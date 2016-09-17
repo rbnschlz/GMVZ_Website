@@ -1,7 +1,6 @@
-title: News
-pages:
-  template: newsitem
-files: false
+title: News Entry
+pages: false
+files: true
 fields:
   title:
     label: Title
@@ -9,6 +8,4 @@ fields:
     readonly: true
 options:
   template: false
-  delete: false
-  url: false
 

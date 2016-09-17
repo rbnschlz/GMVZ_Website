@@ -6,6 +6,37 @@ fields:
     label: Title
     type:  text
     readonly: true
+  artist:
+    label: Artist
+    type: select
+    options: query
+    query:
+      page: artists
+      fetch: visibleChildren
+      value: '{{title}}'
+      text: '{{title}}'
+  description:
+    label: Description
+    type:  textarea
+  startdate:
+    label: Exhibition Beginning
+    type:  date
+    width: 1/2
+  enddate:
+    label: Exhibition Ending
+    type:  date
+    width: 1/2
+  openingstart:
+    label: Vernissage Beginning
+    type: datetime
+    date:
+      format: DD-MM-YYYY
+    width: 1/2
+  openingend:
+    label: Vernissage Ending
+    type: time
+    interval: 15
+    width: 1/2
 options:
   template: false
 
