@@ -9,6 +9,7 @@
   <meta name="description" content="<?php echo $site->description()->html() ?>">
   <meta name="keywords" content="<?php echo $site->keywords()->html() ?>">
 
+  <?php echo less('assets/less/main.less') ?>
   <?php echo css('assets/css/main.css') ?>
 
 </head>
