@@ -8,7 +8,7 @@ fields:
     readonly: true
   artist:
     label: Artist
-    type: select
+    type: multiselect
     options: query
     query:
       page: artists
