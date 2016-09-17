@@ -1,0 +1,42 @@
+/* Mixins */
+
+.transition (@transition) {
+    -webkit-transition: @transition;  
+    -moz-transition:    @transition;
+    -ms-transition:     @transition;
+    -o-transition:      @transition;
+    transition:         @transition;
+}
+
+.transform (@transform) {
+    -webkit-transform:  @transform;
+    -moz-transform:     @transform;
+    -ms-transform:      @transform;
+    -o-transform:       @transform;
+    transform:          @transform;
+}
+
+.flex-display(@display: flex) {
+    display: ~"-webkit-box";
+    display: ~"-webkit-@{display}";
+    display: ~"-moz-@{display}";
+    display: ~"-ms-@{display}box"; // IE10 uses -ms-flexbox
+    display: ~"-ms-@{display}"; // IE11
+    display: @display;
+}
+
+// .prefix(@property, @value) {
+//     -webkit-@{property}: @value;
+//        -moz-@{property}: @value;
+//         -ms-@{property}: @value;
+//          -o-@{property}: @value;
+//             @{property}: @value;
+// }
+
+// .prefix-suffix(@property, @value, @suffix) {
+//     -webkit-@{property}: @value ~"-webkit-@{suffix}";
+//        -moz-@{property}: @value ~"-moz-@{suffix}";
+//         -ms-@{property}: @value ~"-ms-@{suffix}";
+//          -o-@{property}: @value ~"-o-@{suffix}";
+//             @{property}: @value @suffix;
+// }
