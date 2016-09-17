@@ -1,0 +1,11 @@
+title: Artist
+pages: false
+files: true
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+options:
+  template: false
+

@@ -1,0 +1,14 @@
+title: Shows
+pages: 
+  template: show
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+options:
+  template: false
+  delete: false
+  url: false
+

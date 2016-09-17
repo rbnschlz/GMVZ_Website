@@ -1,0 +1,14 @@
+title: Artists
+pages: 
+  template: artist
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+options:
+  template: false
+  delete: false
+  url: false
+

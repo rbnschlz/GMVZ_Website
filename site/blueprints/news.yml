@@ -1,0 +1,13 @@
+title: News
+pages: true
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+    readonly: true
+options:
+  template: false
+  delete: false
+  url: false
+
