@@ -43,8 +43,7 @@ return function($site, $pages, $page) {
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
-		$collection = $shows;
-		
+
 
  //    // Date
  //    $start = strtotime($first->startdate());
@@ -66,7 +65,6 @@ return function($site, $pages, $page) {
         // 'current_date' => $current_date,
         'shows' => $shows,
         'artists' => $artists,
-        'collection' => $collection,
     );
 
 };

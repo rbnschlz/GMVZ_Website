@@ -1,6 +1,11 @@
 title: Shows
 pages: 
   template: show
+  num:
+    mode: date
+    field: enddate
+    format: Ynd
+  sort: flip
 files: false
 fields:
   title:

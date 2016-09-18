@@ -28,10 +28,12 @@ fields:
   startdate:
     label: Exhibition Beginning
     type:  date
+    format: DD-MM-YYYY
     width: 1/2
   enddate:
     label: Exhibition Ending
     type:  date
+    format: DD-MM-YYYY
     width: 1/2
   openingstart:
     label: Vernissage Beginning

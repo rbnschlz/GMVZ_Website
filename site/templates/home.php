@@ -124,24 +124,22 @@
 <div class="main_wrapper">
 
 	<?php 
-		foreach($collection as $item):
-			$filtered = array();
-						foreach($item->title()->html() as $filter){
-				if(!in_array($filter, $filtered)){
-					$filtered[]=$filter;
-				};
-			};
-			// $var_artist = kirby()->request()->get('artist');
-			$$var_artist = "test";
+		$artists = kirby()->request()->get('artists');
+		foreach($shows as $show):
+			$title = $show->title();
+			$title = $title->lower();
+			$title = umlaute($titlelow);
+			$title = str_replace(' ', '', $titlelow);
+			$title = str_replace('-', '', $titlelow);
 
-			if(!in_array($var_artist, $filtered)):
+			if(strpos($artists, $title) == false):
 			    continue;
 			endif;
+			print_r($var_artists);
 	?>
-	<div style="width: 100px; height: 100px; float: left; background: green;"></div>
-
-
+		<div style="width: 400px; height: 400px; float: left; background: green; margin: 10px;"></div>
 	<?php endforeach; ?>
+
 </div>
 
 

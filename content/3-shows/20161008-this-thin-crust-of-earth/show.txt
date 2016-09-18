@@ -2,7 +2,7 @@ Title: This Thin Crust of Earth
 
 ----
 
-Artist: Max Mustermann
+Artist: 
 
 ----
 
@@ -32,3 +32,7 @@ Openingstart: 2016-09-02 19:00:00
 ----
 
 Openingend: 22:00
+
+----
+
+Additionalartist: 
