@@ -35,6 +35,11 @@ return function($site, $pages, $page) {
  //        return $date;
  //    }
 
+
+		$shows = page('shows')->children();
+		$artists = page('artists')->children()->visible();
+		$collection = $shows;
+
  //    // Date
  //    $start = strtotime($first->startdate());
  //    $end = strtotime($first->enddate());
@@ -45,15 +50,18 @@ return function($site, $pages, $page) {
  //    // Currently Open/Closed
  //    $current_date = strtotime(date('Y-m-d H:i:s'));
 
- //    return array(
- //        'start' => $start,
- //        'end' => $end,
- //        'firstend' => $firstend,
- //        'datestring' => $datestring,
- //        'open' => $open,
- //        'openend' => $openend,
- //        'current_date' => $current_date,
- //    );
+    return array(
+        // 'start' => $start,
+        // 'end' => $end,
+        // 'firstend' => $firstend,
+        // 'datestring' => $datestring,
+        // 'open' => $open,
+        // 'openend' => $openend,
+        // 'current_date' => $current_date,
+        'shows' => $shows,
+        'artists' => $artists,
+        'collection' => $collection,
+    );
 
 };
 
