@@ -7,10 +7,10 @@
 		$titlelow = $title->lower()->htm();
 		$titlelow = preg_replace('/\s*/', '', $titlelow);
 		$request = kirby()->request()->get('artist');
-		$active = (strpos($request, $titlelow) !== false ) ? 'italic' : '';
-					$output = " <a class='menu_item' href='?artist=";
+		$active = (strpos($request, $titlelow) !== false ) ? 'active' : '';
+					$output = " <a href='?artist=";
 					$output .= $titlelow;
-					$output .="' class='";
+					$output .="' class='menu_item ";
 					$output .= $active;
 					$output .="'>";
 					$output .= $title;
