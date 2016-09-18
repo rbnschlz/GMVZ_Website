@@ -6,8 +6,9 @@
 		$title = $artist->title()->html();
 		$titlelow = $title->lower()->htm();
 		$titlelow = preg_replace('/\s*/', '', $titlelow);
-		$active = (kirby()->request()->get('artists') == $titlelow ) ? 'italic' : '';
-					$output = " <a class='menu_item' href='?artists=";
+		$request = kirby()->request()->get('artist');
+		$active = (strpos($request, $titlelow) !== false ) ? 'italic' : '';
+					$output = " <a class='menu_item' href='?artist=";
 					$output .= $titlelow;
 					$output .="' class='";
 					$output .= $active;
