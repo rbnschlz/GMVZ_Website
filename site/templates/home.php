@@ -4,135 +4,57 @@
 	<div class="menu_artists">
 		<?php foreach($artists as $artist):
 			$title = $artist->title()->html();
-			$titlelow = $title->lower();
+			$titlelow = $title->lower()->htm();
 			$titlelow = str_replace(' ', '', $titlelow);
 			$titlelow = str_replace('-', '', $titlelow);
 			// $titlelow = preg_replace('/\s*/', '', $titlelow);
 			$params = $_GET;
-			// print_r($params);
+
+			//Add Plus sign if variable is already defined
 			if (!empty($params["artists"]) && strpos($params["artists"], $titlelow) === false) {
 				$params["artists"] .= " ";
 			}
-			// if (!in_array($titlelow , $_GET)) {
+
+			// If title is not yet added, add title
 			if (strpos($params["artists"], $titlelow) === false) {
 				$params["artists"] .= $titlelow;
-			// } else if (in_array($titlelow, $params)) {
-			} else if (strpos($params["artists"], $titlelow) !== false) {
-				$params["artists"] = str_replace($titlelow, '', $params["artists"]);
+				$active = "";
 
+			} else if (trim($params["artists"]) == $titlelow) {
+				unset($params["artists"]);
+				$active = "active";
+
+			//if title is added, remove title
+			} else if (strpos($params["artists"], $titlelow) !== false && trim($params["artists"]) != '') {
+				$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
+				$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
+				$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
+				$active = "active";
 			}
-			$params = str_replace('  ', ' ', $params);
-			$params = str_replace('= ', '=', $params);
-						$url = http_build_query($params);
-			// $url = urldecode($url);
+
+			//Build query
+			$url = http_build_query($params);
+
+			//Add question mark if variable is set
 			if (isset($params["artists"])) {
-				$filter="?";
+				$filter = "?";
+			} else {
+				$filter = "";
 			}
 
-
-				$output = " <a href='";
-				$output .= $site->url();
-				$output .= $filter;
-				$output .= $url;
-				$output .="' class='menu_item ";
-				// $output .= $active;
-				$output .="'>";
-				$output .= $title;
-				$output .=",</a>";
-				echo ($output);
-				// print_r($params);
-
-
-				endforeach;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-			// $active = (strpos($request, $titlelow) !== false ) ? 'active' : '';
-			// $url = $_SERVER['REQUEST_URI'];
-			// if (!isset($_GET["filter"])) {
-			// 	$param = $url;
-			// 	$param .= "?filter=";
-			// } else if (isset($_GET["filter"]) && strpos($url, $titlelow) == false) {
-			// 	$param = $url;
-			// 	$param .= "&filter=";
-			// } else if (isset($_GET["filter"]) && strpos($url, $titlelow) !== false) {
-			// 	$param = str_replace('&filter', 'filter', $param);
-			// 	$param = str_replace('?filter', 'filter', $param);
-			// 	$param = str_replace($titlelow, '', $url);
-			// 	// $param = (str_word_count($request) == 1) ? str_replace('?filter=', '', $param) : $param; 
-			// };
-
-
-
-			// if (strpos($request, $titlelow) == false) {
-			// 	$filter = $titlelow;
-			// } else {
-			// 	$filter = "";
-			// }
-
-
-
-
-
-
-
-
-
-
-			// 	$output = " <a href='";
-			// 	$output .= $param;
-			// 	$output .= $filter;
-			// 	$output .="' class='menu_item ";
-			// 	// $output .= $active;
-			// 	$output .="'>";
-			// 	$output .= $title;
-			// 	$output .=",</a>";
-			// 	echo $output;
-		 ?>
+			//Assemble Menu
+			$output = " <a href='";
+			$output .= $site->url();
+			$output .= $filter;
+			$output .= $url;
+			$output .="' class='menu_item ";
+			$output .= $active;
+			$output .="'>";
+			$output .= $title;
+			$output .=",</a>";
+			echo ($output);
+		endforeach; ?>
 	</div>
-<?php 
-// 	class url extends url_Core {
-	
-// 	/* 
-// 	 * Add a new variable to the query string
-// 	 * or overwrites the value, if already exist
-// 	 */
-// 	public static function add_to_query_string($param, $new_value)
-// 	{
-// 		$parameters = input::instance()->get();
-// 		$parameters[$param] = $new_value;
-// 		return url::base().url::current().'?'.http_build_query($parameters);
-// 	}
-	
-// 	/* 
-// 	 * Remove a variable from the query string
-// 	 */
-// 	public static function remove_from_query_string($param)
-// 	{
-// 		$parameters = input::instance()->get();
-// 		unset($parameters[$param]);
-// 		return url::base().url::current().'?'.http_build_query($parameters);
-// 	}
-// }
-?>
 
 
 
