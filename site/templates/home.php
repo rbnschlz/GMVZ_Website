@@ -3,14 +3,15 @@
 <div class="menu_wrapper">
 	<div class="menu_artists">
 		<?php foreach($artists as $artist):
-			$title = $artist->title()->html();
-			$titlelow = $title->lower()->htm();
+			$title = $artist->title();
+			$titlelow = $title->lower();
+			$titlelow = umlaute($titlelow);
 			$titlelow = str_replace(' ', '', $titlelow);
 			$titlelow = str_replace('-', '', $titlelow);
 			// $titlelow = preg_replace('/\s*/', '', $titlelow);
 			$params = $_GET;
 
-			//Add Plus sign if variable is already defined
+			//Add space if variable is already defined
 			if (!empty($params["artists"]) && strpos($params["artists"], $titlelow) === false) {
 				$params["artists"] .= " ";
 			}
@@ -63,7 +64,7 @@
 			$timelow = strtolower($time);
 			$params = $_GET;
 
-			//Add Plus sign if variable is already defined
+			//Add space sign if variable is already defined
 			if (!empty($params["time"]) && strpos($params["time"], $timelow) === false) {
 				$params["time"] .= " ";
 			}
@@ -109,20 +110,6 @@
 		endforeach; ?>
 			<a href='<?php echo $site->url(); ?>' class='menu_item'>Show All</a>
 	</div>
-
-
-
-
-
-
-
-
-
-
-<!-- 	<div class="menu_time">
-		<?php ?>
-	</div> -->
-
 </div>
 
 
@@ -135,9 +122,6 @@
 
 
 <div class="main_wrapper">
-
-
-
 
 	<?php 
 		foreach($collection as $item):
