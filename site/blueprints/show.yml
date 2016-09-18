@@ -19,6 +19,9 @@ fields:
       fetch: visibleChildren
       value: '{{title}}'
       text: '{{title}}'
+  additionalArtist:
+    label: Artists not represented by the gallery
+    type:  textarea
   description:
     label: Description
     type:  textarea
