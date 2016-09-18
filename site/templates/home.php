@@ -6,22 +6,34 @@
 		$title = $artist->title()->html();
 		$titlelow = $title->lower()->htm();
 		$titlelow = preg_replace('/\s*/', '', $titlelow);
-		$request = kirby()->request()->get('artist');
+		$request = kirby()->request()->query('artists');
 		$active = (strpos($request, $titlelow) !== false ) ? 'active' : '';
-					$output = " <a href='?artist=";
-					$output .= $titlelow;
-					$output .="' class='menu_item ";
-					$output .= $active;
-					$output .="'>";
-					$output .= $title;
-					$output .=",</a>";
-					echo $output;
+			$output = " <a href='?artists=";
+			$output .= $titlelow;
+			$output .="' class='menu_item ";
+			$output .= $active;
+			$output .="'>";
+			$output .= $title;
+			$output .=",</a>";
+			echo $output;
 	endforeach ?>
 </div>
 	<div class="menu_time">
-	<a class="menu_item">Upcoming</a>
-	<a class="menu_item">Current</a>
-	<a class="menu_item">Past</a>
+	<?php 
+	$times = array("Upcoming", "Current", "Past");
+	foreach($times as $time):
+		$timelow = strtolower($time);
+		$request = kirby()->request()->query('time');
+		$active = (strpos($request, $timelow) !== false ) ? 'active' : '';
+			$output = " <a href='?time=";
+			$output .= $timelow;
+			$output .="' class='menu_item ";
+			$output .= $active;
+			$output .="'>";
+			$output .= $time;
+			$output .=",</a>";
+			echo $output;
+	endforeach ?>
 	</div>
 </div>
 
