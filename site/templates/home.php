@@ -1,9 +1,16 @@
 <?php snippet('header') ?>
 
 <div class="menu_wrapper">
+<div class="menu_artists">
 	<?php foreach($artists as $artist): ?>
-		<a class="menu_item"><?php echo $artist->title()->html(); ?></a>
+		<a class="menu_item" href=""><?php echo $artist->title()->html(); ?></a>
 	<? endforeach ?>
+</div>
+	<div class="menu_time">
+	<a class="menu_item">Upcoming</a>
+	<a class="menu_item">Current</a>
+	<a class="menu_item">Past</a>
+	</div>
 </div>
 
 <div class="main_wrapper">
