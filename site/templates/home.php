@@ -36,7 +36,7 @@
 			$url = http_build_query($params);
 
 			//Add question mark if variable is set
-			if (isset($params["artists"])) {
+			if (isset($params["artists"]) || isset($params["time"])) {
 				$filter = "?";
 			} else {
 				$filter = "";
@@ -54,6 +54,60 @@
 			$output .=",</a>";
 			echo ($output);
 		endforeach; ?>
+			<a href='<?php echo $site->url(); ?>' class='menu_item'>Show All</a>
+	</div>
+
+	<div class="menu_time">
+		<?php $times = array("Upcoming", "Current", "Past");
+		foreach($times as $time):
+			$timelow = strtolower($time);
+			$params = $_GET;
+
+			//Add Plus sign if variable is already defined
+			if (!empty($params["time"]) && strpos($params["time"], $timelow) === false) {
+				$params["time"] .= " ";
+			}
+
+			// If title is not yet added, add title
+			if (strpos($params["time"], $timelow) === false) {
+				$params["time"] .= $timelow;
+				$active = "";
+
+			} else if (trim($params["time"]) == $timelow) {
+				unset($params["time"]);
+				$active = "active";
+
+			//if title is added, remove title
+			} else if (strpos($params["time"], $timelow) !== false && trim($params["time"]) != '') {
+				$params["time"] = str_replace(" $timelow", '', $params["time"]);
+				$params["time"] = str_replace("$timelow ", '', $params["time"]);
+				$params["time"] = str_replace("$timelow", '', $params["time"]);
+				$active = "active";
+			}
+
+			//Build query
+			$url = http_build_query($params);
+
+			//Add question mark if variable is set
+			if (isset($params["time"]) || isset($params["artists"])) {
+				$filter = "?";
+			} else {
+				$filter = "";
+			}
+
+			//Assemble Menu
+			$output = " <a href='";
+			$output .= $site->url();
+			$output .= $filter;
+			$output .= $url;
+			$output .="' class='menu_item ";
+			$output .= $active;
+			$output .="'>";
+			$output .= $time;
+			$output .=",</a>";
+			echo ($output);
+		endforeach; ?>
+			<a href='<?php echo $site->url(); ?>' class='menu_item'>Show All</a>
 	</div>
 
 
