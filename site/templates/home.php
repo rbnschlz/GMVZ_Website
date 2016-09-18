@@ -2,9 +2,20 @@
 
 <div class="menu_wrapper">
 <div class="menu_artists">
-	<?php foreach($artists as $artist): ?>
-		<a class="menu_item" href=""><?php echo $artist->title()->html(); ?></a>
-	<? endforeach ?>
+	<?php foreach($artists as $artist):
+		$title = $artist->title()->html();
+		$titlelow = $title->lower()->htm();
+		$titlelow = preg_replace('/\s*/', '', $titlelow);
+		$active = (kirby()->request()->get('artists') == $titlelow ) ? 'italic' : '';
+					$output = " <a class='menu_item' href='?artists=";
+					$output .= $titlelow;
+					$output .="' class='";
+					$output .= $active;
+					$output .="'>";
+					$output .= $title;
+					$output .=",</a>";
+					echo $output;
+	endforeach ?>
 </div>
 	<div class="menu_time">
 	<a class="menu_item">Upcoming</a>
