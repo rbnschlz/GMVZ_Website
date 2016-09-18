@@ -34,15 +34,17 @@ return function($site, $pages, $page) {
  //    }
  //        return $date;
  //    }
-
-	function removevar($url, $varname) {
-    	return preg_replace('/([?&])'.$varname.'=[^&]+(&|$)/','$1',$url);
+	function umlaute($string) {
+		$search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´");
+		$replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "");
+		return str_replace($search, $replace, $string);
 	}
 
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
 		$collection = $shows;
+		
 
  //    // Date
  //    $start = strtotime($first->startdate());
