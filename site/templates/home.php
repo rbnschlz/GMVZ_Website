@@ -6,10 +6,45 @@
 			$title = $artist->title()->html();
 			$titlelow = $title->lower()->htm();
 			$titlelow = preg_replace('/\s*/', '', $titlelow);
-			$request = kirby()->request()->query('artists');
+			$request = kirby()->request()->query('filter');
 			$active = (strpos($request, $titlelow) !== false ) ? 'active' : '';
-				$output = " <a href='?artists=";
-				$output .= $titlelow;
+			$url = $_SERVER['REQUEST_URI'];
+			if (!isset($_GET["filter"])) {
+				$param = " <a href='";
+				$param .= $url;
+				$param .= "?filter=";
+			} else if (isset($_GET["filter"]) && strpos($request, $titlelow) == false) {
+				$param = " <a href='";
+				$param .= $url;
+				$param .= ",";
+			} else if (isset($_GET["filter"]) && strpos($request, $titlelow) !== false) {
+				$param = " <a href='";
+				$param .= str_replace($titlelow, '', $url);
+				$param = str_replace(',,', ',', $param);
+				$param = str_replace('=,', '=', $param);
+				// $param = (str_word_count($request) > 1) ? str_replace('?filter=', '', $param) : $param; 
+			};
+
+
+
+			if (strpos($request, $titlelow) == false) {
+				$filter = $titlelow;
+			} else {
+				$filter = "";
+			}
+
+
+
+
+
+
+
+
+
+
+
+				$output = $param;
+				$output .= $filter;
 				$output .="' class='menu_item ";
 				$output .= $active;
 				$output .="'>";
@@ -19,34 +54,14 @@
 		endforeach ?>
 	</div>
 
-	<div class="menu_time">
-		<?php $times = array("Upcoming", "Current", "Past");
-		foreach($times as $time):
-			$timelow = strtolower($time);
-			$request = kirby()->request()->query('time');
-			$active = (strpos($request, $timelow) !== false ) ? "active" : "";
-			$url = $_SERVER['REQUEST_URI'];
-			if (!isset($_GET["time"]) && !isset($_GET["artists"])) {
-				$param = " <a href='";
-				$param .= $url;
-				$param .= "?time=";
-			} else if (!isset($_GET["time"]) && isset($_GET["artists"])) {
-				$param = " <a href='";
-				$param .= $url;
-				$param .= "&time=";
-			} else if ( isset($_GET["time"])) {
-				$param = " <a href=',";
-			};
-				$output = $param;
-				$output .= $timelow;
-				$output .="' class='menu_item ";
-				$output .= $active;
-				$output .="'>";
-				$output .= $time;
-				$output .=",</a>";
-				echo $output;
-		endforeach ?>
-	</div>
+
+
+
+
+
+<!-- 	<div class="menu_time">
+		<?php ?>
+	</div> -->
 
 </div>
 

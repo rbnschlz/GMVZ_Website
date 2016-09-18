@@ -35,6 +35,10 @@ return function($site, $pages, $page) {
  //        return $date;
  //    }
 
+	function removevar($url, $varname) {
+    	return preg_replace('/([?&])'.$varname.'=[^&]+(&|$)/','$1',$url);
+	}
+
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
