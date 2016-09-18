@@ -35,8 +35,8 @@ return function($site, $pages, $page) {
  //        return $date;
  //    }
 	function umlaute($string) {
-		$search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´");
-		$replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "");
+		$search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´", "ó");
+		$replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "", "o");
 		return str_replace($search, $replace, $string);
 	}
 

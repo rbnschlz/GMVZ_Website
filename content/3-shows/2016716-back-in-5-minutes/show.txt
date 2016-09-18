@@ -1,0 +1,56 @@
+Title: Back in 5 Minutes
+
+----
+
+Artist: Navid Nuur, Oscar Pabón
+
+----
+
+Additionalartist: 
+
+----
+
+Description: 
+
+My name is ABSENTIA
+but, I'm not absent.
+
+However, no one seems
+to see or hear me.
+ 
+But I'm everywhere. 
+
+(Extract from 'ABSENTIA' by Vernon J. Davis Jr.)
+
+----
+
+Startdate: 2016-06-10
+
+----
+
+Enddate: 2016-07-16
+
+----
+
+Openingstart: 
+
+----
+
+Openingend: 
+
+----
+
+Extartist: 
+
+- 
+  artistname: Christoph Bruckner
+- 
+  artistname: Giulia Cenci
+- 
+  artistname: Christine Moldrickx
+- 
+  artistname: Wilfredo Prieto
+- 
+  artistname: Ehsan ul Haq
+- 
+  artistname: Robbert Weide

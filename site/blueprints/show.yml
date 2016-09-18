@@ -9,9 +9,8 @@ fields:
   title:
     label: Title
     type:  text
-    readonly: true
   artist:
-    label: Artist
+    label: Artist(s)
     type: multiselect
     options: query
     query:
@@ -19,9 +18,16 @@ fields:
       fetch: visibleChildren
       value: '{{title}}'
       text: '{{title}}'
-  additionalArtist:
-    label: Artists not represented by the gallery
-    type:  textarea
+  extartist:
+    label: External Artist(s)
+    type:  structure
+    entry: >
+      {{artistname}}
+    fields:
+      artistname:
+        label: Name
+        type: text
+    placeholder: Not represented by Martin von Zomeren
   description:
     label: Description
     type:  textarea
