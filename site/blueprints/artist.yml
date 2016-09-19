@@ -1,6 +1,11 @@
 title: Artist
 pages: false
 files: true
+  fields:
+    caption:
+      label: Caption
+      type: textarea
+  sortable: true  
 fields:
   title:
     label: Title

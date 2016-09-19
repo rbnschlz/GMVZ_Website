@@ -5,6 +5,7 @@ files:
     caption:
       label: Caption
       type: textarea
+  sortable: true  
 fields:
   title:
     label: Title

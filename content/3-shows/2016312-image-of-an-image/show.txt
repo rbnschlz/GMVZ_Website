@@ -12,6 +12,14 @@ Additionalartist:
 
 Description: 
 
+Martin van Zomeren is pleased to present 'IMAGE OF AN IMAGE', the second solo exhibition of Pieter Engels at the gallery.
+
+Pieter Engels (1938, Rosmalen) moved to Amsterdam in the late fifties and finished the Rijksakademie in 1962. Two years later he founded EPO (Engels Products Organization). The ‘company’ was housed in a showroom on Prinsengracht and organized annual sales events of not usable furniture and shiny objects, referred to as products. The works were then sold together with a folder magnifying the product. Sometimes they were priced according to the weight. 
+
+Engels presented himself not as an artist but as the director of the firm: Simon Es, his alterego, a fictive sales manager. Functional objects were deconstructed and 'repaired' in a dysfunctional way, creating something never seen before. He applied the principle of destruction also to the art world (EPO is a striking example), and sometimes he pushed it against the public - for example when he performed in a space full of philatelists cutting the most precious stamps.
+
+Even though his work shows a clear influence by the Fluxus' irreverence, Engels always kept an independent position. The exhibition focuses on historical works made between 1963 and 1969.
+
 ----
 
 Startdate: 2016-02-06
@@ -27,3 +35,7 @@ Openingstart:
 ----
 
 Openingend: 
+
+----
+
+Extartist: 
