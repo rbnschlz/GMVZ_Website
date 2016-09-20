@@ -14,6 +14,7 @@
   					$(this).removeClass('active');
 				});
 				$(".menu_time").css("display", "none");
+				$(".menu_reset").css("display", "none");
 			} else {
 				console.log("unchecked");
 				artists.each(function() {
@@ -21,6 +22,7 @@
   					$(this).css( 'color', 'red');
 				});
 				$(".menu_time").css("display", "inline-block");
+				$(".menu_reset").css("display", "block");
 			}
 		});
 	}
