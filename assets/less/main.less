@@ -146,13 +146,13 @@ li {
   text-align: center;
 }
 
-.menu_temp_switch {
+.menu_switch {
  padding: 0 0 @mp-s 0; 
  display: inline-block;
 }
 
     // slider
-    .switch {
+    .menu_switch_label {
       position: relative;
       display: inline-block;
       width: 40px;
@@ -160,9 +160,9 @@ li {
       margin: 0 5px 0 5px;
     }
 
-    .switch input {display:none;}
+    .menu_switch_label input {display:none;}
 
-    .slider {
+    .menu_switch_slider {
       position: absolute;
       cursor: pointer;
       top: 0;
@@ -172,9 +172,10 @@ li {
       background-color: black;
       -webkit-transition: .4s;
       transition: .4s;
+      border-radius: 50%;
     }
 
-    .slider:before {
+    .menu_switch_slider:before {
       position: absolute;
       content: "";
       height: 10px;
@@ -186,27 +187,18 @@ li {
       transition: .4s;
     }
 
-    input:checked + .slider {
+    input:checked + .menu_switch_slider {
       background-color: grey;
     }
 
-    input:focus + .slider {
+    input:focus + .menu_switch_slider {
       box-shadow: 0 0 1px grey;
     }
 
-    input:checked + .slider:before {
+    input:checked + .menu_switch_slider:before {
       -webkit-transform: translateX(22px);
       -ms-transform: translateX(22px);
       transform: translateX(22px);
-    }
-
-    /* Rounded sliders */
-    .slider.round {
-      border-radius: 34px;
-    }
-
-    .slider.round:before {
-      border-radius: 50%;
     }
 
 
