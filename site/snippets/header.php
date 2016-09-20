@@ -38,3 +38,5 @@
 
 </head>
 <body>
+
+<?php snippet('menu') ?>
