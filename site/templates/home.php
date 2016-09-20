@@ -1,6 +1,25 @@
 <?php snippet('header') ?>
 
 <div class="menu_wrapper">
+	<div class="menu_title">
+		<?php 
+		echo $site->title()->text();
+		?>
+	</div>
+
+	<div class='menu_temp_switch'>
+		Shows
+		<label class="switch">
+		  <input type="checkbox">
+		  <div class="slider round"></div>
+		</label>
+		Artists
+	</div>
+
+	<div class='menu_nav'>
+
+	</div>
+
 	<div class="menu_artists">
 		<?php foreach($artists as $artist):
 			$title = $artist->title();
