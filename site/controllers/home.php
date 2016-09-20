@@ -41,7 +41,7 @@ return function($site, $pages, $page) {
 	// }
 
 
-	// 	$shows = page('shows')->children();
+		$shows = page('shows')->children();
 	// 	$artists = page('artists')->children()->visible();
  //        $artistshome = $artists->add($site);
         // $artists = $artists->add('home');
@@ -65,7 +65,7 @@ return function($site, $pages, $page) {
         // 'open' => $open,
         // 'openend' => $openend,
         // 'current_date' => $current_date,
-        // 'shows' => $shows,
+        'shows' => $shows,
         // 'artists' => $artists,
         // 'artistshome' => $artistshome
     );

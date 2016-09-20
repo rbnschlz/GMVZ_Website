@@ -12,20 +12,29 @@
 <div class="main_wrapper">
 
 	<?php 
-		// $artists = kirby()->request()->get('artists');
-		// foreach($shows as $show):
-		// 	$title = $show->title();
-		// 	$title = $title->lower();
-		// 	$title = umlaute($titlelow);
-		// 	$title = str_replace(' ', '', $titlelow);
-		// 	$title = str_replace('-', '', $titlelow);
+		$artists = kirby()->request()->get('artists');
+		$artists = "";
+		$params = $_GET;
+		foreach($shows as $show):
+			$artist = $show->artist();
+		if($artist->isNotEmpty()){
+			$artistlow = $artist->lower();
+			$artistlow = umlaute($artistlow);
+			$artistlow = str_replace(' ', '', $artistlow);
+			$artistlow = str_replace('-', '', $artistlow);
+			$artistlow = str_replace(', ', '+', $artistlow);
+		} else {
+			$artistlow = " ";
+		}
 
-		// 	if(strpos($artists, $title) == false):
-		// 	    continue;
-		// 	endif;
-		// 	print_r($var_artists);
+		if(isset($_GET['artists'])) {
+			if(strpos($params["artists"], $artistlow) === false):
+			    continue;
+			endif;
+		};
 	?>
-	<?php //endforeach; ?>
+	<img src="<?php //echo $show->images()->first()->url()?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;">
+	<?php endforeach; ?>
 
 </div>
 

@@ -5,7 +5,7 @@
 
 	var switchtoggle = function(){
 		var artists = $(".menu_artist");
-		$(".menu_switch_label input").click(function() {
+		$("#menu_switch_checkbox").click(function() {
 			if ($('#menu_switch_checkbox').prop('checked')) {
 				console.log("checked");
 				artists.each(function() {
@@ -29,12 +29,6 @@
 			}
 		});
 	}
-
-// 	$('#checkArray:checkbox:checked').length > 0;
-
-// 	$('#isAgeSelected').click(function() {
-//     $("#txtAge").toggle(this.checked);
-// });
 
 	//document ready
 	$(document).ready(function(){
