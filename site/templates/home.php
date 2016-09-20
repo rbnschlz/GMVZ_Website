@@ -17,6 +17,10 @@
 		$params = $_GET;
 		foreach($shows as $show):
 			$artist = $show->artist();
+			$img = "";
+			if ($show->hasImages()) {
+				$img = $show->images()->first()->url();
+			}
 		if($artist->isNotEmpty()){
 			$artistlow = $artist->lower();
 			$artistlow = umlaute($artistlow);
@@ -33,7 +37,7 @@
 			endif;
 		};
 	?>
-	<img src="<?php //echo $show->images()->first()->url()?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;">
+	<img src="<?php echo $img ?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;"></img>
 	<?php endforeach; ?>
 
 </div>
