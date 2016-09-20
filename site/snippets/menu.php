@@ -7,7 +7,7 @@
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
-        $artists->add($site);
+
 ?>
 
 
@@ -44,27 +44,30 @@
 			$artistlink = $artist->url();
 			// $titlelow = preg_replace('/\s*/', '', $titlelow);
 			$params = $_GET;
+			$active = "";
+			//Check if variable is set
+			if(isset($_GET['artists'])) {
+				//Add space if variable is already defined
+				if (!empty($params["artists"]) && strpos($params["artists"], $titlelow) === false) {
+					$params["artists"] .= " ";
+				}
 
-			//Add space if variable is already defined
-			if (!empty($params["artists"]) && strpos($params["artists"], $titlelow) === false) {
-				$params["artists"] .= " ";
-			}
+				// If title is not yet added, add title
+				if (strpos($params["artists"], $titlelow) === false) {
+					$params["artists"] .= $titlelow;
+					$active = "";
 
-			// If title is not yet added, add title
-			if (strpos($params["artists"], $titlelow) === false) {
-				$params["artists"] .= $titlelow;
-				$active = "";
+				} else if (trim($params["artists"]) == $titlelow) {
+					unset($params["artists"]);
+					$active = "active";
 
-			} else if (trim($params["artists"]) == $titlelow) {
-				unset($params["artists"]);
-				$active = "active";
-
-			//if title is added, remove title
-			} else if (strpos($params["artists"], $titlelow) !== false && trim($params["artists"]) != '') {
-				$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
-				$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
-				$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
-				$active = "active";
+				//if title is added, remove title
+				} else if (strpos($params["artists"], $titlelow) !== false && trim($params["artists"]) != '') {
+					$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
+					$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
+					$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
+					$active = "active";
+				}
 			}
 
 			//Build query
@@ -103,27 +106,30 @@
 		foreach($times as $time):
 			$timelow = strtolower($time);
 			$params = $_GET;
+			$active = "";
+			//Check if variable is set
+			if(isset($_GET['time'])) {
+				//Add space sign if variable is already defined
+				if (!empty($params["time"]) && strpos($params["time"], $timelow) === false) {
+					$params["time"] .= " ";
+				}
 
-			//Add space sign if variable is already defined
-			if (!empty($params["time"]) && strpos($params["time"], $timelow) === false) {
-				$params["time"] .= " ";
-			}
+				// If title is not yet added, add title
+				if (strpos($params["time"], $timelow) === false) {
+					$params["time"] .= $timelow;
+					$active = "";
 
-			// If title is not yet added, add title
-			if (strpos($params["time"], $timelow) === false) {
-				$params["time"] .= $timelow;
-				$active = "";
+				} else if (trim($params["time"]) == $timelow) {
+					unset($params["time"]);
+					$active = "active";
 
-			} else if (trim($params["time"]) == $timelow) {
-				unset($params["time"]);
-				$active = "active";
-
-			//if title is added, remove title
-			} else if (strpos($params["time"], $timelow) !== false && trim($params["time"]) != '') {
-				$params["time"] = str_replace(" $timelow", '', $params["time"]);
-				$params["time"] = str_replace("$timelow ", '', $params["time"]);
-				$params["time"] = str_replace("$timelow", '', $params["time"]);
-				$active = "active";
+				//if title is added, remove title
+				} else if (strpos($params["time"], $timelow) !== false && trim($params["time"]) != '') {
+					$params["time"] = str_replace(" $timelow", '', $params["time"]);
+					$params["time"] = str_replace("$timelow ", '', $params["time"]);
+					$params["time"] = str_replace("$timelow", '', $params["time"]);
+					$active = "active";
+				}
 			}
 
 			//Build query
