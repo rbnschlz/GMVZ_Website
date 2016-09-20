@@ -33,7 +33,7 @@ a:hover {
 @mp-s = 10px;
 @mp-m = 18px;
 @mp-l = 40px;
-@mp-xl = 80px;
+@mp-xl = 70px;
 
 @fs-s: 18px;
 @fs-m: 21px;
@@ -68,7 +68,9 @@ em {
 }
 
 .active {
-    font-style: italic;
+    border-bottom: 1px solid;
+    padding-bottom: 2px;
+    margin-bottom: 1px;
 }
 
 .text {
@@ -185,11 +187,11 @@ li {
     }
 
     input:checked + .slider {
-      background-color: black;
+      background-color: grey;
     }
 
     input:focus + .slider {
-      box-shadow: 0 0 1px black;
+      box-shadow: 0 0 1px grey;
     }
 
     input:checked + .slider:before {
