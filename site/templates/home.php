@@ -19,7 +19,7 @@
 			$artist = $show->artist();
 			$img = "";
 			if ($show->hasImages()) {
-				$img = $show->images()->first()->url();
+				$img = "src='".$show->images()->first()->url()."'";
 			}
 		if($artist->isNotEmpty()){
 			$artistlow = $artist->lower();
@@ -32,12 +32,12 @@
 		}
 
 		if(isset($_GET['artists'])) {
-			if(strpos($params["artists"], $artistlow) === false):
+			if(strpos($params["artists"], $artistlow) === false || $artist == ""):
 			    continue;
 			endif;
 		};
 	?>
-	<img src="<?php echo $img ?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;"></img>
+	<img <?php echo $img ?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;"></img>
 	<?php endforeach; ?>
 
 </div>
