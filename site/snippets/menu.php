@@ -7,7 +7,7 @@
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
-        // $artists = $artists->add(page('artists'));
+        $artists->add($site);
 ?>
 
 
@@ -33,7 +33,9 @@
 	</div>
 
 	<div class="menu_artists">
-		<?php foreach($artists as $artist):
+		<?php 
+	echo ($artists);
+		foreach($artists as $artist):
 			$title = $artist->title();
 			$titlelow = $title->lower();
 			$titlelow = umlaute($titlelow);
