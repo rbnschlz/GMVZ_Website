@@ -10,9 +10,8 @@
 				console.log("checked");
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-filter'));
-  					$(this).css( 'color', 'blue');
   					if($(this).hasClass('active')){
-  					$(this).toggleClass('active exh-active');
+  					$(this).toggleClass('active active-ph');
   					}
 				});
 				$(".menu_time").css("display", "none");
@@ -21,9 +20,8 @@
 				console.log("unchecked");
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-links'));
-  					$(this).css( 'color', 'red');
-  					if($(this).hasClass('exh-active')){
-  					$(this).toggleClass('exh-active active');
+  					if($(this).hasClass('active-ph')){
+  					$(this).toggleClass('active-ph active');
   					}
 				});
 				$(".menu_time").css("display", "inline-block");
