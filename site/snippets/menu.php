@@ -8,7 +8,7 @@
 	<div class='menu_switch'>
 		<a class="menu_switch_shows">Filter Shows</a>
 		<label class="menu_switch_label">
-			<input type="checkbox">
+			<input id="menu_switch_checkbox" type="checkbox">
 			<div class="menu_switch_slider"></div>
 		</label>
 		<a class="menu_switch_artists">Show Artist Information</a>
@@ -66,8 +66,12 @@
 			$output .= $site->url();
 			$output .= $filter;
 			$output .= $url;
-			$output .="' data-href='";
+			$output .="' data-filter='";
 			$output .= $artistlink;
+			$output .= "' data-links='";
+			$output .= $site->url();
+			$output .= $filter;
+			$output .= $url;
 			$output .="' class='menu_item ";
 			$output .= $active;
 			$output .="'>";

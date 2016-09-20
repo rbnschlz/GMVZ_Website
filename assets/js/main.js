@@ -3,9 +3,34 @@
 	var example = function(){
 	}
 
+	var switchtoggle = function(){
+		var artists = $(".menu_item");
+		$(".menu_switch_label input").click(function() {
+			if ($('#menu_switch_checkbox').prop('checked')) {
+				console.log("checked");
+				artists.each(function() {
+  					$(this).attr( 'href', $(this).attr('data-filter'));
+  					$(this).css( 'color', 'blue');
+				});
+			} else {
+				console.log("unchecked");
+				artists.each(function() {
+  					$(this).attr( 'href', $(this).attr('data-links'));
+  					$(this).css( 'color', 'red');
+				});
+			}
+		});
+	}
+
+// 	$('#checkArray:checkbox:checked').length > 0;
+
+// 	$('#isAgeSelected').click(function() {
+//     $("#txtAge").toggle(this.checked);
+// });
+
 	//document ready
 	$(document).ready(function(){
-
+		switchtoggle();
 	});
 
 
