@@ -33,15 +33,15 @@ a:hover {
 @mp-l = 40px;
 @mp-xl = 70px;
 
-@fs-s: 18px;
-@fs-m: 24px;
-
-@lh-s: 22px;
-@lh-m: 28px;
-
 @lbTransitionLength: 0.25s;
 
-@fontStack: "Jungka", "Times New Roman", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
+@fontStack: "Executive-55Reg", "Times New Roman", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
+
+@fs-s: 14px;
+@lh-s: 16px;
+
+@fs-m: 16px;
+@lh-m: 19px;
 
 .fs-m {
     font-size: @fs-m;
@@ -49,7 +49,6 @@ a:hover {
 .fs-s {
     font-size: @fs-s;
 }
-
 .lh-m {
      line-height: @lh-m;
 }
@@ -77,7 +76,6 @@ em {
   user-select: text; 
   .fs-m;
   .lh-m;
-  letter-spacing: 0.1px;
 }
 
 .opentype {
@@ -102,7 +100,7 @@ html {
   .text;
 
   // fontstack didnt recognize the font when added there
-  // font-family: @fontStack;
+  font-family: @fontStack;
 }
 
 body {
@@ -160,9 +158,9 @@ li {
 .menu_switch_label {
   position: relative;
   display: inline-block;
-  width: 40px;
-  height: 17px;
-  margin: 0 5px 0 5px;
+  width: 36px;
+  height: 21px;
+  margin: 0 10px 0 10px;
 }
 
 .menu_switch_label input {display:none;}
@@ -174,21 +172,20 @@ li {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #BDBDBD;
-  -webkit-transition: .25s;
-  transition: .25s;
-  border-radius: 20px;
+  border-radius: 25px;
+  background: lightgrey;
+  // border: solid 2px black;
   
 }
 
 .menu_switch_slider:before {
   position: absolute;
   content: "";
-  height: 9px;
-  width: 9px;
-  left: 4px;
-  bottom: 4px;
-  background-color: black;
+  height: 23px;
+  width: 23px;
+  left: 0px;
+  top: -1px;
+  background-color: grey;
   border-radius: 50%;
 }
 
@@ -201,9 +198,9 @@ input:focus + .menu_switch_slider {
 }
 
     input:checked + .menu_switch_slider:before {
-      -webkit-transform: translateX(22px);
-      -ms-transform: translateX(22px);
-      transform: translateX(22px);
+      -webkit-transform: translateX(13px);
+      -ms-transform: translateX(13px);
+      transform: translateX(13px);
     }
 
 
