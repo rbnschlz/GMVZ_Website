@@ -5,13 +5,13 @@
 		?>
 	</div>
 
-	<div class='menu_temp_switch'>
-		Shows
-		<label class="switch">
-		  <input type="checkbox">
-		  <div class="slider round"></div>
+	<div class='menu_switch'>
+		<a class="menu_switch_shows">Filter Shows</a>
+		<label class="menu_switch_label">
+			<input type="checkbox">
+			<div class="menu_switch_slider"></div>
 		</label>
-		Artists
+		<a class="menu_switch_artists">Show Artist Information</a>
 	</div>
 
 	<div class='menu_nav'>
