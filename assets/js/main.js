@@ -11,7 +11,9 @@
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-filter'));
   					$(this).css( 'color', 'blue');
-  					$(this).removeClass('active');
+  					if($(this).hasClass('active')){
+  					$(this).toggleClass('active exh-active');
+  					}
 				});
 				$(".menu_time").css("display", "none");
 				$(".menu_reset").css("display", "none");
@@ -20,6 +22,9 @@
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-links'));
   					$(this).css( 'color', 'red');
+  					if($(this).hasClass('exh-active')){
+  					$(this).toggleClass('exh-active active');
+  					}
 				});
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
