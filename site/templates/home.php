@@ -17,6 +17,7 @@
 		$params = $_GET;
 		foreach($shows as $show):
 			$artist = $show->artist();
+			$artist = $artist->toArray();
 			$img = "";
 			if ($show->hasImages()) {
 				$img = "src='".$show->images()->first()->url()."'";
@@ -26,15 +27,17 @@
 			$artistlow = umlaute($artistlow);
 			$artistlow = str_replace(' ', '', $artistlow);
 			$artistlow = str_replace('-', '', $artistlow);
-			$artistlow = str_replace(', ', '+', $artistlow);
+			// $artistlow = str_replace(',', ', ', $artistlow);
+			$artistarray = explode(',', $artistlow);
 		} else {
 			$artistlow = " ";
-		}
+		};
+
 
 		if(isset($_GET['artists'])) {
-			if(strpos($params["artists"], $artistlow) === false || $artist == ""):
-			    continue;
-			endif;
+			if (!preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches)) {
+				continue;
+			}
 		};
 	?>
 	<img <?php echo $img ?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;"></img>
