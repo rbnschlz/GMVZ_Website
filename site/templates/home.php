@@ -8,6 +8,7 @@
 			$titlelow = umlaute($titlelow);
 			$titlelow = str_replace(' ', '', $titlelow);
 			$titlelow = str_replace('-', '', $titlelow);
+			$artistlink = $artist->url();
 			// $titlelow = preg_replace('/\s*/', '', $titlelow);
 			$params = $_GET;
 
@@ -48,6 +49,8 @@
 			$output .= $site->url();
 			$output .= $filter;
 			$output .= $url;
+			$output .="' data-href='";
+			$output .= $artistlink;
 			$output .="' class='menu_item ";
 			$output .= $active;
 			$output .="'>";
