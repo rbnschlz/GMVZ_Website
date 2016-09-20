@@ -4,7 +4,7 @@
 	}
 
 	var switchtoggle = function(){
-		var artists = $(".menu_item");
+		var artists = $(".menu_artist");
 		$(".menu_switch_label input").click(function() {
 			if ($('#menu_switch_checkbox').prop('checked')) {
 				console.log("checked");
@@ -13,12 +13,14 @@
   					$(this).css( 'color', 'blue');
   					$(this).removeClass('active');
 				});
+				$(".menu_time").css("display", "none");
 			} else {
 				console.log("unchecked");
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-links'));
   					$(this).css( 'color', 'red');
 				});
+				$(".menu_time").css("display", "inline-block");
 			}
 		});
 	}

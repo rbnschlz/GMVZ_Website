@@ -1,3 +1,17 @@
+<?php
+	function umlaute($string) {
+		$search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´", "ó");
+		$replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "", "o");
+		return str_replace($search, $replace, $string);
+	}
+
+		$shows = page('shows')->children();
+		$artists = page('artists')->children()->visible();
+        // $artists = $artists->add(page('artists'));
+?>
+
+
+
 <div class="menu_wrapper">
 	<!-- <div class="menu_title">
 		<?php 
@@ -72,7 +86,7 @@
 			$output .= $site->url();
 			$output .= $filter;
 			$output .= $url;
-			$output .="' class='menu_item ";
+			$output .="' class='menu_artist ";
 			$output .= $active;
 			$output .="'>";
 			$output .= $title;
@@ -125,7 +139,7 @@
 			$output .= $site->url();
 			$output .= $filter;
 			$output .= $url;
-			$output .="' class='menu_item ";
+			$output .="' class='menu_time ";
 			$output .= $active;
 			$output .="'>";
 			$output .= $time;

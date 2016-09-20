@@ -25,7 +25,6 @@
 		// 	endif;
 		// 	print_r($var_artists);
 	?>
-		<div style="width: 400px; height: 400px; float: left; background: green; margin: 10px;"></div>
 	<?php //endforeach; ?>
 
 </div>

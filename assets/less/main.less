@@ -27,7 +27,6 @@ a:hover {
 
 @c1 = #fff;
 @c2 = rgba(20, 67, 20, 100);
-@c3 = #ccc;
 
 
 @mp-s = 10px;
@@ -68,7 +67,14 @@ em {
 }
 
 .active {
+<<<<<<< Updated upstream
     font-style: italic;
+=======
+    // border-bottom: 1px solid;
+    // padding-bottom: 2px;
+    // margin-bottom: 1px;
+    color: orange;
+>>>>>>> Stashed changes
 }
 
 .text {
@@ -103,7 +109,7 @@ html {
   .text;
 
   // fontstack didnt recognize the font when added there
-  font-family: "Jungka";
+  // font-family: @fontStack;
 }
 
 body {
@@ -135,7 +141,6 @@ li {
 .menu_wrapper {
   width: 100%;
   height: auto;
-
   padding: @mp-s @mp-m @mp-s @mp-m; 
 }
 
@@ -149,51 +154,51 @@ li {
  display: inline-block;
 }
 
-    // slider
-    .menu_switch_label {
-      position: relative;
-      display: inline-block;
-      width: 40px;
-      height: 17px;
-      margin: 0 5px 0 5px;
-    }
+// slider
+.menu_switch_label {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 17px;
+  margin: 0 5px 0 5px;
+}
 
-    .menu_switch_label input {display:none;}
+.menu_switch_label input {display:none;}
 
-    .menu_switch_slider {
-      position: absolute;
-      cursor: pointer;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: #BDBDBD;
-      -webkit-transition: .25s;
-      transition: .25s;
-      border-radius: 20px;
-      
-    }
+.menu_switch_slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #BDBDBD;
+  -webkit-transition: .25s;
+  transition: .25s;
+  border-radius: 20px;
+  
+}
 
-    .menu_switch_slider:before {
-      position: absolute;
-      content: "";
-      height: 9px;
-      width: 9px;
-      left: 4px;
-      bottom: 4px;
-      background-color: black;
-      -webkit-transition: .25s;
-      transition: .25s;
-      border-radius: 50%;
-    }
+.menu_switch_slider:before {
+  position: absolute;
+  content: "";
+  height: 9px;
+  width: 9px;
+  left: 4px;
+  bottom: 4px;
+  background-color: black;
+  -webkit-transition: .25s;
+  transition: .25s;
+  border-radius: 50%;
+}
 
-    input:checked + .menu_switch_slider {
-      /*background-color: grey;*/
-    }
+input:checked + .menu_switch_slider {
+  /*background-color: grey;*/
+}
 
-    input:focus + .menu_switch_slider {
-      /*box-shadow: 0 0 1px grey;*/
-    }
+input:focus + .menu_switch_slider {
+  /*box-shadow: 0 0 1px grey;*/
+}
 
     input:checked + .menu_switch_slider:before {
       -webkit-transform: translateX(22px);

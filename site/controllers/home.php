@@ -34,15 +34,17 @@ return function($site, $pages, $page) {
  //    }
  //        return $date;
  //    }
-	function umlaute($string) {
-		$search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´", "ó");
-		$replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "", "o");
-		return str_replace($search, $replace, $string);
-	}
+	// function umlaute($string) {
+	// 	$search = array("Ä", "Ö", "Ü", "ä", "ö", "ü", "ß", "´", "ó");
+	// 	$replace = array("Ae", "Oe", "Ue", "ae", "oe", "ue", "ss", "", "o");
+	// 	return str_replace($search, $replace, $string);
+	// }
 
 
-		$shows = page('shows')->children();
-		$artists = page('artists')->children()->visible();
+	// 	$shows = page('shows')->children();
+	// 	$artists = page('artists')->children()->visible();
+ //        $artistshome = $artists->add($site);
+        // $artists = $artists->add('home');
 
 
  //    // Date
@@ -63,8 +65,9 @@ return function($site, $pages, $page) {
         // 'open' => $open,
         // 'openend' => $openend,
         // 'current_date' => $current_date,
-        'shows' => $shows,
-        'artists' => $artists,
+        // 'shows' => $shows,
+        // 'artists' => $artists,
+        // 'artistshome' => $artistshome
     );
 
 };
