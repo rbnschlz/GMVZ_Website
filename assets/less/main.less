@@ -156,7 +156,7 @@ li {
       position: relative;
       display: inline-block;
       width: 40px;
-      height: 16px;
+      height: 17px;
       margin: 0 5px 0 5px;
     }
 
@@ -169,9 +169,9 @@ li {
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: black;
-      -webkit-transition: .4s;
-      transition: .4s;
+      background-color: #BDBDBD;
+      -webkit-transition: .25s;
+      transition: .25s;
       border-radius: 20px;
       
     }
@@ -179,22 +179,22 @@ li {
     .menu_switch_slider:before {
       position: absolute;
       content: "";
-      height: 10px;
-      width: 10px;
+      height: 9px;
+      width: 9px;
       left: 4px;
-      bottom: 3px;
-      background-color: white;
-      -webkit-transition: .4s;
-      transition: .4s;
+      bottom: 4px;
+      background-color: black;
+      -webkit-transition: .25s;
+      transition: .25s;
       border-radius: 50%;
     }
 
     input:checked + .menu_switch_slider {
-      background-color: grey;
+      /*background-color: grey;*/
     }
 
     input:focus + .menu_switch_slider {
-      box-shadow: 0 0 1px grey;
+      /*box-shadow: 0 0 1px grey;*/
     }
 
     input:checked + .menu_switch_slider:before {
