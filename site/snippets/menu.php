@@ -49,18 +49,22 @@
 			$titlelow = str_replace('-', '', $titlelow);
 
 			// GET parameter
-				$params = $_GET;
-				// Define vars if get is not set
-				$active = "";
+			$params = $_GET;
 
 			//Check if page title matches current page
 			if ($title == $page->title()) {
 				$artistlink = "";
 				$title = "Show All";
 				$url = "";
+				if(!isset($_GET['artists'])) {
+					$active = " active";
+				};
+				$hide = " hidethis";
 			} else {
 				$url = "?artists=$titlelow";
 				$artistlink = $artist->url();
+				$active = "";
+				$hide = "";
 
 				//Check if variable is set
 				if(isset($_GET['artists'])) {
@@ -76,14 +80,14 @@
 
 					} else if (trim($params["artists"]) == $titlelow) {
 						unset($params["artists"]);
-						$active = "active";
+						$active = " active";
 
 					//if title is added, remove title
 					} else if (strpos($params["artists"], $titlelow) !== false && trim($params["artists"]) != '') {
 						$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
 						$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
 						$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
-						$active = "active";
+						$active = " active";
 					}
 
 					//Build query
@@ -109,8 +113,8 @@
 			$output .= $site->url();
 			$output .= $filter;
 			$output .= $url;
-			$output .="' class='menu_artist ";
-			$output .= $active;
+			$output .="' class='menu_artist";
+			$output .= $active.$hide;
 			$output .="'>";
 			$output .= $title;
 			$output .= $i < $len ? "," : "";
