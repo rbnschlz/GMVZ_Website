@@ -11,6 +11,7 @@
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-filter'));
   					$(this).css( 'color', 'blue');
+  					$(this).removeClass('active');
 				});
 			} else {
 				console.log("unchecked");

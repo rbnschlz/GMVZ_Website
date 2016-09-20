@@ -1,9 +1,9 @@
 <div class="menu_wrapper">
-	<div class="menu_title">
+	<!-- <div class="menu_title">
 		<?php 
 		echo $site->title()->text();
 		?>
-	</div>
+	</div> -->
 
 	<div class='menu_switch'>
 		<a class="menu_switch_shows">Filter Shows</a>
