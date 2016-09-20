@@ -7,7 +7,9 @@
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
-
+		$collection = pages();
+		$collection->add($artists);
+		$collection->add($page);
 ?>
 
 
@@ -34,51 +36,67 @@
 
 	<div class="menu_artists">
 		<?php 
-	echo ($artists);
-		foreach($artists as $artist):
+		//Comma or not
+		$i = 0;
+		$len = count($collection);
+		//Foreach loop
+		foreach($collection as $artist):
+			$i++;
 			$title = $artist->title();
 			$titlelow = $title->lower();
 			$titlelow = umlaute($titlelow);
 			$titlelow = str_replace(' ', '', $titlelow);
 			$titlelow = str_replace('-', '', $titlelow);
-			$artistlink = $artist->url();
-			// $titlelow = preg_replace('/\s*/', '', $titlelow);
-			$params = $_GET;
-			$active = "";
-			//Check if variable is set
-			if(isset($_GET['artists'])) {
-				//Add space if variable is already defined
-				if (!empty($params["artists"]) && strpos($params["artists"], $titlelow) === false) {
-					$params["artists"] .= " ";
-				}
 
-				// If title is not yet added, add title
-				if (strpos($params["artists"], $titlelow) === false) {
-					$params["artists"] .= $titlelow;
-					$active = "";
+			// GET parameter
+				$params = $_GET;
+				// Define vars if get is not set
+				$active = "";
 
-				} else if (trim($params["artists"]) == $titlelow) {
-					unset($params["artists"]);
-					$active = "active";
-
-				//if title is added, remove title
-				} else if (strpos($params["artists"], $titlelow) !== false && trim($params["artists"]) != '') {
-					$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
-					$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
-					$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
-					$active = "active";
-				}
-			}
-
-			//Build query
-			$url = http_build_query($params);
-
-			//Add question mark if variable is set
-			if (isset($params["artists"]) || isset($params["time"])) {
-				$filter = "?";
+			//Check if page title matches current page
+			if ($title == $page->title()) {
+				$artistlink = "";
+				$title = "Show All";
+				$url = "";
 			} else {
-				$filter = "";
-			}
+				$url = "?artists=$titlelow";
+				$artistlink = $artist->url();
+
+				//Check if variable is set
+				if(isset($_GET['artists'])) {
+					//Add space if variable is already defined
+					if (!empty($params["artists"]) && strpos($params["artists"], $titlelow) === false) {
+						$params["artists"] .= " ";
+					}
+
+					// If title is not yet added, add title
+					if (strpos($params["artists"], $titlelow) === false) {
+						$params["artists"] .= $titlelow;
+						$active = "";
+
+					} else if (trim($params["artists"]) == $titlelow) {
+						unset($params["artists"]);
+						$active = "active";
+
+					//if title is added, remove title
+					} else if (strpos($params["artists"], $titlelow) !== false && trim($params["artists"]) != '') {
+						$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
+						$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
+						$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
+						$active = "active";
+					}
+
+					//Build query
+					$url = http_build_query($params);
+				}
+			};
+
+				//Add question mark if variable is set
+				if (isset($params["artists"]) || isset($params["time"])) {
+					$filter = "?";
+				} else {
+					$filter = "";
+				}
 
 			//Assemble Menu
 			$output = " <a href='";
@@ -95,10 +113,10 @@
 			$output .= $active;
 			$output .="'>";
 			$output .= $title;
-			$output .=",</a>";
+			$output .= $i < $len ? "," : "";
+			$output .="</a>";
 			echo ($output);
 		endforeach; ?>
-			<a href='<?php echo $site->url(); ?>' class='menu_item'>Show All</a>
 	</div>
 
 	<div class="menu_time">
