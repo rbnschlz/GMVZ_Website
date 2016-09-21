@@ -39,7 +39,6 @@
 			$img = "";
 			if ($show->hasImages()) {
 				$img = "src='".$show->images()->first()->url()."'";
-<<<<<<< Updated upstream
 			}
 
 			//Convert Artist variable to lowercase
@@ -52,13 +51,14 @@
 			} else {
 				$artistlow = " ";
 			};
-=======
-				if ($show->images()->first()->orientation() == 'landscape') {
-					$imgOrientation = "landscape";
-				} else {
-					$imgOrientation = "portrait";
-				}
-			}	
+
+			// 	if ($show->images()->first()->orientation() == 'landscape') {
+			// 		$imgOrientation = "landscape";
+			// 	} else {
+			// 		$imgOrientation = "portrait";
+			// 	}
+			// }	
+
 		if($artist->isNotEmpty()){
 			$artistlow = $artist->lower();
 			$artistlow = umlaute($artistlow);
@@ -68,7 +68,6 @@
 		} else {
 			$artistlow = " ";
 		};
->>>>>>> Stashed changes
 
 		//Filter by Artist
 		if(isset($_GET['artists'])) {
@@ -93,58 +92,6 @@
 	<?php endforeach; ?>
 
 </div>
-
-<<<<<<< Updated upstream
-<?php
-
-// $out = "";
-// $current_date = new DateTime("");
-// $out .= "<div class='block_float_container'>";
-// $current = false;
-// $forthcoming = false;
-// $past = false;
-// foreach($shows as $exhibit) {
-//         $prefix = "";
-//         $opening_date = $start;
-//         $closing_date = $end;
-
-//         if ($closing_date < $current_date) {
-//             // past
-//             $filter = "ex_past";
-//             $type = "past";
-//             $past = true;
-//         } else if ( ($opening_date < $current_date) && ($closing_date > $current_date) ) {
-//             // current
-//             $filter = "ex_cur";
-//             $type = "current";
-//             $current = true;
-//             $prefix = "<em>Current:</em> ";
-//         } else {
-//             // forthcoming
-//             $filter = "ex_up";
-//             $type = "forthcoming";
-//             $forthcoming = true;
-//             $prefix = "<em>Forthcoming:</em> ";
-//         }
-
-//         $out .= "<div class='".$filter." block_float lazy'>";
-//         $out .= "<a href='".$exhibit->url."'>";
-//         $out .= "<div class='block_float_capt'>";
-//         $out .= $prefix;
-//         $out .= "<em>".$exhibit->title."</em>";
-//         $out .= ",<br>".$datestring;
-//         $out .= "</div></a></div>";
-
-// }
-// $out .= "</div>";
-
-
-// echo $out;
-
-?>
-=======
-</div>
->>>>>>> Stashed changes
 
 
 
