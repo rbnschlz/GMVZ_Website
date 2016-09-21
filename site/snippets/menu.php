@@ -26,7 +26,7 @@
 			<input id="menu_switch_checkbox" class="<?php echo $gohome ?>" <?php echo $checked ?> type="checkbox">
 			<div class="menu_switch_slider"></div>
 		</label>
-		<a class="menu_switch_artists">Artist Info</a>
+		<a class="menu_switch_artists">Artists</a>
 	</div>
 
 	<div class="menu_artists">
