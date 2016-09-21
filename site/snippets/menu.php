@@ -115,8 +115,6 @@
 			$output .= $i < $len ? "," : "";
 			$output .="</a>";
 			echo $output;
-			// print_r($params);
-			// print_r($url);
 		endforeach; ?>
 	</div>
 
@@ -133,9 +131,6 @@
 
 			// GET parameter
 			$params = $_GET;
-			// if(isset($_GET['artists'])) {
-			// 	$params["artists"] = $_GET["artists"];
-			// };
 
 			//Check if artists variable is set
 			if(isset($_GET['artists'])) {

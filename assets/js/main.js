@@ -14,6 +14,8 @@
   						$(this).toggleClass('active active-ph');
   					}
 				});
+				// window.location.href = window.location.href.split('?')[0];
+				history.pushState("", document.title, window.location.pathname);
 				$(".menu_time").css("display", "none");
 				$(".menu_reset").css("display", "none");
 			} else {
@@ -24,6 +26,7 @@
   						$(this).toggleClass('active-ph active');
   					}
 				});
+				history.back();
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
 			}
