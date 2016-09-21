@@ -3,3 +3,23 @@ Title: Contact
 ----
 
 Text: 
+
+----
+
+Street: Hazenstraat 20
+
+----
+
+City: 1016 SP Amsterdam
+
+----
+
+Mail: contact@gmvz.com
+
+----
+
+Phone: +31 20 420 8129
+
+----
+
+Mobile: +31 6 1137 021

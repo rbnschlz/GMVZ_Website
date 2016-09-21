@@ -142,7 +142,7 @@ li {
 
 .menu_switch {
  padding: 0 0 @mp-s 0; 
- display: inline-block;
+ display: block;
 }
 
 .menu_reset {
@@ -155,11 +155,19 @@ li {
 }
 
 // slider
+.menu_switch_shows {
+  float: left;
+}
+
+.menu_switch_artists {
+  float: right;
+}
+
 .menu_switch_label {
   position: relative;
   display: inline-block;
-  width: 36px;
-  height: 21px;
+  width: calc(~"100% - 125px");
+  height: 18px;
   margin: 0 10px 0 10px;
 }
 
@@ -168,12 +176,11 @@ li {
 .menu_switch_slider {
   position: absolute;
   cursor: pointer;
-  top: 0;
+  top: -4px;
   left: 0;
   right: 0;
   bottom: 0;
   border-radius: 25px;
-  background: lightgrey;
   // border: solid 2px black;
   
 }
@@ -181,11 +188,11 @@ li {
 .menu_switch_slider:before {
   position: absolute;
   content: "";
-  height: 23px;
-  width: 23px;
+  height: 15px;
+  width: 15px;
   left: 0px;
-  top: -1px;
-  background-color: grey;
+  top: 3px;
+  background-color: black;
   border-radius: 50%;
 }
 
@@ -198,16 +205,45 @@ input:focus + .menu_switch_slider {
 }
 
     input:checked + .menu_switch_slider:before {
-      -webkit-transform: translateX(13px);
-      -ms-transform: translateX(13px);
-      transform: translateX(13px);
+      -webkit-transform: translateX(calc(~"100vw - 167px"));
+      -ms-transform: translateX(calc(~"100vw - 167px"));
+      transform: translateX(calc(~"100vw - 167px"));
     }
 
+/* general
+-------------------------------------------------- */
+.main_wrapper {
+
+}
+
+/* home
+-------------------------------------------------- */
+.home_show_wrap {
+  width: 100%;
+  height: auto;
+  padding: @mp-s @mp-m @mp-s @mp-m; 
+}
+
+.home_show {
+  float: left;
+  vertical-align: top;
+  padding: @mp-l @mp-s @mp-s @mp-s; 
+}
+
+.home_show img {
+  margin-bottom: @mp-m;
+}
+
+  .portrait {
+    width: 300px;
+  }
+
+  .landscape {
+    width: 500px;
+  }
 
 /* Helpers
 -------------------------------------------------- */
-
-
 
 /* Animations
 -------------------------------------------------- */

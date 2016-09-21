@@ -6,8 +6,26 @@ fields:
     label: Title
     type:  text
     readonly: true
+  street:
+    label: Street & Number
+    type:  text
+    width: 1/2
+  city:
+    label: Postal & City 
+    type:  text
+    width: 1/2
+  mail:
+    label: e-Mail
+    type: email
+  phone:
+    label: Phone
+    type: tel
+    width: 1/2
+  mobile:
+    label: Mobile
+    type: tel
+    width: 1/2  
 options:
   template: false
   delete: false
   url: false
-

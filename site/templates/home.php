@@ -11,6 +11,7 @@
 
 <div class="main_wrapper">
 
+<div class='home_show_wrap'>
 	<?php 
 		$artists = kirby()->request()->get('artists');
 		$artists = "";
@@ -38,6 +39,7 @@
 			$img = "";
 			if ($show->hasImages()) {
 				$img = "src='".$show->images()->first()->url()."'";
+<<<<<<< Updated upstream
 			}
 
 			//Convert Artist variable to lowercase
@@ -50,6 +52,23 @@
 			} else {
 				$artistlow = " ";
 			};
+=======
+				if ($show->images()->first()->orientation() == 'landscape') {
+					$imgOrientation = "landscape";
+				} else {
+					$imgOrientation = "portrait";
+				}
+			}	
+		if($artist->isNotEmpty()){
+			$artistlow = $artist->lower();
+			$artistlow = umlaute($artistlow);
+			$artistlow = str_replace(' ', '', $artistlow);
+			$artistlow = str_replace('-', '', $artistlow);
+			$artistarray = explode(',', $artistlow);
+		} else {
+			$artistlow = " ";
+		};
+>>>>>>> Stashed changes
 
 		//Filter by Artist
 		if(isset($_GET['artists'])) {
@@ -64,11 +83,18 @@
 			}
 		};
 	?>
-	<img <?php echo $img ?>" style="height: 300px; width: auto; display: inline-block; vertical-align: top; padding: 10px;"></img>
+	
+	<div class='home_show <?php echo $imgOrientation?>'>
+	<img <?php echo $img ?>></img>
+	<?php 
+	echo $show->title();
+	?>
+	</div>
 	<?php endforeach; ?>
 
 </div>
 
+<<<<<<< Updated upstream
 <?php
 
 // $out = "";
@@ -116,6 +142,9 @@
 // echo $out;
 
 ?>
+=======
+</div>
+>>>>>>> Stashed changes
 
 
 
