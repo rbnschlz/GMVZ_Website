@@ -32,22 +32,24 @@
 			} else if ($start > $current_date) {
 				$when = "upcoming";
 			};
-
+			//Set Artist variable
 			$artist = $show->artist();
 			$artist = $artist->toArray();
 			$img = "";
 			if ($show->hasImages()) {
 				$img = "src='".$show->images()->first()->url()."'";
 			}
-		if($artist->isNotEmpty()){
-			$artistlow = $artist->lower();
-			$artistlow = umlaute($artistlow);
-			$artistlow = str_replace(' ', '', $artistlow);
-			$artistlow = str_replace('-', '', $artistlow);
-			$artistarray = explode(',', $artistlow);
-		} else {
-			$artistlow = " ";
-		};
+
+			//Convert Artist variable to lowercase
+			if($artist->isNotEmpty()){
+				$artistlow = $artist->lower();
+				$artistlow = umlaute($artistlow);
+				$artistlow = str_replace(' ', '', $artistlow);
+				$artistlow = str_replace('-', '', $artistlow);
+				$artistarray = explode(',', $artistlow);
+			} else {
+				$artistlow = " ";
+			};
 
 		//Filter by Artist
 		if(isset($_GET['artists'])) {
