@@ -18,12 +18,12 @@
 
 	<div class='menu_switch'>
 	<?php $checked = $page->parent()->title() == "Artists"? "checked" : ""; ?>
-		<a class="menu_switch_shows">Filter Shows</a>
+		<a class="menu_switch_shows">Shows</a>
 		<label class="menu_switch_label">
 			<input id="menu_switch_checkbox" <?php echo $checked ?> type="checkbox">
 			<div class="menu_switch_slider"></div>
 		</label>
-		<a class="menu_switch_artists">Artist Information</a>
+		<a class="menu_switch_artists">Artist Info</a>
 	</div>
 
 	<div class="menu_artists">
@@ -187,9 +187,9 @@
 			echo $output;
 		endforeach; ?>
 	</div>
-<?php endif; ?>
 
 	<a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a>
+<?php endif; ?>
 
 
 </div>
