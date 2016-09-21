@@ -15,11 +15,6 @@
 
 
 <div class="menu_wrapper">
-	<!-- <div class="menu_title">
-		<?php 
-		echo $site->title()->text();
-		?>
-	</div> -->
 
 	<div class='menu_switch'>
 		<a class="menu_switch_shows">Filter Shows</a>
@@ -57,7 +52,13 @@
 				};
 				$hide = " hidethis";
 			} else {
-				$url = "?artists=$titlelow";
+				//Check if times variable is set
+				if(isset($_GET['times'])) {
+					$url = http_build_query($params);
+					$url .= "&artists=$titlelow";
+				} else {
+					$url = "?artists=$titlelow";
+				};
 				$artistlink = $artist->url();
 				$active = "";
 				$hide = "";
@@ -73,6 +74,7 @@
 
 					} else if (trim($params["artists"]) === $titlelow) {
 						unset($params["artists"]);
+						$params = str_replace('&', '', $params);
 						$active = " active";
 
 					//if title is added, remove title
@@ -89,7 +91,7 @@
 			};
 
 				//Add question mark if variable is set
-				if (isset($params["artists"]) || isset($params["artists"])) {
+				if (isset($params["times"]) || isset($params["artists"])) {
 					$filter = "?";
 				} else {
 					$filter = "";
@@ -113,6 +115,8 @@
 			$output .= $i < $len ? "," : "";
 			$output .="</a>";
 			echo $output;
+			// print_r($params);
+			// print_r($url);
 		endforeach; ?>
 	</div>
 
@@ -129,12 +133,20 @@
 
 			// GET parameter
 			$params = $_GET;
+			// if(isset($_GET['artists'])) {
+			// 	$params["artists"] = $_GET["artists"];
+			// };
 
-			//Check if page title matches current page
+			//Check if artists variable is set
+			if(isset($_GET['artists'])) {
+				$url = http_build_query($params);
+				$url .= "&times=$titlelow";
+			} else {
 				$url = "?times=$titlelow";
-				$artistlink = $artist->url();
-				$active = "";
-				$hide = "";
+			};
+			$artistlink = $artist->url();
+			$active = "";
+			$hide = "";
 
 				//Check if variable is set
 				if(isset($_GET['times'])) {
@@ -162,7 +174,7 @@
 				}
 
 				//Add question mark if variable is set
-				if (isset($params["times"]) || isset($params["times"])) {
+				if (isset($params["times"]) || isset($params["artists"])) {
 					$filter = "?";
 				} else {
 					$filter = "";
