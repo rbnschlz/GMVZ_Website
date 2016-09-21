@@ -9,7 +9,7 @@
 			if ($('#menu_switch_checkbox').prop('checked')) {
 				console.log("checked");
 				artists.each(function() {
-  					$(this).attr( 'href', $(this).attr('data-filter'));
+  					$(this).attr( 'href', $(this).attr('data-links'));
   					if($(this).hasClass('active')){
   						$(this).toggleClass('active active-ph');
   					}
@@ -21,12 +21,12 @@
 			} else {
 				console.log("unchecked");
 				artists.each(function() {
-  					$(this).attr( 'href', $(this).attr('data-links'));
+  					$(this).attr( 'href', $(this).attr('data-filter'));
   					if($(this).hasClass('active-ph')){
   						$(this).toggleClass('active-ph active');
   					}
 				});
-				history.back();
+				// history.back();
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
 			}

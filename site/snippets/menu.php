@@ -17,9 +17,10 @@
 <div class="menu_wrapper">
 
 	<div class='menu_switch'>
+	<?php $checked = $page->parent()->title() == "Artists"? "checked" : ""; ?>
 		<a class="menu_switch_shows">Filter Shows</a>
 		<label class="menu_switch_label">
-			<input id="menu_switch_checkbox" type="checkbox">
+			<input id="menu_switch_checkbox" <?php echo $checked ?> type="checkbox">
 			<div class="menu_switch_slider"></div>
 		</label>
 		<a class="menu_switch_artists">Artist Information</a>
@@ -45,7 +46,7 @@
 			//Check if page title matches current page
 			if ($title == $page->title()) {
 				$artistlink = "";
-				$title = "Show All";
+				// $title = "Show All";
 				$url = "";
 				if(!isset($_GET['artists'])) {
 					$active = " active";
@@ -99,15 +100,11 @@
 
 			//Assemble Menu
 			$output = " <a href='";
-			$output .= $site->url();
-			$output .= $filter;
-			$output .= $url;
-			$output .="' data-filter='";
+			$output .= $page->parent() == page("Artists") ? $site->url().$filter.$url : $artistlink;
+			$output .="' data-links='";
 			$output .= $artistlink;
-			$output .= "' data-links='";
-			$output .= $site->url();
-			$output .= $filter;
-			$output .= $url;
+			$output .= "' data-filter='";
+			$output .= $site->url().$filter.$url;
 			$output .="' class='menu_artist";
 			$output .= $active.$hide;
 			$output .="'>";
@@ -117,6 +114,8 @@
 			echo $output;
 		endforeach; ?>
 	</div>
+
+<?php //if($page->parent() == page("Artists")): ?>
 
 	<div class="menu_time">
 		<?php $times = array("Upcoming", "Current", "Past");
@@ -177,9 +176,7 @@
 
 			//Assemble Menu
 			$output = " <a href='";
-			$output .= $site->url();
-			$output .= $filter;
-			$output .= $url;
+			$output .= $site->url().$filter.$url;
 			$output .="' class='menu_artist";
 			$output .= $active;
 			$output .="'>";
@@ -189,6 +186,7 @@
 			echo $output;
 		endforeach; ?>
 	</div>
+<?php //endif; ?>
 
 	<a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a>
 
