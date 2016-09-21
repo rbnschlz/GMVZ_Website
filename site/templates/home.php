@@ -52,12 +52,13 @@
 				$artistlow = " ";
 			};
 
-			// 	if ($show->images()->first()->orientation() == 'landscape') {
-			// 		$imgOrientation = "landscape";
-			// 	} else {
-			// 		$imgOrientation = "portrait";
-			// 	}
-			// }	
+			// Add image orientation
+			if ($show->images()->first()->orientation() == 'landscape') {
+				$imgOrientation = "landscape";
+			} else {
+				$imgOrientation = "portrait";
+			}
+			
 
 		if($artist->isNotEmpty()){
 			$artistlow = $artist->lower();

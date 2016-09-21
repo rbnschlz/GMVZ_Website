@@ -160,19 +160,12 @@ li {
 }
 
 // slider
-.menu_switch_shows {
-  float: left;
-}
-
-.menu_switch_artists {
-  float: right;
-}
-
 .menu_switch_label {
   position: relative;
   display: inline-block;
-  width: calc(~"100% - 125px");
-  height: 18px;
+  width: 35px;
+  height: 12px;
+  top: 2px;
   margin: 0 10px 0 10px;
 }
 
@@ -186,18 +179,19 @@ li {
   right: 0;
   bottom: 0;
   border-radius: 25px;
-  // border: solid 2px black;
+  background: lightgrey;
+    // border: solid 2px black;
   
 }
 
 .menu_switch_slider:before {
   position: absolute;
   content: "";
-  height: 15px;
-  width: 15px;
+  height: 24px;
+  width: 24px;
   left: 0px;
-  top: 3px;
-  .translong;
+  top: -4px;
+  .trans;
   background-color: black;
   border-radius: 50%;
 }
@@ -211,9 +205,9 @@ input:focus + .menu_switch_slider {
 }
 
     input:checked + .menu_switch_slider:before {
-      -webkit-transform: translateX(calc(~"100vw - 167px"));
-      -ms-transform: translateX(calc(~"100vw - 167px"));
-      transform: translateX(calc(~"100vw - 167px"));
+      -webkit-transform: translateX(12px);
+      -ms-transform: translateX(12px);
+      transform: translateX(12px);
     }
 
 /* general
