@@ -36,11 +36,6 @@
 			//Set Artist variable
 			$artist = $show->artist();
 			$artist = $artist->toArray();
-			$img = "";
-			if ($show->hasImages()) {
-				$img = "src='".$show->images()->first()->url()."'";
-			}
-
 			//Convert Artist variable to lowercase
 			if($artist->isNotEmpty()){
 				$artistlow = $artist->lower();
@@ -51,44 +46,43 @@
 			} else {
 				$artistlow = " ";
 			};
+			//Set src
+			$img = "";
+			if ($show->hasImages()) {
+				$img = "src='".$show->images()->first()->url()."'";
+			}
 
 			// Add image orientation
-			if ($show->images()->first()->orientation() == 'landscape') {
-				$imgOrientation = "landscape";
+			$orientation = $show->images()->first()->orientation() == 'landscape' ? "landscape" : "portrait";
+
+			if($artist->isNotEmpty()){
+				$artistlow = $artist->lower();
+				$artistlow = umlaute($artistlow);
+				$artistlow = str_replace(' ', '', $artistlow);
+				$artistlow = str_replace('-', '', $artistlow);
+				$artistarray = explode(',', $artistlow);
 			} else {
-				$imgOrientation = "portrait";
-			}
-			
+				$artistlow = " ";
+			};
 
-		if($artist->isNotEmpty()){
-			$artistlow = $artist->lower();
-			$artistlow = umlaute($artistlow);
-			$artistlow = str_replace(' ', '', $artistlow);
-			$artistlow = str_replace('-', '', $artistlow);
-			$artistarray = explode(',', $artistlow);
-		} else {
-			$artistlow = " ";
-		};
+			//Filter by Artist
+			if(isset($_GET['artists'])) {
+				if (!preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches)) {
+					continue;
+				}
+			};
 
-		//Filter by Artist
-		if(isset($_GET['artists'])) {
-			if (!preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches)) {
-				continue;
-			}
-		};
-		//Filter by times
-		if (isset($_GET['times'])){
-			if (strpos($params["times"], $when) === false) {
-				continue;
-			}
-		};
+			//Filter by times
+			if (isset($_GET['times'])){
+				if (strpos($params["times"], $when) === false) {
+					continue;
+				}
+			};
 	?>
 	
-	<div class='home_show <?php echo $imgOrientation?>'>
+	<div class='home_show <?php echo $orientation?>'>
 	<img <?php echo $img ?>></img>
-	<?php 
-	echo $show->title();
-	?>
+	<?php echo $show->title();?>
 	</div>
 	<?php endforeach; ?>
 

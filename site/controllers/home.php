@@ -36,21 +36,6 @@ return function($site, $pages, $page) {
     }
 
 	$shows = page('shows')->children();
-	// 	$artists = page('artists')->children()->visible();
- //        $artistshome = $artists->add($site);
-        // $artists = $artists->add('home');
-
-
- //    // Date
-    // foreach ($shows as $show) {
-    //     $start = strtotime($show->startdate());
-    //     $end = strtotime($show->enddate());
-    //     $datestring = returnDate($start, $end);
-    // }
- //    //Opening
- //    $open =  strtotime($first->openingstart());
- //    $openend =  strtotime($first->openingend());
- //    // Currently Open/Closed
     $current_date = strtotime(date('Y-m-d H:i:s'));
 
     return array(
