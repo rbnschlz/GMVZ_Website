@@ -31,6 +31,7 @@
 		//Comma or not
 		$i = 0;
 		$len = count($collection);
+		$artists = page("artists");
 		//Foreach loop
 		foreach($collection as $artist):
 			$i++;
@@ -100,7 +101,7 @@
 
 			//Assemble Menu
 			$output = " <a href='";
-			$output .= $page->parent() == page("Artists") ? $site->url().$filter.$url : $artistlink;
+			$output .= !$page->isChildOf($artists) ? $site->url().$filter.$url : $artistlink;
 			$output .="' data-links='";
 			$output .= $artistlink;
 			$output .= "' data-filter='";
@@ -115,7 +116,7 @@
 		endforeach; ?>
 	</div>
 
-<?php //if($page->parent() == page("Artists")): ?>
+<?php if(!$page->isChildOf($artists)): ?>
 
 	<div class="menu_time">
 		<?php $times = array("Upcoming", "Current", "Past");
@@ -186,7 +187,7 @@
 			echo $output;
 		endforeach; ?>
 	</div>
-<?php //endif; ?>
+<?php endif; ?>
 
 	<a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a>
 
