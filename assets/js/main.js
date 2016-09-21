@@ -26,6 +26,13 @@
   						$(this).toggleClass('active-ph active');
   					}
 				});
+				if ($('#menu_switch_checkbox').hasClass("gohome")) {
+					pathArray = location.href.split( '/' );
+					protocol = pathArray[0];
+					host = pathArray[2];
+					url = protocol + '//' + host;
+					window.location.href = url;
+				}
 				// history.back();
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
