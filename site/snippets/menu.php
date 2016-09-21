@@ -7,9 +7,6 @@
 
 		$shows = page('shows')->children();
 		$artists = page('artists')->children()->visible();
-		$collection = pages();
-		$collection->add($artists);
-		// $collection->add($page);
 ?>
 
 
@@ -33,10 +30,10 @@
 		<?php 
 		//Comma or not
 		$i = 0;
-		$len = count($collection);
-		$artists = page("artists");
+		$len = count($artists);
+		$artistspage = page("artists");
 		//Foreach loop
-		foreach($collection as $artist):
+		foreach($artists as $artist):
 			$i++;
 			$title = $artist->title();
 			$titlelow = $title->lower();
@@ -104,7 +101,7 @@
 
 			//Assemble Menu
 			$output = " <a href='";
-			$output .= !$page->isChildOf($artists) ? $site->url().$filter.$url : $artistlink;
+			$output .= !$page->isChildOf($artistspage) ? $site->url().$filter.$url : $artistlink;
 			$output .="' data-links='";
 			$output .= $artistlink;
 			$output .= "' data-filter='";
@@ -119,7 +116,7 @@
 		endforeach; ?>
 	</div>
 
-<?php if(!$page->isChildOf($artists)): ?>
+<?php if(!$page->isChildOf($artistspage)): ?>
 
 	<div class="menu_time">
 		<?php $times = array("Upcoming", "Current", "Past");

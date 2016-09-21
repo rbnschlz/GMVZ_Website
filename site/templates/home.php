@@ -1,14 +1,5 @@
 <?php snippet('header') ?>
 
-
-
-
-
-
-
-
-
-
 <div class="main_wrapper">
 
 <div class='home_show_wrap'>
