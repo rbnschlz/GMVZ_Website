@@ -34,6 +34,7 @@ a:hover {
 @mp-xl = 70px;
 
 @lbTransitionLength: 0.25s;
+@lbTransitionLengthLong: 0.75s;
 
 @fontStack: "Executive-55Reg", "Times New Roman", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
 
@@ -88,6 +89,10 @@ em {
 
 .trans {
   .transition(@lbTransitionLength ease opacity;);
+}
+
+.translong {
+  .transition(@lbTransitionLengthLong ease;);
 }
 
 
@@ -192,6 +197,7 @@ li {
   width: 15px;
   left: 0px;
   top: 3px;
+  .translong;
   background-color: black;
   border-radius: 50%;
 }
