@@ -12,6 +12,7 @@
 		$upcoming = false;
 		$when = "";
 		// Run through array of shows
+		$i = 0;
 		foreach($shows as $show):
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
@@ -85,7 +86,7 @@
 			</div>
 		</div>
 	<?php endforeach; ?>
-	<?php if($output != false): ?>
+	<?php if($output === true): ?>
 		<div>No match found. Please change your selection</div>
 	<?php endif; ?>
 
