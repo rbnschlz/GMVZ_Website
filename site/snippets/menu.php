@@ -35,7 +35,7 @@
 		//Comma or not
 		$i = 0;
 		$len = count($artists);
-		$artistspage = page("artists");
+		// $artistspage = page("artists");
 		//Foreach loop
 		foreach($artists as $artist):
 			$i++;
@@ -50,7 +50,7 @@
 
 			//Check if page title matches current page
 			if ($title == $page->title()) {
-				$artistlink = "";
+				// $artistlink = "";
 				// $title = "Show All";
 				$url = "";
 				if(!isset($_GET['artists'])) {
@@ -65,7 +65,7 @@
 				} else {
 					$url = "?artists=$titlelow";
 				};
-				$artistlink = $artist->url();
+				// $artistlink = $artist->url();
 				$active = "";
 				$hide = "";
 
@@ -105,22 +105,22 @@
 
 			//Assemble Menu
 			$output = " <a href='";
-			$output .= !$page->isChildOf($artistspage) ? $site->url().$filter.$url : $artistlink;
-			$output .="' data-links='";
-			$output .= $artistlink;
-			$output .= "' data-filter='";
 			$output .= $site->url().$filter.$url;
+			// $output .="' data-links='";
+			// $output .= $artistlink;
+			// $output .= "' data-filter='";
+			// $output .= $site->url().$filter.$url;
 			$output .="' class='menu_artist nobr";
 			$output .= $active.$hide;
 			$output .="'>";
 			$output .= $title;
-			$output .= $i < $len ? "," : "";
 			$output .="</a>";
+			$output .= $i < $len ? "," : "";
 			echo $output;
 		endforeach; ?>
 	</div>
 
-<?php if(!$page->isChildOf($artistspage)): ?>
+<?php //if(!$page->isChildOf($artistspage)): ?>
 
 	<div class="menu_time">
 		<?php $times = array("Upcoming", "Current", "Past");
@@ -188,8 +188,8 @@
 				$output .= $active;
 				$output .="'>";
 				$output .= $title;
-				$output .= $i < $len ? "," : "";
 				$output .="</a>";
+				$output .= $i < $len ? "," : "";
 			} else {
 				$output = " <a href='";
 				$output .= $site->url().$filter.$url;
@@ -197,8 +197,8 @@
 				$output .= $active;
 				$output .="'>";
 				$output .= $title;
-				$output .= $i < $len ? "," : "";
-				$output .="</a>";				
+				$output .="</a>";
+				$output .= $i < $len ? "," : "";				
 			}
 			
 			echo $output;
@@ -208,7 +208,7 @@
 	</div>
 
 	<a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a>
-<?php endif; ?>
+<?php //endif; ?>
 
 
 </div>

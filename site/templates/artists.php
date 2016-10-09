@@ -1,2 +1,4 @@
 <?php snippet('header') ?>
-<?php snippet('menu2') ?>
+<?php snippet('artists_menu') ?>
+
+<?php snippet('footer') ?>
