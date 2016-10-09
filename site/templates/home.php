@@ -12,12 +12,11 @@
 		$upcoming = false;
 		$when = "";
 		// Run through array of shows
-		$i = 0;
+		$output = [];
 		foreach($shows as $show):
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
         	$datestring = returnDate($start, $end);
-        	$output = [];
         	//Set Date variable
 			if ($end < $current_date) {
 				$when = "past";
@@ -65,21 +64,21 @@
 			if(isset($_GET['artists'])) {
 				if (count($artistarray) < 1 || !preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches)) {
 					continue;
-					$output[] = "none";
 				} else {
 					$output[] = "added";
 				}
+				$output[] = "added";
 			};
 
 			//Filter by times
 			if (isset($_GET['times'])){
 				if (strpos($params["times"], $when) === false) {
 					continue;
-					$output[] = "none";
 				} else {
 					$output[] = "added";
 				}
 			};
+			$output[] = "added";
 	?>
 	<?php //if(in_array(yes, $output)): ?>
 	 	<div class='home_show <?php echo $orientation; echo " "; echo $sizing; ?>'>
@@ -90,9 +89,9 @@
 			</p>
 		</div>
 	<?php endforeach; ?>
-	<?php if(!in_array("added", $output)): ?>
+	<?php if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)): ?>
 		<div>No matches found. Please refine your selection.</div>
-	<?php endif; ?>
+	<?php print_r($output); endif; ?>
 
 </div>
 
