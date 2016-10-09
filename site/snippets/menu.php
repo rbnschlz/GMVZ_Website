@@ -177,7 +177,7 @@
 
 			//Assemble Menu
 			$activeUrl = $_SERVER['REQUEST_URI'];
-			if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false ) {
+			if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'times') === false ) {
 				$output = " <a href='";
 				$output .= $site->url().$filter.$url;
 				$output .="' class='menu_artist active";
