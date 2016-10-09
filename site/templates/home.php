@@ -72,8 +72,11 @@
 	?>
 	
 	<div class='home_show <?php echo $orientation?>'>
-	<img <?php echo $img ?>></img>
-	<?php echo $show->title();?>
+		<img <?php echo $img ?>></img>
+		<div class='home_show_caption'>
+			<?php echo $show->title();?>
+			<?php echo $datestring;?>
+		</div>
 	</div>
 	<?php endforeach; ?>
 

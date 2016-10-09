@@ -13,7 +13,7 @@ return function($site, $pages, $page) {
     $end_year = $end_date[2];
 
     $date = "";
-    $span = " – ";
+    $span = "–";
     $date .= $start_day;
     if ($end) {
         if ($start_year == $end_year) {
@@ -35,7 +35,7 @@ return function($site, $pages, $page) {
         return $date;
     }
 
-	$shows = page('shows')->children();
+	$shows = page('shows')->children()->sortBy('startdate', 'desc', 'enddate', 'asc');
     $current_date = strtotime(date('Y-m-d H:i:s'));
 
     return array(
