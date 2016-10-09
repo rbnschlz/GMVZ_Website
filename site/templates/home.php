@@ -86,10 +86,10 @@
 			$block = "<div class='home_show";
 			$block .= " {$orientation} {$sizing}'>";
 			$block .= "<img {$img}></img>";
-			// $block .= "<p class='home_show_caption'>";
-			// $block .= "<span>{$show->title()}</span>";
-			// $block .= "<span>{$datestring}</span>";
-			// $block .= "</p>";
+			$block .= "<p class='home_show_caption'>";
+			$block .= "<span>{$show->title()}</span>";
+			$block .= "<span>{$datestring}</span>";
+			$block .= "</p>";
 			$block .= "</div>";
 			echo $block;
 		}
