@@ -36,13 +36,13 @@ a:hover {
 @lbTransitionLength: 0.25s;
 @lbTransitionLengthLong: 0.75s;
 
-@fontStack: "MariaPro", "HermesSans-Reg", "Times New Roman", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
+@fontStack: "HMChez", "HermesSans-Reg", "Times New Roman", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
 
 @fs-s: 12px;
 @lh-s: 14px;
 
-@fs-m: 15px;
-@lh-m: 19px;
+@fs-m: 18px;
+@lh-m: 21px;
 
 .fs-m {
     font-size: @fs-m;
@@ -148,8 +148,19 @@ header {
   width: 100%;
   height: auto;
   padding: @mp-s @mp-m @mp-s @mp-m; 
+  position: absolute;
+  // background: rgba(255,255,0,0.9);
+  // text-shadow: 1px 1px #ffffff;
   // text-align: center;
   // position: fixed;
+}
+
+.menu_adress {
+  padding: @mp-s @mp-m @mp-s @mp-m; 
+  background: rgba(0,0,255,0.9);
+  color: white;
+  display: inline-block;
+
 }
 
 // .menu_title {
@@ -159,17 +170,19 @@ header {
 
 .menu_switch {
  padding: 0 0 @mp-s 0; 
- display: block;
+ display: inline-block;
+ background: rgba(255,255,0,0.9);
 }
 
-.menu_reset {
-  padding: @mp-s @mp-s @mp-s 0; 
-  display: inline-block;
-}
+// .menu_reset {
+//   padding: @mp-s @mp-s @mp-s 0; 
+//   display: inline-block;
+// }
 
 .menu_time, .menu_artists {
   padding: @mp-s @mp-s @mp-s 0; 
   max-width: 80%;
+  background: rgba(255,255,0,0.9);
 }
 
 // slider
@@ -244,8 +257,8 @@ header {
   width: auto;
   img {
     margin-bottom: @mp-s/2;
-    height: auto;
-    width: 100%;
+    width: auto;
+    height: 100%;
     display: inline;
   }
   &_caption {
@@ -305,15 +318,18 @@ header {
   // }
 
 .small_float {
-  width: 300px;
+  height: 250px;
+  // background: green;
 }
 
 .medium_float {
-  width: 400px;
+  height: 250px;
+  // background: blue;
 }
 
 .big_float {
-  width: 600px;
+  height: 250px;
+  // background: #FD5F00; 
 }
 
 /* Helpers

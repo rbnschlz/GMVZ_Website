@@ -12,6 +12,7 @@
 
 
 <div class="menu_wrapper">
+	<div class="menu_adress">Hazenstraat 20, 1016 SP Amsterdam<br>m: +31 6 1137 0211, t/f: +31 20 420 8129<br>info@martinvansomeren.com</div>
 
 <!-- 	<div class='menu_switch'>
 	<?php 
