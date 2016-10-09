@@ -83,10 +83,10 @@
 	?>
 	 	<div class='home_show <?php echo $orientation; echo " "; echo $sizing; ?>'>
 			<img <?php echo $img ?>></img>
-<!-- 			<p class='home_show_caption'>
-				<?php echo $show->title();?>
-				<?php echo $datestring;?>
-			</p> -->
+			<p class='home_show_caption'>
+				<span><?php echo $show->title();?></span>
+				<span><?php echo $datestring;?></span>
+			</p>
 		</div>
 	<?php endforeach; ?>
 	<?php //if($output === true): ?>
