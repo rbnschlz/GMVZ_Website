@@ -207,7 +207,7 @@
 		endforeach; ?>
 	</div>
 
-	<a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a>
+	<!-- <a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a> -->
 <?php //endif; ?>
 
 
