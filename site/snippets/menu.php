@@ -27,8 +27,7 @@
 	</div> -->
 
 	<div class='menu_switch'>
-	<a href="/">Shows</a>
-	<a href="/artists">Artists</a>
+	<a class="active" href="/">Shows</a>, <a href="/artists">Artists</a>
 	</div>
 
 	<div class="menu_artists">
