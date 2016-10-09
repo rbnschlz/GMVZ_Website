@@ -21,10 +21,13 @@
         	//Set Date variable
 			if ($end < $current_date) {
 				$when = "past";
+				$sizing = "small_float";
 			} else if (($start < $current_date) && ($end > $current_date)) {
 				$when = "current";
+				$sizing = "big_float";
 			} else if ($start > $current_date) {
 				$when = "upcoming";
+				$sizing = "medium_float";
 			};
 			//Set Artist variable
 			$artist = $show->artist();
@@ -78,17 +81,17 @@
 				}
 			};
 	?>
-	 	<div class='home_show <?php echo $orientation?>'>
+	 	<div class='home_show <?php echo $orientation; echo " "; echo $sizing; ?>'>
 			<img <?php echo $img ?>></img>
-			<div class='home_show_caption'>
+<!-- 			<p class='home_show_caption'>
 				<?php echo $show->title();?>
 				<?php echo $datestring;?>
-			</div>
+			</p> -->
 		</div>
 	<?php endforeach; ?>
-	<?php if($output === true): ?>
-		<div>No match found. Please change your selection</div>
-	<?php endif; ?>
+	<?php //if($output === true): ?>
+		<!-- <div>No match found. Please change your selection</div> -->
+	<?php //endif; ?>
 
 </div>
 

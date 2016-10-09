@@ -2,7 +2,7 @@ Title: This Thin Crust of Earth
 
 ----
 
-Artist:
+Artist: 
 
 ----
 
@@ -23,7 +23,7 @@ Startdate: 2016-09-03
 
 ----
 
-Enddate: 2016-10-08
+Enddate: 2016-10-16
 
 ----
 

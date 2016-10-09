@@ -7,11 +7,10 @@
 		var artists = $(".menu_artist");
 		$("#menu_switch_checkbox").click(function() {
 			if ($('#menu_switch_checkbox').prop('checked')) {
-				console.log("checked");
 				artists.each(function() {
   					$(this).attr( 'href', $(this).attr('data-links'));
   					if($(this).hasClass('active')){
-  						$(this).removeClass('active active-ph');
+  						$(this).removeClass('active');
   					}
 				});
 				// window.location.href = window.location.href.split('?')[0];
@@ -32,12 +31,6 @@
 					host = pathArray[2];
 					url = protocol + '//' + host;
 					window.location.href = url;
-				// } else {
-				// 	pathArray = location.href.split( '/' );
-				// 	protocol = pathArray[0];
-				// 	host = pathArray[2];
-				// 	url = protocol + '//' + host;
-				// 	window.location.href = url;
 				// }
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
