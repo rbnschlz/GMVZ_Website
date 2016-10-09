@@ -18,6 +18,8 @@
 				$(".menu_time").css("display", "none");
 				$(".menu_reset").css("display", "none");
 				$(".home_show_wrap").css("display", "none");
+				$('.menu_switch_shows').removeClass('active');
+				$('.menu_switch_artists').addClass('active');
 			} else {
 				console.log("unchecked");
 				artists.each(function() {
@@ -35,6 +37,8 @@
 				// }
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
+				$('.menu_switch_shows').addClass('active');
+				$('.menu_switch_artists').removeClass('active');
 				// $(".home_show_wrap").css("display", "block");
 			}
 		});

@@ -41,8 +41,8 @@ a:hover {
 @fs-s: 12px;
 @lh-s: 14px;
 
-@fs-m: 14px;
-@lh-m: 16px;
+@fs-m: 15px;
+@lh-m: 19px;
 
 .fs-m {
     font-size: @fs-m;
@@ -66,7 +66,8 @@ em {
 }
 
 .active {
-    font-style: italic;
+    border-bottom: 1px solid;
+    margin-bottom: -1px;
 }
 
 .text {
@@ -75,6 +76,7 @@ em {
   -ms-user-select: text;
   user-select: text; 
   color: @c2;
+  letter-spacing: -.2px;
   .fs-m;
   .lh-m;
 }
@@ -133,6 +135,13 @@ li {
   list-style: none;
 }
 
+/* Menu
+-------------------------------------------------- */
+header {
+  padding: @mp-s;
+  width: 100%;
+  text-align: center;
+}
 /* Menu
 -------------------------------------------------- */
 .menu_wrapper {
@@ -294,7 +303,7 @@ input:focus + .menu_switch_slider {
   // }
 
 .small_float {
-  width: 200px;
+  width: 300px;
 }
 
 .medium_float {
