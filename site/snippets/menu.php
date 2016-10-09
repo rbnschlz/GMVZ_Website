@@ -18,7 +18,7 @@
 	$checked = $page->parent()->title() == "Artists"? "checked" : ""; 
 	$gohome = $page->parent()->title() == "Artists"? "gohome" : "";
 	?>
-		<a class="menu_switch_shows">Shows</a>
+		<a class="menu_switch_shows active">Shows</a>
 		<label class="menu_switch_label">
 			<input id="menu_switch_checkbox" class="<?php echo $gohome ?>" <?php echo $checked ?> type="checkbox">
 			<div class="menu_switch_slider"></div>
@@ -176,15 +176,30 @@
 				}
 
 			//Assemble Menu
-			$output = " <a href='";
-			$output .= $site->url().$filter.$url;
-			$output .="' class='menu_artist";
-			$output .= $active;
-			$output .="'>";
-			$output .= $title;
-			$output .= $i < $len ? "," : "";
-			$output .="</a>";
+			$activeUrl = $_SERVER['REQUEST_URI'];
+			if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false ) {
+				$output = " <a href='";
+				$output .= $site->url().$filter.$url;
+				$output .="' class='menu_artist active";
+				$output .= $active;
+				$output .="'>";
+				$output .= $title;
+				$output .= $i < $len ? "," : "";
+				$output .="</a>";
+			} else {
+				$output = " <a href='";
+				$output .= $site->url().$filter.$url;
+				$output .="' class='menu_artist";
+				$output .= $active;
+				$output .="'>";
+				$output .= $title;
+				$output .= $i < $len ? "," : "";
+				$output .="</a>";				
+			}
+			
 			echo $output;
+			
+			
 		endforeach; ?>
 	</div>
 

@@ -37,6 +37,10 @@
 
 
 </head>
+
+<header>
+<?php echo $site->title() ?>
+</header>
 <body>
 
 <?php snippet('menu') ?>
