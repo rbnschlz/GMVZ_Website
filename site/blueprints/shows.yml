@@ -3,9 +3,9 @@ pages:
   template: show
   num:
     mode: date
-    field: enddate
+    field: startdate
     format: Ynd
-    sort: flip
+  sort: flip
 files: false
 fields:
   title:

@@ -13,7 +13,7 @@ return function($site, $pages, $page) {
     $end_year = $end_date[2];
 
     $date = "";
-    $span = "–";
+    $span = " – ";
     $date .= $start_day;
     if ($end) {
         if ($start_year == $end_year) {
