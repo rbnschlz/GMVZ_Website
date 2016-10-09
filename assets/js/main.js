@@ -17,6 +17,7 @@
 				history.pushState("", document.title, window.location.pathname);
 				$(".menu_time").css("display", "none");
 				$(".menu_reset").css("display", "none");
+				$(".home_show_wrap").css("display", "none");
 			} else {
 				console.log("unchecked");
 				artists.each(function() {
@@ -34,6 +35,7 @@
 				// }
 				$(".menu_time").css("display", "inline-block");
 				$(".menu_reset").css("display", "block");
+				// $(".home_show_wrap").css("display", "block");
 			}
 		});
 	}
