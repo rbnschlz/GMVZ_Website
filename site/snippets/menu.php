@@ -106,7 +106,7 @@
 			$output .= $artistlink;
 			$output .= "' data-filter='";
 			$output .= $site->url().$filter.$url;
-			$output .="' class='menu_artist";
+			$output .="' class='menu_artist nobr";
 			$output .= $active.$hide;
 			$output .="'>";
 			$output .= $title;

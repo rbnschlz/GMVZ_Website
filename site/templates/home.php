@@ -17,7 +17,7 @@
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
         	$datestring = returnDate($start, $end);
-        	$output = true;
+        	$output = [];
         	//Set Date variable
 			if ($end < $current_date) {
 				$when = "past";
@@ -65,9 +65,9 @@
 			if(isset($_GET['artists'])) {
 				if (count($artistarray) < 1 || !preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches)) {
 					continue;
-					$output = false;
+					$output[] = "none";
 				} else {
-					$output = true;
+					$output[] = "added";
 				}
 			};
 
@@ -75,12 +75,13 @@
 			if (isset($_GET['times'])){
 				if (strpos($params["times"], $when) === false) {
 					continue;
-					$output = false;
+					$output[] = "none";
 				} else {
-					$output = true;
+					$output[] = "added";
 				}
 			};
 	?>
+	<?php //if(in_array(yes, $output)): ?>
 	 	<div class='home_show <?php echo $orientation; echo " "; echo $sizing; ?>'>
 			<img <?php echo $img ?>></img>
 			<p class='home_show_caption'>
@@ -89,9 +90,9 @@
 			</p>
 		</div>
 	<?php endforeach; ?>
-	<?php //if($output === true): ?>
-		<!-- <div>No match found. Please change your selection</div> -->
-	<?php //endif; ?>
+	<?php if(!in_array("added", $output)): ?>
+		<div>No matches found. Please refine your selection.</div>
+	<?php endif; ?>
 
 </div>
 
