@@ -1,4 +1,5 @@
 <?php snippet('header') ?>
+<?php snippet('menu') ?>
 
 <div class="main_wrapper">
 
@@ -13,7 +14,7 @@
 		$when = "";
 		// Run through array of shows
 		$output = [];
-		foreach($shows as $show):
+		foreach($shows as $show) {
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
         	$datestring = returnDate($start, $end);
@@ -79,28 +80,26 @@
 				}
 			};
 			$output[] = "added";
+
+
+			//Build Block and display
+			$block = "<div class='home_show";
+			$block .= " {$orientation} {$sizing}'>";
+			$block .= "<img {$img}></img>";
+			$block .= "<p class='home_show_caption'>";
+			$block .= "<span>{$show->title()}</span>";
+			$block .= "<span>{$datestring}</span>";
+			$block .= "</p>";
+			$block .= "</div>";
+			echo $block;
+		}
+
+	if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
+		echo "<div>No matches found. Please refine your selection.</div>";
+	}
 	?>
-	<?php //if(in_array(yes, $output)): ?>
-	 	<div class='home_show <?php echo $orientation; echo " "; echo $sizing; ?>'>
-			<img <?php echo $img ?>></img>
-			<p class='home_show_caption'>
-				<span><?php echo $show->title();?></span>
-				<span><?php echo $datestring;?></span>
-			</p>
-		</div>
-	<?php endforeach; ?>
-	<?php if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)): ?>
-		<div>No matches found. Please refine your selection.</div>
-	<?php print_r($output); endif; ?>
 
 </div>
-
-
-
-
-
-
-
 
 
 

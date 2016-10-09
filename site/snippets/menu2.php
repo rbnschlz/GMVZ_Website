@@ -27,8 +27,8 @@
 	</div> -->
 
 	<div class='menu_switch'>
-	<a href="/">Shows</a>
-	<a href="/artists">Artists</a>
+		<a href="/">Shows</a>
+		<a href="/artists">Artists</a>
 	</div>
 
 	<div class="menu_artists">
@@ -120,81 +120,6 @@
 			echo $output;
 		endforeach; ?>
 	</div>
-
-<?php if(!$page->isChildOf($artistspage)): ?>
-
-	<div class="menu_time">
-		<?php $times = array("Upcoming", "Current", "Past");
-		//Comma or not
-		$i = 0;
-		$len = count($times);
-		//Foreach loop
-		foreach($times as $time):
-			$i++;
-			$title = $time;
-			$titlelow = strtolower($title);
-
-			// GET parameter
-			$params = $_GET;
-
-			//Check if artists variable is set
-			if(isset($_GET['artists'])) {
-				$url = http_build_query($params);
-				$url .= "&times=$titlelow";
-			} else {
-				$url = "?times=$titlelow";
-			};
-			$artistlink = $artist->url();
-			$active = "";
-			$hide = "";
-
-				//Check if variable is set
-				if(isset($_GET['times'])) {
-					//Add space if variable is already defined
-					// If title is not yet added, add title
-					if (strpos($params["times"], $titlelow) === false) {
-						$params["times"] .= " ";
-						$params["times"] .= $titlelow;
-						$active = "";
-
-					} else if (trim($params["times"]) === $titlelow) {
-						unset($params["times"]);
-						$active = " active";
-
-					//if title is added, remove title
-					} else if (strpos($params["times"], $titlelow) !== false) {
-						$params["times"] = str_replace(" $titlelow", '', $params["times"]);
-						$params["times"] = str_replace("$titlelow ", '', $params["times"]);
-						$params["times"] = str_replace("$titlelow", '', $params["times"]);
-						$active = " active";
-					}
-
-					//Build query
-					$url = http_build_query($params);
-				}
-
-				//Add question mark if variable is set
-				if (isset($params["times"]) || isset($params["artists"])) {
-					$filter = "?";
-				} else {
-					$filter = "";
-				}
-
-			//Assemble Menu
-			$output = " <a href='";
-			$output .= $site->url().$filter.$url;
-			$output .="' class='menu_artist";
-			$output .= $active;
-			$output .="'>";
-			$output .= $title;
-			$output .= $i < $len ? "," : "";
-			$output .="</a>";
-			echo $output;
-		endforeach; ?>
-	</div>
-
-	<a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a>
-<?php endif; ?>
 
 
 </div>
