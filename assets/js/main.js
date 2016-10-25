@@ -4,44 +4,44 @@
 	}
 
 	var switchtoggle = function(){
-		var artists = $(".menu_artist");
-		$("#menu_switch_checkbox").click(function() {
-			if ($('#menu_switch_checkbox').prop('checked')) {
-				artists.each(function() {
-  					$(this).attr( 'href', $(this).attr('data-links'));
-  					if($(this).hasClass('active')){
-  						$(this).removeClass('active');
-  					}
-				});
-				// window.location.href = window.location.href.split('?')[0];
-				history.pushState("", document.title, window.location.pathname);
-				$(".menu_time").css("display", "none");
-				$(".menu_reset").css("display", "none");
-				$(".home_show_wrap").css("display", "none");
-				$('.menu_switch_shows').removeClass('active');
-				$('.menu_switch_artists').addClass('active');
-			} else {
-				console.log("unchecked");
-				artists.each(function() {
-  					$(this).attr( 'href', $(this).attr('data-filter'));
-  					if($(this).hasClass('active')){
-  						$(this).removeClass('active');
-  					}
-				});
-				// if ($('#menu_switch_checkbox').hasClass("gohome")) {
-					pathArray = location.href.split( '/' );
-					protocol = pathArray[0];
-					host = pathArray[2];
-					url = protocol + '//' + host;
-					window.location.href = url;
-				// }
-				$(".menu_time").css("display", "inline-block");
-				$(".menu_reset").css("display", "block");
-				$('.menu_switch_shows').addClass('active');
-				$('.menu_switch_artists').removeClass('active');
-				// $(".home_show_wrap").css("display", "block");
-			}
-		});
+		// var artists = $(".menu_artist");
+		// $("#menu_switch_checkbox").click(function() {
+		// 	if ($('#menu_switch_checkbox').prop('checked')) {
+		// 		artists.each(function() {
+  // 					$(this).attr( 'href', $(this).attr('data-links'));
+  // 					if($(this).hasClass('active')){
+  // 						$(this).removeClass('active');
+  // 					}
+		// 		});
+		// 		// window.location.href = window.location.href.split('?')[0];
+		// 		history.pushState("", document.title, window.location.pathname);
+		// 		$(".menu_time").css("display", "none");
+		// 		$(".menu_reset").css("display", "none");
+		// 		$(".home_show_wrap").css("display", "none");
+		// 		$('.menu_switch_shows').removeClass('active');
+		// 		$('.menu_switch_artists').addClass('active');
+		// 	} else {
+		// 		console.log("unchecked");
+		// 		artists.each(function() {
+  // 					$(this).attr( 'href', $(this).attr('data-filter'));
+  // 					if($(this).hasClass('active')){
+  // 						$(this).removeClass('active');
+  // 					}
+		// 		});
+		// 		// if ($('#menu_switch_checkbox').hasClass("gohome")) {
+		// 			pathArray = location.href.split( '/' );
+		// 			protocol = pathArray[0];
+		// 			host = pathArray[2];
+		// 			url = protocol + '//' + host;
+		// 			window.location.href = url;
+		// 		// }
+		// 		$(".menu_time").css("display", "inline-block");
+		// 		$(".menu_reset").css("display", "block");
+		// 		$('.menu_switch_shows').addClass('active');
+		// 		$('.menu_switch_artists').removeClass('active');
+		// 		// $(".home_show_wrap").css("display", "block");
+		// 	}
+		// });
 	}
 
 	//document ready

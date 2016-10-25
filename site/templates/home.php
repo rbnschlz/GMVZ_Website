@@ -14,20 +14,25 @@
 		$when = "";
 		// Run through array of shows
 		$output = [];
+		$allyears = [];
+
+
 		foreach($shows as $show) {
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
+        	$startyear = date('Y', $start);
+
         	$datestring = returnDate($start, $end);
         	//Set Date variable
 			if ($end < $current_date) {
 				$when = "past";
-				$sizing = "small_float";
+				// $sizing = "small_float";
 			} else if (($start < $current_date) && ($end > $current_date)) {
 				$when = "current";
-				$sizing = "big_float";
+				// $sizing = "big_float";
 			} else if ($start > $current_date) {
 				$when = "upcoming";
-				$sizing = "medium_float";
+				// $sizing = "medium_float";
 			};
 			//Set Artist variable
 			$artist = $show->artist();
@@ -45,21 +50,12 @@
 			//Set src
 			$img = "";
 			if ($show->hasImages()) {
-				$img = "src='".$show->images()->first()->url()."'";
+				$img = "style='background-image:url(".$show->images()->first()->url().")'";
+				$img2 = "src='".$show->images()->first()->url()."'";
 			}
 
 			// Add image orientation
 			$orientation = $show->images()->first()->orientation() == 'landscape' ? "landscape" : "portrait";
-
-			// if($artist->isNotEmpty()){
-			// 	$artistlow = $artist->lower();
-			// 	$artistlow = umlaute($artistlow);
-			// 	$artistlow = str_replace(' ', '', $artistlow);
-			// 	$artistlow = str_replace('-', '', $artistlow);
-			// 	$artistarray = explode(',', $artistlow);
-			// } else {
-			// 	$artistarray = " ";
-			// };
 
 			//Filter by Artist
 			if(isset($_GET['artists'])) {
@@ -81,16 +77,36 @@
 			};
 			$output[] = "added";
 
+			if(!in_array($startyear, $allyears)) {
+				$block = "<div class='home_show_year'>";
+				$block .= " {$startyear}";
+				$block .= "</div>";
+
+				echo $block;
+				$allyears[] = $startyear;
+			}
+
 
 			//Build Block and display
-			$block = "<div class='home_show";
-			$block .= " {$orientation} {$sizing}'>";
-			$block .= "<img {$img}></img>";
-			$block .= "<p class='home_show_caption'>";
-			$block .= "<span>{$show->title()}</span>";
-			$block .= "<span>{$datestring}</span>";
-			$block .= "</p>";
-			$block .= "</div>";
+			if($show->images()->first()->orientation() == 'portrait') {
+				$block = "<div class='home_show_portrait";
+				$block .= " {$orientation}'>";
+				$block .= "<div class='home_show_portrait_img' {$img}></div>";
+				$block .= "<div class='home_show_portrait_caption'>";
+				$block .= "<span>{$show->title()}, </span>";
+				$block .= "<span>{$datestring}</span>";
+				$block .= "</div>";
+				$block .= "</div>";
+			} else {
+				$block = "<div class='home_show_landscape";
+				$block .= " {$orientation}'>";
+				$block .= "<div class='home_show_landscape_img' {$img}></div>";
+				$block .= "<div class='home_show_landscape_caption'>";
+				$block .= "<span>{$show->title()}, </span>";
+				$block .= "<span>{$datestring}</span>";
+				$block .= "</div>";
+				$block .= "</div>";
+			}
 			echo $block;
 		}
 

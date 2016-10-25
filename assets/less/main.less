@@ -26,6 +26,7 @@ a:hover {
 
 @c1 = #fff;
 @c2 = #202020;
+@c3 = #FD5F00;
 
 
 @mp-s = 10px;
@@ -36,13 +37,13 @@ a:hover {
 @lbTransitionLength: 0.25s;
 @lbTransitionLengthLong: 0.75s;
 
-@fontStack: "HelveticaNeue-Medium", "HermesSans-Reg", "Times New Roman", "Times", 'Helvetica Neue', 'Helvetica', Arial, serif;
+@fontStack: 'Magister-Regular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
-@fs-s: 12px;
-@lh-s: 14px;
+@fs-s: 15px;
+@lh-s: 17px;
 
-@fs-m: 16px;
-@lh-m: 18px;
+@fs-m: 15px;
+@lh-m: 17px;
 
 .fs-m {
     font-size: @fs-m;
@@ -66,10 +67,14 @@ em {
 }
 
 .active {
-    border-bottom: 2px solid;
+    // border-bottom: 2px solid;
+    // transform: rotate(180deg) scaleX(-1);
+    // text-transform: Uppercase;
+    // color: blue;
     // padding-bottom: -2px;
     // color: grey;
     // font-family: "HelveticaNeue-MediumItalic";
+    font-family: 'MagisterActive-Regular';
 }
 
 .text {
@@ -78,9 +83,9 @@ em {
   -ms-user-select: text;
   user-select: text; 
   color: @c2;
-  letter-spacing: -.2px;
-  .fs-m;
-  .lh-m;
+  letter-spacing: 0.05em;
+  .fs-s;
+  .lh-s;
 }
 
 .opentype {
@@ -116,8 +121,9 @@ body {
   margin: 0;
   overflow-x: hidden; 
   background: @c1;
-  background-image: url(http://www.sulki-min.com/wp/sm-images/bg-noise.gif);
-  background-size: 250px 250px;
+  // background-image: url(http://www.sulki-min.com/wp/sm-images/bg-noise.gif);
+  // background-size: 250px 250px;
+  // background-color: @c2;
 }
 
 a {
@@ -151,26 +157,29 @@ header {
 .menu_wrapper {
   width: 100%;
   height: auto;
-  padding: @mp-s/2 @mp-s @mp-s @mp-s; 
+  color: @c1;
+  // margin: @mp-s @mp-s @mp-s @mp-s; 
+  padding: @mp-s @mp-s @mp-s @mp-m; 
   position: fixed;
   font-size: 0;
-  // background: rgba(255,255,0,0.9);
+  // color: @c3; 
+  // background: rgba(255,255,255,0.9);
+  border-radius: 5px;
   // text-shadow: 1px 1px #ffffff;
   // text-align: center;
   // position: fixed;
+  // text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.6), 1px -1px 1px rgba(255,255, 255, 0.6), -1px 1px 1px rgba(255, 255, 255, 0.6), -1px -1px 1px rgba(255, 255, 255, 0.6);
 }
 
-.menu_adress {
-  padding: @mp-s @mp-s @mp-s @mp-s; 
-  // background: rgba(250,250,250,0.9);
-  background: rgba(255,255,0,0.9);
-  background: rgba(120,120,120,0.9);
-  // color: white;
-  display: inline-block;
-    .fs-m;
-  .lh-m;
+// .menu_adress {
+//   padding: @mp-s @mp-s @mp-s @mp-m; 
+//   // background: rgba(250,250,250,0.9);
+//   // background: rgba(255,255,0,0.9);
+//   // background: rgba(120,120,120,0.9);
+//   // color: white;
+//   display: inline-block;
 
-}
+// }
 
 // .menu_title {
 //   padding: 0 0 @mp-m 0;
@@ -178,11 +187,13 @@ header {
 // }
 
 .menu_switch {
- padding: 0 @mp-s @mp-s @mp-s; 
- display: inline-block;
- // background: rgba(255,255,0,0.9);
- background: rgba(120,120,120,0.9);
-   .fs-m;
+  padding: @mp-s @mp-s @mp-s @mp-s; 
+  margin: @mp-s/2;
+  display: inline-block;
+  background: rgba(0,0,0,0.9);
+ border-radius: 10px;
+ // background: rgba(120,120,120,0.9);
+  .fs-m;
   .lh-m;
 }
 
@@ -192,22 +203,26 @@ header {
 // }
 
 .menu_time {
-  padding: @mp-s @mp-s @mp-s 0; 
+  padding: @mp-s @mp-s @mp-s @mp-s; 
+  margin: @mp-s/2;
   display: inline-block;
-  // background: rgba(255,255,0,0.9);
-  background: rgba(120,120,120,0.9);
-    .fs-m;
+  background: rgba(0,0,0,0.9);
+  border-radius: 10px;
+  // background: rgba(120,120,120,0.9);
+  .fs-m;
   .lh-m;
 }
 
-.menu_artists {
-  padding: @mp-s @mp-s @mp-s 0; 
-  max-width: 1200px;
-  display: block;
-  // background: rgba(255,255,0,0.9);
-  background: rgba(120,120,120,0.9);
-    .fs-m;
-  .lh-m;
+.menu_artists a {
+  padding: @mp-s @mp-s @mp-s @mp-s; 
+  margin: @mp-s/2;
+  // max-width: 1200px;
+  display: inline-block;
+  border-radius: 10px;
+  background: rgba(0,0,0,0.9);
+  // background: rgba(120,120,120,0.9);
+  .fs-m;
+  // .lh-m;
 }
 
 // slider
@@ -271,28 +286,83 @@ header {
 .home_show_wrap {
   width: 100%;
   height: auto;
-  padding: @mp-s @mp-s @mp-s @mp-s; 
+  padding: @mp-s*20 @mp-s @mp-s @mp-s; 
 }
 
-.home_show {
+.home_show_year {
+  // display: inline-block;
+  // width: 300px;
+  // height: 220px;
+  text-align: left;
+  .fs-m;
+  .lh-m;
+  // background: @c2;
+  // color: @c1;
+  padding: @mp-s @mp-m;
+  margin: @mp-m;
+  border-bottom: dotted 2px @c2;
+  border-top: dotted 2px @c2;
+}
+
+.home_show_portrait {
+  text-align: center;
   // float: left;
   display: inline-block;
-  vertical-align: bottom;
-  padding: @mp-s @mp-s @mp-s @mp-s; 
-  width: auto;
-  background: rgba(245,245,245,1);
-  img {
-    margin-bottom: @mp-s/2;
-    width: 100%;
-    // height: 80%;
-    display: inline;
-  }
+  vertical-align: top;
+  // padding: @mp-s;  
+  width: 170px;
+  height: 240px;
+  // width: calc(~"100% / 6");
+  // height: 100%;
+  margin: @mp-m; 
+  // height: 200px;
+  // background: rgba(250,250,250,1);
   &_caption {
-    height: 100%;
+    // height: 100%;
+    padding-top: @mp-s/2;
+    display: inline;
+    span {
+      display: block;
+    }
+  }
+  &_img {
+    height: 220px;
+    width: 170px;
+    margin-bottom: @mp-s/2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.home_show_landscape {
+  text-align: center;
+  // float: left;
+  display: inline-block;
+  vertical-align: top;
+  // padding: @mp-s;  
+  width: 320px;
+  margin: @mp-m; 
+  // img {
+  //   margin-bottom: @mp-s/2;
+  //   width: 100%;
+  //   display: inline;
+  // }
+  &_caption {
+    // height: 100%;
+    padding-top: @mp-s/2;
     display: block;
     span {
       display: block;
     }
+  }
+  &_img {
+    height: 220px;
+    width: 320px;
+    margin-bottom: @mp-s/2;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 }
 
@@ -343,29 +413,29 @@ header {
   //   width: 500px;
   // }
 
-.small_float {
-  width: 250px;
-  // background: green;
-}
+// .small_float {
+//   width: 250px;
+//   // background: green;
+// }
 
-.medium_float {
-  width: 250px;
-  // background: blue;
-}
+// .medium_float {
+//   width: 250px;
+//   // background: blue;
+// }
 
-.big_float {
-  width: 250px;
-    // color: red;
-  // background: #FD5F00; 
-}
+// .big_float {
+//   width: 250px;
+//     // color: red;
+//   // background: #FD5F00; 
+// }
 
-.portrait {
-  width: 250px;
-}
+// .portrait {
+//   height: 300px;
+// }
 
-.landscape {
-  width: 350px;
-}
+// .landscape {
+//   height: 200px;
+// }
 
 /* Helpers
 -------------------------------------------------- */
