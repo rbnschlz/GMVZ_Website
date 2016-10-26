@@ -53,7 +53,7 @@
 			$output .="'>";
 			$output .= $title;
 			$output .="</a>";
-			$output .= $i < $len ? "," : "";
+			$output .= $i < $len ? "" : "";
 			echo $output;
 		endforeach; ?>
 	</div>

@@ -3,6 +3,77 @@
 	var example = function(){
 	}
 
+	var showArtist = function(){
+		var artistMenu = $(".menu_artists");
+		var artists = $(".menu_artist");
+		var show = $(".home_show");
+
+		var ArtistArray = [];
+		artists.each(function() {
+			var menuArtists = $(this).text().toLowerCase();	
+			ArtistArray.push(menuArtists);
+		});
+		// var ArtistArray = ArtistArray.toString();
+
+		show.each(function() {
+		var show = $(this);	
+		var showArtist = $(this).attr('artist');
+		var showArtist = showArtist.split(", ");	
+		var showCaption = $(this).find('.home_show_caption span');
+		var showImg = $(this).find('.img');
+
+
+			$(this).hover(function() {
+				var outsideArray = [];
+				$(showArtist).each(function () {
+				var word = this.toString();
+					artists.each(function () {
+					activeArtist = $(this);
+					var artistHtml = $(this).text().toLowerCase();		
+					if (artistHtml.indexOf(word) >= 0) { 
+						activeArtist.addClass('active')  
+					} else if (ArtistArray.indexOf(word) <= 0) {
+						outsideArray.push(word);
+					}
+			    	});
+				});
+
+			  	var outsideArray = outsideArray.reverse();
+			  	jQuery.each(outsideArray, function() {
+				var outsideArray_once = this;
+			  	var outsideArray_once_class = outsideArray_once.replace(/ /g, "")
+			  	var temp_artist = '<span class="menu_artist menu_artists_temp '+outsideArray_once_class+'"><p>'+outsideArray_once+'</p></span>';
+					if(typeof outsideArray_once !== "undefined" && $('.'+outsideArray_once_class+'').length === 0) {
+					  $(temp_artist).insertAfter(artists.last());
+					}
+				});			
+
+			  	// $(showImg).fadeTo(100, 0);
+
+			    $(show).children("img").addClass('non_active_show');
+
+			    if(show.children("img").hasClass('non_active_show')) {
+			    	$(this).removeClass('non_active_show');
+			    }
+
+		  	}, function() {
+			  	// $(showImg).fadeTo(50, 1);
+
+		    	$('.menu_artist').each(function () {
+			    	$(this).removeClass('active');
+			    });
+
+		    	$('.menu_artists_temp').remove();
+		    	$(show).siblings().children("img").removeClass('non_active_show');
+		    	
+		    	// if (pastShow.hasClass('past_date')) {
+			    // 	pastShow.fadeTo(200, 0)
+			    // }
+		 	});
+
+		});
+	}
+
 	var switchtoggle = function(){
 		// var artists = $(".menu_artist");
 		// $("#menu_switch_checkbox").click(function() {
@@ -47,6 +118,7 @@
 	//document ready
 	$(document).ready(function(){
 		switchtoggle();
+		showArtist();
 	});
 
 

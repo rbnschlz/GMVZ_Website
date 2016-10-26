@@ -9,10 +9,7 @@
 		$artists = page('artists')->children()->visible();
 ?>
 
-
-
 <div class="menu_wrapper">
-	<!-- <div class="menu_adress">Hazenstraat 20, 1016 SP Amsterdam<br>m: +31 6 1137 0211, t/f: +31 20 420 8129<br>info@martinvansomeren.com</div> -->
 
 <!-- 	<div class='menu_switch'>
 	<?php 
@@ -31,11 +28,12 @@
 	<a class="active" href="/">Shows</a>, <a href="/artists">Artists</a>
 	</div>
 
-	<div class="menu_artists">
+		<!-- Build artist menu -->
 		<?php 
 		//Comma or not
 		$i = 0;
 		$len = count($artists);
+		$artistMenu = array();
 		// $artistspage = page("artists");
 		//Foreach loop
 		foreach($artists as $artist):
@@ -117,9 +115,9 @@
 			$output .= $title;
 			$output .="</a>";
 			// $output .= $i < $len ? "," : "";
-			echo $output;
+			$artistMenu[] = $output;
 		endforeach; ?>
-	</div>
+	
 
 <?php //if(!$page->isChildOf($artistspage)): ?>
 
@@ -185,21 +183,21 @@
 			if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'times') === false ) {
 				$output = " <a href='";
 				$output .= $site->url().$filter.$url;
-				$output .="' class='menu_artist active";
+				$output .="' class='menu_time active";
 				$output .= $active;
 				$output .="'>";
 				$output .= $title;
 				$output .="</a>";
-				$output .= $i < $len ? "," : "";
+				$output .= $i < $len ? "" : "";
 			} else {
 				$output = " <a href='";
 				$output .= $site->url().$filter.$url;
-				$output .="' class='menu_artist";
+				$output .="' class='time_artist";
 				$output .= $active;
 				$output .="'>";
 				$output .= $title;
 				$output .="</a>";
-				$output .= $i < $len ? "," : "";				
+				$output .= $i < $len ? "" : "";				
 			}
 			
 			echo $output;
@@ -207,6 +205,14 @@
 			
 		endforeach; ?>
 	</div>
+
+	<!-- Assemble Artist Menu  -->
+	<div class='menu_artists'>
+	<?php
+	echo implode(' ',$artistMenu);
+	?>
+	</div>
+
 
 	<!-- <a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a> -->
 <?php //endif; ?>
