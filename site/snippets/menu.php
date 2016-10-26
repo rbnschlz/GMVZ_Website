@@ -12,21 +12,8 @@
 <div class="menu_wrapper">
 
 <!-- 	<div class='menu_switch'>
-	<?php 
-	$checked = $page->parent()->title() == "Artists"? "checked" : ""; 
-	// $gohome = $page->parent()->title() == "Artists"? "gohome" : "";
-	?>
-		<a class="menu_switch_shows active">Shows</a>
-		<label class="menu_switch_label">
-			<input id="menu_switch_checkbox" class="<?php //echo $gohome ?>" <?php echo $checked ?> type="checkbox">
-			<div class="menu_switch_slider"></div>
-		</label>
-		<a class="menu_switch_artists">Artists</a>
-	</div> -->
-
-	<div class='menu_switch'>
 	<a class="active" href="/">Shows</a>, <a href="/artists">Artists</a>
-	</div>
+	</div> -->
 
 		<!-- Build artist menu -->
 		<?php 
@@ -34,7 +21,6 @@
 		$i = 0;
 		$len = count($artists);
 		$artistMenu = array();
-		// $artistspage = page("artists");
 		//Foreach loop
 		foreach($artists as $artist):
 			$i++;
@@ -49,8 +35,6 @@
 
 			//Check if page title matches current page
 			if ($title == $page->title()) {
-				// $artistlink = "";
-				// $title = "Show All";
 				$url = "";
 				if(!isset($_GET['artists'])) {
 					$active = " active";
@@ -105,21 +89,20 @@
 			//Assemble Menu
 			$output = " <a href='";
 			$output .= $site->url().$filter.$url;
-			// $output .="' data-links='";
-			// $output .= $artistlink;
-			// $output .= "' data-filter='";
-			// $output .= $site->url().$filter.$url;
 			$output .="' class='menu_artist nobr";
 			$output .= $active.$hide;
 			$output .="'>";
 			$output .= $title;
+			// $output .= $i < $len ? ", " : "";		
 			$output .="</a>";
-			// $output .= $i < $len ? "," : "";
 			$artistMenu[] = $output;
 		endforeach; ?>
-	
-
-<?php //if(!$page->isChildOf($artistspage)): ?>
+	<!-- Assemble Artist Menu  -->
+	<div class='menu_artists'>
+	<?php
+	echo implode(' ',$artistMenu);
+	?>
+	</div>	
 
 	<div class="menu_time">
 		<?php $times = array("Upcoming", "Current", "Past");
@@ -206,16 +189,7 @@
 		endforeach; ?>
 	</div>
 
-	<!-- Assemble Artist Menu  -->
-	<div class='menu_artists'>
-	<?php
-	echo implode(' ',$artistMenu);
-	?>
-	</div>
-
-
-	<!-- <a href="<?php echo $page->url() ?>" class='menu_reset'>Reset</a> -->
-<?php //endif; ?>
+	
 
 
 </div>

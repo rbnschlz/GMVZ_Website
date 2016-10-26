@@ -1,5 +1,4 @@
-<?php snippet('header') ?>
-<?php snippet('menu') ?>
+<?php snippet('header'); snippet('menu'); snippet('sidenav') ?>
 
 <div class="main_wrapper">
 
@@ -95,6 +94,9 @@
 			$output[] = "added";
 
 			if(!in_array($startyear, $allyears)) {
+				if(!empty($allyears)) {
+					echo "</div>";
+				}
 				$block = "<div class='home_show_outer'>";
 				$block .= "<div class='home_show_year'>";
 				$block .= " {$startyear}";
