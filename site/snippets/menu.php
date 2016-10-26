@@ -11,6 +11,18 @@
 
 <div class="menu_wrapper">
 
+<div class="sidenav_wrapper">
+<ol>
+	<li class="sidenav_nav sidenav_title active">Martin van Zomeren</li>
+	<li class="sidenav_nav sidenav_shows active"><a href="/">Shows</a></li>
+	<li class="sidenav_nav sidenav_artists"><a href="/">Artists</a></li>
+	<li class="sidenav_nav sidenav_info"><a href="/">Information</a></li>
+	<li class="sidenav_nav sidenav_shop"><a href="/">Shop</a></li>
+	<li class="sidenav_nav sidenav_fairs"><a href="/">Artfairs</a></li>
+</ol>
+
+</div>
+
 <!-- 	<div class='menu_switch'>
 	<a class="active" href="/">Shows</a>, <a href="/artists">Artists</a>
 	</div> -->
@@ -93,7 +105,7 @@
 			$output .= $active.$hide;
 			$output .="'>";
 			$output .= $title;
-			// $output .= $i < $len ? ", " : "";		
+			$output .= $i < $len ? ", " : "";		
 			$output .="</a>";
 			$artistMenu[] = $output;
 		endforeach; ?>

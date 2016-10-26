@@ -24,24 +24,25 @@ a {
 a:hover {
 }
 
-@c1 = #fff;
-@c2 = #000;
-@c3 = #ffff99;
-@c4 = #ffffff;
+// @c1 = #030505;
+@c1 = blue;
+@c2 = #fff;
+@c3 = rgb(250,250,250);
+@c4 = rgb(245,245,245);
 
 
 @mp-s = 10px;
-@mp-m = 18px;
+@mp-m = 20px;
 @mp-l = 40px;
 @mp-xl = 70px;
 
 @lbTransitionLength: 0.25s;
 @lbTransitionLengthLong: 0.75s;
 
-@fontStack: 'lapidar', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+@fontStack: 'MercuryLight-Regular', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
-@fs-s: 15px;
-@lh-s: 17px;
+@fs-s: 14px;
+@lh-s: 16px;
 
 @fs-m: 21px;
 @lh-m: 24px;
@@ -77,8 +78,9 @@ em {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text; 
-  color: @c2;
+  color: @c1;
   letter-spacing: 0.05em;
+  font-family: @fontStack;
   .fs-s;
   .lh-s;
 }
@@ -107,9 +109,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   .text;
-
-  // fontstack didnt recognize the font when added there
-  font-family: @fontStack;
+  background-color: @c2;
 }
 
 body {
@@ -145,8 +145,11 @@ li {
 
 .sidenav {
   &_wrapper {
-    background: @c3;
-    padding: @mp-s;
+    // position: fixed;
+    // background: @c2;
+    width: 100%;
+    // background: @c3;
+    padding: @mp-s 0;
     .fs-m;
     .lh-m;
   }
@@ -163,21 +166,17 @@ li {
 .menu_wrapper {
   width: 100%;
   height: auto;
-  color: @c2;
-  padding: @mp-s @mp-s @mp-s @mp-s;
+  // color: @c2;
+  padding: @mp-s @mp-s @mp-l @mp-s;
   font-size: 0;
-  // top: 48%;
+  // background: linear-gradient(to bottom, #fff 60%, rgba(255,255,255,0) 100%);
+  // top: 30px;
+  width: 100%;
   // transform: -50%;
+  position: fixed;
+  color: red;
+  top: 0;
 }
-
-
-.title {
-  padding: @mp-s*1.5;
-  .fs-m;
-  .lh-m;
-  background: #ffff99;
-}
-
 
 .menu_switch {
   display: inline-block;
@@ -189,6 +188,13 @@ li {
 
 .menu_artists {
   display: block;
+  padding: 0 @mp-s @mp-s @mp-s;
+  a {
+    display: inline-block;
+    .fs-m;
+    .lh-m;
+    padding: 0 @mp-s/2 0 0;
+  }
 }
 
 .menu_switch a{
@@ -196,35 +202,22 @@ li {
   // padding: @mp-s/2;
   margin: @mp-s/2;
   display: inline-block;
-  background: rgba(255,255,255,1);
-  
-  // background: rgba(10,10,10,0.6);
-  
-  // box-shadow: 0 0 3px rgba(90,90,90,0.5);
-  .fs-s;
-  .lh-s;
-  // text-transform: uppercase;
+  // background: rgba(255,255,255,1);
+  .fs-m;
+  .lh-m;
 }
 
 .menu_time a{
   // padding: @mp-s/2;
-  margin: @mp-s/2;
+  margin: @mp-s;
   display: inline-block;
-  background: rgba(255,255,255,1);
-  .fs-s;
-  .lh-s;
-}
-
-.menu_artists a{
-  // padding: @mp-s/1.5;
-  margin: @mp-s/2;
-  display: inline-block;
-  background: rgba(255,255,255,1);
-  .fs-s;
-  .lh-s;
+  // background: rgba(255,255,255,1);
+  .fs-m;
+  .lh-m;
 }
 
 .menu_artists_temp p{
+  display: none;
   // padding: @mp-s/1.5;
   // margin: @mp-s/2;
   // max-width: 1200px;
@@ -239,7 +232,7 @@ li {
 /* General
 -------------------------------------------------- */
 .main_wrapper {
-
+  margin-top: 180px;
 }
 
 /* home
@@ -251,10 +244,10 @@ li {
 
 .home_show_outer {
   &:nth-of-type(even) {
-    background: @c3;
+    // background: @c3;
   }
   &:nth-of-type(odd) {
-    background: @c4;
+    // background: @c4;
   }
 }
 
@@ -262,16 +255,16 @@ li {
   text-align: left;
   .fs-m;
   .lh-m;
-  padding: @mp-s @mp-m;
-  // border-top: 1px solid @c2;
+  padding: @mp-s @mp-l;
+  color: green;
 }
 
 .home_show_portrait {
   text-align: left;
   display: inline-block;
   vertical-align: top;
-  width: 170px;
-  margin: @mp-m; 
+  width: 250px;
+  margin: 0 @mp-m @mp-l @mp-m; 
   &_caption {
     padding-top: @mp-s/2;
     display: inline;
@@ -280,8 +273,8 @@ li {
     }
   }
   &_img {
-    height: 220px;
-    width: 170px;
+    height: 166px;
+    width: 250px;
     margin-bottom: @mp-s/2;
     background-position: center;
     background-repeat: no-repeat;
@@ -295,15 +288,9 @@ li {
   display: inline-block;
   vertical-align: top;
   // padding: @mp-s;  
-  width: 320px;
-  margin: @mp-m; 
-  // img {
-  //   margin-bottom: @mp-s/2;
-  //   width: 100%;
-  //   display: inline;
-  // }
+  width: 250px;
+  margin: 0 @mp-m @mp-l @mp-m; 
   &_caption {
-    // height: 100%;
     padding-top: @mp-s/2;
     display: block;
     span {
@@ -311,85 +298,14 @@ li {
     }
   }
   &_img {
-    height: 220px;
-    width: 320px;
+    height: 166px;
+    width: 250px;
     margin-bottom: @mp-s/2;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
 }
-
-// .home_show img {
-//   margin-bottom: @mp-m;
-//   width: auto;
-//   height: 100%;
-//   display: inline;
-// }
-
-// .home_show_caption {
-//   width: 100%;
-//   display: block;
-//   span {
-//     display: block;
-//   }
-// }
-
-// .small_float.portrait {
-//   width: 200px;
-// }
-
-// .small_float.landscape {
-//   width: 300px;
-// }
-
-// .medium_float.portrait {
-//   width: 300px;
-// }
-
-// .medium_float.landscape {
-//   width: 500px;
-// }
-
-// .big_float.portrait {
-//   width: 500px;
-// }
-
-// .big_float.landscape {
-//   width: 600px;
-// }
-
-  // .portrait {
-  //   width: 300px;
-  // }
-
-  // .landscape {
-  //   width: 500px;
-  // }
-
-// .small_float {
-//   width: 250px;
-//   // background: green;
-// }
-
-// .medium_float {
-//   width: 250px;
-//   // background: blue;
-// }
-
-// .big_float {
-//   width: 250px;
-//     // color: red;
-//   // background: #FD5F00; 
-// }
-
-// .portrait {
-//   height: 300px;
-// }
-
-// .landscape {
-//   height: 200px;
-// }
 
 /* Helpers
 -------------------------------------------------- */
