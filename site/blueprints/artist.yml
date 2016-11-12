@@ -10,6 +10,58 @@ fields:
   title:
     label: Title
     type:  text
+    width: 1/2
+  web:
+    label: URL website
+    type: url
+    width: 1/2  
+  yearBirth:
+    label: Year of birth
+    type:  text
+    width: 1/2
+    required: true
+  placeBirth:
+    label: Place of birth
+    type:  text  
+    width: 1/2
+    placeholder: city, country
+  builder:
+    label: Biography
+    type: builder
+    fieldsets:
+      dateSummary:
+        label: Summary starting with single date
+        entry: >
+        	{{title}}
+        fields:
+          title:
+            label: Title
+            type: text
+          text:
+            label: Summary 
+            type: textarea
+      doubleDateSummary:
+        label: Summary starting with double dates
+        entry: >
+          {{title}}
+        fields:
+          title:
+            label: Title
+            type: text
+          text:
+            label: Summary 
+            type: textarea      
+      textSummary:
+        label: Summary starting with text
+        entry: >
+        	{{title}}
+        fields:
+          title:
+            label: Title
+            type: text
+          text:
+            label: Summary 
+            type: textarea      
 options:
   template: false
 

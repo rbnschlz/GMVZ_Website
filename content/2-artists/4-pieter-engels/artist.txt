@@ -1,1 +1,140 @@
 Title: Pieter Engels
+
+----
+
+Web: 
+
+----
+
+Yearbirth: 1938
+
+----
+
+Placebirth: 
+
+----
+
+Builder: 
+
+- 
+  title: Solo Exhibitions
+  text: |
+    2016 IMAGE OF AN IMAGE epo-show ‘engels products’ 1963-1969, Martin van Zomeren, Amsterdam
+    2013 A (HAPPY) FEW ACTS OUT OF ENGELS’ HORN OF PLENTY, Martin van Zomeren, Amsterdam
+    2010 The rrrolls-royce among artists, Museum Jan Cunen, Oss
+    2005 Pieter Engels. Retrospectif 1964-1979, Galerie A, Amsterdam
+    2002-2003 Untitled Art Gallery
+    1996 Galerie Scheper, Amsterdam
+    1994 Galerie Yaki Kornblit, Amsterdam
+    1993 Galerie Vandenberg, Den Bosch
+    1992 Ledisflam Gallery, New York
+    1992 Galerie Brinkman, Amsterdam
+    1991 Nijmeegs Museum, Commanderie van Sint Jan, Nijmegen
+    1991 Galerie Vandenberg, Den Bosch
+    1991 Galerie Brinkman, Amsterdam
+    1990 Ledisflam Gallery, New York
+    1989 Galerie Yaki Kornblit, Amsterdam
+    1988 Galerie Vandenberg, Den Bosch
+    1988 Ledisflam Gallery, New York
+    1988 Galerie Yaki Kornblit, Amsterdam
+    1987 Galerie Brinkman, Amsterdam
+    1986 Galerie Brinkman, Amsterdam
+    1984-1985 Galerie Brinkman, Amsterdam
+    1983 Galerie Brinkman, Amsterdam
+    1982 Galerie Brinkman, Amsterdam
+    1981 Stedelijk Museum, Amsterdam
+    1981 Galerie Brinkman, Amsterdam
+    1980 De Vleeshal, Middelburg
+    1979 Orez Mobiel, Den Haag
+    1978 Es Gallery, New York
+    1977 Galerie Yaki Kornblit, Amsterdam
+    1975 Museum Boijmans van Beuningen, Rotterdam
+    1975 Galerie Yaki Kornblit, Amsterdam
+    1974 Galerie Yaki Kornblit, Amsterdam
+    1973 I.C.C., Antwerpen
+    1973 Galerie Yaki Kornblit, Amsterdam
+    1973 Yodfat Gallery, Tel Aviv
+    1972 Rotterdamse Kunststichting, Rotterdam
+    1972 Galerie 20, Amsterdam
+    1972 Galerie Dorothea Loehr, Frankfurt
+    1972 Stedelijk Museum, Amsterdam
+    1971 Galerie 20, Amsterdam
+    1971 Stichting de Utrechtse Kring, Utrecht
+    1970 Galerie Toni Gerber, Amsterdam
+    1970 Galerie 20, Amsterdam
+    1969 Stedelijk Museum, Amsterdam
+    1969 Stedelijk van Abbemuseum, Eindhoven
+    1968 Galerie Kueckels, Bochum
+    1968 Galerie 20, Amsterdam
+    1968 Galerie Jalmar, Amsterdam
+    1967 Wide White Space Gallery, Antwerpen
+    1967 Galerie Waalkens, Finsterwolde
+    1966 Geementemuseum, Den Haag
+    1966 Koninklijke Academie. Den Bosch
+    1966 Galerie 845, Amsterdam
+    1966 Galerie 20, Amsterdam
+    1966 Galerie Swart, Amsterdam
+    1965 Galerie Arti-Schunck, Maastricht
+    1965 Galerie A, Arnhem
+    1965 Galerie 845, Amsterdam
+    1965 L.A.K. gebouw Universiteit Leiden
+    1963 De Krabbedans, Eindhoven
+    1963 't Venster, Rotterdam
+    1963 Galerij Orez, Den Haag
+    1963 Ay-Ay Gallery, Yokohama
+  _fieldset: dateSummary
+- 
+  title: Selected Group Exhibitions
+  text: |
+    2010-2009 Museum van Hedendaagse Kunst, Antwerpen
+    2009 Museum of Modern Art, New York
+    2009 T-Tris : Un « jeu » de construction entre les collections de la Province de Hainaut, du Muhka et du Mudam - Université du Travail, Charleroi
+    2008 Valeurs Croisées, Biennale d'art contemporain, Rennes
+    2007 Stedelijk Museum, Schiedam
+    2007 Rompecabeza, de Vishal - ruimte voor beeldende kunst, Haarlem
+    2004 Dear ICC - Aspects of contemporary art in Belgium 1970-1985, MuHKA Museum voor Hedendaagse Kunst, Antwerp
+    2003 Time Based Arts, Amsterdam
+    2003 De Balie, Amsterdam
+    1997 Nabeelden van de oude meesters, Arti et Amicitiae, Amsterdam
+    1995 Museum Boijmans van Beuningen, Rotterdam
+    1994 Grote Kerk, Den Haag
+    1994 Arti et Amicitiae, Amsterdam
+    1990 HCAK, Den Haag
+    1987 Verover het Beeld, over natuur en hun bronnen, Stadsgalerij Heerlen, Heerlen
+    1986 Die Sammlung Tony Gerber, Kunstmuseum Bern, Bern
+    1985-1984 Van Gogh Museum, Amsterdam
+    1984 Koninklijk Museum voor Scone Kunsten, Antwerpen
+    1983 Gemeentemuseum, Den Haag
+    1982 Museum Fodor, Amsterdam
+    1981 Provinciaal Museum, Hasselt
+    1980-1979 Museum Boijmans van Beuningen, Rotterdam
+    1979 Centre Pompidou, Paris
+    1978 Stadtische Kunsthalle, Dusseldorf
+    1976 Schuh-Werke. Aspekte zum Menschenbild, Kunsthalle Nürnberg, Nuremberg
+    1972 Metamorphose de Dinges, Kunsthalle Basel, Basel
+    1971 Metamorphose de Dinges, Palazzo Reale, Milan
+    1971 Neue Nationalgalerie, Berlin
+    1971 Museum Boijmans van Beuningen, Rotterdam
+    1971 Sonsbeek 71 - Sonsbeek International Sculpture Exhibition, Arnhem
+    1971 Metamorphose de Dinges, BOZAR - Palais des Beaux-Arts / Paleis voor Schone Kunsten, Brussels
+    1971 Gemeentemuseum, Den Haag
+    1971 Rassegna Internazionale delle Arti e della Cultura, Lugano
+    1971 11e Biennale, Antwerpen
+    1971 Stedelijk Museum, Amsterdam
+    1970 Kunsthalle, Bern
+    1970 Museum Modern Art, Munchen
+    1970 Expo 70, Osaka
+    1969 Stedelijk Museum, Amsterdam
+    1968 Documenta 4, Kassel
+    1968 Kunsthalle, Bern
+    1968 Catharijne Convent, Utrecht
+    1967 Palazzo dei Congressi, San Marino
+    1967 Expo 67, Montreal
+    1967 Musee d'art Moderne de la ville de Paris, Paris
+    1967 Stedelijk Museum, Amsterdam
+    1966 Stedelijk Museum, Schiedam
+    1965 Nederlandse Kunststichting, Zeist
+    1965 Stedelijk Museum, Amsterdam
+    1965 Stedelijk van Abbemuseum, Eindhoven
+    1964 Stedelijk Museum, Amsterdam
+  _fieldset: dateSummary

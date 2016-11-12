@@ -1,1 +1,107 @@
 Title: Martijn Hendriks
+
+----
+
+Web: 
+
+----
+
+Yearbirth: 1973
+
+----
+
+Placebirth: 
+
+----
+
+Builder: 
+
+- 
+  title: Education
+  text: |
+    1997–2002 MA Visual Culture, Faculty of Arts and Social Sciences, University of Maastricht
+    1991–1994 Academy of Fine Arts/Academie voor Beeldende Vorming, Tilburg
+  _fieldset: doubleDateSummary
+- 
+  title: Selected Solo Exhibitions
+  text: |
+    2014 Credit Like Drain Follow, Martin van Zomeren, Amsterdam
+    2012 Every Reform Movement Has a Lunatic Fringe (with Matthew Lutz-Kinoy), W139, Amsterdam
+    2011 ALMOST NOTHING AND ALMOST EVERYTHING, Martin van Zomeren, Amsterdam
+    2011 The One Two, Martijn Hendriks and Uta Eisenreich, TAG, The Hague (Curated by Suzanne Wallinga)
+    2011 Beside Itself, Martijn Hendriks and Bas van den Hurk, Duende, Rotterdam
+    2010 Martijn Hendriks and Magali Reus, Walden Affairs, The Hague
+    2010 All That is Solid, RSTR4, Munich
+    2009 Let’s call the whole thing off, MIC Toi Rerehiko, Auckland (Curated by Nicole Edwards)
+  _fieldset: dateSummary
+- 
+  title: Group Exhibitions
+  text: |
+    2016 Body Holes, New Scenario, Fear of Content section 9th Berlin Biennale for Contemporary Art, Berlin
+    2016 Hybrid Modus, Skulptur Bredelar 2016, Bredelar, Nordrhein-Westfalen (curated by Ursula Ströbele and Bas Hendrikx)
+    2016 Sculpture falls in a forest, Do It With Others, Tilburg
+    2016 Inflected Objects, De Hallen, Haarlem (curated by Melanie Buehler)
+    2015 Technologism, Monash University Museum of Art, Melbourne (curated by Charlotte Day)
+    2015 Searching for Devices, Basis, Frankfurt am Main (Curated by Gislind Köhler)
+    2015 Ende Gelände, Martin van Zomeren, Amsterdam
+    2015 Electric Dreams, Monash University Museum of Art, Melbourne
+    2014 Impossible Show, lecture performance with Francesco Stocchi, Temporary Gallery, Cologne
+    2014 It ain’t whatcha write, it’s the way atcha write it, International Foundation Manifesta, Amsterdam
+    2013 Initial Public Offering, WCW Gallery, Hamburg
+    2013 PARALLAX OBJECT, RELIEF, BLACKOUT, Martin van Zomeren, Amsterdam
+    2013 Abstract Myths, Nest, Den Haag (Curated by Hans den Hartog Jager)
+    2012 Pigna Project Space, (Drawing) Quote!, (urated by F. Stocchi & N. Oberthaler), Rome
+    2012 Khaza-ism, Diet, Miami
+    2012 Reflections on Form, Barbara Seiler Galerie, Zurich
+    2012 Autumn of Modernism, Temporary Gallery Cologne (Curated by Lorenzo Benedetti)
+    2012 Minimal Myth, Boijmans van Beuningen (Curated by Francesco Stocchi)
+    2012 What is the use of being a boy if you are going to grow up to be a man, Annie Gentils Gallery, Antwerp 2012 (Curated by Alexander Mayhew)
+    2012 Autumn of Modernism, De Vleeshal, Middelburg (Curated by Lorenzo Benedetti)
+    2012 The Greater Cloud, Nimk, Amsterdam, (Curated by Petra Heck)
+    2011 I Can’t, I Can, I Care, De Vleeshal, Middelburg, (Curated by Lorenzo Benedetti)
+    2011 One place after another, kabinetten van de Vleeshal, Middelburg
+    2011 Format, The Luminary Center for the Arts, St. Louis
+    2011 Memery, Massachusetts Museum of Contemporary Art (MASS MoCA), North Adams (Curated by Emily Leisz 2011 Carr and Oliver Wunsch)
+    2011 Rhododendron,W139, Amsterdam (Curated by Harm van den Dorpel)
+    2011 A Leaf Is Crashing On My Window, WCW Gallery, Hamburg
+    2010 Free, New Museum of Contemporary Art, New York City (Curated by Lauren Cornell)
+    2010 Fotografia, Museo d’Arte Contemporanea di Roma, Rome (Curated by Valentina Tanni)
+    2010 Catalyst, American University Museum at the Katzen Arts Center, Washington DC
+    2010 Smooth Structures, Smart Project Space, Amsterdam (Curated by Enough Room for Space)
+    2010 Be Blue, Laleh June Galerie, Basel
+    2010 Input/Output, duo exhibition Ryan Trecartin and Martijn Hendriks, Incubate, Tilburg
+    2010 Video Feedback, Hunter College Times Square Gallery, New York NY
+    2010 An immaterial survey of our peers, Sullivan Galleries, Chicago
+    2010 The Destroyed Room II, Whatspace, Tilburg
+    2010 The Destroyed Room I, Galerie im Regierungsviertel / Forgotten Bar Project, Berlin
+    2010 Whole Earth Catalogue, Neoncampobase, Bologna (Curated by Domenico Quaranta)
+    2010 After Image, School 33, Baltimore MA (Curated by Jamillah James)
+    2009 Versions, Netherlands Institute for Media Arts Montevideo/Time Based Arts, Amsterdam
+    2009 Infernal Machine, G39, Cardiff, UK
+    2009 Imagine, CasZuidas, Amsterdam
+    2009 Just Add Water, De Soto Gallery, Los Angeles
+    2009 No Soul for Sale, X-Initiative, New York NY
+    2009 New Wave, Padiglione Internet, 53rd Venice Biennale, Venice
+    2009 Michael Jackson Doesn’t Quit, The Future Gallery, Berlin
+    2009 In Real Life, Capricious Space, New York NY (Curated by Laurel Ptak)
+    2009 New Genre XVI, Living Arts of Tulsa, Oklahoma
+    2009 Contemporary Semantics Beta, Arti et Amicitiae, Amsterdam
+    2009 Without a Trace, Vooruit, Ghent
+    2008 When Absence Becomes Presence, Washington Project for the Arts, Washington DC
+    2008 While We Were Working, Nightingale Theatre, Chicago
+    2008 Hitchcock, héritiers et détournement, 17e Festival du Film de Vendôme, Vendôme
+    2008 The Birds without the birds, Broadway Media Centre, Nottingham
+    2008 Drawing near, then away, FADA Art Gallery, Ankara
+    2008 Always on your minds, Video Vortex 3, Ankara
+    2008 Netmares/Netdreams, Current Gallery, Baltimore MA
+    2008 Los Angeles Works, Los Angeles Contemporary Exhibitions, Los Angeles
+    2007 Video Vortex 2, Netherlands Media Art Institute Montevideo/Time Based Arts, Amsterdam
+    2007 Video as Urban Condition, Lentos Kunstmuseum/Museum of Modern Art Linz, Linz
+    2007 Untitled Group Show, Atelierhaus Aachen, Aachen
+  _fieldset: dateSummary
+- 
+  title: Grants and Awards
+  text: |
+    2009 Basisstipendium Fonds BKVB, Netherlands Foundation for Visual Arts, Design and Architecture, Amsterdam
+    2008 Kraft Prize for New Media, Washington Project for the Arts and The Phillips Collection, Washington DC
+  _fieldset: dateSummary

@@ -1,1 +1,59 @@
 Title: Juliaan Andeweg
+
+----
+
+Yearbirth: 1986
+
+----
+
+Situated: 
+
+----
+
+Web: 
+
+----
+
+Builder: 
+
+- 
+  title: Education
+  text: >
+    2008-2012 BA Fine Arts, Royal Academy of
+    Visual Arts (KABK), Den Haag, diploma
+  _fieldset: doubleDateSummary
+- 
+  title: Residencies
+  text: >
+    2015-2016 Rijksakademie Van Beeldende
+    Kunsten, Amsterdam
+  _fieldset: doubleDateSummary
+- 
+  title: Selected Exhibitions
+  text: |
+    2015 RijksakademieOPEN, Amsterdam
+    2015 Axis Mundi, -1, Paris
+    2015 Star digs hole in space, Spatiu Intact, Cluj
+    2015 Making monsters for my friends, De Nederlandsche Bank, Amsterdam
+    2015 FA FA FA, Martin van Zomeren, Amsterdam
+    2015 ENDE GELÄNDE, Martin van Zomeren, Amsterdam
+    2014 AO, Martin van Zomeren, Amsterdam
+    2014 Juliette Jongma, Amsterdam
+    2014 UNFAIR, Amsterdam
+    2014 Boetzelaer van Nispen, GRAN TURISMO we play on difficult, Amsterdam
+    2014 Stroom, Finna Leave The House/Finna Go To The Studio, Den haag
+    2013 GEM, Now or never 2
+    2013 UNFAIR, Amsterdam
+    2013 Galerie Juliette Jongma, a cock in a frock on a rock, Amsterdam
+    2013 Nieuwe Vide, The Fake, the Fiction and the Common, Haarlem
+    2013 Part 1, Plenty of Sand in the Vaseline, Haarlem
+    2013 Part 2,Je bent niet hopeloos, Haarlem
+    2013 Part 2,OUTTA THE OFFICE INTO THE FORERST OUTTA THE FOREST INTO THIS!, Haarlem
+    2013 Museumnacht, Phophyry in the attic, The Hague
+    2013 Oude Kerk, Hijacking Karma (in a positive way), Amsterdam
+    2013 K.I. Beyonce, There is nothing there to save the organizers, Amsterdam
+  _fieldset: dateSummary
+
+----
+
+Placebirth: 

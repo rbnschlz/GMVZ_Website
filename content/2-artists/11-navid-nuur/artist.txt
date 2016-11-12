@@ -1,1 +1,186 @@
 Title: Navid Nuur
+
+----
+
+Web: 
+
+----
+
+Yearbirth: 1976
+
+----
+
+Placebirth: 
+
+----
+
+Builder: 
+
+- 
+  title: Education
+  text: |
+    1999-2001 HKU, Utrecht
+    2002-2003 Pietzwart Institute, Rotterdam
+    2002-2004 MA Plymouth University England
+  _fieldset: doubleDateSummary
+- 
+  title: Selected Solo Exhibitions
+  text: |
+    2015 CONTEXT IS THE NEW CONTENT, Martin van Zomeren, Amsterdam
+    2015 MINING MEMORY, Max Hetzler and Plan B, Berlin
+    2015 About a Work #3, Galleria Zero, Milano
+    2014 The Main Remain, Galerie Max Hetzler, Paris
+    2014 RENDERENDER, Dundee Contemporary Arts, Dundee
+    2014 COLOR ME CLOSELY, Trafó - House of Contemporary Arts, Budapest
+    2014-2013 Lube Love, Bonnefantenmuseum, Maastricht
+    2013 UNIFIED NOT UNIFORMED, Martin van Zomeren, Amsterdam
+    2013 TA-DA !, Galerie des Enfants, Centre Pompidou, Paris
+    2013 Phantom Fuel, Parasol Unit, London
+    2013 Track&Trace, Watersnoodmuseum, Ouwerkerk
+    2013 SMOKEBOMBSMOKE, OUI Center of Contemporary Art, Grenoble
+    2012 GAMeC, Bergamo
+    2012 Hocus Focus, Matadero, Madrid
+    2011 CONDUCTORCONDUCTOR, Plan-B, Berlin
+    2011 IT'S NO CRIME TO TICKLE TIME, Martin van Zomeren, Amsterdam
+    2011 POST PARALLELISM, Kunst Halle Sankt Gallen, st. Gallen
+    2010 Glow (Re-)discovering Eindhoven, Van Abbe Museum, Eindhoven
+    2010 The Other Another, Galleri Christina Wilson, Copenhagen
+    2010 PHANTOM FUEL, Plan B, Cluj
+    2010 THE VALUE OF VOID, De Hallen Museum, Haarlem
+    2009 THE VALUE OF VOID, Kunsthalle Fridericianum, Kassel
+    2009 THE VALUE OF VOID, S.M.A.K (Stedelijk Museum voor Actuele Kunst), Gent
+    2009 (No) Norms Forgotten, 10m2 project space, Sarajevo
+    2009 Aass Wwee bbccoommee Oonnee, Klerkx, Milan
+    2009 Within Your Worlds, Martin van Zomeren, Amsterdam
+    2009 In Your World, Plan B, Berlin
+    2008 Where It's At, Fries Museum/ Bureau Leeuwarden
+    2008 Lost Licks, 1646, The Hague
+    2008 Solo booth, Art Amsterdam, Stroom, The Hague
+    2008 Solo booth, Art Amsterdam, Martin van Zomeren
+    2007 THE RISE OF RE, solo, project space Stroom, The Hague
+    2004 Galerie De5er, Rotterdam
+  _fieldset: dateSummary
+- 
+  title: Selected Group Exhibitions
+  text: |
+    2016 Lube Love, Bonnefantenmuseum @pinkpop-up, Landgraaf
+    2016 IFFR White Nights, Rotterdam (screening)
+    2016, Analog Borders, Grafische Werkplaats, The Hague
+    2016 La mia ceramica, Galerie Max Hetzler, Paris
+    2016 Back in 5 Minutes, Martin van Zomeren, Amsterdam
+    2016 Illigibility: The Contexts of Script, (curated by Marta Smolińska), Kulczyk Foundation, Poznań
+    2016-2015 Addition: Schenking Pieter and Marieke Sanders, Stedelijk Museum, Amsterdam
+    2016-2015 Lekker Licht, Centraal Museum, Utrecht
+    2015 Eppur si muove, MUDAM, Luxembourg
+    2015 Let Us Meet Inside You, Trendbeheer, De Garage, Rotterdam
+    2015 Mountains With a Broken Corner, 12th Havana Biennial
+    2015 Playing Future, Kunsthalle Kiel, Kiel
+    2015 Fa Fa Fa, Martin van Zomeren, Amsterdam
+    2015 When I Give, I Give Myself, Van Gogh Museum, Amsterdam
+    2015 The Dutch Connection - A4 Multiple (5), S.M.A.K. Museum, Ghent
+    2015 Too Early, Too Late. Middle East And Modernity, Pinacoteca Nazionale, Bologna (curated by Marco Scotini)
+    2015 Enge Gelände, Martin van Zomeren, Amsterdam
+    2015 Signs & Symbols, Jessica Bradley, Toronto
+    2014 Allegory of the Cave Painting, Extra City Kunsthal, Antwerp
+    2014 Alchemy, Nest, Den Haag (curated by Will Lunn and David Rickard)
+    2014 Geografiek / Géographique, Slotstraat 17, Brussels
+    2014 It ain’t whatcha write, it’s the way atcha write it, International Foundation Manifesta, Amsterdam
+    2014 Beating around the bush Episode #1, Bonnefantenmuseum, Maastricht
+    2014 Halftone: Through the Grid, Galerie Max Hetzler, Berlin
+    2014 RE:Painted - ‘Painting' from the collection, S.M.A.K., Gent
+    2014 Amnesia, Open Gallery, Bratislava (curated by Lýdia Pribišová and Monika Pavlechová)
+    2013 AGORA, 4th Athens Biennale
+    2013 Traces, Stedelijk Museum 's-Hertogenbosch
+    2013 (T)HERE, Bonnefanten Hedge House, Wijlre
+    2013 Flex-Sil Reloaded, Kunst Halle, St. Gallen
+    2013 Casey Kaplan, New York
+    2013 The image in the sculpture, Centre Pompidou, Paris (curated by Christine Macel and Navid Nuur)
+    2013 Mesures et disparition / Over maat en verdwijning, Institut Néerlandais, Paris
+    2013 It wasn't there yesterday, Raster Gallery, Warsaw
+    2012 This Title is an Artwork of Mine, Motto Charlottenborg, Copenhagen (curated by Mikkel Carl)
+    2012 The Castle in the Air. Séance of Imagination, Centre of Culture ZAMEK, Poznan (curated by Adam Budak)
+    2012 Through an open window, Institut Néerlandais, Paris
+    2012 A Battle for Narrative, Bonnefanten Hedge House, Wijlre
+    2012 Galerie Nächst St. Stephan Rosemerie Schwarzwälder, Wien
+    2012 TAF / the Art Foundation, Athens
+    2012 Sint-Jan, Sint-Baafskathedraal, Gent (curated by Jan Hoet and Hans Marten)
+    2012 SummerNest, Nest, Den Haag
+    2012 On Geometry and Speculation, official parallel project Marrakech Biennale, ESAV, Marrakech (curated by Hicham Khalidi)
+    2012 Un paisaje holandés / A Dutch Landscape, La Casa Encendida, Madrid
+    2012 Ashes and gold. A World’s Journey, Marta Herford Museum, Herford
+    2012 People have the power, Zero, Milano
+    2011-2012 Recently unpacked. How art ages, MARTa Herford Museum, Herford
+    2011 Villa Tokyo, Tokyo
+    2011 SLAA, curated by Bianca Stiger, Performance, De Balie, Amsterdam
+    2011 De Nederlandse identiteit? De Kracht van Heden, Museum De Paviljoens, Almere
+    2011 Royal Awards for Painting 2011, Royal Palace, Amsterdam
+    2011 ILLUMInations, the 54th Venice Biennale, (directed by Bice Curiger)
+    2011 Too late, too little, (and how) to fail gracefully, Kunstfort Asperen, Langedijk
+    2011 IMAGE TO BE PROJECTED UNTIL IT VANISHES Museion - Museum of modern and contemporary art, Bolzano (curated by Mihnea Mircan)
+    2011 Radical Autonomy, Netwerk / centrum voor hedendaagse kunst, Aalst, België (Curated by Arno van Roosmalen)
+    2011 Inside Installations | Collectietentoonstelling, S.M.A.K (Stedelijk Museum voor Actuele Kunst), Gent
+    2011 Falten, Searching for White, Rise above Reason, Martin van Zomeren, Amsterdam
+    2010 Winner of 'Oogst', Stedelijk Museum, Schiedam
+    2010 Taking Place, Stedelijk Museum, Amsterdam (curated by Ann Goldstein)
+    2010 Invisible Shadows ï¿½ Images of Uncertainty, MARTa Herford Museum, Herford
+    2010 Benefit Exhibition, Kunst Halle Sankt Gallen, st. Gallen
+    2010 Starter, Arter, istanbul (curated by Rene Block)
+    2010 History of Art, David Roberts Art Foundation
+    2010 Performative Attitudes, Kunsthaus Glarus, Switzerland
+    2010 Up to You, Stroom, The Hague
+    2009 The Knight's Tour, De Hallen Museum, Haarlem
+    2009 Sculptural - Collection, S.M.A.K (Stedelijk Museum voor Actuele Kunst), Gent
+    2009 Broken English, Selier + Mosseri-Marlio Galerie, Zurich
+    2008 Modern Museum of Arnhem
+    2008 Portfolio 1, Plan B, Berlin
+    2008 Group show, schil/ders, DCR, The Hague
+    2008 Geoair, residency in Georgia, Tbilisi
+    2008 Groupshow, Mariakapel, Hoorn
+    2007 Billy town, group show, Rijswijk
+    2007 INSIDEOUTï¿½, solo, Moira Gallery, Utrecht
+    2007 Voorstel voor, group show, DCR Project Space, The Hague
+    2007 Drawing the line somewhere, duo, Ned. Cacaofabriek, Helmond
+    2007 Lumiere, group show, Galerie Blaak 10, Rotterdam
+    2006 Villa Nuts, group show, The Hague
+    2006 For a(n) relation(s), group show, ADA Gallery, Virginia, USA
+    2006 Countersale, group show, Utrecht
+    2005 Rebound, group show , HKU gallery Utrecht
+    2005 Jack of Hearts, group show, project space Stroom, The Hague
+    2004 The Art of Management, group, Ecole Superieure de Commerce, Paris
+    2004 Billboart European Billboard exposition, Bratislava, Warsaw
+  _fieldset: dateSummary
+- 
+  title: Publications
+  text: |
+    2013 SMACKED & SMOKED, publisher UOI projectspace, Grenoble (upcoming)
+    2013 NN, publisher Parasol Unit, London (upcoming)
+    2012 The Afterglow / El rastro de la luz, publisher Matadero, Madrid
+    2011 The Afterglow, publisher Van Abbemuseum, Eindhoven
+    2011 Bored at the museum / Bored at the studio', publisher Mousse, Italy
+    2010 THE VALUE OF VOIDï', publisher Onomatopee
+    2009 Younger than Jesus/ Artist Directory, pg. 367
+    2009 EXTEXTS, VOL. 1
+    2007 Where I end and you begin' ISBN: 978-90-78454-12-0, Publisher Onomatopee
+    2007 ETIOLATION, ISBN.978-90-8690-119-7, Veennman Publishers
+    2007 Sliding The Slow Split, ISBN 978-90-78454-06-9, publisher Onomatopee
+    2006 Afterouge, Initiator & Editor, Publisher Revolver archiv fur aktuelle Kunst, Berlin
+  _fieldset: dateSummary
+- 
+  title: Selected Reviews
+  text: |
+    2011 Macel, Christine, Best of 2011, ARTFORUM, December, pg. 198
+    2011 Vrancken, Judith, Navid Nuur, frieze, Winter, pg. 128
+    2011 Khazam, Rahma, 500 WORDS - Art Forum, 16.02.
+    2010 van Saaze, Vivian, 'Een nieuw onderzoeksterrien', Origine04, pg. 28
+    2010 de Coninck, Frits, 'Ontroerende alledaagsheid', financial dagblad, 1 may, pg. 28
+    2010 Smolik, Naomi, ARTFORUM, April, pg. 210
+    2010 de Vries, Marina, ï¿½Bergkristal van piepschuimï¿½, Volkskrant, 31.03.10
+    2010 Bem, Merel, ï¿½Hij geeft je zin om mee te doenï¿½, Volkskrant, 26.03.10
+    2010 Braat, Manon, ï¿½Het juiste werk, de juiste tijd, de juiste plaatsï¿½, Kunsbeeld nr. 2-2010, pg. 22
+    2010 Westcott, James, Flink of an Eye, Modern Painters, winter edition, pg.30
+    2009 den Hartog Jager, Hans, Krachtige beelden gunnen publiek geen rust, NRC, 1 october, pg. 11
+    2009 Braat, Manon, Flash Art March April 2009, pg.89
+    2008 Leij, Machteld, BIJ NACHT EN ONTIJ NAAST JE BED, Kunstbeeld nr. 11, pg. 22 (cover story plus cover image)
+    2008 Zonnenberg, Nathalie, Metropolis M, nr. 1, pg.38
+    2008 Neal, Jane, OUVO magazine, interview, September Issue
+  _fieldset: dateSummary

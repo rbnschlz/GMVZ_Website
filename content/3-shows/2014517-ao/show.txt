@@ -15,7 +15,7 @@ Extartist:
 - 
   artistname: Marlie Mul
 - 
-  artistname: Daniel Van Straalen
+  artistname: Daniel van Straalen
 
 ----
 

@@ -1,8 +1,9 @@
-<?php snippet('header'); snippet('menu'); snippet('sidenav') ?>
+<?php snippet('header'); snippet('home_menu'); ?>
+
 
 <div class="main_wrapper">
 
-<div class='home_show_wrap'>
+<table class='home_show_wrap'>
 	<?php 
 		$artists = kirby()->request()->get('artists');
 		$artists = "";
@@ -17,11 +18,23 @@
 
 
 		foreach($shows as $show) {
+			// Exhibition dates
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
         	$startyear = date('Y', $start);
-
+        	
         	$datestring = returnDate($start, $end);
+
+        	// Opening date/time
+        	$opening = strtotime($show->openingstart());
+        	$closing = strtotime($show->openingend());
+        	$openingdate = date('j.m.Y', $opening);
+        	$openingtime = date('H:i', $opening);
+        	$closingtime = date('H:i', $closing);
+        	$time = "{$openingtime}–{$closingtime}";
+
+        	$openingstring = "{$openingdate}, {$time}h";
+
         	//Set Date variable
 			if ($end < $current_date) {
 				$when = "past";
@@ -49,8 +62,9 @@
 			//Set src
 			$img = "";
 			if ($show->hasImages()) {
-				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
-				$img2 = "src='".$show->images()->sortBy('sort', 'asc')->first()->url()."'";
+				$img = $show->images()->sortBy('sort', 'asc')->first()->url();
+				// $img2 = "src='".$show->images()->sortBy('sort', 'asc')->first()->url()."'";
+				// $img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
 			}
 
 
@@ -61,13 +75,13 @@
 			$Extartist = trim($Extartist,",");
 			$Extartist = trim($Extartist," ");
 			if($artist->isNotEmpty() && $show->Extartist()->isNotEmpty()){			
-				$artisttag = $artist->lower().', '.$Extartist;
+				$artisttag = $artist.', '.$Extartist;
 			} else if ($show->Extartist()->isNotEmpty()){
 				$artisttag = $Extartist;
 			} else if ($artist->isNotEmpty()) {
-				$artisttag = $artist->lower();
+				$artisttag = $artist;
 			} else {
-				$artisttag = '  ';
+				$artisttag = '   ';
 			}
 
 			// Add image orientation
@@ -93,67 +107,86 @@
 			};
 			$output[] = "added";
 
-			if(!in_array($startyear, $allyears)) {
-				if(!empty($allyears)) {
-					echo "</div>";
-				}
-				$block = "<div class='home_show_outer'>";
-				$block .= "<div class='home_show_year'>";
-				$block .= " {$startyear}";
-				$block .= "</div>";
+			// if(!in_array($startyear, $allyears)) {
+			// 	if(!empty($allyears)) {
+			// 		echo "</div>";
+			// 	}
+			// 	$block = "<div class='home_show_outer'>";
+			// 	$block .= "<div class='home_show_year'>";
+			// 	$block .= " {$startyear}";
+			// 	$block .= "</div>";
 				
+			// 	echo $block;
+			// 	$allyears[] = $startyear;
+			// }
 
-				echo $block;
-				$allyears[] = $startyear;
+			// if(!in_array($startyear, $allyears)) {
+
+			// 	$block = "<td class='home_show_year'>";
+			// 	$block .= "<span>";
+			// 		$block .= "{$startyear}";
+			// 	$block .= "</span>";	
+			// 	$block .= "</td>";
+				
+			// 	echo $block;
+			// 	$allyears[] = $startyear;
+			// }
+
+			//url
+			if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
+				$urlStart = $show->url();
+				$urlEnd = "</a>";
+			} /*else if ($show->images()->count() < 2 && $show->description()->isNotEmpty() ) {
+				$urlStart = "<div class='home_show_link' data-text='{$show->description()->kirbytext()}'>";
+				$urlEnd = "</div>";
+			}*/ else {
+				$urlStart = "";
+				$urlEnd = "";
 			}
+			
 
 
 			//Build Block and display
-			if($show->images()->first()->orientation() == 'portrait') {
-				$block = "<div class='home_show home_show_portrait";
-				$block .= " {$orientation}' artist='{$artisttag}'>";
-				$block .= "<div class='home_show_portrait_img img' {$img}></div>";
-				$block .= "<div class='home_show_portrait_caption'>";
-				$block .= "<span>{$show->title()}, </span>";
-				$block .= "<span>{$datestring}</span>";
-				$block .= "</div>";
-				$block .= "</div>";
-			} else {
-				$block = "<div class='home_show home_show_landscape";
-				$block .= " {$orientation}' artist='{$artisttag}'>";
-				$block .= "<div class='home_show_landscape_img img' {$img}></div>";
-				$block .= "<div class='home_show_landscape_caption'>";
-				$block .= "<span>{$show->title()}, </span>";
-				$block .= "<span>{$datestring}</span>";
-				$block .= "</div>";
-				$block .= "</div>";
-			}
+
+			$block = "<tr class='home_show' data-href='{$urlStart}'>";
+			
+			// $block .= $urlStart;
+			
+			$block .= "<td class='home_show_title'>";
+				$block .= "<span>{$show->title()}</span>";
+			$block .= "</td>";
+			
+				
+			$block .= "<td class='home_show_artist'>";
+				$block .= "<span>{$artisttag}</span>";
+			$block .= "</td>";
+
+			$block .= "<td class='home_show_date'>";
+				$block .= "<span>";
+				$block .= "{$datestring}";
+				if ($when === "upcoming") {
+					$block .= "<br>";
+					$block .= "Opening: {$openingstring}";
+				}
+				$block .= "</span>";
+			$block .= "</td>";
+
+			$block .= "<td class='home_show_thumb'>";
+				$block .= "<span><img src='{$img}'></span>";
+			$block .= "</td>";
+		
+			$block .= "</tr>";
+			
 			echo $block;
 
 		}
 
 	if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
-		echo "<div>No matches found. Please refine your selection.</div>";
+		echo "<div class='no_match'>No matches found. Please redefine your selection.</div>";
 	}
 	?>
 
+</table>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <?php snippet('footer') ?>

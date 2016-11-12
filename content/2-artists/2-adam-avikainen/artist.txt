@@ -1,1 +1,93 @@
 Title: Adam Avikainen
+
+----
+
+Web: 
+
+----
+
+Yearbirth: 1978
+
+----
+
+Placebirth: 
+
+----
+
+Builder: 
+
+- 
+  title: Education
+  text: |
+    2005-2007 De Ateliers, Amsterdam.
+    2003-2005 Kuvataideakatemia, Helsinki (MFA)
+    2001-2003 University of Minnesota, Minneapolis (BA)
+    1996-1998 University of Southern California, Los Angeles
+  _fieldset: doubleDateSummary
+- 
+  title: Selected Group Exhibitions
+  text: |
+    2015 La Chose, CAC, La Synagogue de Delme, France
+    2014 10th Shanghai Biennale, Shanghai
+    2014 Animism, HWP Ashkal Alwan, Beirut
+    2013 Animism, Ilmin Museum of Art, Seoul, Korea
+    2013 Animism, OCAT Shenzen, China
+    2012 Modern Monsters / Death and Life of Fiction, Taipei Biennial (curated by Anselm Franke)
+    2012 Sincerly how am I talking – It’s moving from I to it , Hollybush Gardens, London
+    2012 Animismus, Haus der Kulturen der Welt, Berlin
+    2010 The Plurality of One, FormContent, London
+    2010 ANIMISM, Kunsthalle Bern
+    2009 SLOW MOVEMENT ODER: Das Halbe und das Ganze, Kunsthalle Bern
+    2008 Tears of Joy, Amsterdam
+    2007 Aki Akari, Center for Contemporary Art, Kitakyushu, Japan
+    2007 Offspring, De Ateliers, Amsterdam
+    2007 Beauty Unrealized, PSWAR, Amsterdam (curated by Angela Serino)
+    2006 Just in Time!, Municipal Art Acquisition, Stedelijk Museum, Amsterdam
+    2005 Estetica della Resistenza, Fondazione Ratti Como/Assab One Milano (curated by Roberto Pinto and Anna Daneri)
+    2005 Aesthetics of Resistance, Ex-Ticosa, Como, Italy
+    2005 Finnish Blood, Golden Gallery, Manchester, UK
+  _fieldset: dateSummary
+- 
+  title: Selected Solo Exhibitions
+  text: |
+    2015 CSI:DNR, MONITOR, Rome
+    2015 Kaki Kuchi, Martin van Zomeren, Amsterdam
+    2014 CSI Department of Natural Resources, Haus der Kulturen der Welt, Berlin
+    2012 Walden Affairs, den Haag (with Robin Vanbesien)
+    2012 Rambler's Association, ARTSPACE, Auckland (with Maria Taniguchi)
+    2010 Indigo Anniversary, Japan
+    2009 Karaeiga Swallow, Monitor Gallery, Rome
+    2009 Chance Gut Flora, Sudachi Heights, Tokushima
+    2008 SARAKURA, Martin van Zomeren, Amsterdam
+    2008 DAIJOUBU, Center for Contemporary Art, Kitakyushu, Japan
+    2007 Art Athina, Athens
+    2007 Sweathertz De Ateliers, Amsterdam
+    2006 Loyly Ikebana, Monitor Gallery, Rome
+    2005 Viva Sisu, KTA Gallery, Helsinki, Finland
+    2005 Miss Mary Mannerheim of Minneapolis, Minnesota Memorial, Kasarminkatu Gallery, Helsinki
+  _fieldset: dateSummary
+- 
+  title: Residencies
+  text: |
+    2009-2010 KAIR, Shikoku, Japan
+    2007-2008 Center for Contemporary Art, Kitakyushu, Japan
+  _fieldset: doubleDateSummary
+- 
+  title: Collections
+  text: |
+    Stedelijk Museum, Amsterdam
+    De Nederlandsche Bank
+  _fieldset: textSummary
+- 
+  title: Selected Reviews and Bibliography
+  text: |
+    2014 Adam Avikainen / CSI Department of Natural Resources, Haus der Kulturen der Welt, catalogue
+    2014 Frieze d/e, 'The Anthropocene Project. A Report' by Martin Herbert
+    2014 10th Shanghai Biennale, catalogue
+    2012 Modern Monsters / Death and Life of Fiction, Taipei Biennial, catalogue
+    2012 Ginger Glacier, Gargantua series, edition of 70 copies
+    2010 Animism
+    2009 Slow Movement or: Half and Whole, Kunsthalle Bern
+    2008 F.R. David, The Stuff and Nonsense Issue, De Appel
+    2008 Metropolis M n2, 'Psychofysisch Spiritueel Realisma' by Maxine Kopsa, p. 38
+  _fieldset: dateSummary

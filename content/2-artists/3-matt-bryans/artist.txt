@@ -1,1 +1,109 @@
 Title: Matt Bryans
+
+----
+
+Web: 
+
+----
+
+Yearbirth: 1977
+
+----
+
+Placebirth: 
+
+----
+
+Builder: 
+
+- 
+  title: Education
+  text: |
+    1999-2001 MA Fine Art, Chelsea School of Art, London
+    1996-1999 BA Fine Art, Winchester School of Art, UK
+  _fieldset: doubleDateSummary
+- 
+  title: Selected Solo Exhibitions
+  text: |
+    2014 Hordaland, Kunstsenter, Bergen
+    2014 Treignac Project, France
+    2013 Kate MacGarry, London
+    2012 Matt Bryans, Tou Scene, Stavanger, Norway
+    2012 Matt Bryans, Wojciech Bąkowski (duo-show), Martin van Zomeren, Amsterdam
+    2012 Chapter Gallery, Cardiff
+    2011 Breaking the Land, SF Camerawork, San Francisco
+    2010 Hibernation, Martin van Zomeren, Amsterdam (March)
+    2009 Matt Bryans, Jack Hanley Gallery, New York
+    2008 Kate MacGarry, London
+    2007 Martin van Zomeren, Amsterdam
+    2007 System Error. War Is A Force That Gives Us Meaning, Palazzo delle Papesse, Siena, Italy
+    2006 Matt Bryans, Contemporary Art Center, Atlanta
+    2006 Matt Bryans, Kate MacGarry, London
+    2005 Matt Bryans Picture This Museum Dhondt Dhaenens (MDD), Deurle , Belgium
+    2005 Matt Bryans, Martin van Zomeren, Amsterdam
+    2003 Matt Bryans, Kate MacGarry, London
+  _fieldset: dateSummary
+- 
+  title: Selected Group Exhibitions
+  text: |
+    2014 Shortlisted Artists, 2014 Guerlain Drawing Prize, Palais de la Bourse, Paris
+    2014 Mammouth, Treignac Projet (curated by Matt Packer)
+    2013 Guerlain Donation, Centre Pompidou, Paris
+    2013 FlowerCastle,Sculpture Garden Kasteel Keukenhof, Lisse
+    2013 The Future's not what it used to be, The Exchange, Penzance
+    2011 From A to B through C, acb Kortárs Művészeti Galéria, Budapest
+    2010 Contemporary drawings, Musee des Beaux Arts de Besancon
+    2009 S.A.I.R, Jyderup, Denmark
+    2009 Dessins, Salon du dessin Palais de la Bourse
+    2008 Anatomie les Peau du Dessin, Collection Florence & Daniel Guerlain, FRAC de Picardie, Amiens
+    2008 Stray Alchemists, Ullens Center for Contemporary Art, Beijing
+    2007 The Juddkey, The Old Art Shop at John Jones
+    2007 Untitled - works on paper, Art : Concept, Paris
+    2006 Collage Effect, Los Angeles
+    2006 With Lillian Vaule and Sam Basu, Flaca, London
+    2005 -2006 New Acquisitions MOCA, Los Angeles
+    2004 Pin-up, Tate Modern
+    2004 Happy Darkness, Andrï¿½ Viana Gallery, Porto
+    2004 Britannia Works, British Council survey show, Athens
+    2003 Group show, Martin van Zomeren, Amsterdam
+    2000 Music Hall Truman Brewery, London
+    2002 Car Free Day, Normand Park, London
+    2002 Flower Bed, Cremer Street Studios London
+    2002 Clear as Mud, Hoxton Jubilee, London
+    2002 May It Return In Spades, Bart Wells Institute, London,
+    2001 If the Wind Changes You'll Stay Like That Mafuji Gallery, London
+    2001 Peckham House Project, Camberwell Arts Week, London
+    2000 Hellseher Dusseldorf, Germany
+    2000 Music Hall, Truman Brewery, London
+  _fieldset: dateSummary
+- 
+  title: Selected Press
+  text: |
+    Abridged (four children), forthcoming 2014, Apis Press
+    Lands, second edition 2014
+    Bergen Tidende, March 2014
+    Ant Hollow G, 2014
+    Lands, first edition 2014
+    Two Dogs Fucking, artist publication, 2013
+    Head-Man Chronicle, 2013
+    Curtains are Cunts, 2013
+    Borgen, Trond, “Sporsikring med omsorg”, Stavanger Aftenblad, 16 March 2012, 30
+    Næsheim, Eli, “En Internasjonal Kunst-overraskelse fra Ålgård,” Stavanger Aftenblad, 8 March 2012, 34
+    Nerheim, Ole S., “Bryans i Ølhallene,” Rogalands Avis, 7 March 2012, 25
+    Howerton, Michael, “Worlds, lost and found,” SF Examiner, 7 July 2011
+    Sussman, Matt, “Fake-out,” SF Bay Guardian, 28 June 2011
+    Somner, Danielle, “It’s all about the landscape,” KQED ARTS, 23 June 2011
+    Tramposch, Emma, “Past is an image we form in the present,” Camerawork, Vol 35, Fall-Winter 2009, 4-7
+    Catalogue Stray Alchemists, Ullens Center for Contemporary Art, Beijing, 2008
+    Matt Bryans by Gilda Williams, Artforum, April 2006
+    Matt Bryans by Aura Satz, Tema Celeste, March/April 2006, n. 114, page 85
+    Emerging Artists: Matt Bryans. Roger Tatley meets the new Eraserhead by Roger Tatley, Modern Painters, March 2006, page 56-58
+    Pin-Up: Contemporary Collage and Drawing by Jonathan Harris, Art Monthly, January February 2005
+    Pin-Up by Jessica Lack, Pick of the Week, The Guardian, 3 January 2005
+    The Art Just Doesn’t Cut It by Fisun Güner, Metro Life, 6 January 2005
+    All stuck and scribbled by Andrew Graham-Dixon, The Sunday Telegraph, 19 December 2004, page 112
+    Work at the Cutting Edge by Charlotte Cripps,
+    The Independent Review, 2 December 2004, page 18
+    Newsnight Review, BBC2, 10 December 2004
+    Sit up and Take Notice, Dazed and Confused, February 2003, page 38
+  _fieldset: textSummary

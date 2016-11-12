@@ -6,15 +6,14 @@
 	}
 
 		$shows = page('shows')->children();
+		$artistsUrl = page('artists')->url();
+		$artistsParent = page('artists');
 		$artists = page('artists')->children()->visible();
+		
 ?>
 
-
-
 <div class="menu_wrapper">
-	<div class='menu_switch'>
-		<a href="/">Shows</a>, <a class="active" href="/artists">Artists</a>
-	</div>
+<?php snippet('site_nav'); ?>
 
 	<div class="menu_artists">
 		<?php 
@@ -30,15 +29,19 @@
 			$titlelow = umlaute($titlelow); 
 			$titlelow = str_replace(' ', '', $titlelow);
 			$titlelow = str_replace('-', '', $titlelow);
+			if($artist->hasImages()){
+			$artistsImage = $artist->images()->sortBy('sort', 'asc')->first()->url();
+			} else {
+			$artistsImage = "";	
+			}
 
 			//Check if page title matches current page
 			if ($title == $page->title()) {
-				$artistlink = "";
+				$artistlink = $artistsUrl;
 				$url = "";
 				if(!isset($_GET['artists'])) {
 					$active = " active";
 				};
-				$hide = " hidethis";
 			} else {
 				$artistlink = $artist->url();
 				$active = "";
@@ -49,14 +52,28 @@
 			$output = " <a href='";
 			$output .= $artistlink;
 			$output .="' class='menu_artist nobr";
-			$output .= $active.$hide;
-			$output .="'>";
+			$output .= $active;
+			$output .="'";
+			$output .=">";
 			$output .= $title;
-			$output .="</a>";
-			$output .= $i < $len ? "" : "";
+			$output .= "<span class='comma'>";
+			$output .= $i < $len ? ", " : "";	
+			$output .= "</span>";
+			$output .="</a>";	
+			
+			/*if($page->isChildOf(page($artistsParent))) {
+			
+			}*/
 			echo $output;
+
 		endforeach; ?>
 	</div>
+
+	<?php if($page->isChildOf(page($artistsParent))): ?>	
+	<div class='artist_menu'>
+		<span class='artist_work_button active'>Selected work</span>, <span class='artist_work_button'>Biography</span>
+	</div>
+	<?php endif ?>
 
 
 </div>
