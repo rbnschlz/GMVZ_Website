@@ -1,6 +1,5 @@
 <?php snippet('header'); snippet('shows_menu'); ?>
 
-
 <div class="main_wrapper">
 
 <table class='home_show_wrap'>
@@ -28,12 +27,12 @@
         	// Opening date/time
         	$opening = strtotime($show->openingstart());
         	$closing = strtotime($show->openingend());
-        	$openingdate = date('j.m.Y', $opening);
+        	$openingdate = date('j M Y', $opening);
         	$openingtime = date('H:i', $opening);
         	$closingtime = date('H:i', $closing);
         	$time = "{$openingtime}–{$closingtime}";
 
-        	$openingstring = "{$openingdate}, {$time}h";
+        	$openingstring = "{$openingdate}";
 
         	//Set Date variable
 			if ($end < $current_date) {
@@ -62,9 +61,9 @@
 			//Set src
 			$img = "";
 			if ($show->hasImages()) {
-				$img = $show->images()->sortBy('sort', 'asc')->first()->url();
+				// $img = $show->images()->sortBy('sort', 'asc')->first()->url();
 				// $img2 = "src='".$show->images()->sortBy('sort', 'asc')->first()->url()."'";
-				// $img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
+				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
 			}
 
 
@@ -107,34 +106,22 @@
 			};
 			$output[] = "added";
 
-			// if(!in_array($startyear, $allyears)) {
-			// 	if(!empty($allyears)) {
-			// 		echo "</div>";
-			// 	}
-			// 	$block = "<div class='home_show_outer'>";
-			// 	$block .= "<div class='home_show_year'>";
-			// 	$block .= " {$startyear}";
-			// 	$block .= "</div>";
+			if(!in_array($startyear, $allyears)) {
+				if(!empty($allyears)) {
+					echo "</div>";
+				}
+				$block = "<div class='home_show_outer'>";
+				$block .= "<div class='home_show_year'>";
+				$block .= " {$startyear}";
+				$block .= "</div>";
 				
-			// 	echo $block;
-			// 	$allyears[] = $startyear;
-			// }
-
-			// if(!in_array($startyear, $allyears)) {
-
-			// 	$block = "<td class='home_show_year'>";
-			// 	$block .= "<span>";
-			// 		$block .= "{$startyear}";
-			// 	$block .= "</span>";	
-			// 	$block .= "</td>";
-				
-			// 	echo $block;
-			// 	$allyears[] = $startyear;
-			// }
+				echo $block;
+				$allyears[] = $startyear;
+			}
 
 			//url
 			if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
-				$urlStart = $show->url();
+				$urlStart = "<a href='{$show->url()}'>";
 				$urlEnd = "</a>";
 			} /*else if ($show->images()->count() < 2 && $show->description()->isNotEmpty() ) {
 				$urlStart = "<div class='home_show_link' data-text='{$show->description()->kirbytext()}'>";
@@ -148,37 +135,30 @@
 
 			//Build Block and display
 
-			$block = "<tr class='home_show' data-href='{$urlStart}'>";
+			$block = "<div class='home_show'>";
 			
-			// $block .= $urlStart;
+			$block .= $urlStart;
+
+			$block .= "<span class='home_show_thumb {$when}' {$img}>";
+			$block .= "</span>";
+
+			$block .= "<span class='home_show_title'>";
+				$block .= $show->title();
+			$block .= "</span>";
 			
-			$block .= "<td class='home_show_title'>";
-				$block .= "<span>{$show->title()}</span>";
-			$block .= "</td>";
-			
+			$block .= "<span class='home_show_date'>";
 				
-			$block .= "<td class='home_show_artist'>";
-				$block .= "<span>{$artisttag}</span>";
-			$block .= "</td>";
+				// if ($when === "upcoming") {
+				// 	$block .= "Opening: {$openingstring}";
+				// } else {
+					$block .= "{$datestring}";
+				// }
+			$block .= "</span>";
 
-			$block .= "<td class='home_show_date'>";
-				$block .= "<span>";
-				$block .= "{$datestring}";
-				if ($when === "upcoming") {
-					$block .= "<br>";
-					$block .= "Opening: {$openingstring}";
-				}
-				$block .= "</span>";
-			$block .= "</td>";
-
-			$block .= "<td class='home_show_thumb'>";
-				$block .= "<span><img src='{$img}'></span>";
-			$block .= "</td>";
-		
-			$block .= "</tr>";
+			$block .= $urlEnd;
+			$block .= "</div>";
 			
 			echo $block;
-
 		}
 
 	if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
