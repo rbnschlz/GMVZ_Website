@@ -27,51 +27,52 @@
 		// GET parameter
 		$params = $_GET;
 
-		//Check if page title matches current page
-		if ($title == $page->title()) {
-			$url = "";
-			if(!isset($_GET['artists'])) {
-				$active = " active";
-			};
-			$hide = " hidethis";
+		//Check if page title matches current page (OLD)
+		// if ($title == $page->title()) {
+			// $url = "";
+			// if(!isset($_GET['artists'])) {
+			// 	$active = " active";
+			// };
+			// $hide = " hidethis";
+		// } else {
+
+		//Check if times variable is set
+		if(isset($_GET['times'])) {
+			$url = http_build_query($params);
+			$url .= "&artists=$titlelow";
 		} else {
-			//Check if times variable is set
-			if(isset($_GET['times'])) {
-				$url = http_build_query($params);
-				$url .= "&artists=$titlelow";
-			} else {
-				$url = "?artists=$titlelow";
-			};
-			// $artistlink = $artist->url();
-			$active = "";
-			$hide = "";
-
-			//Check if variable is set
-			if(isset($_GET['artists'])) {
-				//Add space if variable is already defined
-				// If title is not yet added, add title
-				if (strpos($params["artists"], $titlelow) === false) {
-					$params["artists"] .= " ";
-					$params["artists"] .= $titlelow;
-					$active = "";
-
-				} else if (trim($params["artists"]) === $titlelow) {
-					unset($params["artists"]);
-					$params = str_replace('&', '', $params);
-					$active = " active";
-
-				//if title is added, remove title
-				} else if (strpos($params["artists"], $titlelow) !== false) {
-					$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
-					$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
-					$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
-					$active = " active";
-				}
-
-				//Build query
-				$url = http_build_query($params);
-			}
+			$url = "?artists=$titlelow";
 		};
+		// $artistlink = $artist->url();
+		$active = "";
+		// $hide = "";
+
+		//Check if variable is set
+		if(isset($_GET['artists'])) {
+			//Add space if variable is already defined
+			// If title is not yet added, add title
+			if (strpos($params["artists"], $titlelow) === false) {
+				$params["artists"] .= " ";
+				$params["artists"] .= $titlelow;
+				$active = "";
+
+			} else if (trim($params["artists"]) === $titlelow) {
+				unset($params["artists"]);
+				$params = str_replace('&', '', $params);
+				$active = " active";
+
+			//if title is added, remove title
+			} else if (strpos($params["artists"], $titlelow) !== false) {
+				$params["artists"] = str_replace(" $titlelow", '', $params["artists"]);
+				$params["artists"] = str_replace("$titlelow ", '', $params["artists"]);
+				$params["artists"] = str_replace("$titlelow", '', $params["artists"]);
+				$active = " active";
+			}
+
+			//Build query
+			$url = http_build_query($params);
+		};
+		// };
 
 			//Add question mark if variable is set
 			if (isset($params["times"]) || isset($params["artists"])) {
@@ -80,31 +81,31 @@
 				$filter = "";
 			}
 
-		//Assemble Menu//Assemble Menu
+		//Assemble Menu
 		$activeUrl = $_SERVER['REQUEST_URI'];
-		if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'artists') === false ) {
+		// if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'artists') === false ) {
+		// 	$output = " <a href='";
+		// 	$output .= $page->url().$filter.$url;
+		// 	$output .="' class='menu_artist nobr";
+		// 	$output .= $active;
+		// 	$output .="'>";
+		// 	$output .= $title;
+		// 	$output .= "<span class='comma'>";
+		// 	$output .= $i < $len ? ", " : "";	
+		// 	$output .= "</span>";
+		// 	$output .="</a>";
+		// } else {
 			$output = " <a href='";
 			$output .= $page->url().$filter.$url;
 			$output .="' class='menu_artist nobr";
-			$output .= $active.$hide;
-			$output .="'>";
-			$output .= $title;
-			$output .= "<span class='comma'>";
-			$output .= $i < $len ? ", " : "";	
-			$output .= "</span>";
-			$output .="</a>";
-		} else {
-			$output = " <a href='";
-			$output .= $page->url().$filter.$url;
-			$output .="' class='menu_artist nobr";
-			$output .= $active.$hide;
+			$output .= $active;
 			$output .="'>";
 			$output .= $title;
 			$output .= "<span class='comma'>";
 			$output .= $i < $len ? ", " : "";	
 			$output .= "</span>";
 			$output .="</a>";					
-		}
+		// }
 		
 			echo $output;
 	endforeach; ?>
