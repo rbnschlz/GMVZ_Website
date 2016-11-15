@@ -14,11 +14,6 @@
 <div class="menu_wrapper">
 <?php snippet('site_nav'); ?>
 
-
-<!-- 	<div class='menu_switch'>
-	<a class="active" href="/">Shows</a>, <a href="/artists">Artists</a>
-	</div> -->
-
 	<div class='menu_artists'>
 	<!-- Build artist menu -->
 	<?php 
@@ -96,7 +91,7 @@
 		if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'artists') === false ) {
 			$output = " <a href='";
 			$output .= $page->url().$filter.$url;
-			$output .="' class='menu_artist nobr";
+			$output .="' class='menu_artist nobr active";
 			$output .= $active.$hide;
 			$output .="'>";
 			$output .= $title;

@@ -61,16 +61,13 @@
 			$output .= "</span>";
 			$output .="</a>";	
 			
-			/*if($page->isChildOf(page($artistsParent))) {
-			
-			}*/
 			echo $output;
 
 		endforeach; ?>
 	</div>
 
 	<?php if($page->isChildOf(page($artistsParent))): ?>	
-	<div class='artist_menu'>
+	<div class='menu_sub'>
 		<span class='artist_work_button active'>Selected work</span>, <span class='artist_work_button'>Biography</span>
 	</div>
 	<?php endif ?>

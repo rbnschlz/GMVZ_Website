@@ -25,7 +25,7 @@ a:hover {
 }
 
 @c1 = black;
-@c2 = rgba(0,0,0,0.6);
+@c2 = #000;
 @c3 = black;
 
 @mp-s = 17px;
@@ -36,7 +36,7 @@ a:hover {
 @lbTransitionLength: 0.25s;
 @lbTransitionLengthLong: 0.75s;
 
-@fontStack: 'Lapidar', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+@fontStack: 'Permanent-BoldFour', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
 @fs-s: 15px;
 @lh-s: 18px;
@@ -66,7 +66,9 @@ em {
 }
 
 .active {
-   color: @c1 !important;
+   // color: @c1 !important;
+   // text-decoration: underline;
+   color: red;
 }
 
 .tempNonActive {
@@ -90,8 +92,6 @@ em {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text; 
-  
-  letter-spacing: 0.05em;
   font-family: @fontStack;
   .fs-m;
   .lh-m;
@@ -252,7 +252,7 @@ li {
 .no_match {
 }
 
-/* home
+/* Shows
 -------------------------------------------------- */
 table {
     display: table;
@@ -299,24 +299,20 @@ tr {
 }
 
 
-.home_show{
+.home_show {
   text-align: left;
   display: inline-block;
   vertical-align: top; 
   width: 100%;
   &_title {
     width: 32vw;
-    // vertical-align: middle;
   }
   &_date {
     vertical-align: top;
     width: 200px;
-    // border-right: solid 0px #808080;
   }
   &_thumb {  
-    // margin-right: @mp-m;
     height: 40px;
-    // min-width: 130px;
     border-right: solid 0px #808080;
     vertical-align: middle;
     line-height: 0;
@@ -324,20 +320,11 @@ tr {
       height: 36px;
       width: auto;
     }
-  //   // // margin-bottom: @mp-s/1.5;
-  //   // background-position: center;
-  //   // background-repeat: no-repeat;
-  //   // background-size: cover;
-  //   // display: inline-block;
   }
   &_artist {
     width: 32vw;
     
   }
-  // &_year {
-  //   height: 48px;
-  //   background: rgba(255, 255, 255, 0.5)
-  // }
 
 }
 
@@ -402,7 +389,7 @@ tr {
 }
 
 
-/* artists
+/* Artists
 -------------------------------------------------- */
 .artists_wrap {
   padding: @mp-xl @mp-m;
@@ -413,22 +400,13 @@ tr {
   }
 }
 
-/* artist
+/* Artist
 -------------------------------------------------- */
 .artist_wrap {
   width: 100%;
   padding: 0 @mp-m @mp-m 0;
 }
 
-.artist_menu {
-  padding: @mp-s 0;
-  .title;
-  span{
-    color: @c2;
-  cursor: pointer;
-  padding: 0;
-  }
-}
 .artist_biography_section {
   padding-bottom: @mp-l;
 }
@@ -537,8 +515,8 @@ tr {
 }
 
 .comma {
-  color: @c1;
-  .title;
+  // .title;
+  text-decoration: none!important;
 }
 
 /* Animations

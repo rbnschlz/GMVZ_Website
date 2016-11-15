@@ -35,12 +35,12 @@ return function($site, $pages, $page) {
         return $date;
     }
 
-	$shows = page('shows')->children()->sortBy('startdate', 'desc', 'enddate', 'asc');
+	$fairs = page('artfairs')->children()->sortBy('startdate', 'desc', 'enddate', 'asc');
     $current_date = strtotime(date('Y-m-d H:i:s'));
 
     return array(
         'current_date' => $current_date,
-        'shows' => $shows,
+        'fairs' => $fairs,
     );
 
 };
