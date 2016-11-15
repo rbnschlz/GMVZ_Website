@@ -79,7 +79,6 @@ foreach($items as $child) {
 		" <?php e(page('artists')->isOpen(), ' class="active"') ?>>Artists</a></li>
 		<li class="sitenav_nav sitenav_shop"><a href="/">Shop</a></li>
 		<li class="sitenav_nav sitenav_fairs"><a href="/artfairs">Artfairs</a></li>
-		<!-- <li class="sitenav_nav sitenav_info"><a href="/information">Information</a></li> -->
 	</ol> -->
 
 
