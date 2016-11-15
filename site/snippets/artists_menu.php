@@ -49,17 +49,18 @@
 			};
 
 			//Assemble Menu
-			$output = " <a href='";
-			$output .= $artistlink;
-			$output .="' class='menu_artist nobr";
+			$output ="<li class='menu_artist nobr";
 			$output .= $active;
-			$output .="'";
-			$output .=">";
+			$output .="'>";
+			$output .= "<a href='";
+			$output .= $artistlink;
+			$output .="'>";
 			$output .= $title;
+			$output .="</a>";
 			$output .= "<span class='comma'>";
-			$output .= $i < $len ? ", " : "";	
+			$output .= $i < $len ? ", " : " ";	
 			$output .= "</span>";
-			$output .="</a>";	
+			$output .="</li>";	
 			
 			echo $output;
 

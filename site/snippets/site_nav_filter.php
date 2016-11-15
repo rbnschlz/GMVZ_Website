@@ -6,6 +6,12 @@
 	}
 
 	$artists = page('artists')->children()->visible();
+	$featured = [];
+	foreach($page->children()as $matches) {
+		foreach($matches->artist()->split() as $match) {
+			$featured[] = $match;
+		} 
+	}
 ?>
 
 <div class='menu_artists'>
@@ -15,6 +21,7 @@
 	$i = 0;
 	$len = count($artists);
 	$artistMenu = array();
+
 	//Foreach loop
 	foreach($artists as $artist):
 		$i++;
@@ -27,15 +34,6 @@
 		// GET parameter
 		$params = $_GET;
 
-		//Check if page title matches current page (OLD)
-		// if ($title == $page->title()) {
-			// $url = "";
-			// if(!isset($_GET['artists'])) {
-			// 	$active = " active";
-			// };
-			// $hide = " hidethis";
-		// } else {
-
 		//Check if times variable is set
 		if(isset($_GET['times'])) {
 			$url = http_build_query($params);
@@ -43,9 +41,8 @@
 		} else {
 			$url = "?artists=$titlelow";
 		};
-		// $artistlink = $artist->url();
+
 		$active = "";
-		// $hide = "";
 
 		//Check if variable is set
 		if(isset($_GET['artists'])) {
@@ -72,7 +69,6 @@
 			//Build query
 			$url = http_build_query($params);
 		};
-		// };
 
 			//Add question mark if variable is set
 			if (isset($params["times"]) || isset($params["artists"])) {
@@ -83,30 +79,25 @@
 
 		//Assemble Menu
 		$activeUrl = $_SERVER['REQUEST_URI'];
-		// if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'artists') === false ) {
-		// 	$output = " <a href='";
-		// 	$output .= $page->url().$filter.$url;
-		// 	$output .="' class='menu_artist nobr";
-		// 	$output .= $active;
-		// 	$output .="'>";
-		// 	$output .= $title;
-		// 	$output .= "<span class='comma'>";
-		// 	$output .= $i < $len ? ", " : "";	
-		// 	$output .= "</span>";
-		// 	$output .="</a>";
-		// } else {
-			$output = " <a href='";
-			$output .= $page->url().$filter.$url;
-			$output .="' class='menu_artist nobr";
-			$output .= $active;
-			$output .="'>";
-			$output .= $title;
-			$output .= "<span class='comma'>";
-			$output .= $i < $len ? ", " : "";	
-			$output .= "</span>";
-			$output .="</a>";					
-		// }
+		$output ="<li class='menu_artist nobr";
+		$output .= $active;
+		$output .="'>";
+		$output .= "<a href='";
+		$output .= $page->url().$filter.$url;
+		$output .="' class='";
+		$output .= (in_array($title, $featured)) ? "" : " strike";
+		$output .="'>";
+		$output .= $title;
+		$output .="</a>";
+		$output .= "<span class='comma'>";
+		$output .= $i < $len ? ", " : "";	
+		$output .= "</span>";
+		$output .="</li>";	
 		
-			echo $output;
-	endforeach; ?>
+		echo $output;
+		// echo $featured;
+		// print_r($featured);
+
+	endforeach; 
+	// echo $featured; ?>
 </div>	

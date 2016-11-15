@@ -219,12 +219,9 @@ li {
   padding: @lh-m @mp-s 0 0; 
   line-height: 0;
   width: calc(~'100% - 100px');
-  a { 
-    // text-shadow: 0 1px 0.5px grey;
-    // -webkit-text-stroke: 0.6px black;
+  li { 
     .title;
-    // color: @c2;
-    // transition: 0s color 0.1s;
+    display: inline-block;
     z-index: 0;
   }
 }
@@ -237,10 +234,10 @@ li {
  }
 }
 
-.menu_artists_temp {
-  display: block;
-  .title;
-}
+// .menu_artists_temp {
+//   display: block;
+//   .title;
+// }
 
 
 /* General
@@ -497,6 +494,10 @@ li {
 
 .nobr { 
   white-space: nowrap; 
+}
+
+.strike {
+  text-decoration: line-through;
 }
 
 .comma {

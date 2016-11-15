@@ -11,7 +11,7 @@
 
 <table class='home_show_wrap'>
 	<?php 
-		$artists = kirby()->request()->get('artists');
+		// $artists = kirby()->request()->get('artists');
 		$artists = "";
 		$params = $_GET;
 		$past = false;
@@ -75,20 +75,20 @@
 
 
 			// Add artist attr
-			$Extartist = $show->Extartist();
-			$Extartist =  preg_replace("/\r|\n/", '', $Extartist);
-			$Extartist = strtr($Extartist, array('-' => '', '   ' => '', 'artistname: ' => ", "));
-			$Extartist = trim($Extartist,",");
-			$Extartist = trim($Extartist," ");
-			if($artist->isNotEmpty() && $show->Extartist()->isNotEmpty()){			
-				$artisttag = $artist.', '.$Extartist;
-			} else if ($show->Extartist()->isNotEmpty()){
-				$artisttag = $Extartist;
-			} else if ($artist->isNotEmpty()) {
-				$artisttag = $artist;
-			} else {
-				$artisttag = '   ';
-			}
+			// $Extartist = $show->Extartist();
+			// $Extartist =  preg_replace("/\r|\n/", '', $Extartist);
+			// $Extartist = strtr($Extartist, array('-' => '', '   ' => '', 'artistname: ' => ", "));
+			// $Extartist = trim($Extartist,",");
+			// $Extartist = trim($Extartist," ");
+			// if($artist->isNotEmpty() && $show->Extartist()->isNotEmpty()){			
+			// 	$artisttag = $artist.', '.$Extartist;
+			// } else if ($show->Extartist()->isNotEmpty()){
+			// 	$artisttag = $Extartist;
+			// } else if ($artist->isNotEmpty()) {
+			// 	$artisttag = $artist;
+			// } else {
+			// 	$artisttag = '   ';
+			// }
 
 			// Add image orientation
 			$orientation = $show->images()->first()->orientation() == 'landscape' ? "landscape" : "portrait";
