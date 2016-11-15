@@ -25,7 +25,7 @@ a:hover {
 }
 
 @c1 = black;
-@c2 = black;
+@c2 = #000;
 @c3 = black;
 
 @mp-s = 15px;
@@ -66,12 +66,12 @@ em {
 }
 
 .active {
-   
+
 }
 
-.tempNonActive {
-  color: @c2 !important;
-}
+// .tempNonActive {
+//   color: @c2 !important;
+// }
 
 .text {
   -webkit-user-select: text;
@@ -93,7 +93,6 @@ em {
   -moz-user-select: text;
   -ms-user-select: text;
   user-select: text; 
-  
   letter-spacing: 0.035em;
   font-family: @fontStack;
   .fs-m;
@@ -163,11 +162,11 @@ li {
 
   &_left {
     float: left;
-    color: @c2;
+    // color: @c2;
   }
   &_title {
     margin-right: @mp-m;
-    color: @c1;
+    // color: @c1;
   }
   &_shows {
   }
@@ -224,7 +223,7 @@ li {
     // text-shadow: 0 1px 0.5px grey;
     // -webkit-text-stroke: 0.6px black;
     .title;
-    color: @c2;
+    // color: @c2;
     // transition: 0s color 0.1s;
     z-index: 0;
   }
@@ -254,7 +253,7 @@ li {
 .no_match {
 }
 
-/* home
+/* Shows
 -------------------------------------------------- */
 .home_show_wrap {  
 }
@@ -274,11 +273,11 @@ li {
 }
 
 
-.home_show{
+.home_show {
   text-align: left;
   display: inline-block;
   vertical-align: top; 
-  width: 270px;
+  width: 265px;
   margin: 0 @mp-l @mp-l 0;
   &_title {
     width: 32vw;
@@ -290,7 +289,7 @@ li {
     display: block;
   }
   &_thumb {  
-    width: 270px;
+    width: 265px;
     height: 230px;
     line-height: 0;
     display: block;
@@ -304,10 +303,6 @@ li {
     width: 32vw;
     
   }
-  // &_year {
-  //   height: 48px;
-  //   background: rgba(255, 255, 255, 0.5)
-  // }
 
 }
 
@@ -378,7 +373,7 @@ li {
 }
 
 
-/* artists
+/* Artists
 -------------------------------------------------- */
 .artists_wrap {
   padding: @mp-xl @mp-m;
@@ -389,22 +384,13 @@ li {
   }
 }
 
-/* artist
+/* Artist
 -------------------------------------------------- */
 .artist_wrap {
   width: 100%;
   padding: 0 @mp-m @mp-m 0;
 }
 
-.artist_menu {
-  padding: @mp-s 0;
-  .title;
-  span{
-    color: @c2;
-  cursor: pointer;
-  padding: 0;
-  }
-}
 .artist_biography_section {
   .title;
   padding-bottom: @mp-l;
@@ -514,8 +500,8 @@ li {
 }
 
 .comma {
-  color: @c1;
-  .title;
+  // .title;
+  text-decoration: none!important;
 }
 
 /* Animations

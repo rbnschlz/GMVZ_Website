@@ -1,0 +1,17 @@
+Title: Artissima
+
+----
+
+Location: Turin
+
+----
+
+Startdate: 2016-11-04
+
+----
+
+Enddate: 2016-11-06
+
+----
+
+External: http://www.artissima.it/site/?lang=en

@@ -1,4 +1,11 @@
-<?php snippet('header'); snippet('shows_menu'); ?>
+<?php snippet('header'); ?>
+<div class="menu_wrapper">
+	<?php 
+		snippet('site_nav_menu'); 
+		snippet('site_nav_filter'); 
+		snippet('site_nav_times');
+	?>
+</div>
 
 <div class="main_wrapper">
 
