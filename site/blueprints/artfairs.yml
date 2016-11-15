@@ -1,5 +1,11 @@
-title: Home
-pages: false
+title: Artfairs
+pages: 
+  template: artfair
+  num:
+    mode: date
+    field: startdate
+    format: Ynd
+  sort: flip
 files: false
 fields:
   title:

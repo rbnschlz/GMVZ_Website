@@ -3,92 +3,96 @@
 <div class='artist_wrap'>
 
 	<div class='artist_biography hide'>
-	<?php
-	$allyears = [];
+		<?php
+		$allyears = [];
 
-	foreach($page->builder()->toStructure() as $section) {
-		$title = $section->title();
+		foreach($page->builder()->toStructure() as $section) {
+			$title = $section->title();
 
 
-		if($section->_fieldset() == 'dateSummary') {
-		$block = "<div class='artist_biography_section'>";
-		$block .= "<div class='artist_section_title'>{$title}</div>";
+			if($section->_fieldset() == 'dateSummary') {
+				$block = "<div class='artist_biography_section'>";
+				$block .= "<div class='artist_section_title'>{$title}</div>";
 
-			$input = $section->text()->text();
-			$input = explode("\n", $input);			
+				$input = $section->text()->text();
+				$input = explode("\n", $input);			
+				
+				$property_types = array();
+
+				foreach ($input as $section) {
+					$line = explode(" ", $section);
+					$date = $line[0];
+
+					if (!in_array($date, $property_types) ) {
+				    $date = $line[0];
+				    } else {
+				    $date = " ";
+				    }
+				    
+					$info = array_slice($line, 1);
+					$info = implode(" ", $info);
+
+					$section_block = "<div class='artist_section'>";
+			 		$section_block .= "<div class='artist_section_date'>{$date}</div>";
+					$section_block .= "<div class='artist_section_info'>{$info}</div>";
+					$section_block .= "</div>";
+					
+					$block .= $section_block;
+
+					$property_types[] = $date;
+				}
+
+				$block .= "</div>";
 			
-			$property_types = array();
-			foreach ($input as $section) {
-				$line = explode(" ", $section);
-				$date = $line[0];
+			} else if($section->_fieldset() == 'doubleDateSummary') {
+				$block = "<div class='artist_biography_section'>";
+				$block .= "<div class='artist_section_title'>{$title}</div>";
 
-				if (!in_array($date, $property_types) ) {
-			    $date = $line[0];
-			    } else {
-			    $date = " ";
-			    }
-			    
-				$info = array_slice($line, 1);
-				$info = implode(" ", $info);
+				$input = $section->text();
+				$input = explode("\n", $input);
 
-				$section_block = "<div class='artist_section'>";
-		 		$section_block .= "<div class='artist_section_date'>{$date}</div>";
-				$section_block .= "<div class='artist_section_info'>{$info}</div>";
-				$section_block .= "</div>";
-				
-				$block .= $section_block;
+				foreach ($input as $section) {
+					$line = explode(" ", $section);
+					$date = $line[0];
+					$info = array_slice($line, 1);
+					$info = implode(" ", $info);
 
-				$property_types[] = $date;
-			}
-		$block .= "</div>";
-		
-		} else if($section->_fieldset() == 'doubleDateSummary') {
-		$block = "<div class='artist_biography_section'>";
-		$block .= "<div class='artist_section_title'>{$title}</div>";
+					$section_block = "<div class='artist_section'>";
+			 		$section_block .= "<div class='artist_section_date'>{$date}</div>";
+					$section_block .= "<div class='artist_section_info'>{$info}</div>";
+					$section_block .= "</div>";
+					
+					$block .= $section_block;
+				}
 
-			$input = $section->text();
-			$input = explode("\n", $input);
+				$block .= "</div>";	
 
-			foreach ($input as $section) {
-				$line = explode(" ", $section);
-				$date = $line[0];
-				$info = array_slice($line, 1);
-				$info = implode(" ", $info);
+			} else if($section->_fieldset() == 'textSummary') {
+				$block = "<div class='artist_biography_section'>";
+				$block .= "<div class='artist_section_title'>{$title}</div>";
 
-				$section_block = "<div class='artist_section'>";
-		 		$section_block .= "<div class='artist_section_date'>{$date}</div>";
-				$section_block .= "<div class='artist_section_info'>{$info}</div>";
-				$section_block .= "</div>";
-				
-				$block .= $section_block;
-			}
+				$input = $section->text()->text();
+				$input = explode("\n", $input);
 
-		$block .= "</div>";	
+				$block .= "<div class='artist_summary_wrap>";
 
-		} else if($section->_fieldset() == 'textSummary') {
-		$block = "<div class='artist_biography_section'>";
-		$block .= "<div class='artist_section_title'>{$title}</div>";
+				foreach ($input as $section) {
+					$block .= "<div class='artist_section_info' style='display: block'>{$section}</div>";
+				}
 
-			$input = $section->text()->text();
-			$input = explode("\n", $input);
+				$block .= "</div>";
+			}	
 
-			$block .= "<div class='artist_summary_wrap>";
-			foreach ($input as $section) {
-				$block .= "<div class='artist_section_info' style='display: block'>{$section}</div>";
-			}
-
-		$block .= "</div>";
-		}	
-
-		echo $block;
-	}
-	?>
+			echo $block;
+		}
+		?>
 	</div>
 
 	<div class='artist_thumb_wrap'>
-	<?php $thumbs = $page->images();?>	
-		<?php foreach($thumbs->sortBy('sort', 'asc') as $thumb): ?>
-					<div class="artist_thumb"><img class='main_thumb_img zoomable' src="<?php echo $thumb->resize(500)->url() ?>"></div>
+		<?php 
+		$thumbs = $page->images();
+		foreach($thumbs->sortBy('sort', 'asc') as $thumb): ?>
+			<div class="artist_thumb"><img class='main_thumb_img zoomable' src="<?php echo $thumb->resize(500)->url() ?>"></div>
 		<?php endforeach ?>
 	</div>
 

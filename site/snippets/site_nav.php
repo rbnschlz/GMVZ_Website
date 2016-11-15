@@ -36,10 +36,10 @@ $artists = page('artists')->children()->visible();
 		}
 		
 		?>
-	" <?php e(page('artists')->isOpen(), ' class="active"') ?>>Work</a></li>
+	" <?php e(page('artists')->isOpen(), ' class="active"') ?>>Artists</a></li>
 	<li class="sitenav_nav sitenav_shop"><a href="/">Shop</a></li>
-	<li class="sitenav_nav sitenav_fairs"><a href="/">Artfairs</a></li>
-	<li class="sitenav_nav sitenav_info"><a href="/">Information</a></li>
+	<li class="sitenav_nav sitenav_fairs"><a href="/artfairs">Artfairs</a></li>
+	<!-- <li class="sitenav_nav sitenav_info"><a href="/information">Information</a></li> -->
 </ol>
 
 

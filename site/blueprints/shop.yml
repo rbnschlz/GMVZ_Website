@@ -1,5 +1,8 @@
-title: Home
-pages: false
+title: Shop
+pages: 
+  template: 
+    - publication
+    - shopitem
 files: false
 fields:
   title:
