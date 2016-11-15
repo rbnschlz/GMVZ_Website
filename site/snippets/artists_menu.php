@@ -58,7 +58,7 @@
 			$output .= $title;
 			$output .="</a>";
 			$output .= "<span class='comma'>";
-			$output .= $i < $len ? ", " : " ";	
+			$output .= $i < $len ? ",&nbsp" : "";	
 			$output .= "</span>";
 			$output .="</li>";	
 			

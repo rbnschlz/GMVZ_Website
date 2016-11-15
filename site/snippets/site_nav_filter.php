@@ -80,17 +80,17 @@
 		//Assemble Menu
 		$activeUrl = $_SERVER['REQUEST_URI'];
 		$output ="<li class='menu_artist nobr";
-		$output .= $active;
 		$output .="'>";
 		$output .= "<a href='";
 		$output .= $page->url().$filter.$url;
 		$output .="' class='";
 		$output .= (in_array($title, $featured)) ? "" : " strike";
+		$output .= $active;
 		$output .="'>";
 		$output .= $title;
 		$output .="</a>";
 		$output .= "<span class='comma'>";
-		$output .= $i < $len ? ", " : "";	
+		$output .= $i < $len ? ",&nbsp" : "";	
 		$output .= "</span>";
 		$output .="</li>";	
 		
