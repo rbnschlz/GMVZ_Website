@@ -1,9 +1,0 @@
-Title: Test Publication
-
-----
-
-Price: 20
-
-----
-
-Description: 

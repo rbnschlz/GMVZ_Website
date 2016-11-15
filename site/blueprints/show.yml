@@ -22,13 +22,13 @@ fields:
   extartist:
     label: External Artist(s)
     type:  structure
+    help: Not represented by Martin van Zomeren
     entry: >
       {{artistname}}
     fields:
       artistname:
         label: Name
         type: text
-    placeholder: Not represented by Martin von Zomeren
   description:
     label: Description
     type:  textarea

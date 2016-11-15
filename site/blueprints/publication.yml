@@ -2,10 +2,30 @@ title: Publication
 pages: false
 files:
   type: image
+  sortable: true
 fields:
   title:
     label: Title
     type:  text
+  artist:
+    label: Artist(s)
+    type: multiselect
+    options: query
+    query:
+      page: artists
+      fetch: visibleChildren
+      value: '{{title}}'
+      text: '{{title}}'
+  extartist:
+    label: External Artist(s)
+    type:  structure
+    help: Not represented by Martin van Zomeren
+    entry: >
+      {{artistname}}
+    fields:
+      artistname:
+        label: Name
+        type: text
   price:
     label: Price in €
     type: number
@@ -18,9 +38,18 @@ fields:
     label: Publisher
     type: text
     width: 1/3
+  year:
+    label: Year
+    type: number
+    width: 1/3
   isbn:
     label: ISBN
     type: text
+    width: 1/3
+  designer:
+    label: Designed by
+    type: text
+    width: 1/3
   description:
     label: Description
     type: textarea

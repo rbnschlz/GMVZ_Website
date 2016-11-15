@@ -21,6 +21,7 @@ foreach($items as $child) {
 
 	$block = "<li class='sitenav_nav sitenav_";
 	$block .= $menulower;
+	$block .= ($child == $page) ? " active" : "";
 	$block .= "'>";
 	$block .= "<a href='";
 	$block .= $menulink."'>";
