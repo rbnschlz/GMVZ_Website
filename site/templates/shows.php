@@ -1,4 +1,4 @@
-<?php snippet('header'); snippet('home_menu'); ?>
+<?php snippet('header'); snippet('shows_menu'); ?>
 
 
 <div class="main_wrapper">
