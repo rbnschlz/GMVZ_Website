@@ -6,17 +6,29 @@ $artists = page('artists')->children()->visible();
 
 <div class="sitenav_wrapper">
 <ol class="sitenav_left">
-<?php foreach($site->children()->visible() as $child) {
-	$menu = $child->title();
-	if ($menu == "Information") {
-		$menu = "Martin van Zomeren";
+<?php 
+
+$items = $site->children()->visible();
+$first = $items->first();
+$last = $items->last();
+$items = $items->prepend($last);
+
+
+foreach($items as $child) {
+	$menutitle = $child->title();
+	if ($menutitle == "Information") {
+		$menutitle = "Martin van Zomeren";
 	};
 	$menulower = $child->title()->lower();
+	$menulink = $child->url();
 
 	$block = "<li class='sitenav_nav sitenav_";
 	$block .= $menulower;
 	$block .= "'>";
-	$block .= $menu;
+	$block .= "<a href='";
+	$block .= $menulink."'>";
+	$block .= $menutitle;
+	$block .= "</a>";
 	$block .= "</li>";
 
 	echo $block;
