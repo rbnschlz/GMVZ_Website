@@ -1,1 +1,1 @@
-<?php go('/') ?>
+<?php go('/shows') ?>

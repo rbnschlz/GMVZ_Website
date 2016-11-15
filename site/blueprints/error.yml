@@ -5,3 +5,4 @@ fields:
   title:
     label: Title
     type:  text
+hide: true

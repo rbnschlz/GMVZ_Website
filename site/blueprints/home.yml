@@ -10,3 +10,4 @@ options:
   template: false
   delete: false
   url: false
+hide: true

@@ -6,13 +6,10 @@ $artists = page('artists')->children()->visible();
 
 <div class="sitenav_wrapper">
 <ol class="sitenav_left">
-<?php 
-
+<?
 $items = $site->children()->visible();
 $first = $items->first();
-$last = $items->last();
-$items = $items->prepend($last);
-
+$items = $items->not($first);
 
 foreach($items as $child) {
 	$menutitle = $child->title();
