@@ -4,7 +4,7 @@
 	<?php 
 		snippet('site_nav_menu'); 
 		snippet('site_nav_filter_2'); 
-		snippet('site_nav_times');
+		snippet('site_nav_times_2');
 	?>
 </div>
 
