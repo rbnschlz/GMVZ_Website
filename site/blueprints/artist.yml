@@ -5,6 +5,8 @@ pages:
       uid: biography
       template: biography
       num: 1
+  max: 1
+  template: biography
 files:
   fields:
     caption:
