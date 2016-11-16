@@ -21,7 +21,7 @@
 	$i = 0;
 	$len = count($times);
 	//Foreach loop
-	foreach($times as $time):
+	foreach($times as $time) {
 		$i++;
 		$title = $time;
 		$titlelow = strtolower($title);
@@ -117,5 +117,5 @@
 		
 		echo $output;
 		
-	endforeach; ?>
+	} ?>
 </div>

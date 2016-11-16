@@ -36,12 +36,12 @@
 			}
 
 			//Check if page title matches current page
-			if ($title == $page->title()) {
+			if ($title == $page->title() || $title == $page->parent()->title()) {
 				$artistlink = $artistsUrl;
 				$url = "";
-				if(!isset($_GET['artists'])) {
+				// if(!isset($_GET['artists'])) {
 					$active = " active";
-				};
+				// };
 			} else {
 				$artistlink = $artist->url();
 				$active = "";
@@ -67,11 +67,33 @@
 		endforeach; ?>
 	</div>
 
-	<?php if($page->isChildOf(page($artistsParent))): ?>	
 	<div class='menu_sub'>
-		<span class='artist_work_button active'>Selected work</span>, <span class='artist_work_button'>Biography</span>
+
+	<?php
+
+	if($page->isDescendantOf('artists')) {
+
+		$biourl = $page->children()->first()->url();
+		$selectedurl = $page->template() == "biography" ? $page->parent()->url() : $page->url();
+		$active1 = $page->template() == "biography" ? "" : "active";
+		$active2 = $page->template() == "biography" ? "active" : "";
+
+	$output = "<a href='";
+	$output .= $selectedurl;
+	$output .= "' class='";
+	$output .= $active1;
+	$output .= "'>Selected Works</a>,&nbsp";
+	$output .= "<a href='";
+	$output .= $biourl;
+	$output .= "' class='";
+	$output .= $active2;
+	$output .= "'>Biography</a>";
+
+	echo $output;
+
+
+	} ?>
 	</div>
-	<?php endif ?>
 
 
 </div>
