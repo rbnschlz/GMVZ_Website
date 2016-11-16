@@ -1,0 +1,26 @@
+title: Biography Category
+pages: false
+files: false
+fields:
+  title:
+    label: Title
+    type:  text
+  entries:
+    label: Entries
+    type: structure
+    entry: >
+      {{year1}} – {{year2}}, {{fact}}
+    fields:
+      year1:
+        label: From
+        type: text
+        help: Leave blank if no year is required
+      year2:
+        label: Until
+        type: text
+        help: Leave blank if only one year is required
+      fact:
+        label: Entry
+        type: text
+options:
+  template: false

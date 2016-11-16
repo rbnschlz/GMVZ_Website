@@ -1,0 +1,12 @@
+Title: Residency
+
+----
+
+Entries: 
+
+- 
+  year1: "2015"
+  year2: "2016"
+  fact: >
+    Rijksakademie Van Beeldende Kunsten,
+    Amsterdam

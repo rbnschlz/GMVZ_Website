@@ -49,11 +49,11 @@
 			};
 
 			//Assemble Menu
-			$output ="<li class='menu_artist nobr";
-			$output .= $active;
-			$output .="'>";
+			$output ="<li class='menu_artist nobr'>";
 			$output .= "<a href='";
 			$output .= $artistlink;
+			$output .="'class='";
+			$output .= $active;
 			$output .="'>";
 			$output .= $title;
 			$output .="</a>";

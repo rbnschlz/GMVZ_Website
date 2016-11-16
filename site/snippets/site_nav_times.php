@@ -1,5 +1,22 @@
-<div class="menu_times">
+<div class="menu_sub">
 	<?php $times = array("Upcoming", "Current", "Past");
+
+	//Striketrough
+	$featured = [];
+	$current_date = strtotime(date('Y-m-d H:i:s'));
+	foreach($page->children()->visible() as $matches) {
+			$start = strtotime($matches->startdate());
+        	$end = strtotime($matches->enddate());
+
+			if ($end < $current_date) {
+				$featured[] = "Past";
+			} else if (($start < $current_date) && ($end > $current_date)) {
+				$featured[] = "Current";
+			} else if ($start > $current_date) {
+				$featured[] = "Upcoming";
+			};
+	}
+
 	//Comma or not
 	$i = 0;
 	$len = count($times);
@@ -34,14 +51,14 @@
 
 				} else if (trim($params["times"]) === $titlelow) {
 					unset($params["times"]);
-					$active = " active";
+					$active = "active";
 
 				//if title is added, remove title
 				} else if (strpos($params["times"], $titlelow) !== false) {
 					$params["times"] = str_replace(" $titlelow", '', $params["times"]);
 					$params["times"] = str_replace("$titlelow ", '', $params["times"]);
 					$params["times"] = str_replace("$titlelow", '', $params["times"]);
-					$active = " active";
+					$active = "active";
 				}
 
 				//Build query
@@ -57,30 +74,46 @@
 
 		// Assemble Menu
 		$activeUrl = $_SERVER['REQUEST_URI'];
-		if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'times') === false ) {
-			$output = " <a href='";
-			$output .= $page->url().$filter.$url;
-			$output .="' class='menu_time active";
-			$output .="'>";
-			$output .= $title;
-			$output .= "<span class='comma'>";
-			$output .= $i < $len ? ", " : "";	
-			$output .= "</span>";
-			$output .="</a>";
+		// if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'times') === false ) {
+		// 	$output = " <a href='";
+		// 	$output .= $page->url().$filter.$url;
+		// 	$output .="' class='menu_time";
+		// 	$output .="'>";
+		// 	$output .= $title;
+		// 	$output .= "<span class='comma'>";
+		// 	$output .= $i < $len ? ", " : "";	
+		// 	$output .= "</span>";
+		// 	$output .="</a>";
 				
-		} else {
-			$output = " <a href='";
-			$output .= $page->url().$filter.$url;
-			$output .="' class='time_artist";
-			$output .= $active;
-			$output .="'>";
-			$output .= $title;
-			$output .= "<span class='comma'>";
-			$output .= $i < $len ? ", " : "";	
-			$output .= "</span>";
-			$output .="</a>";
+		// } else {
+			// $output = " <a href='";
+			// $output .= $page->url().$filter.$url;
+			// $output .="' class='time_artist";
+			// $output .= $active;
+			// $output .="'>";
+			// $output .= $title;
+			// $output .= "<span class='comma'>";
+			// $output .= $i < $len ? ", " : "";	
+			// $output .= "</span>";
+			// $output .="</a>";
+
+		$output ="<li class='menu_time nobr";
+		$output .="'>";
+		$output .= (in_array($title, $featured)) ? "<a href='" : "<span";
+		$output .= (in_array($title, $featured)) ? $page->url().$filter.$url : "";
+		$output .= (in_array($title, $featured)) ? "' class='" : " class='";
+		$output .= (in_array($title, $featured)) ? "" : "strike";
+		$output .= $active;
+		$output .= "'>";
+		$output .= $title;
+		$output .= (in_array($title, $featured)) ? "</a>" : "</span>";
+		$output .= "<span class='comma'>";
+		$output .= $i < $len ? ",&nbsp" : "";	
+		$output .= "</span>";
+		$output .= "</li>";	
+		
 						
-		}
+		// }
 		
 		echo $output;
 		

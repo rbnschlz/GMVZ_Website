@@ -1,0 +1,114 @@
+Title: Selected Exhibitions
+
+----
+
+Entries: 
+
+- 
+  year1: "2015"
+  year2: ""
+  fact: RijksakademieOPEN, Amsterdam
+- 
+  year1: "2015"
+  year2: ""
+  fact: Axis Mundi, -1, Paris
+- 
+  year1: "2015"
+  year2: ""
+  fact: >
+    Star digs hole in space, Spatiu Intact,
+    Cluj
+- 
+  year1: "2015"
+  year2: ""
+  fact: >
+    Making monsters for my friends, De
+    Nederlandsche Bank, Amsterdam
+- 
+  year1: "2015"
+  year2: ""
+  fact: FA FA FA, Martin van Zomeren, Amsterdam
+- 
+  year1: "2015"
+  year2: ""
+  fact: >
+    ENDE GELÄNDE, Martin van Zomeren,
+    Amsterdam
+- 
+  year1: "2014"
+  year2: ""
+  fact: AO, Martin van Zomeren, Amsterdam
+- 
+  year1: "2014"
+  year2: ""
+  fact: Juliette Jongma, Amsterdam
+- 
+  year1: "2014"
+  year2: ""
+  fact: UNFAIR, Amsterdam
+- 
+  year1: "2014"
+  year2: ""
+  fact: >
+    Boetzelaer van Nispen, GRAN TURISMO we
+    play on difficult, Amsterdam
+- 
+  year1: "2014"
+  year2: ""
+  fact: >
+    Stroom, Finna Leave The House/Finna Go
+    To The Studio, Den haag
+- 
+  year1: "2013"
+  year2: ""
+  fact: GEM, Now or never 2
+- 
+  year1: "2013"
+  year2: ""
+  fact: UNFAIR, Amsterdam
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    Galerie Juliette Jongma, a cock in a
+    frock on a rock, Amsterdam
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    Nieuwe Vide, The Fake, the Fiction and
+    the Common, Haarlem
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    Part 1, Plenty of Sand in the Vaseline,
+    Haarlem
+- 
+  year1: "2013"
+  year2: ""
+  fact: Part 2,Je bent niet hopeloos, Haarlem
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    Part 2,OUTTA THE OFFICE INTO THE FORERST
+    OUTTA THE FOREST INTO THIS!, Haarlem
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    Museumnacht, Phophyry in the attic, The
+    Hague
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    Oude Kerk, Hijacking Karma (in a
+    positive way), Amsterdam
+- 
+  year1: "2013"
+  year2: ""
+  fact: >
+    K.I. Beyonce, There is nothing there to
+    save the organizers, Amsterdam

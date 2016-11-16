@@ -36,13 +36,13 @@ a:hover {
 @lbTransitionLength: 0.25s;
 @lbTransitionLengthLong: 0.75s;
 
-@fontStack: 'Inhouse Gothic', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
+@fontStack: 'Permanent-BoldFour', 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
 
-@fs-s: 21px;
-@lh-s: 24px;
+@fs-s: 17px;
+@lh-s: 21px;
 
-@fs-m: 25px;
-@lh-m: 28px;
+@fs-m: 21px;
+@lh-m: 24px;
 
 .fs-m {
     font-size: @fs-m;
@@ -66,14 +66,8 @@ em {
 }
 
 .active {
- // border: solid 2px;
- // color: #eee!important;
- color: green!important;
+ text-decoration: underline;
 }
-
-// .tempNonActive {
-//   color: @c2 !important;
-// }
 
 .text {
   -webkit-user-select: text;
@@ -86,7 +80,7 @@ em {
   .fs-s;
   .lh-s;
   p {
-  padding: 0 0 @lh-s 0;
+    padding: 0 0 @lh-s 0;
   }
 }
 
@@ -100,7 +94,7 @@ em {
   .fs-m;
   .lh-m;
   p {
-  padding: 0 0 @lh-m 0;
+    padding: 0 0 @lh-m 0;
   }
 }
 
@@ -164,11 +158,8 @@ li {
 
   &_left {
     float: left;
-    // color: @c2;
   }
   &_title {
-    margin-right: @mp-m;
-    // color: @c1;
   }
   &_shows {
   }
@@ -228,7 +219,7 @@ li {
   }
 }
 
-.menu_times {
+.menu_sub {
   padding:  @lh-m 0;
   .title;
   a {
@@ -254,8 +245,6 @@ li {
 
 /* Shows
 -------------------------------------------------- */
-.home_show_wrap {  
-}
 
 .home_show_outer {
   padding: 0 @mp-s @mp-s 0;
@@ -266,7 +255,7 @@ li {
 }
 
 .home_show_year {
-  padding: 0 0 @mp-l 0;
+  padding: 0 0 @mp-s 0;
   .title;
   display: block;
 }
@@ -277,10 +266,9 @@ li {
   display: inline-block;
   vertical-align: top; 
   // width: 265px;
-  width: 310px;
-  margin: 0 @mp-s @mp-xl 0;
+  width: 320px;
+  margin: 0 @mp-m @mp-m 0;
   &_title {
-    width: 32vw;
     .text;
   }
   &_date {
@@ -289,23 +277,15 @@ li {
     display: block;
   }
   &_thumb {  
-    // width: 265px;
-    // height: 230px;
-    width: 310px;
-    height: 270px;
+    width: 320px;
+    height: 240px;
     line-height: 0;
     display: block;
     margin-bottom: @mp-s;
-
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
   }
-  &_artist {
-    width: 32vw;
-    
-  }
-
 }
 
 .upcoming {

@@ -110,8 +110,9 @@
 				} else {
 					$output[] = "added";
 				}
+				$output[] = "added";
 			};
-			$output[] = "added";
+			// $output[] = "added";
 
 			if(!in_array($startyear, $allyears)) {
 				if(!empty($allyears)) {
@@ -143,25 +144,15 @@
 			//Build Block and display
 
 			$block = "<div class='home_show'>";
-			
 			$block .= $urlStart;
-
 			$block .= "<span class='home_show_thumb {$when}' {$img}>";
 			$block .= "</span>";
-
 			$block .= "<span class='home_show_title'>";
-				$block .= $show->title();
+			$block .= $show->title();
 			$block .= "</span>";
-			
 			$block .= "<span class='home_show_date'>";
-				
-				// if ($when === "upcoming") {
-				// 	$block .= "Opening: {$openingstring}";
-				// } else {
-					$block .= "{$datestring}";
-				// }
+			$block .= $datestring;
 			$block .= "</span>";
-
 			$block .= $urlEnd;
 			$block .= "</div>";
 			

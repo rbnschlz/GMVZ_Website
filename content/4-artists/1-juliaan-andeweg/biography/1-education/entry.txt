@@ -1,0 +1,12 @@
+Title: Education
+
+----
+
+Entries: 
+
+- 
+  year1: "2008"
+  year2: "2012"
+  fact: >
+    BA Fine Arts, Royal Academy of Visual
+    Arts (KABK), Den Haag, diploma
