@@ -3,7 +3,7 @@
 <div class="menu_wrapper">
 	<?php 
 		snippet('site_nav_menu'); 
-		snippet('site_nav_filter'); 
+		snippet('site_nav_filter_2'); 
 		snippet('site_nav_times');
 	?>
 </div>
@@ -15,7 +15,7 @@
 	<?php 
 		$artists = kirby()->request()->get('artists');
 		$params = $_GET;
-		$fairs = $page->artfairs();
+		$fairs = $page->items();
 		$when = "";
 		// Run through array of artfairs
 		$output = [];

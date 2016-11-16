@@ -6,7 +6,7 @@ fields:
     label: Title
     type:  text
     readonly: true
-  newsitems:
+  items:
     label: News items
     type: structure
     entry: >

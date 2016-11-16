@@ -6,7 +6,7 @@ fields:
     label: Title
     type:  text
     readonly: true
-  artfairs:
+  items:
     label: Artfairs
     type: structure
     entry: >

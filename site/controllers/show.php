@@ -3,8 +3,8 @@
 return function($site, $pages, $page) {
 
     function returnDate($start, $end) {
-    $start_date = explode(" ", date('j M Y', $start));
-    $end_date = explode(" ", date('j M Y', $end));
+    $start_date = explode(" ", date('j F Y', $start));
+    $end_date = explode(" ", date('j F Y', $end));
     $start_day = $start_date[0];
     $end_day = $end_date[0];
     $start_month = $start_date[1];

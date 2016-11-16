@@ -3,7 +3,7 @@
 <div class="menu_wrapper">
 	<?php 
 		snippet('site_nav_menu'); 
-		snippet('site_nav_filter'); 
+		snippet('site_nav_filter_2'); 
 		snippet('site_nav_times'); 
 	?>
 </div>
@@ -13,16 +13,16 @@
 	<?php 
 		$artists = kirby()->request()->get('artists');
 		$params = $_GET;
-		$news = $page->newsitems();
+		$item = $page->items();
 		$when = "";
 		// Run through array of artnews
 		$output = [];
 		$allyears = [];
 		$when = "";
 		
-		$count = count($news->toStructure());
+		$count = count($item->toStructure());
 
-		foreach($news->toStructure()->sortBy('startdate', 'desc') as $news) {
+		foreach($item->toStructure()->sortBy('startdate', 'desc') as $news) {
 			// Exhibition dates
 			$start = strtotime($news->startdate());
         	$end = strtotime($news->enddate());
