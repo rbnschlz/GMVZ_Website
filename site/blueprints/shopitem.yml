@@ -1,0 +1,53 @@
+title: Edition
+pages: false
+files:
+  type: image
+  sortable: true
+fields:
+  title:
+    label: Title
+    type:  text
+  artist:
+    label: Artist(s)
+    type: multiselect
+    options: query
+    query:
+      page: artists
+      fetch: visibleChildren
+      value: '{{title}}'
+      text: '{{title}}'
+  extartist:
+    label: External Artist(s)
+    type:  structure
+    help: Not represented by Martin van Zomeren
+    entry: >
+      {{artistname}}
+    fields:
+      artistname:
+        label: Name
+        type: text
+  price:
+    label: Price in €
+    type: number
+    width: 1/2
+  year:
+    label: Year
+    type: number
+    width: 1/2
+  dimensions:
+    label: Dimensions
+    type: text
+    width: 1/2
+  edition:
+    label: Edition
+    type: text
+    width: 1/2    
+  description:
+    label: Description
+    type: textarea
+  availability:
+    label: Availability
+    type: checkboxes
+    options:
+      available: Available
+      soldout: Sold out

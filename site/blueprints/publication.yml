@@ -53,3 +53,9 @@ fields:
   description:
     label: Description
     type: textarea
+  availability:
+    label: Availability
+    type: checkboxes
+    options:
+      available: Available
+      soldout: Sold out
