@@ -81,18 +81,18 @@
 		$activeUrl = $_SERVER['REQUEST_URI'];
 		$output ="<li class='menu_artist nobr";
 		$output .="'>";
-		$output .= "<a href='";
-		$output .= $page->url().$filter.$url;
-		$output .="' class='";
+		$output .= (in_array($title, $featured)) ? "<a href='" : "<span";
+		$output .= (in_array($title, $featured)) ? $page->url().$filter.$url : "";
+		$output .= (in_array($title, $featured)) ? "' class" : " class='";
 		$output .= (in_array($title, $featured)) ? "" : " strike";
 		$output .= $active;
-		$output .="'>";
+		$output .= "'>";
 		$output .= $title;
-		$output .="</a>";
+		$output .= (in_array($title, $featured)) ? "</a>" : "</span>";
 		$output .= "<span class='comma'>";
 		$output .= $i < $len ? ",&nbsp" : "";	
 		$output .= "</span>";
-		$output .="</li>";	
+		$output .= "</li>";	
 		
 		echo $output;
 		// echo $featured;
