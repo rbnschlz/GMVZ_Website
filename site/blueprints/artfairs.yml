@@ -1,17 +1,55 @@
 title: Artfairs
-pages: 
-  template: artfair
-  num:
-    mode: date
-    field: startdate
-    format: Ynd
-  sort: flip
+pages: false
 files: false
 fields:
   title:
     label: Title
     type:  text
     readonly: true
+  artfairs:
+    label: Artfairs
+    type: structure
+    entry: >
+          {{title}}, {{startdate}}
+    fields:
+      title:
+          label: Title
+          type:  text
+      external:
+        label: Link
+        type: url
+      artist:
+        label: Artist(s)
+        type: multiselect
+        options: query
+        query:
+          page: artists
+          fetch: visibleChildren
+          value: '{{title}}'
+          text: '{{title}}'
+      extartist:
+        label: External Artist(s)
+        type:  structure
+        help: Not represented by Martin van Zomeren
+        entry: >
+          {{artistname}}
+        fields:
+          artistname:
+            label: Name
+            type: text
+      location: 
+        label: Location
+        type: text
+      startdate:
+        label: Exhibition Beginning
+        type:  date
+        format: DD-MM-YYYY
+        width: 1/2
+      enddate:
+        label: Exhibition Ending
+        type:  date
+        format: DD-MM-YYYY
+        width: 1/2 
 options:
   template: false
   delete: false

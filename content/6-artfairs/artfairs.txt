@@ -1,1 +1,64 @@
 Title: Artfairs
+
+----
+
+Artfairs: 
+
+- 
+  title: Unseen
+  external: https://www.unseenamsterdam.com/
+  artist: Juliaan Andeweg
+  location: Amsterdam
+  startdate: 2016-10-14
+  enddate: 2016-10-16
+- 
+  title: Swab
+  external: ""
+  artist: ""
+  location: Barcelona
+  startdate: 2015-10-10
+  enddate: 2015-11-15
+- 
+  title: Granpallazo
+  external: ""
+  artist: Juliaan Andeweg, Matt Bryans
+  location: Rome
+  startdate: 2015-05-15
+  enddate: 2015-05-17
+- 
+  title: FIAC (OFF)ICIELLE
+  external: ""
+  artist: ""
+  location: Paris
+  startdate: 2015-10-21
+  enddate: 2015-10-25
+- 
+  title: Artissima
+  external: http://www.artissima.it/site/?lang=en
+  artist: Nick Oberthaler
+  location: Turin
+  startdate: 2016-11-04
+  enddate: 2016-11-06
+- 
+  title: Art Rotterdam
+  external: >
+    http://www.artrotterdam.com/users/128/content/home/index.html
+  artist: Fiona Mackay
+  location: ""
+  startdate: 2016-02-11
+  enddate: 2016-02-14
+- 
+  title: Art Cologne
+  external: >
+    http://www.artcologne.de/ART-COLOGNE/index.php
+  artist: ""
+  location: ""
+  startdate: 2016-04-14
+  enddate: 2016-04-17
+- 
+  title: Art Brussels
+  external: ""
+  artist: Navid Nuur
+  location: ""
+  startdate: 2016-04-22
+  enddate: 2016-04-24

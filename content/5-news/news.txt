@@ -3,3 +3,51 @@ Title: News
 ----
 
 Text: 
+
+----
+
+Newsitems: 
+
+- 
+  title: Berlin Bienalle
+  external: http://bb9.berlinbiennale.de/
+  artist: Anne de Vries
+  description: ""
+  location: ""
+  startdate: 2016-06-04
+  enddate: 2016-09-18
+- 
+  title: Kerman
+  external: http://www.centrepompidou.fr
+  artist: Alexandra Leykauf
+  description: Screening on Nov 4, 2015
+  location: Centre Pompidou, Paris
+  startdate: 2015-11-04
+  enddate: ""
+- 
+  title: E_MERGE
+  external: ""
+  artist: Anne de Vries
+  description: Solo exhibition
+  location: Foam, Amsterdam
+  startdate: 2015-08-28
+  enddate: 2015-09-25
+- 
+  title: La Chose
+  external: ""
+  artist: Adam Avikainen
+  description: Curated by Anne Bonnin
+  location: La Synagogue de Delme
+  startdate: 2015-06-03
+  enddate: 2015-09-25
+- 
+  title: Calculated Reserve
+  external: >
+    http://www.museoandersen.beniculturali.it/
+  artist: Juliaan Andeweg, Nick Oberthaler
+  description: >
+    solo exhibition curated by Pier Paolo
+    Pancotto
+  location: "Museo H.C. Andersen - Galleria nazionale d'arte moderna e contemporanea, Rome"
+  startdate: 2014-09-20
+  enddate: 2014-11-21

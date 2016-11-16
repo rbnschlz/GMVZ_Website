@@ -1,6 +1,8 @@
 title: Artfair
 pages: false
 files: false
+options:
+  status: true
 fields:
   title:
     label: Title

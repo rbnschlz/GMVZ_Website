@@ -1,12 +1,58 @@
 title: News
-pages:
-  template: newsitem
+pages: false
 files: false
 fields:
   title:
     label: Title
     type:  text
     readonly: true
+  newsitems:
+    label: News items
+    type: structure
+    entry: >
+          {{title}}, {{artist}}, {{startdate}}
+    fields:
+      title:
+          label: Title
+          type:  text
+      external:
+        label: Link
+        type: url
+      artist:
+        label: Artist(s)
+        type: multiselect
+        options: query
+        query:
+          page: artists
+          fetch: visibleChildren
+          value: '{{title}}'
+          text: '{{title}}'
+      extartist:
+        label: External Artist(s)
+        type:  structure
+        help: Not represented by Martin van Zomeren
+        entry: >
+          {{artistname}}
+        fields:
+          artistname:
+            label: Name
+            type: text
+      description: 
+        label: Description
+        type: text
+      location: 
+        label: Location
+        type: text
+      startdate:
+        label: Exhibition Beginning
+        type:  date
+        format: DD-MM-YYYY
+        width: 1/2
+      enddate:
+        label: Exhibition Ending
+        type:  date
+        format: DD-MM-YYYY
+        width: 1/2  
 options:
   template: false
   delete: false

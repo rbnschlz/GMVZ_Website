@@ -15,19 +15,23 @@
 	<?php 
 		$artists = kirby()->request()->get('artists');
 		$params = $_GET;
+		$fairs = $page->artfairs();
 		$when = "";
 		// Run through array of artfairs
 		$output = [];
 		$allyears = [];
+		$when = "";
+		$count = count($fairs->toStructure());
 
-
-		foreach($fairs as $fair) {
+		foreach($fairs->toStructure()->sortBy('startdate', 'desc') as $fair) {
 			// Exhibition dates
 			$start = strtotime($fair->startdate());
         	$end = strtotime($fair->enddate());
         	$startyear = date('Y', $start);
         	
         	$datestring = returnDate($start, $end);
+
+        	$fairNumber = $count--;
 
         	// Opening date/time
         	$opening = strtotime($fair->openingstart());
@@ -58,6 +62,19 @@
 				$output[] = "added";
 			};
 
+			//Set Date variable
+			if ($end < $current_date) {
+				$when = "past";
+				// $sizing = "small_float";
+			} else if (($start < $current_date) && ($end > $current_date)) {
+				$when = "current";
+				// $sizing = "big_float";
+			} else if ($start > $current_date) {
+				$when = "upcoming";
+				// $sizing = "medium_float";
+			};
+
+
 			//Filter by times
 			if (isset($_GET['times'])){
 				if (strpos($params["times"], $when) === false) {
@@ -67,13 +84,34 @@
 				}
 			};
 			
+			//url
+			if($fair->external->isNotEmpty()) {
+				$urlStart = "<a href='{$fair->external()}' target='_blank'>";
+				$urlEnd = "</a>";
+			} else {
+				$urlStart = "";
+				$urlEnd = "";
+			}
+
 
 			//Build Block and display
 
-			$block = "<li class='artfairs_entry'>";
-			$block .= $fair->title();
-			$block .= ($fair->location()) ? ", ".$fair->location() : "";
-			$block .= "</li>";
+			$block = "<ol class='artfairs_entry'>";
+				$block .= "<li class='artfairs_entry_number'>";
+				$block .= $fairNumber;
+				$block .= "</li>";
+				$block .= $urlStart;
+				$block .= "<li class='artfairs_entry_event'>";
+				$block .= $fair->title();
+				if($fair->location()->isNotEmpty()){
+				$block .= ($fair->location()) ? ", ".$fair->location() : "";
+				}
+				if($fair->startdate()->isNotEmpty()){
+				$block .= ($datestring) ? ", ".$datestring : "";
+				}
+				$block .= "</li>";
+				$block .= $urlEnd;	
+			$block .= "</ol>";
 			
 			echo $block;
 
