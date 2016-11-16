@@ -1,6 +1,13 @@
 title: Artist
-pages: false
-files: true
+pages:
+  build:
+    - title: Biography
+      uid: biography
+      template: biography
+      num: 1
+  max: 1
+  template: biography
+files:
   fields:
     caption:
       label: Caption
@@ -10,58 +17,20 @@ fields:
   title:
     label: Title
     type:  text
-    width: 1/2
   web:
-    label: URL website
+    label: Website URL
     type: url
-    width: 1/2  
+    width: 1/3  
   yearBirth:
-    label: Year of birth
+    label: Year of Birth
     type:  text
-    width: 1/2
+    width: 1/3
     required: true
   placeBirth:
-    label: Place of birth
+    label: Place of Birth
     type:  text  
-    width: 1/2
+    width: 1/3
     placeholder: city, country
-  builder:
-    label: Biography
-    type: builder
-    fieldsets:
-      dateSummary:
-        label: Summary starting with single date
-        entry: >
-        	{{title}}
-        fields:
-          title:
-            label: Title
-            type: text
-          text:
-            label: Summary 
-            type: textarea
-      doubleDateSummary:
-        label: Summary starting with double dates
-        entry: >
-          {{title}}
-        fields:
-          title:
-            label: Title
-            type: text
-          text:
-            label: Summary 
-            type: textarea      
-      textSummary:
-        label: Summary starting with text
-        entry: >
-        	{{title}}
-        fields:
-          title:
-            label: Title
-            type: text
-          text:
-            label: Summary 
-            type: textarea      
 options:
   template: false
 

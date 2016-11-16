@@ -35,7 +35,7 @@ return function($site, $pages, $page) {
         return $date;
     }
 
-	$shows = page('shows')->children()->sortBy('startdate', 'desc', 'enddate', 'asc');
+	$shows = page('shows')->children()->sortBy('startdate', 'desc', 'enddate', 'asc')->visible();
     $current_date = strtotime(date('Y-m-d H:i:s'));
 
     return array(
