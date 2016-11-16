@@ -79,23 +79,19 @@
 		echo $block;
 	?>
 
-	<?php if($page->description()->isNotEmpty()): ?>
-  	<div class="show_description">
-	  	<?php
-	  		echo $page->description()->kirbytext();
-	  	?>
-	  </div>
-	<?php endif ?>
-
 </div>
 
 <?php if($page->images()->count() > 1): ?>
+	<!-- <div class="show_description_button">
+		Press Release
+	</div> -->
+	
 	<div class="show_thumb">
 	<?php $images = $page->images();?>	
 	<?php foreach($images->sortBy('sort', 'asc') as $image): ?>
 		<div class="show_thumb_image">
 			<img class='show_thumb_img zoomable' src="<?php echo $image->resize(1400)->url() ?>">
-			<!-- <span class='show_thumb_caption'><?php echo $image->caption()?></span> -->
+			<span class='show_thumb_caption'><?php echo $image->caption()->kirbytext()?></span>
 		</div>
 	<?php endforeach ?>
 	</div>
@@ -111,9 +107,16 @@
 			<?php endforeach ?>
 		</div>
 	</div>
-
 <?php endif ?>
 
+<?php if($page->description()->isNotEmpty()): ?>
+  	<div class="show_description">
+  		<div class="show_description_title">Press Release</div>
+	  	<?php
+	  		echo $page->description()->kirbytext();
+	  	?>
+	  </div>
+<?php endif ?>
 
 
 </div>

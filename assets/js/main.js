@@ -181,19 +181,16 @@
 		setTimeout(function() { scrollhide(); }, 200);
 	};
 
-	var menuTop= function(){
-		$(window).scroll(function (event) {
-    	var scrollPosition = $(window).scrollTop();
-    	var menuHeight = $(".main_wrapper").outerHeight();
-    		if(scrollPosition < menuHeight + 100) {
-			    $(".menu_wrapper").addClass("opacityzero");			      
-    		}
+	var showTextTop = function(){
+		$(".show_description_button").click(function() {
+		$(window).scrollTop($('.show_description').offset().top);
+		$(this).fadeOut(100, 0);
 		});
 	};
 
 	//document ready
 	$(document).ready(function(){
-		// menuTop();
+		showTextTop();
 		// artistsPreview();
 		toggleArtistContent();
 		slideit();

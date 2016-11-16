@@ -1,5 +1,5 @@
-Caption: Installation view
+Caption: 
 
 ----
 
-Sort: 3
+Sort: 4

@@ -1,4 +1,8 @@
-Caption: title, year
+Caption: 
+
+Artist:
+Title, Year
+Material
 
 ----
 
