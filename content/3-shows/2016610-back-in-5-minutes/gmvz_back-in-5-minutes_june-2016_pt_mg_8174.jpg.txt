@@ -1,9 +1,5 @@
 Caption: 
 
-Artist:
-Title, Year
-Material
-
 ----
 
 Sort: 5

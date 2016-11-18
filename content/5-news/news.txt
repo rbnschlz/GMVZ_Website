@@ -6,7 +6,7 @@ Text:
 
 ----
 
-items: 
+Items: 
 
 - 
   title: Berlin Bienalle
@@ -44,7 +44,7 @@ items:
   title: Calculated Reserve
   external: >
     http://www.museoandersen.beniculturali.it/
-  artist: Juliaan Andeweg, Nick Oberthaler
+  artist: ""
   description: >
     solo exhibition curated by Pier Paolo
     Pancotto

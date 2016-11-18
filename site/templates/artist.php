@@ -1,11 +1,11 @@
 <?php snippet('header'); snippet('artists_menu'); ?>
 
-<div class="main_wrapper">
+<div class="main_wrapper hide">
 	<div class="artist_artworks"
 		<div class='artist_thumb_wrap'>
 			<?php $thumbs = $page->images();
-			foreach($thumbs->sortBy('sort', 'asc') as $thumb): ?>
-				<div class="artist_thumb"><img class='main_thumb_img zoomable' src="<?php echo $thumb->resize(500)->url() ?>"></div>
+			foreach($thumbs->sortBy('sort', 'asc') as $thumb): $caption = $thumb->caption()->kirbytext(); ?>
+				<div class="artist_thumb"><img class='main_thumb_img zoomable' src="<?php echo $thumb->resize(500)->url() ?>"><?php echo $caption?></div>
 			<?php endforeach ?>
 		</div>
 

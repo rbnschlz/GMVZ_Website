@@ -1,4 +1,4 @@
-Caption: title, work
+Caption: 
 
 ----
 

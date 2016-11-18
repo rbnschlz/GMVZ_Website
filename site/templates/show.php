@@ -4,9 +4,6 @@
 	<?snippet('site_nav') ?>
 </div>	
 
-<div class="show_wrapper">
-
-<div class="show_info">	
 	<?php
 		$title = $page->title();
 
@@ -22,11 +19,9 @@
 		$artistcount = count($artists);
 
 
-		$block = "<div class='show_info_title'>";
-		$block .= $title;
-		$block .= "</div>";
-
-
+		
+		$block = $title;
+		
 		if($page->artist()->isNotEmpty() && $page->extartist()->isNotEmpty() ){
 			$block .= "<div class='show_info_artists'>";		
 			// $block .= "<br>";
@@ -76,47 +71,96 @@
 		$block .= $datestring;
 		$block .= "</div>";
 		}
-		echo $block;
 	?>
 
-</div>
 
-<?php if($page->images()->count() > 1): ?>
-	<!-- <div class="show_description_button">
-		Press Release
-	</div> -->
 	
-	<div class="show_thumb">
-	<?php $images = $page->images();?>	
-	<?php foreach($images->sortBy('sort', 'asc') as $image): ?>
-		<div class="show_thumb_image">
-			<img class='show_thumb_img zoomable' src="<?php echo $image->resize(1400)->url() ?>">
-			<span class='show_thumb_caption'><?php echo $image->caption()->kirbytext()?></span>
+
+<?php if($page->description()->isNotEmpty() && $page->images()->count() > 1): ?>
+<div class="show_wrapper">
+	<div class="show_info">	
+		<?php echo $block; ?>
+		<div class="show_info_buttons">
+			<a href="/" class="show_info_buttons">Back</a>,
+			<div class="show_info_button">Press Release</div>
 		</div>
-	<?php endforeach ?>
+	</div>	
+
+  	<div class="show_thumb">
+		<?php $images = $page->images();?>	
+		<?php foreach($images->sortBy('sort', 'asc') as $image): ?>
+			<div class="show_thumb_image">
+				<img class='show_thumb_img zoomable' src="<?php echo $image->resize(1400)->url() ?>">
+				<span class='show_thumb_caption'><?php echo $image->caption()->kirbytext()?></span>
+			</div>
+		<?php endforeach ?>
 	</div>
 
 	<div class="artist_overlay_wrapper">
-	<?php $images = $page->images();?>		
-		<div class="overlay_slide">
-			<?php foreach($images->sortBy('sort', 'asc') as $image): $url = $image->resize(1400)->url(); $caption = $image->caption()->text(); ?>
-				<div class="overlay_slide_s" >
-					<div class="overlay_slide_s_img" data-style="background-image: url('<?php echo $url ?>')"></div>
-					<div class="overlay_slide_s_caption"><?php echo $caption?></div>
-				</div>
-			<?php endforeach ?>
+		<?php $images = $page->images();?>		
+			<div class="overlay_slide">
+				<?php foreach($images->sortBy('sort', 'asc') as $image): $url = $image->resize(1400)->url(); $caption = $image->caption()->text(); ?>
+					<div class="overlay_slide_s" >
+						<div class="overlay_slide_s_img" data-style="background-image: url('<?php echo $url ?>')"></div>
+						<div class="overlay_slide_s_caption"><?php echo $caption?></div>
+					</div>
+				<?php endforeach ?>
+			</div>
 		</div>
+	</div>	
+
+	<div class="show_description_overlay hide"><?php echo $page->description()->kirbytext(); ?></div>
+</div>	
+
+<?php elseif($page->images()->count() > 1): ?>
+<div class="show_wrapper">
+	<div class="show_info">	
+		<?php echo $block; ?>
+		<div class="show_info_buttons">
+			<a href="/" class="show_info_buttons">Back</a>
+		</div>
+	</div>	
+
+  	<div class="show_thumb">
+		<?php $images = $page->images();?>	
+		<?php foreach($images->sortBy('sort', 'asc') as $image): ?>
+			<div class="show_thumb_image">
+				<img class='show_thumb_img zoomable' src="<?php echo $image->resize(1400)->url() ?>">
+				<span class='show_thumb_caption'><?php echo $image->caption()->kirbytext()?></span>
+			</div>
+		<?php endforeach ?>
 	</div>
+
+	<div class="artist_overlay_wrapper">
+		<?php $images = $page->images();?>		
+			<div class="overlay_slide">
+				<?php foreach($images->sortBy('sort', 'asc') as $image): $url = $image->resize(1400)->url(); $caption = $image->caption()->text(); ?>
+					<div class="overlay_slide_s" >
+						<div class="overlay_slide_s_img" data-style="background-image: url('<?php echo $url ?>')"></div>
+						<div class="overlay_slide_s_caption"><?php echo $caption?></div>
+					</div>
+				<?php endforeach ?>
+			</div>
+		</div>
+	</div>	
+
+</div>
+
+
+<?php elseif($page->description()->isNotEmpty()): ?>	
+<div class="show_wrapper">
+	<div class="show_info">	
+		<?php echo $block; ?> 
+		<div class="show_info_buttons">
+			<a href="/" class="show_info_buttons">Back</a>
+		</div>
+	</div> 
+	
+	<div class="show_description"><?php echo $page->description()->kirbytext(); ?></div>
+
+</div>
 <?php endif ?>
 
-<?php if($page->description()->isNotEmpty()): ?>
-  	<div class="show_description">
-  		<div class="show_description_title">Press Release</div>
-	  	<?php
-	  		echo $page->description()->kirbytext();
-	  	?>
-	  </div>
-<?php endif ?>
 
 
 </div>

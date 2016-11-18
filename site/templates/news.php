@@ -106,7 +106,9 @@
 					$artistsummary .= $i_artist > $artistcount ? ", " : "";
 					$artistsummary .= "</span>";
 				}
-			} 
+			} else {
+				$artistsummary = "";
+			}
 
 
 
