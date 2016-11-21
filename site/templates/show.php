@@ -81,7 +81,6 @@
 	<div class="show_info">	
 		<?php echo $block; ?>
 		<div class="show_info_buttons">
-			<a href="/" class="show_info_buttons">Back</a>,
 			<div class="show_info_button">Press Release</div>
 		</div>
 	</div>	
@@ -95,6 +94,8 @@
 			</div>
 		<?php endforeach ?>
 	</div>
+
+	<div class='show_end'><a href="/" class="show_info_buttons">Back</a></div>
 
 	<div class="artist_overlay_wrapper">
 		<?php $images = $page->images();?>		

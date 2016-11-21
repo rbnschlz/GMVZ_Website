@@ -78,14 +78,14 @@
 		$active1 = $page->template() == "biography" ? "" : "active";
 		$active2 = $page->template() == "biography" ? "active" : "";
 
-	$output = "<a href='";
+	$output = "<span href='";
 	$output .= $selectedurl;
-	$output .= "' class='";
-	$output .= $active1;
-	$output .= "'>Selected Works</a>,&nbsp";
+	$output .= "' class='sub_menu_works ";
+	// $output .= $active1;
+	$output .= "'>Selected Works</span>,&nbsp";
 	$output .= "<a href='";
 	$output .= $biourl;
-	$output .= "' class='";
+	$output .= "' class='sub_menu_biography ";
 	$output .= $active2;
 	$output .= "'>Biography</a>";
 

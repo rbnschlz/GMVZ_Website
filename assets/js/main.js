@@ -148,17 +148,43 @@
 
 	};
 
+	var artistCycle = function(){
+		$(".artist_artworks_container").cycle({
+				slides:".artist_artworks_slide",
+				prev: ".artist_artworks_prev",
+				next: ".artist_artworks_next",
+				timeout: 0,
+				speed: 1,
+				swipe: true,
+				// startingSlide: i
+		});
+
+		$(document).on('click', '.sub_menu_works', function(event) {		
+			$('.artist_artworks_container').addClass('active'); 
+			$('.artist_artworks_container').addClass('ontop'); 
+		});
+
+		$(document).on('click', '.artist_artworks_end', function(event) {
+		$(".artist_artworks_container").removeClass('active');
+		setTimeout(function() { 
+			$('.artist_artworks_container').removeClass('ontop'); 
+			$('.artist_artworks_container').cycle('destroy');
+		}, 250);
+		});
+
+		
+	}
+
 
 
 	//document ready
 	$(document).ready(function(){
 		slideit();
 		showPage();
+		artistCycle();
 	});
 
 	$(window).resize(function(){
-		artistsPreview();
-
 	})
 
 
