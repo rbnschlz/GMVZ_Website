@@ -3,6 +3,42 @@
 	var example = function(){
 	}
 
+	var showsCaption = function(){
+		var showBlock = $(".shows_block");
+
+		$(showBlock).each(function() {	
+		var caption = $(this).children("a").children(".shows_block_caption");	
+		var	date = caption.children(".shows_block_date");
+		var	artists = caption.children(".shows_block_artists");
+		var	image = $(this).find(".shows_block_thumb");
+		var imageUrl = $(image).attr("zoom-image");
+		var captionHeight = $(caption).height();
+		var captionWidth = $(caption).width();
+
+		// Zoom
+		$(image).zoom({url: imageUrl});
+
+			if(artists.length) {
+				$(image).hover(function () {
+					$(caption).css("min-height", captionHeight);
+					$(caption).css("min-width", captionWidth);
+
+					$(date).addClass("opacityzero", function(){
+				    	$(artists).removeClass("opacityzero");
+				   	});
+					
+
+				}, function() {
+					// $(date).removeClass("opacityzero", function(){
+				 //        $(artists).addClass("opacityzero");
+				 //    });
+
+			  	}
+				);
+			}	
+		});	
+	}
+
 	var showArtist = function(){
 		var artistMenu = $(".menu_artists");
 		var artists = $(".menu_artist");
@@ -144,8 +180,8 @@
 		});
 
 		$(document).on('click', '.artist_artworks_end', function(event) {
-		$(".artist_artworks_container").removeClass('active');
-		$('.artist_artworks_container').removeClass('ontop'); 	
+			$(".artist_artworks_container").removeClass('active');
+			$('.artist_artworks_container').removeClass('ontop'); 	
 		});
 		
 	}
@@ -157,6 +193,11 @@
 		slideit();
 		showPage();
 		artistCycle();
+		showsCaption();
+
+		$(".zoomContainer").mouseenter(function () {
+			console.log("aa");
+		});
 	});
 
 	$(window).resize(function(){

@@ -99,7 +99,7 @@
 				}
 					$block = "<div class='artfairs_outer'>";
 					$block .= "<div class='artfairs_year'>";
-					$block .= " {$startyear}";
+					$block .= " {$startyear},";
 					$block .= "</div>";
 					
 					echo $block;

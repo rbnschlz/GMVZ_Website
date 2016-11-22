@@ -245,7 +245,7 @@ li {
 -------------------------------------------------- */
 
 .shows_outer {
-  padding: 0 @mp-s 0 0;
+  padding: 0 0 @mp-l 0;
   &:nth-of-type(even) {
   }
   &:nth-of-type(odd) {
@@ -253,9 +253,10 @@ li {
 }
 
 .shows_year {
-  padding: 0 0 @mp-xl 0;
+  padding: 0 0 @mp-l 0;
   .title;
   display: block;
+
 }
 
 
@@ -265,14 +266,6 @@ li {
   vertical-align: top; 
   width: 355px;
   margin: 0 @mp-l @mp-l 0;
-  &_title {
-    .title;
-  }
-  &_date {
-    .title;
-    vertical-align: top;
-    display: inline-block;
-  }
   &_thumb {  
     width: 355px;
     height: 270px;
@@ -283,19 +276,40 @@ li {
     background-repeat: no-repeat;
     background-size: cover;
   }
+  &_caption {
+    display: block;
+  }
+  &_title {
+  .title;
+  }
+  &_date {
+    .title;
+    vertical-align: top;
+    display: inline-block;
+  }
+  &_artists {
+    display: block;
+    & .single {
+      .title;
+      display: inline-block;
+    }
+    span {
+      display: inline-block;
+    }
+  }
+  
 }
+
 
 .upcoming {
    border-radius: 50%;
 }
 
 .current {
-   border-radius: 50%;
+   border-radius: 50% !important;
+   overflow: hidden;
 }
 
-// .shows_link:hover {
-//   cursor: pointer;
-// }
 
 /* Show
 -------------------------------------------------- */
@@ -393,7 +407,7 @@ li {
   z-index: -1;
   opacity: 0;
   background: @c3;
-  .transition(0.1s ease);
+  .transition(0.1s opacity ease);
   &.active {
     opacity: 1;
   }
@@ -640,8 +654,8 @@ li {
   padding: 0 0 @lh-m 0;
 }
 .artfairs_year {
-  .title;
-  padding: 0 0 @mp-s 0;
+  .text;
+  padding: 0;
 }
 
 .artfairs_entry {
@@ -659,7 +673,8 @@ li {
 /* Helpers
 -------------------------------------------------- */
 .opacityzero {
-  opacity: 0 !important;
+  opacity: 0;
+  display: none;
 }
 
 .hide {

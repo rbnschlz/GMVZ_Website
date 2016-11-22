@@ -19,7 +19,6 @@
 		// Run through array of shows
 		$output = [];
 		$allyears = [];
-		$i = 0;
 
 		foreach($shows as $show) {
 			// Exhibition dates
@@ -64,6 +63,7 @@
 			$img = "";
 			if ($show->hasImages()) {
 				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
+				$zoomImg = $show->images()->sortBy('sort', 'asc')->first()->width(1000)->url();
 			}
 
 			// Set artists
@@ -72,9 +72,11 @@
 			
 			$len = count($show->extartist()->artistname()->toStructure());
 			$artistcount = count($artists);
+			$artistsExtCount = count($show->extartist()->artistname()->toStructure());
 
 			if($show->artist()->isNotEmpty() && $show->extartist()->isNotEmpty() ){
-			$artistSummery = "<span class='show_info_artists'>";		
+			$artistSummery = "<span class='shows_block_artists opacityzero'>";	
+				$i = 0;
 				foreach ($artists as $artist) {	
 					$artistSummery .= "<span>";
 					$artistSummery .= $artist;
@@ -82,6 +84,7 @@
 					$artistSummery .= "</span>";
 					$artistSummery .= " ";
 				}
+				
 				foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
 				$i++;
 					$artistSummery .= "<span>";
@@ -92,10 +95,13 @@
 				}	
 			$artistSummery .= "</span>";
 			} else if ($show->artist()->isNotEmpty()){
-			$artistSummery = "<span class='show_info_artists'>";
+			$artistSummery = "<span class='shows_block_artists opacityzero'>";
+				$i = 0;
 				foreach ($artists as $artist) {
 				$i++;	
-					$artistSummery .= "<span>";
+					$artistSummery .= "<span class='";
+					$artistSummery .= $artistcount == 1 ? "single" : "";
+					$artistSummery .= "'>";
 					$artistSummery .= $artist;
 					$artistSummery .= $i < $artistcount ? ", " : "";
 					$artistSummery .= "</span>";
@@ -103,7 +109,7 @@
 				}
 			$artistSummery .= "</span>";
 			} else if ($show->extartist()->isNotEmpty()){
-			$artistSummery = "<span class='show_info_artists'>";
+			$artistSummery = "<span class='shows_block_artists single opacityzero'>";
 				$i = 0;
 				foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
 				$i++;	
@@ -193,16 +199,23 @@
 
 			$block = "<div class='shows_block'>";
 			$block .= $urlStart;
-			$block .= "<span class='shows_block_thumb {$when}' {$img}>";
+			$block .= "<span class='shows_block_thumb {$when}' {$img} zoom-image={$zoomImg} data-time='{$when}'>";
 			$block .= "</span>";
-			$block .= "<span class='shows_block_title'>";
-			$block .= $show->title();
+			$block .= "<span class='shows_block_caption'>";
+				$block .= "<span class='shows_block_title'>";
+				$block .= $show->title();
+				$block .= "</span>";
+				$block .= ", ";
+				
+				$block .= "<span class='shows_block_date'>";
+				$block .= $datestring;
+				$block .= "</span>";
+
+				if (!empty($artistSummery)) {
+			    $block .= $artistSummery;
+				}
 			$block .= "</span>";
-			$block .= ", ";
-			$block .= "<span class='shows_block_date'>";
-			$block .= $datestring;
-			$block .= "</span>";
-			// $block .= $artistSummery;
+			
 			$block .= $urlEnd;
 			$block .= "</div>";
 			
