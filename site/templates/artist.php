@@ -1,5 +1,7 @@
-<?php snippet('header'); snippet('artists_menu'); ?>
-<div class='loader'></div>
+<?php snippet('header'); ?>
+<div class='outer_wrapper'>
+<?php snippet('artists_menu'); ?>
+
 <!-- <div class="main_wrapper"> -->
 	<div class="artist_artworks">
 		<div class='artist_thumb_wrap hide'>
@@ -10,7 +12,7 @@
 		</div>
 
 
-		<div class="artist_artworks_container">
+		<!-- <div class="artist_artworks_container">
 			<?php 
 				$images = $page->images(); 
 				$i = 0;
@@ -21,13 +23,15 @@
 				$caption = $image->caption()->kirbytext();				
 			?>
 
-			<div class="artist_artworks_slide" >
-				<div class="artist_artworks_image" style="background-image: url('<?php echo $url ?>')"></div>					
+			<div class="artist_artworks_slide">
+			<div class="artist_artworks_flexwrap">	
+				<div class="artist_artworks_image" style="background-image: url('<?php echo $url ?>')">
+				</div>	
+
+				<div class="artist_artworks_caption <?php if (!$image->caption()->isNotEmpty()){echo "hide";} ?> ">
+					<?php echo $caption?>
+				</div>				
 				
-				<?php if ($image->caption()->isNotEmpty()):?>
-					<div class="artist_artworks_caption"><?php echo $caption?></div>
-				<?php endif ?>
-			
 				<?php if (!$i == 0): ?>
 					<div class="artist_artworks_prev">&larr;</div>
 				<?php endif ?>
@@ -36,6 +40,7 @@
 					<div class="artist_artworks_next">&rarr;</div>
 				<?php endif ?>
 			</div>
+			</div>
 
 			<?php 
 				$i++; 
@@ -43,10 +48,11 @@
 			?>	
 			<div class="artist_artworks_end">&#215;</div>	
 		</div>
-	
+		 -->
 
 	
 	</div>
+</div>	
 <!-- </div> -->
 
 <?php snippet('footer') ?>

@@ -3,28 +3,6 @@
 	var example = function(){
 	}
 
-	var menuScroll= function(){
-	var lastScroll = 0;
-		// var menuHeight = $(".main_wrapper").outerHeight() - $(".main_wrapper").children().height() ;
-		// console.log(menuHeight);
-		var scrollhide = function(){ 
-			$(window).scroll(function(){
-				var scroll = $(window).scrollTop();
-			    	if ((scroll > lastScroll) && (scroll > 100)) {
-			    		if (!$(".menu_wrapper").hasClass("opacityzero")) {
-			        		$(".menu_wrapper").addClass("opacityzero");
-			        	}
-			    	} else if (scroll < lastScroll) {
-			        	if ($(".menu_wrapper").hasClass("opacityzero")) {
-			        		$(".menu_wrapper").removeClass("opacityzero");
-			        	}
-			    	}
-			    	lastScroll = scroll;
-			});
-		};
-		setTimeout(function() { scrollhide(); }, 200);
-	};
-
 	var showArtist = function(){
 		var artistMenu = $(".menu_artists");
 		var artists = $(".menu_artist");
@@ -135,14 +113,14 @@
 		var PrOverlay = $(".show_description_overlay");
 
 		$(PrButton).click(function(){
-			if($(PrOverlay).hasClass("hide")) {
-				$(PrOverlay).removeClass("hide");
-			} 
+			$(PrOverlay).addClass('active');
+			$(PrOverlay).addClass('ontop'); 	
 		});
 
-		$(PrOverlay ).click(function(){
-			if(!$(PrOverlay).hasClass("hide")) {
-				$(PrOverlay).addClass("hide");
+		$(PrOverlay).click(function(){
+			if($(PrOverlay).hasClass("active")) {
+				$(PrOverlay).removeClass('active');
+				$(PrOverlay).removeClass('ontop'); 
 			} 
 		});
 
@@ -162,16 +140,13 @@
 		$(document).on('click', '.sub_menu_works', function(event) {		
 			$('.artist_artworks_container').addClass('active'); 
 			$('.artist_artworks_container').addClass('ontop'); 
+			console.log("aa");
 		});
 
 		$(document).on('click', '.artist_artworks_end', function(event) {
 		$(".artist_artworks_container").removeClass('active');
-		setTimeout(function() { 
-			$('.artist_artworks_container').removeClass('ontop'); 
-			$('.artist_artworks_container').cycle('destroy');
-		}, 250);
+		$('.artist_artworks_container').removeClass('ontop'); 	
 		});
-
 		
 	}
 

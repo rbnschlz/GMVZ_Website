@@ -19,6 +19,7 @@
 		// Run through array of shows
 		$output = [];
 		$allyears = [];
+		$i = 0;
 
 		foreach($shows as $show) {
 			// Exhibition dates
@@ -63,6 +64,58 @@
 			$img = "";
 			if ($show->hasImages()) {
 				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
+			}
+
+			// Set artists
+			$artists = $show->artist();
+			$artists = explode(",", $artists);
+			
+			$len = count($show->extartist()->artistname()->toStructure());
+			$artistcount = count($artists);
+
+			if($show->artist()->isNotEmpty() && $show->extartist()->isNotEmpty() ){
+			$artistSummery = "<span class='show_info_artists'>";		
+				foreach ($artists as $artist) {	
+					$artistSummery .= "<span>";
+					$artistSummery .= $artist;
+					$artistSummery .= ", ";
+					$artistSummery .= "</span>";
+					$artistSummery .= " ";
+				}
+				foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
+				$i++;
+					$artistSummery .= "<span>";
+					$artistSummery .= $exhartist;
+					$artistSummery .= $i < $len ? ", " : "";
+					$artistSummery .= "</span>";
+					$artistSummery .= " ";
+				}	
+			$artistSummery .= "</span>";
+			} else if ($show->artist()->isNotEmpty()){
+			$artistSummery = "<span class='show_info_artists'>";
+				foreach ($artists as $artist) {
+				$i++;	
+					$artistSummery .= "<span>";
+					$artistSummery .= $artist;
+					$artistSummery .= $i < $artistcount ? ", " : "";
+					$artistSummery .= "</span>";
+					$artistSummery .= " ";
+				}
+			$artistSummery .= "</span>";
+			} else if ($show->extartist()->isNotEmpty()){
+			$artistSummery = "<span class='show_info_artists'>";
+				$i = 0;
+				foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
+				$i++;	
+					$artistSummery .= "<span>";
+					$artistSummery .= $exhartist;
+					$artistSummery .= $i < $len ? ", " : "";
+					$artistSummery .= "</span>";
+					$artistSummery .= " ";
+				}	
+			$artistSummery .= "</span>";
+			} else {
+				$artistSummery = "";
 			}
 
 
@@ -145,9 +198,11 @@
 			$block .= "<span class='shows_block_title'>";
 			$block .= $show->title();
 			$block .= "</span>";
+			$block .= ", ";
 			$block .= "<span class='shows_block_date'>";
 			$block .= $datestring;
 			$block .= "</span>";
+			// $block .= $artistSummery;
 			$block .= $urlEnd;
 			$block .= "</div>";
 			

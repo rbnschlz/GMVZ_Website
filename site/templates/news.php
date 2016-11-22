@@ -1,4 +1,5 @@
 <?php snippet('header'); ?>
+<div class="outer_wrapper">
 
 <div class="menu_wrapper">
 	<?php 
@@ -8,7 +9,6 @@
 	?>
 </div>
 
-<div class="main_wrapper">
 <div class='news_wrapper'>
 	<?php 
 		$artists = kirby()->request()->get('artists');
@@ -117,6 +117,7 @@
 			$block = "<ol class='news_entry'>";
 				$block .= "<li class='news_entry_number'>";
 				$block .= $newsNumber;
+				$block .= ",&nbsp";
 				$block .= "</li>";
 				$block .= $urlStart;
 				$block .= "<li class='news_entry_item'>";

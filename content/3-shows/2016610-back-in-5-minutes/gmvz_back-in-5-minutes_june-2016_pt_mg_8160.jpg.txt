@@ -1,9 +1,5 @@
 Caption: 
 
-Left: Juliaan Andeweg
-Middle:  Juliaan Andeweg
-Front: Juliaan Andeweg
-
 ----
 
 Sort: 3

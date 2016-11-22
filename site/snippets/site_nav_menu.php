@@ -12,6 +12,7 @@ $first = $items->first();
 $items = $items->not($first);
 
 foreach($items as $child) {
+	$parent = $child->parent();
 	$menutitle = $child->title();
 	if ($menutitle == "Information") {
 		$menutitle = "Martin van Zomeren";
@@ -21,11 +22,13 @@ foreach($items as $child) {
 
 	$block = "<li class='sitenav_nav sitenav_";
 	$block .= $menulower;
-	$block .= ($child == $page) ? " active" : "";
 	$block .= "'>";
 	$block .= "<a href='";
-	$block .= $menulink."'>";
+	$block .= $menulink."' class='";
+	$block .= ($child == $page || $page->parent() == $child) ? " active" : "";
+	$block .= "'>";
 	$block .= $menutitle;
+
 	$block .= "</a>";
 	$block .= "</li>";
 
