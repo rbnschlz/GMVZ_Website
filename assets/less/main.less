@@ -26,7 +26,7 @@ a:hover {
 
 @c1 = black;
 @c2 = #000;
-@c3 = rgba(225,225,225,.9);
+@c3 = rgba(245,245,245,.9);
 @c4 = rgba(231,231,231,1);
 
 @mp-s = 15px;
@@ -43,7 +43,7 @@ a:hover {
 @lh-s: 24px;
 
 @fs-m: 24px;
-@lh-m: 32px;
+@lh-m: 36px;
 
 .fs-m {
     font-size: @fs-m;
@@ -311,10 +311,10 @@ li {
 }
 
 .shows_lenghtIndicatior {
-  width: 130px;
-  height: 130px;
+  width: 110px;
+  height: 110px;
   padding: @mp-s;
-  background: @c4;
+  background: white;
   border-radius: 50%;
   position: fixed;
   bottom: @mp-s;
@@ -408,7 +408,7 @@ li {
   z-index: -1;
   opacity: 0;
   background: @c3;
-  .transition(0.1s ease);
+  .transition(0.05s ease);
   &.active {
     opacity: 1;
     border-bottom: 0px !important;
@@ -519,7 +519,6 @@ li {
     width: auto;
     cursor: pointer;
     margin-bottom: @mp-s;
-    transition: box-shadow 0.05s;
   }
   .user-select;
 }
@@ -666,7 +665,7 @@ li {
   z-index: -1;
   opacity: 0;
   background: @c3;
-  .transition(0.1s ease opacity);
+  .transition(0.05s ease opacity);
   &.active {
     opacity: 1;
   }

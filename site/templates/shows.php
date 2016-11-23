@@ -1,3 +1,10 @@
+<style type="text/css">
+html {
+	background: rgba(231,231,231,1);
+	/*background: #E7CAF1;*/
+}
+</style>
+
 <?php snippet('header'); ?>
 <div class="menu_wrapper">
 	<?php 

@@ -194,9 +194,9 @@
 		    if($selected.length && docH > viewPortH + 150){
 		    	console.log('active');
 		    	$(".shows_lenghtIndicatior").fadeIn("fast");
-		         
 		    }
 		});
+
 	});
 
 	$(window).resize(function(){
