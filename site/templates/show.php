@@ -25,7 +25,6 @@
 
 		if($page->artist()->isNotEmpty() && $page->extartist()->isNotEmpty() ){
 			$block .= "<div class='show_info_artists'>";		
-			// $block .= "<br>";
 			foreach ($artists as $artist) {	
 				$block .= "<span>";
 				$block .= $artist;
@@ -87,21 +86,19 @@
 		<?php echo $block; ?>
 	</div>	
 
-  	<div class="show_thumb">
+  	<div class="show_thumb_wrapper">
 		<?php $images = $page->images();?>	
 		<?php foreach($images->shuffle() as $image): 
 			$orientation = $image->orientation() == 'landscape' ? "landscape" : "portrait";
+			$caption = $image->caption()->kirbytext();
 		?>
-			<div class="show_thumb_image ">
-				<img class='<?php echo $image->orientation() ?>' src="<?php echo $image->resize(1400)->url() ?>">
-				<?php if($image->caption()->isNotEmpty()): ?>
-					<span class='show_thumb_caption'><?php echo $image->caption()->kirbytext()?></span>
-				<?php endif ?>	
+			<div class="show_thumb zoomable">
+				<img class='show_thumb_image' src="<?php echo $image->resize(1400)->url() ?>">
 			</div>
 		<?php endforeach ?>
 	</div>
 
-	<!-- <div class="artist_overlay_wrapper">
+	<div class="overlay_wrapper">
 		<?php $images = $page->images();?>		
 			<div class="overlay_slide">
 				<?php foreach($images->sortBy('sort', 'asc') as $image): 
@@ -115,7 +112,7 @@
 				<?php endforeach ?>
 			</div>
 		</div>
-	</div>	 -->
+	</div>	
 
 	<div class="show_description_overlay"><?php echo $page->description()->kirbytext(); ?></div>
 </div>	

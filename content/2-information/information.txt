@@ -23,3 +23,23 @@ Phone: +31 20 420 8129
 ----
 
 Mobile: +31 6 1137 021
+
+----
+
+Openhour: 11:00
+
+----
+
+Closinghour: 18:00
+
+----
+
+Daysopen: Wednesday, Thursday, Friday, Saturday
+
+----
+
+Facebook: https://www.facebook.com/galerie.vanzomeren?fref=ts
+
+----
+
+Instagram: https://www.instagram.com/martin_van_zomeren/

@@ -75,7 +75,7 @@
 			$artistsExtCount = count($show->extartist()->artistname()->toStructure());
 
 			if($show->artist()->isNotEmpty() && $show->extartist()->isNotEmpty() ){
-			$artistSummery = "<span class='shows_block_artists opacityzero'>";	
+			$artistSummery = "<span class='shows_block_artists hide'>";	
 				$i = 0;
 				foreach ($artists as $artist) {	
 					$artistSummery .= "<span>";
@@ -94,8 +94,9 @@
 					$artistSummery .= " ";
 				}	
 			$artistSummery .= "</span>";
+			$artistHover = "activeArtist";
 			} else if ($show->artist()->isNotEmpty()){
-			$artistSummery = "<span class='shows_block_artists opacityzero'>";
+			$artistSummery = "<span class='shows_block_artists hide'>";
 				$i = 0;
 				foreach ($artists as $artist) {
 				$i++;	
@@ -108,8 +109,9 @@
 					$artistSummery .= " ";
 				}
 			$artistSummery .= "</span>";
+			$artistHover = "activeArtist";
 			} else if ($show->extartist()->isNotEmpty()){
-			$artistSummery = "<span class='shows_block_artists single opacityzero'>";
+			$artistSummery = "<span class='shows_block_artists single hide'>";
 				$i = 0;
 				foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
 				$i++;	
@@ -120,8 +122,10 @@
 					$artistSummery .= " ";
 				}	
 			$artistSummery .= "</span>";
+			$artistHover = "activeArtist";
 			} else {
 				$artistSummery = "";
+				$artistHover = "";
 			}
 
 
@@ -199,9 +203,9 @@
 
 			$block = "<div class='shows_block'>";
 			$block .= $urlStart;
-			$block .= "<span class='shows_block_thumb {$when}' {$img} zoom-image={$zoomImg} data-time='{$when}'>";
-			$block .= "</span>";
-			$block .= "<span class='shows_block_caption'>";
+			$block .= "<span class='shows_block_thumb {$when}' {$img} zoom-image={$zoomImg} data-time='{$when}'></span>";
+			$block .= $urlEnd;
+			$block .= "<span class='shows_block_caption $artistHover'>";
 				$block .= "<span class='shows_block_title'>";
 				$block .= $show->title();
 				$block .= "</span>";
@@ -215,8 +219,6 @@
 			    $block .= $artistSummery;
 				}
 			$block .= "</span>";
-			
-			$block .= $urlEnd;
 			$block .= "</div>";
 			
 			echo $block;
@@ -228,6 +230,9 @@
 		?>
 
 	</div>
+
+	<div class="shows_lenghtIndicatior hide">More bellow<br>&#8595;</div>
+
 </div>
 
 <?php snippet('footer') ?>

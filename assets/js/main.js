@@ -7,7 +7,7 @@
 		var showBlock = $(".shows_block");
 
 		$(showBlock).each(function() {	
-		var caption = $(this).children("a").children(".shows_block_caption");	
+		var caption = $(this).children(".shows_block_caption");	
 		var	date = caption.children(".shows_block_date");
 		var	artists = caption.children(".shows_block_artists");
 		var	image = $(this).find(".shows_block_thumb");
@@ -18,24 +18,14 @@
 		// Zoom
 		$(image).zoom({url: imageUrl});
 
-			if(artists.length) {
-				$(image).hover(function () {
-					$(caption).css("min-height", captionHeight);
-					$(caption).css("min-width", captionWidth);
-
-					$(date).addClass("opacityzero", function(){
-				    	$(artists).removeClass("opacityzero");
-				   	});
-					
-
-				}, function() {
-					// $(date).removeClass("opacityzero", function(){
-				 //        $(artists).addClass("opacityzero");
-				 //    });
-
-			  	}
-				);
-			}	
+		// Click for artist
+		if(artists.length){
+			$(caption).click(function() {
+				date.toggleClass("hide");
+				artists.toggleClass("hide");
+			});
+		}
+			
 		});	
 	}
 
@@ -111,8 +101,8 @@
 	var slideit= function(){
 		$(document).on('click', ".zoomable", function(event) {
 			var i = $(".zoomable").index(this);
-			$(".artist_overlay_wrapper").addClass('active').addClass('ontop');
-			$(".artist_overlay_wrapper").addClass('ontop');
+			$(".overlay_wrapper").addClass('active').addClass('ontop');
+			$(".overlay_wrapper").addClass('ontop');
 			$(".overlay_slide").cycle({
 				slides:"> div",
 				timeout: 0,
@@ -134,10 +124,10 @@
                 prev.removeAttr( 'data-style' ); //Clean up code
 		});
 
-		$(document).on('click', '.artist_overlay_wrapper', function(event) {
-			$(".artist_overlay_wrapper").removeClass('active');
+		$(document).on('click', '.overlay_wrapper', function(event) {
+			$(".overlay_wrapper").removeClass('active');
 			setTimeout(function() { 
-				$('.artist_overlay_wrapper').removeClass('ontop'); 
+				$('.overlay_wrapper').removeClass('ontop'); 
 				$('.overlay_slide').cycle('destroy');
 			}, 250);
 		});
@@ -195,8 +185,17 @@
 		artistCycle();
 		showsCaption();
 
-		$(".zoomContainer").mouseenter(function () {
-			console.log("aa");
+
+		var docH = $(document).height(),
+    	viewPortH = $(window).height();
+
+		$(".menu_artist").each(function() {
+			var $selected = $('.active',$(this));
+		    if($selected.length && docH > viewPortH + 150){
+		    	console.log('active');
+		    	$(".shows_lenghtIndicatior").fadeIn("fast");
+		         
+		    }
 		});
 	});
 

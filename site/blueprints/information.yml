@@ -25,6 +25,35 @@ fields:
     label: Mobile
     type: tel
     width: 1/2  
+  openhour:
+    label: Opening Hour
+    type: time
+    interval: 30
+    width: 1/2
+  closinghour:  
+    label: Closing Hour
+    type: time
+    interval: 30 
+    width: 1/2
+  daysopen:
+    label: Days open
+    type: multiselect
+    options: 
+      Monday: Monday
+      Tuesday: Tuesday
+      Wednesday: Wednesday
+      Thursday: Thursday
+      Friday: Friday
+      Saturday: Saturday
+      Friday: Friday
+  facebook:
+    label: Facebook
+    type: url
+    width: 1/2
+  instagram:  
+    label: Instagram
+    type: url
+    width: 1/2  
 options:
   template: false
   delete: false
