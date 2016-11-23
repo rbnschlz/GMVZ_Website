@@ -88,7 +88,7 @@
 
   	<div class="show_thumb_wrapper">
 		<?php $images = $page->images();?>	
-		<?php foreach($images->shuffle() as $image): 
+		<?php foreach($images as $image): 
 			$orientation = $image->orientation() == 'landscape' ? "landscape" : "portrait";
 			$caption = $image->caption()->kirbytext();
 		?>
@@ -101,7 +101,7 @@
 	<div class="overlay_wrapper">
 		<?php $images = $page->images();?>		
 			<div class="overlay_slide">
-				<?php foreach($images->sortBy('sort', 'asc') as $image): 
+				<?php foreach($images as $image): 
 					$url = $image->resize(1400)->url(); 
 					$caption = $image->caption()->text(); 
 				?>
