@@ -1,0 +1,41 @@
+Title: Test Object 1
+
+----
+
+Artist: Juliaan Andeweg
+
+----
+
+Extartist: 
+
+----
+
+Price: 600
+
+----
+
+Year: 2016
+
+----
+
+Height: 200
+
+----
+
+Width: 100
+
+----
+
+Length: 205.3
+
+----
+
+Edition: Edition of 5
+
+----
+
+Description: Test Test Test
+
+----
+
+Availability: soldout

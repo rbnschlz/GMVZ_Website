@@ -1,10 +1,3 @@
-<style type="text/css">
-html {
-	background: rgba(231,231,231,1);
-	/*background: #E7CAF1;*/
-}
-</style>
-
 <?php snippet('header'); ?>
 <div class="menu_wrapper">
 	<?php 
@@ -188,21 +181,22 @@ html {
 				}
 				$block = "<div class='shows_outer'>";
 				$block .= "<div class='shows_year'>";
-				$block .= " {$startyear}";
-				$block .= "</div>";
+				$block .= "<span>";
+				$block .= $startyear;
+				$block .= "</span></div>";
 				
 				echo $block;
 				$allyears[] = $startyear;
 			}
 
 			//url
-			if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
+			// if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
 				$urlStart = "<a href='{$show->url()}'>";
 				$urlEnd = "</a>";
-			} else {
-				$urlStart = "";
-				$urlEnd = "";
-			}
+			// } else {
+			// 	$urlStart = "";
+			// 	$urlEnd = "";
+			// }
 			
 
 

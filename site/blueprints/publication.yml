@@ -50,6 +50,20 @@ fields:
     label: Designed by
     type: text
     width: 1/3
+  height:
+    label: Height (in cm)
+    type: number
+    step: .01
+    width: 1/3
+  width: 
+    label: Width (in cm)
+    type: number
+    step: .01
+    width: 1/3
+  pagecount:
+    label: Number of Pages
+    type: number
+    width: 1/3
   description:
     label: Description
     type: textarea

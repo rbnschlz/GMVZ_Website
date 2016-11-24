@@ -3,6 +3,26 @@
 	var example = function(){
 	}
 
+	//Slideshow Loading
+	$(document).on( 'cycle-initialized', function(e, opts) {
+	    var key = 'cycle-look-ahead';
+	    opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
+	        var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
+	            slide = $( opts.slides[ index ] ),
+	            images;
+
+	        if ( slide.length && ! slide.data( key ) ) {
+	            slide.data( key, true );
+	            images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
+	            images.each(function() {
+	                var img = $(this);
+	                img.attr( 'style', img.attr('data-style') );
+	                img.removeAttr( 'data-style' );
+	            });
+	        }
+	    });
+	});
+
 	var showsCaption = function(){
 		var showBlock = $(".shows_block");
 
@@ -97,7 +117,7 @@
 		});
 	}
 
-	//Slideshow
+	//Overlay Slideshow
 	var slideit= function(){
 		$(document).on('click', ".zoomable", function(event) {
 			var i = $(".zoomable").index(this);
@@ -201,6 +221,14 @@
 
 	$(window).resize(function(){
 	})
+
+	$(document.documentElement).keyup(function (event) {
+	    if (event.keyCode == 37) {
+	    	$('.overlay_slide').cycle('prev');
+        } else if (event.keyCode == 39) {
+            $('.overlay_slide').cycle('next')
+	    }
+	});
 
 
 

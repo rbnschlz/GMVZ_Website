@@ -14,7 +14,7 @@
 	}
 ?>
 
-<div class='menu_artists'>
+<ol class='menu_artists'>
 	<!-- Build artist menu -->
 	<?php
 	//Comma or not
@@ -100,5 +100,5 @@
 
 	endforeach; 
 	// echo $featured; ?>
-</div>			
+</ol>			
 

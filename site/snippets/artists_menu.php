@@ -80,7 +80,7 @@
 
 	$output = "<span href='";
 	$output .= $selectedurl;
-	$output .= "' class='sub_menu_works ";
+	$output .= "' class='sub_menu_works dotted";
 	// $output .= $active1;
 	$output .= "'>Selected Works</span>,&nbsp";
 	$output .= "<a href='";

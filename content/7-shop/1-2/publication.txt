@@ -8,6 +8,11 @@ Artist: Cornelius Quabeck
 
 Extartist: 
 
+- 
+  artistname: Test Name 1
+- 
+  artistname: Test Name 2
+
 ----
 
 Price: 10
@@ -39,3 +44,15 @@ Description:
 ----
 
 Availability: available
+
+----
+
+Height: 20
+
+----
+
+Width: 10
+
+----
+
+Pagecount: 200
