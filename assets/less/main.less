@@ -286,6 +286,9 @@ li {
   }
   &_artists {
     display: block;
+    span {
+      display: inline;
+    }
     & .single {
       display: block;
     }
@@ -513,8 +516,7 @@ li {
   .big;
   span {
     display: inline-block;
-    border-bottom: dotted 0.1em black;
-    line-height: 1;
+    .dotted;
   }
 }
 
@@ -551,8 +553,7 @@ li {
   .big;
   span {
     display: inline-block;
-    border-bottom: dotted 0.1em black;
-    line-height: 1;
+    .dotted;
   }
 }
 
@@ -689,14 +690,14 @@ li {
 
 .active {
   border-bottom: 0.1em solid @c1; 
-  line-height: 0.8;
+  line-height: 1;
   display: inline-block;
   // color: transparent;
 }
 
 .dotted {
   border-bottom: dotted 0.1em @c1;
-  line-height: 0.8;
+  line-height: 1;
 }
 
 .comma {

@@ -132,7 +132,7 @@
 			}
 
 		if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
-			echo "<div class='no_match'>No matches found. Please redefine your selection.</div>";
+			echo "<div class='no_match'>No matches found. Please refine your selection.</div>";
 		}
 		?>
 	</div>
