@@ -83,6 +83,14 @@
 			$priceblock = "<li class='shop_object_info_price'>Sold Out</li>";
 		}
 
+		//Published by
+		if($object->publisher()->isNotEmpty()) {
+			$publisher = "<li class='shop_object_info_publisher'><span>Published by ";
+			$publisher .= $object->publisher();
+			$publisher .= "</span>";
+			$publisher .= $object->year()->isNotEmpty() ? ", <span>".$object->year()."</span>" : "";
+			$publisher .= "</li>";
+		}
 
  	if($object->hasImages()) {
 	 	$block = "<div class='shop_object'>";
@@ -92,14 +100,15 @@
 	 		$block .= $artblock;
 	 		$block .= $dimblock;
 	 		$block .= $object->isbn()->isNotEmpty() ? "<li class='shop_object_info_isbn'><span>ISBN: ".$object->isbn()."</span></li>" : "";
+	 		$block .= $object->designer()->isNotEmpty() ? "<li class='shop_object_info_designer'><span>Designed by ".$object->designer()."</span></li>" : "";
+	 		$block .= $publisher;
+	 		$block .= $object->edition()->isNotEmpty() ? "<li class='shop_object_info_edition'><span>Edition of ".$object->edition()."</span></li>" : "";
+	 		$block .= $object->description()->isNotEmpty() ? "<div class='shop_object_info_desc'>".$object->description()."</div>" : "";
 	 		$block .= $priceblock;
 			$block .= "</div>";
 	 	$block .= "</div>";
 
-
 	 	echo $block;
-
-
 	}
  } ?>
 

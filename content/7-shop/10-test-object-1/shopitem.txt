@@ -30,7 +30,7 @@ Length: 205.3
 
 ----
 
-Edition: Edition of 5
+Edition: 5 (+ 3 AC)
 
 ----
 

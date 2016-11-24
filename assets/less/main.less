@@ -577,18 +577,34 @@ li {
   display: block;
   padding-top: @mp-m;
   &_img {
-    width: 50%;
+    width: 30%;
     display: inline-block;
+    float: left;
   }
   &_info {
     display: inline-block;
     vertical-align: top;
     padding: 0 0 0 @mp-s;
+    width: 70%;
+    float: left;
     li {
       // display: block;
       span {
          display:inline-block;
       }
+    }
+    &_title {
+      padding-bottom: @mp-s;
+    }
+    &_artist {
+      padding-bottom: @mp-s;
+    }
+    &_desc {
+      padding-top: @mp-s;
+      width: 100%;
+    }
+    &_price {
+      padding-top: @mp-s;
     }
   }
 }
@@ -675,7 +691,7 @@ li {
   border-bottom: 0.1em solid @c1; 
   line-height: 0.8;
   display: inline-block;
-  color: transparent;
+  // color: transparent;
 }
 
 .dotted {
