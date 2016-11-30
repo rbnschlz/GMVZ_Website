@@ -204,19 +204,25 @@
 					fx: "fade",
 					next: $(images),
 					
-					timeout: 1200,
+					timeout: 0,
 					speed: 1,
 					swipe: true,
 					autoHeight: "container",
 					autoHeightSpeed: 0,
 			});
 
-			$(this).cycle('pause');
-			$(this).hover(function () {
-			    $(this).cycle('resume');
-			},
-			function () {
-			    $(this).cycle('pause');
+			// $(this).cycle('pause');
+			// $(this).hover(function () {
+			//     $(this).cycle('resume');
+			// },
+			// function () {
+			//     $(this).cycle('pause');
+			// });
+
+
+			$(this).click(function() {
+					$(this).removeClass("border");
+					$(this).addClass("borderNeg");
 			});
 
 			$(this).on('cycle-after',function(e, optionHash, outgoingSlideEl,  incomingSlideEl, forwardFlag){
