@@ -198,11 +198,19 @@
 
 	var shopCycle = function(){
 		$(".shop_object_img").each(function(){
-		var images = $(this).children("img");	
+		var images = $(this).children("img");
+		var count = $(this).children("img").length;	
+		
+		$(this).click(function() {
+			if($(this).hasClass("border")) {
+				$(this).removeClass("border");
+			}	
+					
+		});
 
 			$(this).cycle({
 					fx: "fade",
-					next: $(images),
+					next: $(click),
 					
 					timeout: 0,
 					speed: 1,
@@ -220,14 +228,17 @@
 			// });
 
 
-			$(this).click(function() {
-					$(this).removeClass("border");
-					$(this).addClass("borderNeg");
-			});
+			// $(this).click(function() {
+					
+			// 		$(this).addClass("borderNeg");
+			// });
 
-			$(this).on('cycle-after',function(e, optionHash, outgoingSlideEl,  incomingSlideEl, forwardFlag){
-			if(optionHash.slideNum == 1){
-		          $(this).cycle('pause');
+			$(this).on('cycle-after',function( slideOptions, currEl, nextEl, fwdFlag ){
+			if(currEl.slideNum == 2){
+		          $(this).removeClass("border");
+		    }
+		    if(currEl.slideNum == 1){
+		          $(this).addClass("border");
 		    }
 			});
 

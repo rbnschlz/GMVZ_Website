@@ -124,7 +124,7 @@ p {
 }
 
 .border {
-  border-radius: 50%;
+  border-radius: 50% !important;
   overflow: hidden;
 }
 
@@ -134,10 +134,7 @@ p {
 }
 
 .borderTrans {
-  -webkit-transition: border 1s 1s linear; /* Saf3.2+, Chrome */
-     -moz-transition: border 1s 1s linear;  /*FF3.7+ */
-       -o-transition: border 1s 1s linear; /* Opera 10.5 */
-          transition: border 1s 1s linear;
+  transition: border-radius 0.5s linear;
 }
 
 .trans {
@@ -298,6 +295,10 @@ li {
   height: 100%;
   position: fixed;
   border-radius: 50%;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
@@ -573,6 +574,7 @@ li {
     width: 450px;
     display: inline-block;   
     .borderTrans;
+    .borderNeg;
     &_s {
       display: none;
     }
