@@ -3,19 +3,6 @@
 
 	//Striketrough
 	$featured = [];
-	// $current_date = strtotime(date('Y-m-d H:i:s'));
-	// foreach($page->children()->visible() as $matches) {
-	// 		$start = strtotime($matches->startdate());
- //        	$end = strtotime($matches->enddate());
-
-	// 		if ($end < $current_date) {
-	// 			$featured[] = "Past";
-	// 		} else if (($start < $current_date) && ($end > $current_date)) {
-	// 			$featured[] = "Current";
-	// 		} else if ($start > $current_date) {
-	// 			$featured[] = "Upcoming";
-	// 		};
-	// }
 
 	foreach($page->children()->visible() as $matches) {
 	    //Set Type variable
@@ -83,28 +70,6 @@
 
 		// Assemble Menu
 		$activeUrl = $_SERVER['REQUEST_URI'];
-		// if(strpos($activeUrl, 'times') === false && strpos($url, 'artists') === false || strpos($activeUrl, 'times') === false ) {
-		// 	$output = " <a href='";
-		// 	$output .= $page->url().$filter.$url;
-		// 	$output .="' class='menu_time";
-		// 	$output .="'>";
-		// 	$output .= $title;
-		// 	$output .= "<span class='comma'>";
-		// 	$output .= $i < $len ? ", " : "";	
-		// 	$output .= "</span>";
-		// 	$output .="</a>";
-				
-		// } else {
-			// $output = " <a href='";
-			// $output .= $page->url().$filter.$url;
-			// $output .="' class='time_artist";
-			// $output .= $active;
-			// $output .="'>";
-			// $output .= $title;
-			// $output .= "<span class='comma'>";
-			// $output .= $i < $len ? ", " : "";	
-			// $output .= "</span>";
-			// $output .="</a>";
 
 		$output ="<li class='menu_time nobr";
 		$output .="'>";

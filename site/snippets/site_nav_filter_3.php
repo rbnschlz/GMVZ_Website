@@ -36,8 +36,8 @@
 		// GET parameter
 		$params = $_GET;
 
-		//Check if times variable is set
-		if(isset($_GET['times'])) {
+		//Check if type variable is set
+		if(isset($_GET['type'])) {
 			$url = http_build_query($params);
 			$url .= "&artists=$titlelow";
 		} else {
@@ -73,7 +73,7 @@
 		};
 
 			//Add question mark if variable is set
-			if (isset($params["times"]) || isset($params["artists"])) {
+			if (isset($params["type"]) || isset($params["artists"])) {
 				$filter = "?";
 			} else {
 				$filter = "";
@@ -97,10 +97,9 @@
 		$output .= "</li>";	
 		
 		echo $output;
-		// echo $featured;
-		// print_r($featured);
+
 
 	endforeach; 
-	// echo $featured; ?>
+	 ?>
 </ol>			
 

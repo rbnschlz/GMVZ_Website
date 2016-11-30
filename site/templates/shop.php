@@ -9,17 +9,19 @@
 </div>
 
 <div class="main_wrapper">
-	<?php foreach($page->children()->visible() as $object) {
+	<?php 
+
+	$output = [];
+	$mail = page("information")->mail();
+	$params = $_GET;
+	$what = "";
+	foreach($page->children()->visible() as $object) {
 	 	$artists = $object->artist();
 		$artists = explode(",", $artists);
+		$artistcount = count($artists);
 		$i = 0;
 		$len = count($object->extartist()->artistname()->toStructure());
-		$artistcount = count($artists);
 	 	$image = $object->images()->first();
-	 	$mail = page("information")->mail();
-	 	$params = $_GET;
-	 	$what = "";
-	 	$output = [];
 
 	    //Set Type variable
 		if ($object->intendedTemplate() == "shopitem") {
@@ -43,9 +45,9 @@
 			$artistarray = [];
 		};
 
-			//Filter by times and artist (Neccessary for the output[] part to work correct)
+			//Filter by type and artist (Neccessary for the output[] part to work correct)
 		if (isset($_GET['type']) && isset($_GET['artists'])) {
-			if (count($artistarray) < 1 || !preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches) || strpos($params["times"], $what) === false) {
+			if (count($artistarray) < 1 || !preg_match('/'.implode('|', $artistarray).'/', $params["artists"], $matches) || strpos($params["type"], $what) === false) {
 				continue;
 			} else {
 				$output[] = "added";
@@ -61,7 +63,7 @@
 			}
 		}
 		//Filter by type
-		else if (isset($_GET['type'])){
+		if (isset($_GET['type'])){
 			if (strpos($params["type"], $what) === false) {
 				continue;
 			} else {
@@ -169,9 +171,10 @@
 		 	$block .= "</div>";
 
 		 	echo $block;
+		 	print_r($output);
 		}
  	} 
- 		if( (isset($_GET['type']) || isset($_GET['artists'])) && !in_array("added", $output)) {
+		if( (isset($_GET['type']) || isset($_GET['artists']) ) && !in_array("added", $output)) {
 			echo "<div class='no_match'>No matches found. Please refine your selection.</div>";
 		}
 	?>

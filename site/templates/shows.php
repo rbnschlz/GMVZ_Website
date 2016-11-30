@@ -129,23 +129,6 @@
 				$artistHover = "";
 			}
 
-
-			// Add artist attr
-			// $Extartist = $show->Extartist();
-			// $Extartist =  preg_replace("/\r|\n/", '', $Extartist);
-			// $Extartist = strtr($Extartist, array('-' => '', '   ' => '', 'artistname: ' => ", "));
-			// $Extartist = trim($Extartist,",");
-			// $Extartist = trim($Extartist," ");
-			// if($artist->isNotEmpty() && $show->Extartist()->isNotEmpty()){			
-			// 	$artisttag = $artist.', '.$Extartist;
-			// } else if ($show->Extartist()->isNotEmpty()){
-			// 	$artisttag = $Extartist;
-			// } else if ($artist->isNotEmpty()) {
-			// 	$artisttag = $artist;
-			// } else {
-			// 	$artisttag = '   ';
-			// }
-
 			// Add image orientation
 			$orientation = $show->images()->first()->orientation() == 'landscape' ? "landscape" : "portrait";
 
@@ -191,13 +174,8 @@
 			}
 
 			//url
-			// if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
-				$urlStart = "<a href='{$show->url()}'>";
-				$urlEnd = "</a>";
-			// } else {
-			// 	$urlStart = "";
-			// 	$urlEnd = "";
-			// }
+			$urlStart = "<a href='{$show->url()}'>";
+			$urlEnd = "</a>";
 			
 
 
@@ -224,6 +202,7 @@
 			$block .= "</div>";
 			
 			echo $block;
+			print_r($output);
 		}
 
 		if( (isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
