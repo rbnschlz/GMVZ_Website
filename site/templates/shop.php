@@ -136,7 +136,10 @@
 				$priceblock .= ", <a href='mailto:".$mail."?subject=".$object->title()."'>Order via e-Mail</a></li>";
 
 			} else {
-				$priceblock = "<li class='shop_object_info_price'>Sold Out</li>";
+				// $priceblock = "<li class='shop_object_info_price'>Sold Out</li>";
+				$priceblock = "<li class='shop_object_info_price'><span class='strike'>";
+				$priceblock .= $object->price();
+				$priceblock .= " €, Order via e-Mail</span></li>";
 			}
 
 			//Published by

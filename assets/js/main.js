@@ -4,24 +4,24 @@
 	}
 
 	//Slideshow Loading
-	$(document).on( 'cycle-initialized', function(e, opts) {
-	    var key = 'cycle-look-ahead';
-	    opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
-	        var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
-	            slide = $( opts.slides[ index ] ),
-	            images;
+	// $(document).on( 'cycle-initialized', function(e, opts) {
+	//     var key = 'cycle-look-ahead';
+	//     opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
+	//         var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
+	//             slide = $( opts.slides[ index ] ),
+	//             images;
 
-	        if ( slide.length && ! slide.data( key ) ) {
-	            slide.data( key, true );
-	            images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
-	            images.each(function() {
-	                var img = $(this);
-	                img.attr( 'style', img.attr('data-style') );
-	                img.removeAttr( 'data-style' );
-	            });
-	        }
-	    });
-	});
+	//         if ( slide.length && ! slide.data( key ) ) {
+	//             slide.data( key, true );
+	//             images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
+	//             images.each(function() {
+	//                 var img = $(this);
+	//                 img.attr( 'style', img.attr('data-style') );
+	//                 img.removeAttr( 'data-style' );
+	//             });
+	//         }
+	//     });
+	// });
 
 	var showsCaption = function(){
 		var showBlock = $(".shows_block");
@@ -130,16 +130,16 @@
 				swipe: true,
 				startingSlide: i
 			});
-			var first = $(".cycle-slide").first().children().first(); //Find first slide
+			var first = $(".cycle-slide").first().children().children().first(); //Find first slide
                 first.attr( 'style', first.attr('data-style') ); //Load background image
                 first.removeAttr( 'data-style' ); //Clean up code
-			var active = $(".cycle-slide-active").children().first(); //Find active slide
+			var active = $(".cycle-slide-active").children().children().first(); //Find active slide
                 active.attr( 'style', active.attr('data-style') ); //Load background image
                 active.removeAttr( 'data-style' ); //Clean up code
-            var next = $(".cycle-slide-active").next().children().first(); //Find next slide
+            var next = $(".cycle-slide-active").next().children().children().first(); //Find next slide
                 next.attr( 'style', next.attr('data-style') ); //Load background image
                 next.removeAttr( 'data-style' ); //Clean up code
-            var prev = $(".cycle-slide-active").prev().children().first(); //Find prev slide
+            var prev = $(".cycle-slide-active").prev().children().children().first(); //Find prev slide
                 prev.attr( 'style', prev.attr('data-style') ); //Load background image
                 prev.removeAttr( 'data-style' ); //Clean up code
 		});
