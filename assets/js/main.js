@@ -199,19 +199,31 @@
 	var shopCycle = function(){
 		$(".shop_object_img").each(function(){
 		var images = $(this).children("img");
-		var count = $(this).children("img").length;	
-		
+
+
 		$(this).click(function() {
 			if($(this).hasClass("border")) {
-				$(this).removeClass("border");
+				 $(this).removeClass("border");
 			}	
-					
+			else if (!$(this).hasClass("border")) {
+				 $(this).cycle('next');
+
+				 // $(this).on('cycle-before',function( slideOptions, currEl, nextEl, fwdFlag ){
+					//  if(currEl.slideNum == 1){
+			  //         	$(this).addClass("border");
+			  //   	 }
+		   //  	 });
+
+		    	 // if($(images).length === 1) {
+		    	 // 	$(this).addClass("border");
+		    	 // }
+			}	
+
 		});
 
 			$(this).cycle({
 					fx: "fade",
-					next: $(click),
-					
+	
 					timeout: 0,
 					speed: 1,
 					swipe: true,
@@ -219,28 +231,7 @@
 					autoHeightSpeed: 0,
 			});
 
-			// $(this).cycle('pause');
-			// $(this).hover(function () {
-			//     $(this).cycle('resume');
-			// },
-			// function () {
-			//     $(this).cycle('pause');
-			// });
-
-
-			// $(this).click(function() {
-					
-			// 		$(this).addClass("borderNeg");
-			// });
-
-			$(this).on('cycle-after',function( slideOptions, currEl, nextEl, fwdFlag ){
-			if(currEl.slideNum == 2){
-		          $(this).removeClass("border");
-		    }
-		    if(currEl.slideNum == 1){
-		          $(this).addClass("border");
-		    }
-			});
+		
 
 		});
 		
