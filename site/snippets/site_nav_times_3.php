@@ -86,9 +86,6 @@
 		$output .= "</span>";
 		$output .= "</li>";	
 		
-						
-		// }
-		
 		echo $output;
 		
 	} ?>

@@ -202,7 +202,6 @@
 			$block .= "</div>";
 			
 			echo $block;
-			print_r($output);
 		}
 
 		if( (isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
