@@ -1,137 +1,116 @@
 <?php snippet('header'); ?>
 
-<!-- <div class="menu_wrapper">
-	<?snippet('site_nav') ?>
-</div>	 -->
+<div class="main_wrapper">
 
-	<?php
-		$title = $page->title();
-
-		$start = strtotime($page->startdate());
-    	$end = strtotime($page->enddate());
-    	$startyear = date('Y', $start);
-    	$datestring = returnDate($start, $end);
-		
-		$artists = $page->artist();
-		$artists = explode(",", $artists);
-		$i = 0;
-		$len = count($page->extartist()->artistname()->toStructure());
-		$artistcount = count($artists);
-
-
-		$block = "<div class='show_info_title'>";
-		$block .= $title;
-		$block .= "</div>";
-
-		if($page->artist()->isNotEmpty() && $page->extartist()->isNotEmpty() ){
-			$block .= "<div class='show_info_artists'>";		
-			foreach ($artists as $artist) {	
-				$block .= "<span>";
-				$block .= $artist;
-				$block .= ", ";
-				$block .= "</span>";
-				$block .= " ";
-			}
-			foreach ($page->extartist()->artistname()->toStructure() as $exhartist) {
-			$i++;
-				$block .= "<span>";
-				$block .= $exhartist;
-				$block .= $i < $len ? ", " : "";
-				$block .= "</span>";
-				$block .= " ";
-			}	
-			$block .= "</div>";
-		} else if ($page->artist()->isNotEmpty()){
-			$block .= "<div class='show_info_artists'>";
-			foreach ($artists as $artist) {
-			$i++;	
-				$block .= "<span>";
-				$block .= $artist;
-				$block .= $i < $artistcount ? ", " : "";
-				$block .= "</span>";
-				$block .= " ";
-			}
-			$block .= "</div>";
-		} else if ($page->extartist()->isNotEmpty()){
-			$block .= "<div class='show_info_artists'>";
-			$i = 0;
-			foreach ($page->extartist()->artistname()->toStructure() as $exhartist) {
-			$i++;	
-				$block .= "<span>";
-				$block .= $exhartist;
-				$block .= $i < $len ? ", " : "";
-				$block .= "</span>";
-				$block .= " ";
-			}	
-			$block .= "</div>";
-		}
-
-		if($page->startdate()->isNotEmpty()) {
-		$block .= "<div class='show_info_date'>";
-		$block .= $datestring;
-			if($page->description()->isNotEmpty() && $page->images()->count() > 1) {
-				$block .= ", ";
-				$block .= "<div class='show_info_button'>Press Release</div>";
-			}
-		$block .= "</div>";
-		}
-	?>
-
-
-	
-
-<?php if($page->description()->isNotEmpty() && $page->images()->count() > 1 || $page->images()->count() > 1 ): ?>
-<div class="show_wrapper">
-	<div class="show_info">	
-		<?php echo $block; ?>
-	</div>	
-
-  	<div class="show_thumb_wrapper">
-		<?php $images = $page->images();?>	
-		<?php foreach($images as $image): 
-			$orientation = $image->orientation() == 'landscape' ? "landscape" : "portrait";
-			$caption = $image->caption()->kirbytext();
+	<div class="close_bt">
+		<?php 
+			$block = "<a href='";
+			$block .= $page->parent()->url();
+			$block .= "' class='show_backbt'>Back";
+			$block .= "</a>";
+			echo $block;
 		?>
-			<div class="show_thumb zoomable">
-				<img class='show_thumb_image' src="<?php echo $image->resize(1400)->url() ?>">
-			</div>
-		<?php endforeach ?>
 	</div>
 
-	<div class="overlay_wrapper">
-		<?php $images = $page->images();?>		
-			<div class="overlay_slide">
-				<?php foreach($images as $image): 
-					$url = $image->resize(1400)->url(); 
-					$caption = $image->caption()->text(); 
-				?>
-					<div class="overlay_slide_s" >
-						<div class="overlay_slide_s_img" data-style="background-image: url('<?php echo $url ?>')"></div>
-						<div class="overlay_slide_s_caption"><?php echo $caption?></div>
-					</div>
-				<?php endforeach ?>
-			</div>
-		</div>
+	<div class='show_info'>
+		<?php
+			$title = $page->title();
+			$start = strtotime($page->startdate());
+	    	$end = strtotime($page->enddate());
+	    	$startyear = date('Y', $start);
+	    	$datestring = returnDate($start, $end);
+			
+			$artists = $page->artist();
+			$artists = explode(",", $artists);
+			$i = 0;
+			$len = count($page->extartist()->artistname()->toStructure());
+			$artistcount = count($artists);
+
+			$block = "<li class='show_info_section'>";
+			$block .= "<span class='show_info_title active'>";
+			$block .= $title;
+			$block .= "</span>";
+			$block .= "</li>";
+
+			$block .= "<li class='show_info_section'>";
+			if($page->artist()->isNotEmpty() && $page->extartist()->isNotEmpty() ){
+				$block .= "<div class='show_info_artists'>";		
+				foreach ($artists as $artist) {	
+					$block .= "<span>";
+					$block .= $artist;
+					$block .= ", ";
+					$block .= "</span>";
+					$block .= " ";
+				}
+				foreach ($page->extartist()->artistname()->toStructure() as $extartist) {
+					$i++;
+					$block .= "<span>";
+					$block .= $extartist;
+					$block .= $i < $len ? ", " : "";
+					$block .= "</span>";
+					$block .= " ";
+				}	
+				$block .= "</div>";
+			} else if ($page->artist()->isNotEmpty()){
+				$block .= "<div class='show_info_artists'>";
+				foreach ($artists as $artist) {
+					$i++;	
+					$block .= "<span>";
+					$block .= $artist;
+					$block .= $i < $artistcount ? ", " : "";
+					$block .= "</span>";
+					$block .= " ";
+				}
+				$block .= "</div>";
+			} else if ($page->extartist()->isNotEmpty()){
+				$block .= "<div class='show_info_artists'>";
+				$i = 0;
+				foreach ($page->extartist()->artistname()->toStructure() as $extartist) {
+				$i++;	
+					$block .= "<span>";
+					$block .= $extartist;
+					$block .= $i < $len ? ", " : "";
+					$block .= "</span>";
+					$block .= " ";
+				}	
+				$block .= "</div>";
+			}
+
+			if($page->startdate()->isNotEmpty()) {
+				$block .= "<div class='show_info_date'>";
+				$block .= $datestring;
+				$block .= "</div>";
+			}
+			$block .= "</li>";
+
+			echo $block; ?>
+	</div>
+
+	<div class="show_images">
+		<?php if($page->hasImages()) {
+				foreach($page->images() as $image) {
+					$orientation = $image->orientation() == 'landscape' ? "landscape" : "portrait";
+					$caption = $image->caption()->kirbytext();
+
+					$block = "<img class='show_images_img zoomable' src='";
+					$block .= $image->url();
+					$block .= "'></img>";
+
+					echo $block;
+
+				}
+			}
+		?>
+	</div>
+
+	<?php if($page->description()->isNotEmpty()):?>
+	<div class="show_description">
+		<div class="show_description_title">Press release</div>
+		<?php echo $page->description()->kirbytext(); ?>
 	</div>	
-
-	<div class="show_description_overlay"><?php echo $page->description()->kirbytext(); ?></div>
-</div>	
-
-
-<!-- if page has no images -->
-<?php elseif($page->description()->isNotEmpty()): ?>	
-	<div class="show_wrapper">
-		<div class="show_info">	
-			<?php echo $block; ?> 
-		</div> 
-		
-		<div class="show_description"><?php echo $page->description()->kirbytext(); ?></div>
-
-	</div>
-<?php endif ?>
-
-
+	<?php endif ?>
 
 </div>
 
+<?php snippet("overlay") ?>
 <?php snippet('footer') ?>

@@ -49,6 +49,7 @@
 			//Set Artist variable
 			$artist = $show->artist();
 			$artist = $artist->toArray();
+
 			//Convert Artist variable to lowercase
 			if($artist->isNotEmpty()){
 				$artistlow = $artist->lower();
@@ -181,21 +182,22 @@
 				}
 				$block = "<div class='shows_outer'>";
 				$block .= "<div class='shows_year'>";
-				$block .= " {$startyear}";
-				$block .= "</div>";
+				$block .= "<span>";
+				$block .= $startyear;
+				$block .= "</span></div>";
 				
 				echo $block;
 				$allyears[] = $startyear;
 			}
 
 			//url
-			if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
+			// if($show->images()->count() > 1 ||  $show->description()->isNotEmpty()) {
 				$urlStart = "<a href='{$show->url()}'>";
 				$urlEnd = "</a>";
-			} else {
-				$urlStart = "";
-				$urlEnd = "";
-			}
+			// } else {
+			// 	$urlStart = "";
+			// 	$urlEnd = "";
+			// }
 			
 
 
@@ -225,13 +227,11 @@
 		}
 
 		if( (isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
-			echo "<div class='no_match'>No matches found. Please redefine your selection.</div>";
+			echo "<div class='no_match'>No matches found. Please refine your selection.</div>";
 		}
 		?>
 
 	</div>
-
-	<div class="shows_lenghtIndicatior hide">More bellow<br>&#8595;</div>
 
 </div>
 

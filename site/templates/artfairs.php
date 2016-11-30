@@ -11,7 +11,7 @@
 	</div>
 
 
-	<div class='artfairs_wrapper'>
+	<div class='main_wrapper'>
 		<?php 
 			$artists = kirby()->request()->get('artists');
 			$params = $_GET;
@@ -98,9 +98,9 @@
 					echo "</div>";
 				}
 					$block = "<div class='artfairs_outer'>";
-					$block .= "<div class='artfairs_year'>";
-					$block .= " {$startyear},";
-					$block .= "</div>";
+					$block .= "<div class='artfairs_year'><span>";
+					$block .= " {$startyear}";
+					$block .= "</span></div>";
 					
 					echo $block;
 					$allyears[] = $startyear;
@@ -112,16 +112,18 @@
 				$block = "<ol class='artfairs_entry'>";
 					$block .= "<li class='artfairs_entry_number'>";
 					$block .= $fairNumber;
-					$block .= ",&nbsp";
+					$block .= ".&nbsp";
 					$block .= "</li>";
 					$block .= $urlStart;
 					$block .= "<li class='artfairs_entry_event'>";
+					$block .= "<p>";
 					$block .= $fair->title();
+					$block .= "</p>";
 					if($fair->location()->isNotEmpty()){
-					$block .= ($fair->location()) ? ", ".$fair->location() : "";
+						$block .= ($fair->location()) ? ", ".$fair->location() : "";
 					}
 					if($fair->startdate()->isNotEmpty()){
-					$block .= ($datestring) ? ", ".$datestring : "";
+						$block .= ($datestring) ? ", ".$datestring : "";
 					}
 					$block .= "</li>";
 					$block .= $urlEnd;	
@@ -132,7 +134,7 @@
 			}
 
 		if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
-			echo "<div class='no_match'>No matches found. Please redefine your selection.</div>";
+			echo "<div class='no_match'>No matches found. Please refine your selection.</div>";
 		}
 		?>
 	</div>

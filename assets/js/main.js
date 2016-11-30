@@ -3,6 +3,26 @@
 	var example = function(){
 	}
 
+	//Slideshow Loading
+	$(document).on( 'cycle-initialized', function(e, opts) {
+	    var key = 'cycle-look-ahead';
+	    opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
+	        var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
+	            slide = $( opts.slides[ index ] ),
+	            images;
+
+	        if ( slide.length && ! slide.data( key ) ) {
+	            slide.data( key, true );
+	            images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
+	            images.each(function() {
+	                var img = $(this);
+	                img.attr( 'style', img.attr('data-style') );
+	                img.removeAttr( 'data-style' );
+	            });
+	        }
+	    });
+	});
+
 	var showsCaption = function(){
 		var showBlock = $(".shows_block");
 
@@ -97,7 +117,7 @@
 		});
 	}
 
-	//Slideshow
+	//Overlay Slideshow
 	var slideit= function(){
 		$(document).on('click', ".zoomable", function(event) {
 			var i = $(".zoomable").index(this);
@@ -106,7 +126,7 @@
 			$(".overlay_slide").cycle({
 				slides:"> div",
 				timeout: 0,
-				speed: 250,
+				speed: 50,
 				swipe: true,
 				startingSlide: i
 			});
@@ -166,12 +186,45 @@
 		$(document).on('click', '.sub_menu_works', function(event) {		
 			$('.artist_artworks_container').addClass('active'); 
 			$('.artist_artworks_container').addClass('ontop'); 
-			console.log("aa");
 		});
 
 		$(document).on('click', '.artist_artworks_end', function(event) {
 			$(".artist_artworks_container").removeClass('active');
 			$('.artist_artworks_container').removeClass('ontop'); 	
+		});
+		
+	}
+
+
+	var shopCycle = function(){
+		$(".shop_object_img").each(function(){
+		var images = $(this).children("img");	
+
+			$(this).cycle({
+					fx: "fade",
+					next: $(images),
+					
+					timeout: 800,
+					speed: 1,
+					swipe: true,
+					autoHeight: "container",
+					autoHeightSpeed: 0,
+			});
+
+			$(this).cycle('pause');
+			$(this).hover(function () {
+			    $(this).cycle('resume');
+			},
+			function () {
+			    $(this).cycle('pause');
+			});
+
+			$(this).on('cycle-after',function(e, optionHash, outgoingSlideEl,  incomingSlideEl, forwardFlag){
+			if(optionHash.slideNum == 1){
+		          $(this).cycle('pause');
+		    }
+			});
+
 		});
 		
 	}
@@ -184,23 +237,20 @@
 		showPage();
 		artistCycle();
 		showsCaption();
+		shopCycle();
 
-
-		var docH = $(document).height(),
-    	viewPortH = $(window).height();
-
-		$(".menu_artist").each(function() {
-			var $selected = $('.active',$(this));
-		    if($selected.length && docH > viewPortH + 150){
-		    	console.log('active');
-		    	$(".shows_lenghtIndicatior").fadeIn("fast");
-		         
-		    }
-		});
 	});
 
 	$(window).resize(function(){
 	})
+
+	$(document.documentElement).keyup(function (event) {
+	    if (event.keyCode == 37) {
+	    	$('.overlay_slide').cycle('prev');
+        } else if (event.keyCode == 39) {
+            $('.overlay_slide').cycle('next')
+	    }
+	});
 
 
 

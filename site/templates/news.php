@@ -9,12 +9,13 @@
 	?>
 </div>
 
-<div class='news_wrapper'>
+<div class='main_wrapper'>
 	<?php 
 		$artists = kirby()->request()->get('artists');
 		$params = $_GET;
 		$item = $page->items();
 		$when = "";
+		$allyears = [];
 		// Run through array of artnews
 		$output = [];
 		$allyears = [];
@@ -92,15 +93,27 @@
 				$urlEnd = "";
 			}
 
+			if(!in_array($startyear, $allyears)) {
+				if(!empty($allyears)) {
+					echo "</div>";
+				}
+					$block = "<div class='news_outer'>";
+					$block .= "<div class='news_year'><span>";
+					$block .= $startyear;
+					$block .= "</span></div>";
+					
+					echo $block;
+					$allyears[] = $startyear;
+				}
+
 
 			// Artists
 			$i_artist = 0;
 			if ($artist->isNotEmpty()){
-			$artists = explode(",", $artist);
-			$artistcount = count($artists);
-				
+				$artists = explode(",", $artist);
+				$artistcount = count($artists);
 				foreach ($artist->toStructure() as $artist) {
-				$i_artist++;	
+					$i_artist++;	
 					$artistsummary = "<span>";
 					$artistsummary .= $artist;
 					$artistsummary .= $i_artist > $artistcount ? ", " : "";
@@ -117,25 +130,27 @@
 			$block = "<ol class='news_entry'>";
 				$block .= "<li class='news_entry_number'>";
 				$block .= $newsNumber;
-				$block .= ",&nbsp";
+				$block .= ".&nbsp";
 				$block .= "</li>";
 				$block .= $urlStart;
 				$block .= "<li class='news_entry_item'>";
+				$block .= "<p>";
 				$block .= $news->title();
+				$block .= "</p>";
 				if(!empty($artistsummary)) {
 				$block .= ", ";
 				$block .= $artistsummary;
 				}
 				if($news->location()->isNotEmpty()){
-				$block .= "<br>";
+				$block .= ". ";
 				$block .= $news->location();
 				}
 				if($news->startdate()->isNotEmpty()){
-					if($news->startdate()->isNotEmpty() && $news->location()->isNotEmpty()) {
-						$block .= ", ";
-					} else { 
-						$block .= "<br>";
-					}
+					// if($news->startdate()->isNotEmpty() && $news->location()->isNotEmpty()) {
+						$block .= ". ";
+					// } else { 
+						// $block .= "<br>";
+					// }
 				$block .= "<span class='news_entry_date'>{$datestring}</span>";
 				}
 				$block .= "</li>";
@@ -147,7 +162,7 @@
 		}
 
 	if((isset($_GET['times']) || isset($_GET['artists'])) && !in_array("added", $output)) {
-		echo "<div class='no_match'>No matches found. Please redefine your selection.</div>";
+		echo "<div class='no_match'>No matches found. Please refine your selection.</div>";
 	}
 	?>
 

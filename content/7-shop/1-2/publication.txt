@@ -2,12 +2,14 @@ Title: 37 1/2
 
 ----
 
-Artist: Adam Avikainen, Cornelius Quabeck
+Artist: Cornelius Quabeck
 
 ----
 
 Extartist: 
 
+- 
+  artistname: Test Name 1
 - 
   artistname: Test Name 2
 
