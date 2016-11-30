@@ -7,10 +7,12 @@
 
 	$artists = page('artists')->children()->visible();
 	$featured = [];
-	foreach($page->items()->toStructure() as $matches) {
+	foreach($page->children()->visible() as $matches) {
+		if($matches->hasImages()){
 		foreach($matches->artist()->split() as $match) {
 			$featured[] = $match;
 		} 
+		}
 	}
 ?>
 

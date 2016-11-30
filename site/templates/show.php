@@ -6,11 +6,8 @@
 		<?php 
 			$block = "<a href='";
 			$block .= $page->parent()->url();
-<<<<<<< HEAD
-			$block .= "' class='show_backbt'>Back";
-=======
+
 			$block .= "' class='show_backbt'>Close";
->>>>>>> origin/master
 			$block .= "</a>";
 			echo $block;
 		?>
@@ -31,11 +28,8 @@
 			$artistcount = count($artists);
 
 			$block = "<li class='show_info_section'>";
-<<<<<<< HEAD
 			$block .= "<span class='show_info_title active'>";
-=======
-			$block .= "<span class='show_info_title dotted'>";
->>>>>>> origin/master
+
 			$block .= $title;
 			$block .= "</span>";
 			$block .= "</li>";
@@ -83,7 +77,7 @@
 				}	
 				$block .= "</div>";
 			}
-<<<<<<< HEAD
+
 
 			if($page->startdate()->isNotEmpty()) {
 				$block .= "<div class='show_info_date'>";
@@ -92,16 +86,6 @@
 			}
 			$block .= "</li>";
 
-=======
-
-			if($page->startdate()->isNotEmpty()) {
-				$block .= "<div class='show_info_date'>";
-				$block .= $datestring;
-				$block .= "</div>";
-			}
-			$block .= "</li>";
-
->>>>>>> origin/master
 			echo $block; ?>
 	</div>
 
@@ -122,18 +106,13 @@
 		?>
 	</div>
 
-<<<<<<< HEAD
 	<?php if($page->description()->isNotEmpty()):?>
 	<div class="show_description">
 		<div class="show_description_title">Press release</div>
 		<?php echo $page->description()->kirbytext(); ?>
 	</div>	
 	<?php endif ?>
-=======
-	<div class="show_description">
-		<?php echo $page->description()->kirbytext(); ?>
-	</div>
->>>>>>> origin/master
+
 
 </div>
 
