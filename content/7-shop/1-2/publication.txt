@@ -1,0 +1,56 @@
+Title: 37 1/2
+
+----
+
+Artist: Adam Avikainen, Cornelius Quabeck
+
+----
+
+Extartist: 
+
+- 
+  artistname: Test Name 2
+
+----
+
+Price: 10
+
+----
+
+Author: 
+
+----
+
+Publisher: the artist
+
+----
+
+Year: 2012
+
+----
+
+Isbn: 
+
+----
+
+Designer: Svenja Richter
+
+----
+
+Description: 
+
+----
+
+Availability: available
+
+----
+
+Height: 20
+
+----
+
+Width: 10
+
+----
+
+Pagecount: 200
