@@ -4,11 +4,8 @@
 		<?php 
 			$block = "<a href='";
 			$block .= $page->parent()->url();
-<<<<<<< HEAD
 			$block .= "' class='show_backbt'>Back";
-=======
-			$block .= "' class='show_backbt'>Close";
->>>>>>> origin/master
+
 			$block .= "</a>";
 			echo $block;
 		?>
@@ -18,11 +15,8 @@
 		$artist = $page->parent();
 		$title = $artist->title();
 		$block = "<li class='artist_bio_info_section'>";
-<<<<<<< HEAD
 		$block .= "<span class='artist_bio_info_title '>";
-=======
-		$block .= "<span class='artist_bio_info_title dotted'>";
->>>>>>> origin/master
+
 		$block .= $title;
 		$block .= "</span>";
 		$block .= "</li>";
@@ -38,11 +32,7 @@
 		$block .= $artist->placeBirth();
 		$block .= "</span>";
 		$block .= "<span class='artist_bio_info_web'>";
-<<<<<<< HEAD
 		$block .= "<a href='".$artist->web()."' target='_blank'>";
-=======
-		$block .= "<a href='".$artist->web()."'>";
->>>>>>> origin/master
 		$block .=  url::short($artist->web());
 		$block .= "</a></span>";
 		$block .= "</li>";

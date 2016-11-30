@@ -158,7 +158,7 @@
 		 		$block .= "</div>";
 
 		 		$block .="<div class='shop_object_info'>";
-		 		$block .= "<li class='shop_object_info_title'><span class='dotted'>".$object->title()."</span></li>";
+		 		$block .= "<li class='shop_object_info_title'><span class=''>".$object->title()."</span></li>";
 		 		$block .= $artblock;
 		 		$block .= $dimblock;
 		 		$block .= $object->isbn()->isNotEmpty() ? "<li class='shop_object_info_isbn'><span>ISBN: ".$object->isbn()."</span></li>" : "";

@@ -132,11 +132,10 @@
 				$block .= $newsNumber;
 				$block .= ".&nbsp";
 				$block .= "</li>";
-				$block .= $urlStart;
 				$block .= "<li class='news_entry_item'>";
-				$block .= "<p>";
+				$block .= $urlStart;
 				$block .= $news->title();
-				$block .= "</p>";
+				$block .= $urlEnd;	
 				if(!empty($artistsummary)) {
 				$block .= ", ";
 				$block .= $artistsummary;
@@ -154,7 +153,7 @@
 				$block .= "<span class='news_entry_date'>{$datestring}</span>";
 				}
 				$block .= "</li>";
-				$block .= $urlEnd;	
+				
 			$block .= "</ol>";
 			
 			echo $block;

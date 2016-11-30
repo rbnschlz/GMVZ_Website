@@ -114,11 +114,10 @@
 					$block .= $fairNumber;
 					$block .= ".&nbsp";
 					$block .= "</li>";
-					$block .= $urlStart;
 					$block .= "<li class='artfairs_entry_event'>";
-					$block .= "<p>";
+					$block .= $urlStart;
 					$block .= $fair->title();
-					$block .= "</p>";
+					$block .= $urlEnd;
 					if($fair->location()->isNotEmpty()){
 						$block .= ($fair->location()) ? ", ".$fair->location() : "";
 					}
@@ -126,7 +125,7 @@
 						$block .= ($datestring) ? ", ".$datestring : "";
 					}
 					$block .= "</li>";
-					$block .= $urlEnd;	
+						
 				$block .= "</ol>";
 				
 				echo $block;

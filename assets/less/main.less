@@ -24,7 +24,7 @@ a {
 a:hover {
 }
 
-@c1 = #090F0F;
+@c1 = white;
 @c2 = #000;
 @c3 = #fff;
 
@@ -109,16 +109,16 @@ p {
 }
 
 .externalLink {
-  .active;
+  .dottedThin;
   border-color: rgba(255, 255, 255, 0);
-
-  -webkit-transition: border-color .1s .15s linear; /* Saf3.2+, Chrome */
-     -moz-transition: border-color .1s .15s linear; /* FF3.7+ */
-       -o-transition: border-color .1s .15s linear; /* Opera 10.5 */
-          transition: border-color .1s .15s linear;
+  -webkit-transition: border-color .1s .1s linear; /* Saf3.2+, Chrome */
+     -moz-transition: border-color .1s .1s linear;  /*FF3.7+ */
+       -o-transition: border-color .1s .1s linear; /* Opera 10.5 */
+          transition: border-color .1s .1s linear;
 }
 
 .externalLinkActive{
+  .dottedThin;
   border-color: @c1;
   cursor: pointer;
 }
@@ -150,6 +150,7 @@ html {
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   .text;
+  background: black;
 }
 
 body {
@@ -311,12 +312,12 @@ li {
     display: inline-block;
   }
   &_artists {
-    display: block;
+    display: inline-block;
     span {
       display: inline;
     }
     & .single {
-      display: block;
+      display: inline-block;
     }
     span {
       display: inline-block;
@@ -365,13 +366,14 @@ li {
     // text-transform: uppercase;
    }
    &_title {
-    margin: 0 @mp-m 0 0;
+    margin: 0 0 @mp-s 0;
+    .active;
    }
    &_date {
     display: block;
    }
    &_artists {
-    padding: @mp-s @mp-m 0 0;
+    padding: 0 @mp-m 0 0;
     span {
       display: inline-block;
     }
@@ -384,9 +386,10 @@ li {
   max-width: 1200px;
   display: block;
   &_title {
+    display: table;
     .text;
     margin: 0 0 @mp-s 0;
-    .active;
+    .dotted;
   }
 }
 
@@ -411,7 +414,7 @@ li {
   vertical-align: top;
   .small;
   img {
-    height: 300px;
+    height: 320px;
     width: auto;
     cursor: pointer;
     margin-bottom: @mp-s/2;
@@ -428,15 +431,13 @@ li {
 
 .artist_bio_info_section {
   display: block;
-  padding-bottom: @mp-s;
-  .runningtext;
+  // padding-bottom: @mp-s;
 }
 
 .artist_bio_info_title {
-  margin: 0 @mp-m 0 0;
+  margin: 0 0 @mp-s 0;
   display: inline;
   .active;
-  .text;
 }
 
 .artist_bio_info_web {
@@ -449,7 +450,7 @@ li {
 }
 
 .artist_bio_info {
-  padding-bottom: @mp-s;
+  padding-bottom: @mp-m;
 }
 
 .artist_bio_section {
@@ -457,7 +458,7 @@ li {
   &_headline {
     padding-bottom: @mp-s;
     span {
-      .active;
+      .dotted;
     }
   }
   &_entry {
@@ -498,15 +499,12 @@ li {
   &_date {
     display: inline-block;
   }
-  p {
+  a {
     display: inline-block;
     padding-bottom: 0px;
     .externalLink;
   }
-  a {
-    cursor: default;
-  }
-  a:hover p {
+  a:hover {
     .externalLinkActive;
   }
 }
@@ -537,16 +535,12 @@ li {
     vertical-align: top;
   }
   a {
-    cursor: default;
-    
-  }
-  p {
     display: inline-block;
     padding-bottom: 0;
     .externalLink;
     
   }
-  a:hover p {
+  a:hover {
    .externalLinkActive; 
   }
 }
@@ -560,7 +554,7 @@ li {
   display: block;
   margin-bottom: @mp-l;
   &_img {
-    width: 330px;
+    width: 450px;
     display: inline-block;   
     border-radius: 50%;
     overflow: hidden;
@@ -574,9 +568,7 @@ li {
     display: inline-block;
     vertical-align: top;
     padding: 0 0 0 @mp-m;
-    width: calc(~"100vw - 390px");
-    padding: 0 0 0 @mp-m;
-    width: 70%;
+    width: calc(~"100vw - 500px");
     li {
       span {
          display:inline-block;
@@ -599,10 +591,9 @@ li {
       
     }
     &_price {
-      .runningtext;
       padding-top: @mp-s;
       a {
-        .dotted;
+        .dottedThin;
       }
       padding-bottom: @mp-s;
     }
@@ -689,6 +680,7 @@ li {
 
 .strike::after {
   border-bottom: 0.1em solid @c1;
+  border-color: red;
   content: "";
   left: 0;
   margin-top: calc(0.1em / 2 * -0.5);
@@ -697,23 +689,33 @@ li {
   top: 50%;
 }
 
+
+.activeThin {
+  border-bottom: 1px solid @c1; 
+  line-height: 1;
+  display: inline-block;
+}
+
 .active {
   border-bottom: 2px solid @c1; 
   line-height: 1;
   display: inline-block;
+  border-color: green;
 }
 
-.dotted {
+.dottedThin {
   border-bottom: dotted 2px @c1;
-
   line-height: 1;
-  display: inline-block;
-  // color: transparent;
 }
 
 .dotted {
   border-bottom: dotted 2px @c1;
   line-height: 1;
+
+  // font-style: italic;
+  // transform: skewX(-7deg);
+  // display: inline-block;
+  // color: green;
 }
 
 .comma {

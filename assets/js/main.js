@@ -204,7 +204,7 @@
 					fx: "fade",
 					next: $(images),
 					
-					timeout: 800,
+					timeout: 1200,
 					speed: 1,
 					swipe: true,
 					autoHeight: "container",

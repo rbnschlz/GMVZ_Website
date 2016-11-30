@@ -7,7 +7,7 @@
 			$block = "<a href='";
 			$block .= $page->parent()->url();
 
-			$block .= "' class='show_backbt'>Close";
+			$block .= "' class='show_backbt'>Back";
 			$block .= "</a>";
 			echo $block;
 		?>
@@ -28,7 +28,7 @@
 			$artistcount = count($artists);
 
 			$block = "<li class='show_info_section'>";
-			$block .= "<span class='show_info_title active'>";
+			$block .= "<span class='show_info_title'>";
 
 			$block .= $title;
 			$block .= "</span>";
