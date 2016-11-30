@@ -291,14 +291,23 @@ li {
 /* Home
 -------------------------------------------------- */
 .home_background {
-  width: 100%;
-  height: 100%;
+  width: calc(~'100% - 150px');  
+  height: calc(~'100% - 150px');  
   position: fixed;
+  top: 75px;
+  left: 75px;
   border-radius: 50%;
-
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.home_caption {
+  position: fixed;
+  padding: @mp-s;
+  top: 0;
+  right: 0;
+  // width: 30%;
 }
 
 
