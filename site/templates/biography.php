@@ -4,7 +4,7 @@
 		<?php 
 			$block = "<a href='";
 			$block .= $page->parent()->url();
-			$block .= "' class='show_backbt'>Back";
+			$block .= "' class='show_backbt'>Close";
 
 			$block .= "</a>";
 			echo $block;

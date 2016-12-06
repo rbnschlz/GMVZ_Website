@@ -95,7 +95,7 @@
 					$artistSummery .= " ";
 				}	
 			$artistSummery .= "</span>";
-			$artistHover = "activeArtist";
+			$artistClickable = "clickable";
 			} else if ($show->artist()->isNotEmpty()){
 			$artistSummery = "<span class='shows_block_artists hide'>";
 				$i = 0;
@@ -110,7 +110,7 @@
 					$artistSummery .= " ";
 				}
 			$artistSummery .= "</span>";
-			$artistHover = "activeArtist";
+			$artistClickable = "clickable";
 			} else if ($show->extartist()->isNotEmpty()){
 			$artistSummery = "<span class='shows_block_artists single hide'>";
 				$i = 0;
@@ -123,10 +123,10 @@
 					$artistSummery .= " ";
 				}	
 			$artistSummery .= "</span>";
-			$artistHover = "activeArtist";
+			$artistClickable = "clickable";
 			} else {
 				$artistSummery = "";
-				$artistHover = "";
+				$artistClickable = "";
 			}
 
 			// Add image orientation
@@ -185,7 +185,7 @@
 			$block .= $urlStart;
 			$block .= "<span class='shows_block_thumb {$when}' {$img} zoom-image={$zoomImg} data-time='{$when}'></span>";
 			$block .= $urlEnd;
-			$block .= "<span class='shows_block_caption $artistHover'>";
+			$block .= "<span class='shows_block_caption $artistClickable'>";
 				$block .= "<span class='shows_block_title'>";
 				$block .= $show->title();
 				$block .= "</span>";

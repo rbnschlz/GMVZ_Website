@@ -2,6 +2,7 @@
 	$featured = [];
 	$img = "";
 	$capt = "";
+	$showsUrl = page("shows")->url();
 	foreach($shows as $show) {
 	    $start = strtotime($show->startdate());
 	    $end = strtotime($show->enddate());
@@ -24,9 +25,11 @@
 		snippet('site_nav_menu');
 		echo "</div>";
 
-		$block = "<div class='home_background' ";
+		$block = "<a href='{$showsUrl}'>";
+		$block .= "<div class='home_background' ";
 		$block .= $img;
 		$block .= "></div>";
+		$block .= "</a>";
 
 		echo $block;
 

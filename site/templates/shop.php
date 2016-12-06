@@ -156,9 +156,9 @@
 		 	$block = "<div class='shop_object'>";
 		 		$block .= "<div class='shop_object_img";
 		 		$block .= $object->availability() == "available" ? " border'>" : "'>";
-		 		foreach($object->images() as $image) {
+		 		
 		 		$block .= "<img class='shop_object_img_s' src='".$image->url()."'></img>";
-		 		}
+		 		
 		 		$block .= "</div>";
 
 		 		$block .="<div class='shop_object_info'>";

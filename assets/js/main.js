@@ -4,24 +4,24 @@
 	}
 
 	//Slideshow Loading
-	// $(document).on( 'cycle-initialized', function(e, opts) {
-	//     var key = 'cycle-look-ahead';
-	//     opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
-	//         var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
-	//             slide = $( opts.slides[ index ] ),
-	//             images;
+	$(document).on( 'cycle-initialized', function(e, opts) {
+	    var key = 'cycle-look-ahead';
+	    opts.container.on( 'cycle-before', function( e, opts, outgoing, incoming, fwd ) {
+	        var index = fwd ? (opts.nextSlide + 1) : (opts.nextSlide - 1),
+	            slide = $( opts.slides[ index ] ),
+	            images;
 
-	//         if ( slide.length && ! slide.data( key ) ) {
-	//             slide.data( key, true );
-	//             images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
-	//             images.each(function() {
-	//                 var img = $(this);
-	//                 img.attr( 'style', img.attr('data-style') );
-	//                 img.removeAttr( 'data-style' );
-	//             });
-	//         }
-	//     });
-	// });
+	        if ( slide.length && ! slide.data( key ) ) {
+	            slide.data( key, true );
+	            images = slide.is( 'div[data-style]' ) ? slide : slide.find( 'div[data-style]' );
+	            images.each(function() {
+	                var img = $(this);
+	                img.attr( 'style', img.attr('data-style') );
+	                img.removeAttr( 'data-style' );
+	            });
+	        }
+	    });
+	});
 
 	var showsCaption = function(){
 		var showBlock = $(".shows_block");
@@ -124,7 +124,7 @@
 			$(".overlay_wrapper").addClass('active').addClass('ontop');
 			$(".overlay_wrapper").addClass('ontop');
 			$(".overlay_slide").cycle({
-				slides:"> div",
+				slides:".overlay_slide_s",
 				timeout: 0,
 				speed: 50,
 				swipe: true,
@@ -196,46 +196,48 @@
 	}
 
 
-	var shopCycle = function(){
-		$(".shop_object_img").each(function(){
-		var images = $(this).children("img");
+	// var shopCycle = function(){
+	// 	$(".shop_object_img").each(function(){
+	// 	var images = $(this).children("img");
+
+	// 	$(this).cycle({
+	// 				fx: "fade",
+	// 				slides:".shop_object_img_s",
+	// 				timeout: 0,
+	// 				speed: 1,
+	// 				swipe: true,
+	// 				autoHeight: "container",
+	// 				autoHeightSpeed: 0,
+	// 	});
+
+	// 	$(this).on( 'cycle-pre-initialize', function( ) {
+	// 	     setTimeout(function(){ $(images).css('opacity','1') }, 65); 
+	// 	});
 
 
-		$(this).click(function() {
-			if($(this).hasClass("border")) {
-				 $(this).removeClass("border");
-			}	
-			else if (!$(this).hasClass("border")) {
-				 $(this).cycle('next');
+	// 	$(this).click(function() {
+	// 		if($(this).hasClass("border")) {
+	// 			 $(this).removeClass("border");
+	// 		}	
+	// 		else if (!$(this).hasClass("border")) {
+	// 			 $(this).cycle('next');
 
-				 // $(this).on('cycle-before',function( slideOptions, currEl, nextEl, fwdFlag ){
-					//  if(currEl.slideNum == 1){
-			  //         	$(this).addClass("border");
-			  //   	 }
-		   //  	 });
+	// 			 // $(this).on('cycle-before',function( slideOptions, currEl, nextEl, fwdFlag ){
+	// 				//  if(currEl.slideNum == 1){
+	// 		  //         	$(this).addClass("border");
+	// 		  //   	 }
+	// 	   //  	 });
 
-		    	 // if($(images).length === 1) {
-		    	 // 	$(this).addClass("border");
-		    	 // }
-			}	
+	// 	  //   	 if($(images).length === 1) {
+	// 	  //   		$(this).addClass("border");
+	// 			// }
+	// 		}	
 
-		});
+	// 	});	
+	// });
 
-			$(this).cycle({
-					fx: "fade",
-	
-					timeout: 0,
-					speed: 1,
-					swipe: true,
-					autoHeight: "container",
-					autoHeightSpeed: 0,
-			});
 
-		
 
-		});
-		
-	}
 
 
 
@@ -245,8 +247,7 @@
 		showPage();
 		artistCycle();
 		showsCaption();
-		shopCycle();
-
+		// shopCycle();
 	});
 
 	$(window).resize(function(){
@@ -258,7 +259,16 @@
         } else if (event.keyCode == 39) {
             $('.overlay_slide').cycle('next')
 	    }
+	    else if (event.keyCode == 27) {
+            $(".overlay_wrapper").removeClass('active');
+			setTimeout(function() { 
+				$('.overlay_wrapper').removeClass('ontop'); 
+				$('.overlay_slide').cycle('destroy');
+			}, 250);
+	    }
 	});
+
+
 
 
 

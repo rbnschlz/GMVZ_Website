@@ -7,7 +7,7 @@
 			$block = "<a href='";
 			$block .= $page->parent()->url();
 
-			$block .= "' class='show_backbt'>Back";
+			$block .= "' class='show_backbt'>Close";
 			$block .= "</a>";
 			echo $block;
 		?>
@@ -91,7 +91,7 @@
 
 	<div class="show_images">
 		<?php if($page->hasImages()) {
-				foreach($page->images() as $image) {
+				foreach($page->images()->sortBy('sort', 'asc') as $image) {
 					$orientation = $image->orientation() == 'landscape' ? "landscape" : "portrait";
 					$caption = $image->caption()->kirbytext();
 
