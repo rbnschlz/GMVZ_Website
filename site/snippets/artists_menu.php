@@ -52,7 +52,7 @@
 			$output ="<li class='menu_artist nobr'>";
 			$output .= "<a href='";
 			$output .= $artistlink;
-			$output .="'class='";
+			$output .="'class='pjax ";
 			$output .= $active;
 			$output .="'>";
 			$output .= $title;
@@ -85,7 +85,7 @@
 	$output .= "'>Selected Works</span>,&nbsp";
 	$output .= "<a href='";
 	$output .= $biourl;
-	$output .= "' class='sub_menu_biography ";
+	$output .= "' class='sub_menu_biography pjax ";
 	$output .= $active2;
 	$output .= "'>Biography</a>";
 
