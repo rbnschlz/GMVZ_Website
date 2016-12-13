@@ -1,5 +1,5 @@
 <div class="menu_sub">
-	<?php $types = array("Publications", "Artworks");
+	<?php $types = array("Publications", "Multiples");
 
 	//Striketrough
 	$featured = [];
@@ -7,7 +7,7 @@
 	foreach($page->children()->visible() as $matches) {
 	    //Set Type variable
 		if ($matches->intendedTemplate() == "shopitem") {
-			$featured[] = "Artworks";
+			$featured[] = "Multiples";
 		} else if ($matches->intendedTemplate() == "publication") {
 			$featured[] = "Publications";
 		}

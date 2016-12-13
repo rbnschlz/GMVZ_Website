@@ -26,7 +26,7 @@
 
 	    //Set Type variable
 		if ($object->intendedTemplate() == "shopitem") {
-			$what = "artwork";
+			$what = "multiple";
 		} else if ($object->intendedTemplate() == "publication") {
 			$what = "publication";
 		};
