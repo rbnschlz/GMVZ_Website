@@ -20,6 +20,10 @@
 		$output = [];
 		$allyears = [];
 
+		//Rotation
+		$clockwise = ['15', '40', '5', '10', '23'];
+		$counterclockwise = ['-15', '-40', '-5', '-10', '-23'];
+
 		foreach($shows as $show) {
 			// Exhibition dates
 			$start = strtotime($show->startdate());
@@ -41,10 +45,15 @@
         	//Set Date variable
 			if ($end < $current_date) {
 				$when = "past";
+				$rotation = "";
 			} else if (($start < $current_date) && ($end > $current_date)) {
 				$when = "current";
+				$number = $clockwise[mt_rand(0, count($clockwise) - 1)];
+				$rotation = " transform: rotate(".$number."deg)' ";
 			} else if ($start > $current_date) {
 				$when = "upcoming";
+				$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+				$rotation = " transform: rotate(".$number."deg)' ";
 			};
 			//Set Artist variable
 			$artist = $show->artist();
@@ -63,7 +72,7 @@
 			//Set src
 			$img = "";
 			if ($show->hasImages()) {
-				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().")'";
+				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().");".$rotation."'";
 				$zoomImg = $show->images()->sortBy('sort', 'asc')->first()->width(1000)->url();
 			}
 
@@ -183,9 +192,9 @@
 
 			$block = "<div class='shows_block'>";
 			$block .= $urlStart;
-			$block .= "<span class='shows_block_thumb {$when}' {$img} zoom-image={$zoomImg} data-time='{$when}'></span>";
+			$block .= "<span class='shows_block_thumb ".$when."' ".$img." zoom-image=".$zoomImg." data-time='".$when."'></span>";
 			$block .= $urlEnd;
-			$block .= "<span class='shows_block_caption $artistClickable'>";
+			$block .= "<span class='shows_block_caption ".$artistClickable."'>";
 				$block .= "<span class='shows_block_title'>";
 				$block .= $show->title();
 				$block .= "</span>";

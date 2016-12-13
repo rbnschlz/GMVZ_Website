@@ -215,20 +215,28 @@
 		$(".home_link_wrapper_upc_d").each(function() {
   			var numRand = Math.floor(Math.random()*201);
   			var a = Math.random() * 50 - 5;
-  			$(this).css({'left': numRand}).css('transform', 'rotate(' + a + 'deg)');
+  			$(this).css({'left': numRand});
 		});
-		$(".home_link_wrapper_curr_d").each(function() {
-  			var a = Math.random() * 20;
-   			$(this).css('transform', 'rotate( -' + a + 'deg)');
-		});
-		$(".home_link_wrapper_curr_s").each(function() {
-  			var a = Math.random() * 20;
-   			$(this).css('transform', 'rotate( -' + a + 'deg)');
-		});
-		$(".home_link_wrapper_upc_s").each(function() {
-  			var a = Math.random() * 40;
-   			$(this).css('transform', 'rotate( -' + a + 'deg)');
-		});
+		// $(".home_link_wrapper_curr_d").each(function() {
+  // 			var a = Math.random() * 20;
+  //  			$(this).css('transform', 'rotate( -' + a + 'deg)');
+		// });
+		// $(".home_link_wrapper_curr_s").each(function() {
+  // 			var a = Math.random() * 20;
+  //  			$(this).css('transform', 'rotate( -' + a + 'deg)');
+		// });
+		// $(".home_link_wrapper_upc_s").each(function() {
+  // 			var a = Math.random() * 40;
+  //  			$(this).css('transform', 'rotate( -' + a + 'deg)');
+		// });
+		// $(".upcoming").each(function() {
+  // 			var a = Math.random() * 30;
+  //  			$(this).css('transform', 'rotate( -' + a + 'deg)');
+		// });
+		// $(".current").each(function() {
+  // 			var a = Math.random() * 30;
+  //  			$(this).css('transform', 'rotate(' + a + 'deg)');
+		// });
 	}
 	// var shopCycle = function(){
 	// 	$(".shop_object_img").each(function(){
