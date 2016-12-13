@@ -51,7 +51,7 @@
 			//Assemble Menu
 			$output = " <a href='";
 			$output .= $artistlink;
-			$output .="' class='menu_artist nobr";
+			$output .="' class='menu_artist nobr pjax";
 			$output .= $active;
 			$output .="'";
 			$output .=">";

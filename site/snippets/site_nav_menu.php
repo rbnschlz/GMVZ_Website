@@ -24,7 +24,7 @@ foreach($items as $child) {
 	$block .= $menulower;
 	$block .= "'>";
 	$block .= "<a href='";
-	$block .= $menulink."' class='";
+	$block .= $menulink."' class='pjax";
 	$block .= ($child == $page || $page->parent() == $child) ? " active" : "";
 	$block .= "'>";
 	$block .= $menutitle;

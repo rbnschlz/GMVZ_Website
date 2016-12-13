@@ -7,7 +7,7 @@
 			$block = "<a href='";
 			$block .= $page->parent()->url();
 
-			$block .= "' class='show_backbt'>Close";
+			$block .= "' class='pjax show_backbt'>Close";
 			$block .= "</a>";
 			echo $block;
 		?>
