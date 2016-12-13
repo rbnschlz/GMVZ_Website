@@ -41,6 +41,18 @@ a {
 @fs-m: 20px;
 @lh-m: 24px;
 
+@fs-mobile-s: 16px;
+@lh-mobile-s: 20px;
+
+@fs-mobile-m: 18px;
+@lh-mobile-m: 22px;
+
+.fs-mobile-m {
+    font-size: @fs-mobile-m;
+}
+.fs-mobile-s {
+    font-size: @fs-mobile-s;
+}
 .fs-m {
     font-size: @fs-m;
 }
@@ -48,6 +60,12 @@ a {
     font-size: @fs-s;
 }
 
+.lh-mobile-m {
+     line-height: @lh-mobile-m;
+}
+.lh-mobile-s {
+     line-height: @lh-mobile-s;
+}
 .lh-m {
      line-height: @lh-m;
 }
@@ -123,6 +141,7 @@ p {
 -------------------------------------------------- */
 html {
   height: 100%;
+  width: 100vw;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   .text;
@@ -158,10 +177,10 @@ li {
 
 .mailform {
   position: relative;
-  padding: @mp-s 0;
+  padding-bottom: @mp-s;
   input {
     display: inline;
-    margin: 0 @mp-s 0 0;
+    margin: @mp-s @mp-s 0 0;
     padding: 0 @mp-s;
     height: 45px;
     border: solid 2px #fff;
@@ -173,6 +192,7 @@ li {
     font-family: @fontStack;
     color: @c1;
   }
+
 }
 
 .newsletter_headline {
@@ -251,7 +271,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 /* General
 -------------------------------------------------- */
 .main_wrapper {
-  padding: @mp-s @mp-s @mp-s @mp-s;
+  padding: @mp-s @mp-s @mp-m @mp-s;
   height: auto;
 }
 
@@ -339,11 +359,6 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 /* Shows
 -------------------------------------------------- */
-
-.shows_outer {
-  padding: 0 0 @mp-m 0;
-}
-
 .shows_year {
   margin: 0 0 @mp-s 0;
   display: block;
@@ -404,7 +419,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 .current {
    border-radius: 50%;
    overflow: hidden;
-   transform: rotate(18deg);
+   transform: rotate(16deg);
 }
 
 .past {
@@ -454,7 +469,6 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .show_description { 
-  // .runningtext;
   padding-right: @mp-m;
   max-width: 1200px;
   display: block;
@@ -554,6 +568,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .news_entry {
+  display: flex;  
   li { 
     display: inline-block;
     z-index: 0;
@@ -562,7 +577,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
     vertical-align: top;
   }
   &_item {
-    width: calc(~'100% - 100px');  
+    flex: 1;
   }
   &_date {
     display: inline-block;
@@ -579,6 +594,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 .artfairs_outer {
   padding: 0 0 @mp-m 0;
 }
+
 .artfairs_year {
   margin: 0 0 @mp-s 0;
   display: block;
@@ -588,9 +604,13 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .artfairs_entry {
+  display: flex;  
   li { 
     display: inline-block;
     z-index: 0;
+  }
+  &_event {
+    flex: 1;
   }
   &_number {
     vertical-align: top;
@@ -601,10 +621,10 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 
-/* Information
+/* Shop
 -------------------------------------------------- */
 .shop_wrapper {
-  padding: @mp-s 0 @mp-s @mp-s;
+  padding: @mp-s 0 0 @mp-s;
   height: auto;
 }
   
@@ -630,7 +650,6 @@ input:focus:-ms-input-placeholder { color:transparent; }
       }
     }
     &_title {
-      .text;
       padding-bottom: @mp-s;
       display: block;
       & span {
@@ -640,7 +659,6 @@ input:focus:-ms-input-placeholder { color:transparent; }
     }
     &_artist {
       padding-bottom: @mp-s;
-      .text;
     }
     &_publisher {
      span {
@@ -653,7 +671,9 @@ input:focus:-ms-input-placeholder { color:transparent; }
     }
     &_price {
       padding-top: @mp-s;
+      
       a {
+        display: inline-block;
         .dotted;
       }
       padding-bottom: @mp-s;
@@ -756,7 +776,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .strike::after {
-  border-bottom: 0.1em solid @c1;
+  border-bottom: 2px solid @c1;
   border-color: red;
   content: "";
   left: 0;
@@ -825,17 +845,143 @@ input:focus:-ms-input-placeholder { color:transparent; }
   .transition(@lbTransitionLength ease opacity;);
 }
 
+
 /* Media Queries
 -------------------------------------------------- */
-
-@media only screen and (max-width: 900px) {
- 
+@media only screen and (max-width: 1200px) {
+  /* Shop
+------------------- */
+  .shop_object {
+    width: calc(~'100% / 3');
+  }
 }
 
-@media only screen and (max-width: 700px) {
-  
+@media only screen and (max-width: 840px) {
+  /* Shop
+------------------- */
+  .shop_object {
+    width: calc(~'100% / 2 - 30px');
+    padding: 0;
+  }
+
+  .shop_object:nth-child(odd) {
+    margin-right: @mp-l;
+  }
+
+  .shop_object_info_desc {
+    .text;
+  }
 }
 
-@media only screen and (max-width: 500px) {
-  
+
+@media only screen and (max-width: 735px) {
+  /* General
+------------------- */
+  html {
+    .fs-mobile-m;
+    .lh-mobile-m;
+    overflow-x: hidden; 
+  }
+
+  .menu_artists {
+  width: 100%;
+  }
+
+  /* Shows
+------------------- */
+  .shows_block {
+    width: calc(~'50% - 15px');
+    margin: 0 0 @mp-m 0;
+    &_thumb {
+      width: 100%;
+      height: 30vw;
+    }
+  }
+
+  .shows_block:nth-child(even) {
+    margin-right: @mp-m;
+  }
+
+  /* Artist
+------------------- */
+  .artist_thumb {
+  padding: 0 @mp-s @mp-s 0;
+    img {
+      height: 120px;
+    }
+  }
+
+  /* Shop
+------------------- */
+  .shop_object_info_desc {
+    .fs-mobile-m;
+    .lh-mobile-m;
+  }  
+}
+
+
+@media only screen and (max-width: 600px) {
+  .shop_object {
+      width: calc(~'100% / 1');
+      padding: 0 @mp-s 0 0;
+  }
+
+  .shop_object:nth-child(odd) {
+    margin-right: 0px;
+  }
+
+}
+
+
+@media only screen and (max-width: 540px) {
+  /* General
+------------------- */
+  .sitenav {
+    &_information {
+      display: block;
+    }
+  }
+
+  /* Shows
+------------------- */
+  .shows_block {
+    width: 100%;
+    padding-right: 0px;
+    &_thumb {
+      width: 100%;
+      height: 60vw;
+    }
+  }
+
+  .shows_block:nth-child(even) {
+    margin-right: 0px;
+  }
+
+  /* Artist
+------------------- */
+  .artist_thumb {
+    img {
+      height: 95px;
+    }
+  }
+
+}
+
+
+@media only screen and (max-width: 320px) {
+  /* General
+------------------- */
+  html {
+    .fs-mobile-s;
+    .lh-mobile-s;
+    overflow-x: hidden; 
+  }
+
+  /* Shop
+------------------- */
+ .shop_object_info_desc {
+    .fs-mobile-s;
+    .lh-mobile-s;
+  } 
+
 }
