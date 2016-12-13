@@ -38,8 +38,6 @@
 		$block .= "'>";
 		$block .= $event->title();
 		$block .= "</a>";
-		// $block .= "<span>by ";
-		// $block .= $event->artist();
 		$block .= "</div>";
 
 		echo $block;

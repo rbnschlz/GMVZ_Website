@@ -68,9 +68,9 @@
 	</div>
 
 <?php 
-
-	$form = "<form id='signup' class='mailform' action='' method='post'>";
-	$form .= "<input class='email' type='text' name='email' placeholder='Newsletter'>";
+	$form = "<span class='newsletter_headline'>Newsletter</span>";
+	$form .= "<form id='signup' class='mailform' action='' method='post'>";
+	$form .= "<input class='email' type='text' name='email' placeholder='e-Mail'>";
 	$form .= "<input type='submit' name='submit' value='Subscribe'>";
 	$form .= "</form>";
 
@@ -86,17 +86,16 @@
 
 		if($email->send()) {
 			echo "<span class='subscribed'>You are now subscribed.</span>";
-		} else {
-			// echo $email->error()->message();
 		}
 	}
-
-
-// if(!isset($_POST['submit'])) {
-// }
-
 ?>
-	
+
+<div class='information_credit'>
+<span class="information_credit_headline">Imprint</span>
+<div class="information_credit_text">
+	<span class="information_credit_text_copy">Copyright by Galerie Martin van Zomeren (<?php echo date("Y") ?>)</span>
+	<span>Development and Design by <a href="http://bramvandenberg.com/" target="_blank">Bram van den Berg</a> and <a href="http://robinscholz.com/" target="_blank">Robin Scholz</a></span>
+</div>
 
 </div>
 
