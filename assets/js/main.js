@@ -196,6 +196,20 @@
 	}
 
 
+	//Mail Shake
+	var mailshake = function(){
+		$('.mailform').submit(function() {
+		    if ($.trim($(".email").val()) === "") {
+		        $("#signup").addClass("shake");
+		        setTimeout(function() {
+					$("#signup").removeClass("shake");
+				}, 500);
+		        return false;
+		    }
+		});
+	};
+
+
 	// var shopCycle = function(){
 	// 	$(".shop_object_img").each(function(){
 	// 	var images = $(this).children("img");
@@ -247,6 +261,7 @@
 		showPage();
 		artistCycle();
 		showsCaption();
+		mailshake();
 		// shopCycle();
 	});
 

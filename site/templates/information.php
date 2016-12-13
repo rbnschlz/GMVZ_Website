@@ -67,9 +67,35 @@
 		?>
 	</div>
 
-	<div class="information_newsletter">
-	Subscribe to our newsletter
-	</div>
+<?php 
+
+	$form = "<form id='signup' class='mailform' action='' method='post'>";
+	$form .= "<input class='email' type='text' name='email' placeholder='Newsletter'>";
+	$form .= "<input type='submit' name='submit' value='Subscribe'>";
+	$form .= "</form>";
+
+	echo $form; 
+
+	if(isset($_POST['submit'])){
+	    $email = email(array(
+			'to'      => 'rbnschlz@gmail.com',
+			'from'    => $_POST['email'],
+			'subject' => 'Newsletter Subscription',
+			'body'    => 'Please add ' . $_POST['email'] . ' to the list of subscribers'
+		));
+
+		if($email->send()) {
+			echo "<span class='subscribed'>You are now subscribed.</span>";
+		} else {
+			// echo $email->error()->message();
+		}
+	}
+
+
+// if(!isset($_POST['submit'])) {
+// }
+
+?>
 	
 
 </div>
