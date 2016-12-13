@@ -5,7 +5,7 @@ pages:
     mode: date
     field: startdate
     format: Ynd
-  sort: flip
+  sort: startdate desc
 files: false
 fields:
   title:
