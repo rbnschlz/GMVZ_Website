@@ -37,8 +37,10 @@
 					$block .= $page->phone();
 					$block .= "</span>";
 				}
-				if($page->mobile()->isNotEmpty()) {
+				if($page->phone()->isNotEmpty() && $page->mobile()->isNotEmpty()) {
 					$block .= ", ";
+				}
+				if($page->mobile()->isNotEmpty()) {
 					$block .= "<span>";
 					$block .= $page->mobile();
 					$block .= "</span>";
@@ -51,8 +53,11 @@
 				if($page->facebook()->isNotEmpty()) {
 					$block .= "<a href='{$page->facebook()}' target='_blank'>Facebook</a>";
 				}
-				if($page->instagram()->isNotEmpty()) {
+				if($page->facebook()->isNotEmpty() && $page->instagram()->isNotEmpty()) {
 					$block .= ", ";
+				}
+				if($page->instagram()->isNotEmpty()) {
+					
 					$block .= "<a href='{$page->instagram()}' target='_blank'>Instagram</a>";
 				}
 				$block .= "</div>";	

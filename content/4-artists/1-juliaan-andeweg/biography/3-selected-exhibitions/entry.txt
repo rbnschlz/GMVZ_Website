@@ -37,11 +37,11 @@ Entries:
 - 
   year1: "2014"
   year2: ""
-  fact: AO, Martin van Zomeren, Amsterdam
+  fact: Juliette Jongma, Amsterdam
 - 
   year1: "2014"
   year2: ""
-  fact: Juliette Jongma, Amsterdam
+  fact: AO, Martin van Zomeren, Amsterdam
 - 
   year1: "2014"
   year2: ""
