@@ -8,7 +8,8 @@
 	?>
 </div>
 
-<div class="main_wrapper">
+<div class="shop_wrapper">
+
 	<?php 
 
 	$output = [];
@@ -181,6 +182,7 @@
 			echo "<div class='no_match'>No matches found. Please refine your selection.</div>";
 		}
 	?>
- </div>
+
+</div>
 
 <?php snippet('footer') ?>

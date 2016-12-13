@@ -535,7 +535,11 @@ li {
 
 /* Information
 -------------------------------------------------- */
-
+.shop_wrapper {
+  padding: @mp-s 0 @mp-s @mp-s;
+  height: auto;
+}
+  
 .shop_object {
   width: 25%;
   display: inline-block;
@@ -555,21 +559,17 @@ li {
     padding: @mp-s 0 0 0;
     li {
       span {
-         display:inline-block;
       }
     }
     &_title {
       .text;
       padding-bottom: @mp-s;
+
       display: block;
       & span {
        .active;
-        display: inline !important;
-      }
-       span:before{
-        content: " ";
-        display: block;
-      }
+       display: inline;
+       }
     }
     &_artist {
       padding-bottom: @mp-s;
@@ -577,13 +577,12 @@ li {
     }
     &_publisher {
      span {
-      display: inline !important;
+      display: inline;
      }
     }
     &_desc {
       padding-top: @mp-s;
       .runningtext;
-      
     }
     &_price {
       padding-top: @mp-s;
@@ -634,12 +633,12 @@ li {
   top: 0;
   left: 0;
   &_s {
-    width: calc(~"100vw - 60px");
-    height: calc(~"100vh - 60px");
+    width: calc(~"100vw - 30px");
+    height: calc(~"100vh - 30px");
     position: absolute;
     top: 0;
     left: 0;
-    margin: @mp-m;
+    margin: @mp-s;
     &_flex {
       width: 100%;
       height: 100%;
@@ -658,7 +657,7 @@ li {
       .runningtext;
       color: black;
       text-align: center;
-      margin-top: @mp-m;
+      margin-top: @mp-s;
       p {
         padding-bottom: 0px;
       }
@@ -698,12 +697,6 @@ li {
   position: absolute;
   right: 0;
   top: 50%;
-}
-
-.activeThin {
-  border-bottom: 1px solid @c1; 
-  line-height: 1;
-  display: inline-block;
 }
 
 .active {
