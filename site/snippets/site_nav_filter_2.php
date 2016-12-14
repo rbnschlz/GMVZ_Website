@@ -68,6 +68,7 @@
 
 			//Build query
 			$url = http_build_query($params);
+			//PJAX Fix
 			$url = str_replace('&_pjax=%23pjax_wrapper', '', $url);
 			$url = str_replace('_pjax=%23pjax_wrapper', '', $url);
 		};
