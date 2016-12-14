@@ -47,14 +47,14 @@
 
 				} else if (trim($params["type"]) === $titlelow) {
 					unset($params["type"]);
-					$active = "active";
+					$active = " active";
 
 				//if title is added, remove title
 				} else if (strpos($params["type"], $titlelow) !== false) {
 					$params["type"] = str_replace(" $titlelow", '', $params["type"]);
 					$params["type"] = str_replace("$titlelow ", '', $params["type"]);
 					$params["type"] = str_replace("$titlelow", '', $params["type"]);
-					$active = "active";
+					$active = " active";
 				}
 
 				//Build query
@@ -76,7 +76,7 @@
 		$output .= (in_array($title, $featured)) ? "<a href='" : "<span";
 		$output .= (in_array($title, $featured)) ? $page->url().$filter.$url : "";
 		$output .= (in_array($title, $featured)) ? "' class='pjax " : " class='pjax ";
-		$output .= (in_array($title, $featured)) ? "" : "strike";
+		$output .= (in_array($title, $featured)) ? "" : " strike";
 		$output .= $active;
 		$output .= "'>";
 		$output .= $title;

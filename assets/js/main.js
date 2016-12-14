@@ -298,7 +298,7 @@
 	// PJAX
 	var options = {
 			url: $(this).attr("href"),
-			fragment: '#pjax_wrapper',
+			fragment: '.pjax_wrapper',
 			timeout: false
 	};
 
