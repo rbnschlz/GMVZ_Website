@@ -298,11 +298,11 @@
 	// PJAX
 	var options = {
 			url: $(this).attr("href"),
-			fragment: '.pjax_wrapper',
+			fragment: '#pjax_wrapper',
 			timeout: false
 	};
 
-	$(document).pjax('.pjax', '.pjax_wrapper', options);
+	$(document).pjax('.pjax', '#pjax_wrapper', options);
 
 
 	$(document).on('pjax:end', function(something, options) {

@@ -70,6 +70,8 @@
 
 			//Build query
 			$url = http_build_query($params);
+			$url = str_replace('&_pjax=%23pjax_wrapper', '', $url);
+			$url = str_replace('_pjax=%23pjax_wrapper', '', $url);
 		};
 
 			//Add question mark if variable is set

@@ -38,4 +38,4 @@
 
 </head>
 <body>
-<div class="pjax_wrapper">
+<div id="pjax_wrapper">
