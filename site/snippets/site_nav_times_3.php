@@ -75,7 +75,7 @@
 		$output .="'>";
 		$output .= (in_array($title, $featured)) ? "<a href='" : "<span";
 		$output .= (in_array($title, $featured)) ? $page->url().$filter.$url : "";
-		$output .= (in_array($title, $featured)) ? "' class='pjax" : " class='pjax";
+		$output .= (in_array($title, $featured)) ? "' class='pjax " : " class='pjax ";
 		$output .= (in_array($title, $featured)) ? "" : "strike";
 		$output .= $active;
 		$output .= "'>";
