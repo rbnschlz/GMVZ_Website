@@ -302,7 +302,7 @@
 			timeout: false
 	};
 
-	$(document).pjax('.pjax', '#pjax_wrapper', options);
+	$(document).pjax('.pjax', '.pjax_wrapper', options);
 
 
 	$(document).on('pjax:end', function(something, options) {
