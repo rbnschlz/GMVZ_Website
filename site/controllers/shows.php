@@ -35,6 +35,23 @@ return function($site, $pages, $page) {
         return $date;
     }
 
+    function openingTime($openingtime) {
+    $openingtime = $openingtime;
+    $fullopenhour = $openingtime;
+    $openhour = explode(":", $openingtime); 
+    $openhour_hour = $openhour[0];
+    $openhour_minute = $openhour[1];
+    $openhour_period =  date('a', strtotime($fullopenhour));
+
+    if($openhour_minute == "00") {
+        $hour = $openhour_hour.$openhour_period;
+    } else {
+        $hour = $openhour_hour.":".$openhour_minute.$openhour_period;
+    }
+
+        return $hour;
+    }
+        
 	$shows = page('shows')->children()->sortBy('startdate', 'desc', 'enddate', 'asc')->visible();
     $current_date = strtotime(date('Y-m-d H:i:s'));
 

@@ -6,8 +6,8 @@
 	$capt = "";
 	$showsUrl = page("shows")->url();
 	$i = 0;
-	$clockwise = ['15', '40', '5', '10', '23'];
-	$counterclockwise = ['-15', '-40', '-5', '-10', '-23'];
+	$clockwise = ['5', '10', '30'];
+	$counterclockwise = ['-5', '-10', '-45'];
 
 
 	//Check what events are currently on
@@ -43,11 +43,21 @@
 
 			foreach($shows as $show) {
 				$start = strtotime($show->startdate());
-				$end = strtotime($show->enddate());
+				$end = strtotime($show->enddate());	
+
+				// Rotate
+			    if($show->rotateangle()->isNotEmpty()) {
+					$rotationval = $show->rotateangle();
+				} else {
+					$rotationval = "";
+				}
+
+				
 
 				$img = "style='background-image:url(".$show->images()->first()->url().")'";
 				if (($start < $current_date) && ($end > $current_date)) {
-					$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+					$number = $rotationval;
+					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 					$block = "<a class='home_link_wrapper_curr_d'";
 					$block .= " style='transform: rotate(".$number."deg)' ";
 					$block .= "href='{$showsUrl}'>";
@@ -59,7 +69,9 @@
 					echo $block;
 				} else if ($start > $current_date) {
 					$number = $clockwise[mt_rand(0, count($clockwise) - 1)];
-					$block2 = "<a class='home_link_wrapper_upc_d'";
+					// $number = $i >= 2 ? $clockwise[mt_rand(0, count($clockwise) - 1)] : $rotationval;
+					$block2 = "<a class='";
+					$block2 .= $i >= 2 ? "home_link_wrapper_upc_d'" : "home_link_wrapper_upc_s'";
 					$block2 .= " style='transform: rotate(".$number."deg)' ";
 					$block2 .= "href='{$showsUrl}'>";
 					$block2 .= "<div class='home_background' ";
@@ -95,6 +107,14 @@
 
 		//If only current
 		} else if(in_array(true, $current)) {
+			// Rotate
+		    if($show->rotateangle()->isNotEmpty()) {
+				$rotationval = $show->rotateangle();
+			} else {
+				$rotationval = "";
+			}
+
+			// $number = $rotationval;
 			$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 			$block = "<a class='home_link_wrapper_curr_s'";
 			$block .= " style='transform: rotate(".$number."deg)' ";
@@ -123,7 +143,15 @@
 				$end = strtotime($show->enddate());
 				$img = "style='background-image:url(".$show->images()->first()->url().")'";
 
+				// Rotate
+			    if($show->rotateangle()->isNotEmpty()) {
+					$rotationval = $show->rotateangle();
+				} else {
+					$rotationval = "";
+				}
+
 				if ($start > $current_date) {
+					// $number = $rotationval;
 					$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 					$block = "<a class='";
 					$block .= $i >= 2 ? "home_link_wrapper_upc_d'" : "home_link_wrapper_upc_s'";

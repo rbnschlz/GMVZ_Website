@@ -45,6 +45,9 @@ fields:
   openingstart:
     label: Vernissage Beginning
     type: datetime
+    time:
+      format: 24
+      interval: 30
     date:
       format: DD-MM-YYYY
     width: 1/2
@@ -53,6 +56,17 @@ fields:
     type: time
     interval: 15
     width: 1/2
+  rotateangle:
+    label: Rotate angle
+    type: select
+    default: random
+    options:
+      5: 5
+      -5: -5
+      10: 10
+      -10: -10
+      30: 30
+      -45: -45
 options:
   template: false
 

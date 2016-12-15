@@ -17,6 +17,14 @@ for more information: http://getkirby.com/license
 
 c::set('license', 'put your license key here');
 c::set('debug', true);
+
+kirby()->hook(['panel.page.create', 'panel.page.update'], function($page) {
+	$values = Array("5","-5","10","-10","30","-45");
+	$item = $values[array_rand($values)];
+
+    if($page->rotateangle()->empty()) $page->update(array('rotateangle' => $item));
+});
+
 /*
 
 ---------------------------------------

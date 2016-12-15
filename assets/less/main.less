@@ -41,8 +41,8 @@ a {
 @fs-m: 20px;
 @lh-m: 24px;
 
-@fs-l: 24px;
-@lh-l: 28px;
+@fs-l: 22px;
+@lh-l: 26px;
 
 @fs-mobile-s: 16px;
 @lh-mobile-s: 20px;
@@ -335,7 +335,6 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 
-
 /* Home
 -------------------------------------------------- */
 
@@ -343,10 +342,10 @@ input:focus:-ms-input-placeholder { color:transparent; }
   display: block;
   position: fixed;
   float: left;
-  top: @mp-l;
-  left: @mp-l;
+  top: @mp-l*1.5;
+  left: @mp-s;
   // margin: @mp-l 10vw;
-  width: calc(~'72vw');  
+  width: calc(~'74vw');  
   height: calc(~'48vw');
   z-index: -1;
   div {
@@ -368,9 +367,11 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 
 .home_link_wrapper_curr_s {
+  top: @mp-l;
+  left: @mp-s;
   display: block;
   position: fixed;
-  width: calc(~'72vw');  
+  width: calc(~'74vw');  
   height: calc(~'48vw');
   // transform: rotate(18deg);
   div {
@@ -379,11 +380,13 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .home_link_wrapper_upc_s {
+  left: @mp-l*2;
+  margin-top: @mp-s;
   display: block;
   position: fixed;
   margin: @mp-m;
-  width: calc(~'72vw');  
-  height: calc(~'48vw');
+  width: calc(~'66vw');  
+  height: calc(~'42vw');
   // transform: rotate(45deg);
 }
 
@@ -907,17 +910,35 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 /* Media Queries
 -------------------------------------------------- */
-@media only screen and (min-width: 1600px) {
+@media only screen and (min-width: 1800px) {
+  html {
+    .fs-l;
+    .lh-l;
+  }
+
   /* Shop
-------------------- */
+  ----------------- */
   .shop_object {
     width: calc(~'100% / 5');
+  }
+
+  .shop_object_info_desc {
+    .fs-mobile-m;
+    .lh-mobile-m;
+  }
+}
+
+@media only screen and (min-width: 2200px) {
+  /* Shop
+  ----------------- */
+  .shop_object {
+    width: calc(~'100% / 6');
   }
 }
 
 @media only screen and (max-width: 1200px) {
   /* Shop
-------------------- */
+  ----------------- */
   .shop_object {
     width: calc(~'100% / 3');
   }
@@ -925,7 +946,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 @media only screen and (max-width: 840px) {
   /* Shop
-------------------- */
+  ----------------- */
   .shop_object {
     width: calc(~'100% / 2 - 30px');
     padding: 0;
@@ -943,7 +964,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 @media only screen and (max-width: 735px) {
   /* General
-------------------- */
+  ----------------- */
   html {
     .fs-mobile-m;
     .lh-mobile-m;
@@ -951,11 +972,11 @@ input:focus:-ms-input-placeholder { color:transparent; }
   }
 
   .menu_artists {
-  width: 100%;
+    width: 100%;
   }
 
   /* Shows
-------------------- */
+  ----------------- */
   .shows_block {
     width: calc(~'50% - 15px');
     margin: 0 0 @mp-m 0;
@@ -970,7 +991,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
   }
 
   /* Artist
-------------------- */
+  ----------------- */
   .artist_thumb {
   padding: 0 @mp-s @mp-s 0;
     img {
@@ -979,7 +1000,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
   }
 
   /* Shop
-------------------- */
+  ----------------- */
   .shop_object_info_desc {
     .fs-mobile-m;
     .lh-mobile-m;
@@ -988,21 +1009,22 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 
 @media only screen and (max-width: 600px) {
+  /* Shop
+  ----------------- */
   .shop_object {
-      width: calc(~'100% / 1');
-      padding: 0 @mp-s 0 0;
+    width: calc(~'100% / 1');
+    padding: 0 @mp-s 0 0;
   }
 
   .shop_object:nth-child(odd) {
     margin-right: 0px;
   }
-
 }
 
 
 @media only screen and (max-width: 540px) {
   /* General
-------------------- */
+  ----------------- */
   .sitenav {
     &_information {
       display: block;
@@ -1010,7 +1032,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
   }
 
   /* Shows
-------------------- */
+  ----------------- */
   .shows_block {
     width: 100%;
     padding-right: 0px;
@@ -1025,19 +1047,17 @@ input:focus:-ms-input-placeholder { color:transparent; }
   }
 
   /* Artist
-------------------- */
+  ----------------- */
   .artist_thumb {
     img {
       height: 95px;
     }
   }
-
 }
-
 
 @media only screen and (max-width: 320px) {
   /* General
-------------------- */
+  ----------------- */
   html {
     .fs-mobile-s;
     .lh-mobile-s;
@@ -1045,10 +1065,9 @@ input:focus:-ms-input-placeholder { color:transparent; }
   }
 
   /* Shop
-------------------- */
- .shop_object_info_desc {
+  ------------------- */
+  .shop_object_info_desc {
     .fs-mobile-s;
     .lh-mobile-s;
   } 
-
 }

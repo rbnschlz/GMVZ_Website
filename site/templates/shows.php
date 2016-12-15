@@ -25,6 +25,13 @@
 		$counterclockwise = ['-15', '-40', '-5', '-10', '-23'];
 
 		foreach($shows as $show) {
+			// Rotation
+			if($show->rotateangle()->isNotEmpty()) {
+				$rotationval = $show->rotateangle();
+			} else {
+				$rotationval = "";
+			}
+
 			// Exhibition dates
 			$start = strtotime($show->startdate());
         	$end = strtotime($show->enddate());
@@ -40,7 +47,8 @@
         	$closingtime = date('H:i', $closing);
         	$time = "{$openingtime}–{$closingtime}";
 
-        	$openingstring = "{$openingdate}";
+        	$openingtime = openingTime($openingtime);
+        	$openingstring = "Opening&nbsp;".$openingdate.", &nbsp;".$openingtime;
 
         	//Set Date variable
 			if ($end < $current_date) {
@@ -48,11 +56,13 @@
 				$rotation = "";
 			} else if (($start < $current_date) && ($end > $current_date)) {
 				$when = "current";
-				$number = $clockwise[mt_rand(0, count($clockwise) - 1)];
+				// $number = $clockwise[mt_rand(0, count($clockwise) - 1)];
+				$number = $rotationval;
 				$rotation = " transform: rotate(".$number."deg)' ";
 			} else if ($start > $current_date) {
 				$when = "upcoming";
-				$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+				// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+				$number = $rotationval;
 				$rotation = " transform: rotate(".$number."deg)' ";
 			};
 			//Set Artist variable
@@ -186,7 +196,8 @@
 			$urlStart = "<a href='{$show->url()}'>";
 			$urlEnd = "</a>";
 			
-
+			//date display
+			$date = $when === "upcoming" && $show->openingstart()->isNotEmpty() ? $openingstring : $datestring;
 
 			//Build Block and display
 
@@ -201,7 +212,7 @@
 				$block .= ", ";
 				
 				$block .= "<span class='shows_block_date'>";
-				$block .= $datestring;
+				$block .= $date;
 				$block .= "</span>";
 
 				if (!empty($artistSummery)) {

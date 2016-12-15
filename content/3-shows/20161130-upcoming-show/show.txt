@@ -39,3 +39,7 @@ Openingstart: 2016-11-29 18:00:00
 ----
 
 Openingend: 22:15
+
+----
+
+Rotateangle: -10
