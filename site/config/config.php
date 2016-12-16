@@ -15,7 +15,7 @@ for more information: http://getkirby.com/license
 
 */
 
-c::set('license', 'put your license key here');
+c::set('license', 'K2-PRO-b2c43ec4771aa32b0405abaa12f836b2');
 c::set('debug', true);
 
 kirby()->hook(['panel.page.create', 'panel.page.update'], function($page) {
