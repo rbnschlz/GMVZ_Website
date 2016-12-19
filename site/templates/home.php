@@ -7,7 +7,7 @@
 	$showsUrl = page("shows")->url();
 	$i = 0;
 	$clockwise = ['5', '10', '30'];
-	$counterclockwise = ['-5', '-10', '-45'];
+	$counterclockwise = ['-5', '-30'];
 
 
 	//Check what events are currently on
@@ -56,8 +56,8 @@
 
 				$img = "style='background-image:url(".$show->images()->first()->url().")'";
 				if (($start < $current_date) && ($end > $current_date)) {
-					$number = $rotationval;
-					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+					// $number = $rotationval;
+					$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 					$block = "<a class='home_link_wrapper_curr_d'";
 					$block .= " style='transform: rotate(".$number."deg)' ";
 					$block .= "href='{$showsUrl}'>";
