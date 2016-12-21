@@ -18,7 +18,7 @@ Mail: contact@gmvz.com
 
 ----
 
-Phone: +31 20 420 8129
+Phone: +31 20 1111 222
 
 ----
 
@@ -43,3 +43,7 @@ Facebook: https://www.facebook.com/galerie.vanzomeren?fref=ts
 ----
 
 Instagram: https://www.instagram.com/martin_van_zomeren/
+
+----
+
+Rotateangle: 10

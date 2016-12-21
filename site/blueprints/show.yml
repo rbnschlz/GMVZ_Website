@@ -37,11 +37,13 @@ fields:
     type:  date
     format: DD-MM-YYYY
     width: 1/2
+    required: true
   enddate:
     label: Exhibition Ending
     type:  date
     format: DD-MM-YYYY
     width: 1/2
+    required: true
   openingstart:
     label: Vernissage Beginning
     type: datetime
