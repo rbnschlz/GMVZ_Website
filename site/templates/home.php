@@ -6,8 +6,8 @@
 	$capt = "";
 	$showsUrl = page("shows")->url();
 	$i = 0;
-	$clockwise = ['5', '10', '30'];
-	$counterclockwise = ['-5', '-30'];
+	$clockwise = ['5', '10', '15', '30'];
+	$counterclockwise = ['-5', '-10', '-15', '-45'];
 
 
 	//Check what events are currently on
