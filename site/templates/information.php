@@ -78,7 +78,7 @@
 
 	if(isset($_POST['submit'])){
 	    $email = email(array(
-			'to'      => 'rbnschlz@gmail.com',
+			'to'      => $mail,
 			'from'    => $_POST['email'],
 			'subject' => 'Newsletter Subscription',
 			'body'    => 'Please add ' . $_POST['email'] . ' to the list of subscribers'
