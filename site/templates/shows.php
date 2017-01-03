@@ -43,12 +43,15 @@
         	$opening = strtotime($show->openingstart());
         	$closing = strtotime($show->openingend());
         	$openingdate = date('j M Y', $opening);
-        	$openingtime = date('H:i', $opening);
-        	$closingtime = date('H:i', $closing);
-        	$time = "{$openingtime}–{$closingtime}";
+        	$openingtime = date('g:i a', $opening);
+        	$closingtime = date('g:i a', $closing);
+        	
+        	$openingtime = $show->openingend()->isNotEmpty() && date('a', $opening) === date('a', $closing) ? openingTime1($openingtime) : openingTime2($openingtime);
+        	$closingtime = closingTime($closingtime);
 
-        	$openingtime = openingTime($openingtime);
-        	$openingstring = "Opening&nbsp;".$openingdate.", &nbsp;".$openingtime;
+        	$closingtime = $show->openingend()->isNotEmpty() ? " – 	".$closingtime : "";
+
+        	$openingstring = "Opening&nbsp;".$openingdate.", &nbsp;".$openingtime.$closingtime;
 
         	//Set Date variable
 			if ($end < $current_date) {

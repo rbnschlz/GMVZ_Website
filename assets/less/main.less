@@ -531,8 +531,8 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .show_description { 
-  padding-right: @mp-m;
-  max-width: 1200px;
+  padding-right: @mp-xl;
+  max-width: 1600px;
   display: block;
   &_title {
     display: table;
@@ -574,7 +574,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 -------------------------------------------------- */
 
 .artist_bio {
-  padding-right: @mp-m;
+  padding-right: @mp-xl;
 }
 
 .artist_bio_info_section {
@@ -990,6 +990,12 @@ input:focus:-ms-input-placeholder { color:transparent; }
     margin-right: @mp-m;
   }
 
+  /* Show
+  ----------------- */
+  .show_description { 
+  padding-right: @mp-s;
+  }
+
   /* Artist
   ----------------- */
   .artist_thumb {
@@ -997,6 +1003,10 @@ input:focus:-ms-input-placeholder { color:transparent; }
     img {
       height: 120px;
     }
+  }
+
+  .artist_bio {
+    padding-right: @mp-s;
   }
 
   /* Shop

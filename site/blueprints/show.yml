@@ -56,7 +56,7 @@ fields:
   openingend:
     label: Vernissage Ending
     type: time
-    interval: 15
+    interval: 30
     width: 1/2
   rotateangle:
     label: Rotate angle
