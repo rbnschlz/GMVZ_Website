@@ -26,19 +26,19 @@ Oscar Pabón (b. 1984, Venezuela) is a former resident of the Rijksakademie (201
 
 ----
 
-Startdate: 2016-11-30
+Startdate: 2017-01-08
 
 ----
 
-Enddate: 2016-12-30
+Enddate: 2017-01-19
 
 ----
 
-Openingstart: 2016-11-29 18:00:00
+Openingstart: 2017-01-07 18:00:00
 
 ----
 
-Openingend: 22:15
+Openingend: 22:30
 
 ----
 

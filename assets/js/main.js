@@ -172,6 +172,36 @@
 		});
 	}
 
+	//Z-index on hover
+	var zindexhover = function(){
+		if($(".home_show").length > 1) {
+			$(".home_show").each(function() {
+  				var zindex = $(this).css("z-index");
+  				var shows = $(".home_show").length;
+  				var zindexplus = zindex + shows;
+
+  				var title = $(this).attr("title");
+
+  				$(this).hover (function () {
+	                  $(this).css({"z-index": zindexplus});
+	                  $(this).siblings(".home_show").css({"z-index": "0"});
+
+	                  $(".home_link").each(function(){
+	                  	var text = $(this).text();
+	                  	if(text === title) {
+	                  		$(this).addClass("active");
+	                  	} else {
+	                  		$(this).removeClass("active");
+	                  	}
+	                  });
+	            });
+
+			});
+
+		}
+		
+	}
+
 	// PJAX
 	var options = {
 			url: $(this).attr("href"),
@@ -207,7 +237,7 @@
 		slideit();
 		showPage();
 		artistCycle();
-		// showsCaption();
+		zindexhover();
 		mailshake();
 		randommargin();
 		lazy();

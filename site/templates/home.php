@@ -56,9 +56,9 @@
 
 				$img = "style='background-image:url(".$show->images()->first()->url().")'";
 				if (($start < $current_date) && ($end > $current_date)) {
-					// $number = $rotationval;
-					$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
-					$block = "<a class='home_link_wrapper_curr_d'";
+					$number = $rotationval;
+					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+					$block = "<a class='home_link_wrapper_curr_d home_show' title='{$show->title()}' ";
 					$block .= " style='transform: rotate(".$number."deg)' ";
 					$block .= "href='{$showsUrl}'>";
 					$block .= "<div class='home_background' ";
@@ -68,10 +68,11 @@
 
 					echo $block;
 				} else if ($start > $current_date) {
-					$number = $clockwise[mt_rand(0, count($clockwise) - 1)];
+					// $number = $clockwise[mt_rand(0, count($clockwise) - 1)];
 					// $number = $i >= 2 ? $clockwise[mt_rand(0, count($clockwise) - 1)] : $rotationval;
+					$number = $rotationval;
 					$block2 = "<a class='";
-					$block2 .= $i >= 2 ? "home_link_wrapper_upc_d'" : "home_link_wrapper_upc_s'";
+					$block2 .= $i >= 2 ? "home_link_wrapper_upc_d home_show' title='{$show->title()}' " : "home_link_wrapper_upc_s home_show' title='{$show->title()}' ";
 					$block2 .= " style='transform: rotate(".$number."deg)' ";
 					$block2 .= "href='{$showsUrl}'>";
 					$block2 .= "<div class='home_background' ";
@@ -84,7 +85,7 @@
 			}
 
 			//Caption
-			$block = "<div class='home_caption'><span>Current: <a class='' href='";
+			$block = "<div class='home_caption'><span>Current: <a class='home_link active' href='";
 			$block .= $event->url();
 			$block .= "'>";
 			$block .= $event->title();
@@ -94,7 +95,7 @@
 			foreach($shows as $show) {
 				$start = strtotime($show->startdate());
 				if ($start > $current_date) {
-				$block .= "<a class='' href='";
+				$block .= "<a class='home_link' href='";
 				$block .= $show->url();
 				$block .= "'>";
 				$block .= $show->title();
@@ -114,9 +115,9 @@
 				$rotationval = "";
 			}
 
-			// $number = $rotationval;
-			$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
-			$block = "<a class='home_link_wrapper_curr_s'";
+			$number = $rotationval;
+			// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+			$block = "<a class='home_link_wrapper_curr_s home_show' title='{$show->title()}' ";
 			$block .= " style='transform: rotate(".$number."deg)' ";
 			$block .= "href='{$showsUrl}'>";
 			$block .= "<div class='home_background' ";
@@ -127,7 +128,7 @@
 			echo $block;
 
 			//Caption
-			$block = "<div class='home_caption'><span>Current exhibition: </span><a class='' href='";
+			$block = "<div class='home_caption'><span>Current exhibition: </span><a class='home_link active' href='";
 			$block .= $event->url();
 			$block .= "'>";
 			$block .= $event->title();
@@ -151,10 +152,10 @@
 				}
 
 				if ($start > $current_date) {
-					// $number = $rotationval;
-					$number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
+					$number = $rotationval;
+					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 					$block = "<a class='";
-					$block .= $i >= 2 ? "home_link_wrapper_upc_d'" : "home_link_wrapper_upc_s'";
+					$block .= $i >= 2 ? "home_link_wrapper_upc_d' home_show title='{$show->title()}' " : "home_link_wrapper_upc_s home_show' title='{$show->title()}' ";
 					$block .= " style='transform: rotate(".$number."deg)' ";
 					$block .= "href='{$showsUrl}'>";
 					$block .= "<div class='home_background' ";
@@ -173,7 +174,7 @@
 			foreach($shows as $show) {
 				$start = strtotime($show->startdate());
 				if ($start > $current_date) {
-				$block .= "<a class='' href='";
+				$block .= "<a class='home_link' href='";
 				$block .= $show->url();
 				$block .= "'>";
 				$block .= $show->title();
