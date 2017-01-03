@@ -21,9 +21,6 @@
 		$allyears = [];
 
 		//Rotation
-		$clockwise = ['15', '40', '5', '10', '23'];
-		$counterclockwise = ['-15', '-40', '-5', '-10', '-23'];
-
 		foreach($shows as $show) {
 			// Rotation
 			if($show->rotateangle()->isNotEmpty()) {
@@ -61,12 +58,12 @@
 				$when = "current";
 				// $number = $clockwise[mt_rand(0, count($clockwise) - 1)];
 				$number = $rotationval;
-				$rotation = " transform: rotate(".$number."deg)' ";
+				$rotation = "style='transform: rotate(".$number."deg)' ";
 			} else if ($start > $current_date) {
 				$when = "upcoming";
 				// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 				$number = $rotationval;
-				$rotation = " transform: rotate(".$number."deg)' ";
+				$rotation = "style='transform: rotate(".$number."deg)' ";
 			};
 			//Set Artist variable
 			$artist = $show->artist();
@@ -85,7 +82,8 @@
 			//Set src
 			$img = "";
 			if ($show->hasImages()) {
-				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().");".$rotation."'";
+				// $img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().");".$rotation."'";
+				$img = "data-src='".$show->images()->sortBy('sort', 'asc')->first()->url()."'";
 				$zoomImg = $show->images()->sortBy('sort', 'asc')->first()->width(1000)->url();
 			}
 
@@ -203,10 +201,9 @@
 			$date = $when === "upcoming" && $show->openingstart()->isNotEmpty() ? $openingstring : $datestring;
 
 			//Build Block and display
-
-			$block = "<div class='shows_block'>";
+			$block = "<div class='shows_block lazy'>";
 			$block .= $urlStart;
-			$block .= "<span class='shows_block_thumb ".$when."' ".$img." zoom-image=".$zoomImg." data-time='".$when."'></span>";
+			$block .= "<span class='shows_block_thumb ".$when."' ".$img." ".$rotation." zoom-image=".$zoomImg." data-time='".$when."'></span>";
 			$block .= $urlEnd;
 			$block .= "<span class='shows_block_caption ".$artistClickable."'>";
 				$block .= "<span class='shows_block_title'>";
