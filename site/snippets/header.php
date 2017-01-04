@@ -18,8 +18,8 @@
   <meta name="robots" content="index, follow" />
   <meta property="og:url" content="<?php echo html($site->url()) ?>/" />
   <meta property="og:description" content="<?php echo html($site->description()) ?>" />
-  <meta property="og:image" content="<?php //echo $img; ?>"" />
-  <link rel="image_src" href="<?php //echo $img; ?>" />
+  <meta property="og:image" content="/assets/img/gmvzfb.jpg" />
+  <link rel="image_src" href="/assets/img/gmvzfb.jpg" />
 
   <?php 
     echo less('assets/less/main.less');
@@ -31,9 +31,10 @@
   <link rel="icon" type="image/png" href="assets/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="manifest" href="assets/favicon/manifest.json">
   <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+
   <meta name="theme-color" content="#ffffff">
 
 
 </head>
 <body>
-<div id="pjax_wrapper">
+  <div id="pjax_wrapper">

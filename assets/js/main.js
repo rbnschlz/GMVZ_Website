@@ -122,6 +122,7 @@
 				}
 	        }
 		});
+		$('.shop_object_img_s').unveil();
 	}
 
 	//Mail Shake
@@ -196,7 +197,7 @@
 		if ($('.mailform').length) {
 			mailshake();
 		}
-		if ($('.shows_wrap').length) {
+		if ($('.shows_wrap').length || $(".shop_wrapper").length) {
 			lazy();
 		}
 		
@@ -206,13 +207,22 @@
 
 	//document ready
 	$(document).ready(function(){
-		slideit();
+		if ($(".artist_artworks_container").length) {
+			artistCycle();
+		}
+		if ($(".zoomable").length) {
+			slideit();
+		}
+		if ($('.mailform').length) {
+			mailshake();
+		}
+		if ($('.shows_wrap').length || $(".shop_wrapper").length) {
+			lazy();
+		}
+		
 		showPage();
-		artistCycle();
-		zindexhover();
-		mailshake();
 		randommargin();
-		lazy();
+		zindexhover();
 	});
 
 	$(window).resize(function(){
