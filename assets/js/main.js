@@ -180,7 +180,7 @@
   				var shows = $(".home_show").length;
   				var zindexplus = zindex + 1;
 
-  				var title = $(this).attr("title");
+  				var title = $(this).attr("show");
 
   				$(this).hover (function () {
 	                  $(this).css({"z-index": zindexplus});
