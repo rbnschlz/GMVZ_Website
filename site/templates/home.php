@@ -101,7 +101,10 @@
 			$block .= "</a></span>";
 			$block .= "<span>Upcoming: ";
 
+			$i = 0;
+			$len = count($shows);
 			foreach($shows as $show) {
+				$i++;
 				$start = strtotime($show->startdate());
 				if ($start > $current_date) {
 				$block .= "<a class='home_link' href='";
@@ -109,6 +112,7 @@
 				$block .= "'>";
 				$block .= $show->title();
 				$block .= "</a>";
+				$block .= $i < $len ? ", " : "";
 				}
 			}
 
@@ -180,7 +184,10 @@
 			$block = "<div class='home_caption'>";
 			$block .= "<span>Upcoming: ";
 
+			$i = 0;
+			$len = count($shows);
 			foreach($shows as $show) {
+				$i++;
 				$start = strtotime($show->startdate());
 				if ($start > $current_date) {
 				$block .= "<a class='home_link' href='";
@@ -188,6 +195,7 @@
 				$block .= "'>";
 				$block .= $show->title();
 				$block .= "</a>";
+				$block .= $i < $len ? ", " : "";
 				}
 			}
 
