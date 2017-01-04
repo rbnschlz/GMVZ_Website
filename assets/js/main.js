@@ -111,7 +111,10 @@
 				var imageUrl = $(image).attr("zoom-image");
 
 				//ZOOM
-				$(image).zoom({url: imageUrl});
+				$(image).zoom({
+					url: imageUrl,
+					touch: false
+				});
 
 				//Artist Names
 				if(artists.length){
