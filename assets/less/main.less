@@ -163,6 +163,7 @@ html {
 }
 
 body {
+  min-height: 100vh;
   margin: 0;
   cursor: default;
   overflow-x: hidden; 
@@ -526,7 +527,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
     margin: 0 0 @mp-s 0;
     display: block;
     max-width: calc(~'100% - 60px');
-    span {
+    & span {
       .active;
       display: inline;
     }
