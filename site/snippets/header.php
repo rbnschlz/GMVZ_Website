@@ -24,7 +24,7 @@
   <?php 
     echo less('assets/less/main.less');
     echo css('assets/css/main.css');
-   ?>
+  ?>
 
   <link rel="apple-touch-icon" sizes="180x180" href="">
   <link rel="icon" type="image/png" href="" sizes="32x32">
@@ -38,4 +38,4 @@
 
 </head>
 <body>
-<div id="pjax_wrapper">
+  <div id="pjax_wrapper">
