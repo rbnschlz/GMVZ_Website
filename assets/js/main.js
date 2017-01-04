@@ -178,13 +178,13 @@
 			$(".home_show").each(function() {
   				var zindex = $(this).css("z-index");
   				var shows = $(".home_show").length;
-  				var zindexplus = zindex + shows;
+  				var zindexplus = zindex + 1;
 
   				var title = $(this).attr("title");
 
   				$(this).hover (function () {
 	                  $(this).css({"z-index": zindexplus});
-	                  $(this).siblings(".home_show").css({"z-index": "0"});
+	                  $(this).siblings(".home_show").css({"z-index": ""});
 
 	                  $(".home_link").each(function(){
 	                  	var text = $(this).text();
