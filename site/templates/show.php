@@ -30,7 +30,9 @@
 			$block = "<li class='show_info_section'>";
 			$block .= "<span class='show_info_title'>";
 
+			$block .= "<span>";
 			$block .= $title;
+			$block .= "</span>";
 			$block .= "</span>";
 			$block .= "</li>";
 

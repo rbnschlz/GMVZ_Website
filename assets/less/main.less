@@ -159,12 +159,13 @@ html {
   -ms-text-size-adjust: 100%;
   .text;
   background: black;
+  overflow-x: hidden; 
 }
 
 body {
   margin: 0;
-  overflow-x: hidden; 
   cursor: default;
+  overflow-x: hidden; 
 }
 
 a {
@@ -523,7 +524,12 @@ input:focus:-ms-input-placeholder { color:transparent; }
    }
    &_title {
     margin: 0 0 @mp-s 0;
-    .active;
+    display: block;
+    max-width: calc(~'100% - 60px');
+    span {
+      .active;
+      display: inline;
+    }
    }
    &_date {
     display: block;
@@ -718,7 +724,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
       & span {
        .active;
        display: inline;
-       }
+      }
     }
     &_artist {
       padding-bottom: @mp-s;
@@ -1007,9 +1013,6 @@ input:focus:-ms-input-placeholder { color:transparent; }
    margin: 0px;
   }
 
-  .show_info_title {
-    max-width: calc(~'100% - 60px');
-  }
 
   /* Artist
   ----------------- */
