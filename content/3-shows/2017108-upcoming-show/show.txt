@@ -34,11 +34,11 @@ Enddate: 2017-01-19
 
 ----
 
-Openingstart: 2017-01-07 18:00:00
+Openingstart: 
 
 ----
 
-Openingend: 22:30
+Openingend: 
 
 ----
 
