@@ -1,0 +1,17 @@
+{
+	"name": "Martin van Zomeren",
+	"icons": [
+		{
+			"src": "\/assets\/img\/android-chrome-192x192.png?v=GvJ77d6nlW",
+			"sizes": "192x192",
+			"type": "image\/png"
+		},
+		{
+			"src": "\/assets\/img\/android-chrome-512x512.png?v=GvJ77d6nlW",
+			"sizes": "512x512",
+			"type": "image\/png"
+		}
+	],
+	"theme_color": "#ffffff",
+	"display": "standalone"
+}
