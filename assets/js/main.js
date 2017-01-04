@@ -56,26 +56,26 @@
 		});
 	};
 
-	var showPage= function(){
+	// var showPage= function(){
 	
-		var PrButton = $(".show_info_button");	
-		var PrOverlay = $(".show_description_overlay");
+	// 	var PrButton = $(".show_info_button");	
+	// 	var PrOverlay = $(".show_description_overlay");
 
-		// $(PrButton).click(function(){
-		$(document).on('click', PrButton, function(event) {
-			$(PrOverlay).addClass('active');
-			$(PrOverlay).addClass('ontop'); 	
-		});
+	// 	// $(PrButton).click(function(){
+	// 	$(document).on('click', PrButton, function(event) {
+	// 		$(PrOverlay).addClass('active');
+	// 		$(PrOverlay).addClass('ontop'); 	
+	// 	});
 
-		// $(PrOverlay).click(function(){
-		$(document).on('click', PrOverlay, function(event) {	
-			if($(PrOverlay).hasClass("active")) {
-				$(PrOverlay).removeClass('active');
-				$(PrOverlay).removeClass('ontop'); 
-			} 
-		});
+	// 	// $(PrOverlay).click(function(){
+	// 	$(document).on('click', PrOverlay, function(event) {	
+	// 		if($(PrOverlay).hasClass("active")) {
+	// 			$(PrOverlay).removeClass('active');
+	// 			$(PrOverlay).removeClass('ontop'); 
+	// 		} 
+	// 	});
 
-	};
+	// };
 
 	var artistCycle = function(){
 		$(".artist_artworks_container").cycle({
@@ -100,8 +100,14 @@
 	}
 
 	//Lazy Load
+	// var wwwidth = $(window).width();
+	// $(window).resize(function(){
+	// 	var wwwidth = $(window).width()
+	// })
+
 	var lazy = function(){
 		var win =  $(window).height()*1.5;
+		var wwwidth = $(window).width();
 		$('.lazy a span').unveil({
 			offset: win,
 			loaded: function () {
@@ -113,10 +119,14 @@
 				var imageUrl = $(image).attr("zoom-image");
 
 				//ZOOM
-				$(image).zoom({
-					url: imageUrl,
-					touch: false
-				});
+				if (wwwidth > 700) {
+					$(image).zoom({
+						url: imageUrl,
+						touch: false
+					});
+				} else {
+					$(image).trigger('zoom.destroy'); 
+				}
 
 				//Artist Names
 				if(artists.length){
@@ -207,7 +217,7 @@
 			lazy();
 		}
 		
-		showPage();
+		// showPage();
 		randommargin();
 	});
 
@@ -226,12 +236,13 @@
 			lazy();
 		}
 		
-		showPage();
+		// showPage();
 		randommargin();
 		zindexhover();
 	});
 
 	$(window).resize(function(){
+		lazy();
 	})
 
 	$(document.documentElement).keyup(function (event) {
