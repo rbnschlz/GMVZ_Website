@@ -203,7 +203,9 @@
 			//Build Block and display
 			$block = "<div class='shows_block lazy'>";
 			$block .= $urlStart;
-			$block .= "<span class='shows_block_thumb ".$when."' ".$img." ".$rotation." zoom-image=".$zoomImg." data-time='".$when."'></span>";
+			$block .= "<span class='";
+			$block .= s::get('device_class') == 'mobile' || s::get('device_class') == 'tablet' ? "" : "zoomthis ";
+			$block .= "shows_block_thumb ".$when."' ".$img." ".$rotation." zoom-image=".$zoomImg." data-time='".$when."'></span>";
 			$block .= $urlEnd;
 			$block .= "<span class='shows_block_caption ".$artistClickable."'>";
 				$block .= "<span class='shows_block_title'>";

@@ -56,27 +56,6 @@
 		});
 	};
 
-	// var showPage= function(){
-	
-	// 	var PrButton = $(".show_info_button");	
-	// 	var PrOverlay = $(".show_description_overlay");
-
-	// 	// $(PrButton).click(function(){
-	// 	$(document).on('click', PrButton, function(event) {
-	// 		$(PrOverlay).addClass('active');
-	// 		$(PrOverlay).addClass('ontop'); 	
-	// 	});
-
-	// 	// $(PrOverlay).click(function(){
-	// 	$(document).on('click', PrOverlay, function(event) {	
-	// 		if($(PrOverlay).hasClass("active")) {
-	// 			$(PrOverlay).removeClass('active');
-	// 			$(PrOverlay).removeClass('ontop'); 
-	// 		} 
-	// 	});
-
-	// };
-
 	var artistCycle = function(){
 		$(".artist_artworks_container").cycle({
 				slides:".artist_artworks_slide",
@@ -100,11 +79,6 @@
 	}
 
 	//Lazy Load
-	// var wwwidth = $(window).width();
-	// $(window).resize(function(){
-	// 	var wwwidth = $(window).width()
-	// })
-
 	var lazy = function(){
 		var win =  $(window).height()*1.5;
 		var wwwidth = $(window).width();
@@ -119,10 +93,9 @@
 				var imageUrl = $(image).attr("zoom-image");
 
 				//ZOOM
-				if (wwwidth > 700) {
+				if (image.hasClass("zoomthis")) {
 					$(image).zoom({
-						url: imageUrl,
-						touch: false
+						url: imageUrl
 					});
 				} else {
 					$(image).trigger('zoom.destroy'); 
@@ -186,12 +159,21 @@
 	                  	}
 	                  });
 	            });
-
 			});
-
 		}
-		
 	}
+
+	//Fade in Images
+	var fade = function () {
+        $(".fader").each(function(index) {
+            // $(this).delay(50*index).addClass('faded').removeClass('fader');
+             $(this).delay(50*index).queue(function(next){
+    			$(this).removeClass("fader").addClass("faded");
+			});
+        });
+        // var timer = $(".faded").length;
+        // setTimeout(function() { pos(); }, 49.5*timer);
+	};
 
 	// PJAX
 	var options = {
@@ -219,6 +201,7 @@
 		
 		// showPage();
 		randommargin();
+		fade();
 	});
 
 	//document ready
@@ -239,6 +222,7 @@
 		// showPage();
 		randommargin();
 		zindexhover();
+		fade();
 	});
 
 	$(window).resize(function(){
