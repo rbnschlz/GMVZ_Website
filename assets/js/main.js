@@ -119,10 +119,9 @@
 				var imageUrl = $(image).attr("zoom-image");
 
 				//ZOOM
-				if (wwwidth > 700) {
+				if (image.hasClass("zoomthis")) {
 					$(image).zoom({
-						url: imageUrl,
-						touch: false
+						url: imageUrl
 					});
 				} else {
 					$(image).trigger('zoom.destroy'); 
