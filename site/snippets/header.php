@@ -18,8 +18,8 @@
   <meta name="robots" content="index, follow" />
   <meta property="og:url" content="<?php echo html($site->url()) ?>/" />
   <meta property="og:description" content="<?php echo html($site->description()) ?>" />
-  <meta property="og:image" content="<?php //echo $img; ?>"" />
-  <link rel="image_src" href="<?php //echo $img; ?>" />
+  <meta property="og:image" content="/assets/img/gmvzfb.jpg" />
+  <link rel="image_src" href="/assets/img/gmvzfb.jpg" />
 
   <?php 
     echo less('assets/less/main.less');
