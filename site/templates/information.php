@@ -95,6 +95,7 @@
 <div class="information_credit_text">
 	<span class="information_credit_text_copy">Copyright by Galerie Martin van Zomeren (<?php echo date("Y") ?>)</span>
 	<span>Development and Design by <a href="http://bramvandenberg.com/" target="_blank">Bram van den Berg</a> and <a href="http://robinscholz.com/" target="_blank">Robin Scholz</a></span>
+	<span>Typeface by <a href="http://abcdinamo.com/" target="_blank">Dinamo</a></span>
 </div>
 
 </div>

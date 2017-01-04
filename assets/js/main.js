@@ -97,32 +97,6 @@
 		
 	}
 
-		var showsCaption = function(){
-		var showBlock = $(".shows_block");
-
-		$(showBlock).each(function() {	
-			var caption = $(this).children(".shows_block_caption");	
-			var	date = caption.children(".shows_block_date");
-			var	artists = caption.children(".shows_block_artists");
-			var	image = $(this).find(".shows_block_thumb");
-			var imageUrl = $(image).attr("zoom-image");
-			// var captionHeight = $(caption).height();
-			// var captionWidth = $(caption).width();
-
-			// Zoom
-			$(image).zoom({url: imageUrl});
-
-			// Click for artist
-			if(artists.length){
-				$(caption).click(function() {
-					date.toggleClass("hide");
-					artists.toggleClass("hide");
-				});
-			}
-		});	
-	}
-
-
 	//Lazy Load
 	var lazy = function(){
 		var win =  $(window).height()*1.5;
@@ -212,7 +186,6 @@
 	$(document).pjax('.pjax', '#pjax_wrapper', options);
 
 	$(document).on('pjax:end', function(something, options) {
-		// var $this = $(something.target)
 
 		if ($(".artist_artworks_container").length) {
 			artistCycle();
@@ -228,7 +201,6 @@
 		}
 		
 		showPage();
-		// showsCaption();
 		randommargin();
 	});
 
