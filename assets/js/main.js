@@ -61,12 +61,14 @@
 		var PrButton = $(".show_info_button");	
 		var PrOverlay = $(".show_description_overlay");
 
-		$(PrButton).click(function(){
+		// $(PrButton).click(function(){
+		$(document).on('click', PrButton, function(event) {
 			$(PrOverlay).addClass('active');
 			$(PrOverlay).addClass('ontop'); 	
 		});
 
-		$(PrOverlay).click(function(){
+		// $(PrOverlay).click(function(){
+		$(document).on('click', PrOverlay, function(event) {	
 			if($(PrOverlay).hasClass("active")) {
 				$(PrOverlay).removeClass('active');
 				$(PrOverlay).removeClass('ontop'); 
@@ -119,6 +121,7 @@
 				//Artist Names
 				if(artists.length){
 					$(caption).click(function() {
+					// $(document).on('click', caption, function(event) {	
 						date.toggleClass("hide");
 						artists.toggleClass("hide");
 					});
