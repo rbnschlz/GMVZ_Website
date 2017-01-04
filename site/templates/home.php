@@ -1,3 +1,12 @@
+<?php if(s::get('device_class') == 'mobile'): ?>
+<?php 	
+	$shows = page("shows")->url();
+	if(s::get('device_class') == 'mobile') {
+  		header('Location: $shows');
+	}
+?>
+<?php endif; ?>
+
 <?php 
 	$featured = [];
 	$current = [];
