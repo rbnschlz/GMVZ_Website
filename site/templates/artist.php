@@ -6,7 +6,7 @@
 		<div class='artist_thumb_wrap'>
 			<?php $thumbs = $page->images();
 			foreach($thumbs->sortBy('sort', 'asc') as $thumb): $caption = $thumb->caption()->html(); ?>
-				<div class="artist_thumb"><img class='artist_thumb_img zoomable fader' src="<?php echo $thumb->resize(500)->url() ?>">
+				<div class="artist_thumb"><img class='artist_thumb_img zoomable' src="<?php echo $thumb->resize(500)->url() ?>">
 				<!-- <?php echo $caption?> -->
 				</div>
 

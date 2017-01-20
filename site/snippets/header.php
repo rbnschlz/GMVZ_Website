@@ -20,11 +20,6 @@
   <meta property="og:description" content="<?php echo html($site->description()) ?>" />
   <meta property="og:image" content="/assets/img/gmvzfb.jpg" />
   <link rel="image_src" href="/assets/img/gmvzfb.jpg" />
-
-  <?php 
-    echo less('assets/less/main.less');
-    echo css('assets/css/main.css');
-   ?>
   
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=GvJ77d6nlW">
   <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png?v=GvJ77d6nlW" sizes="32x32">
@@ -35,7 +30,22 @@
   <meta name="msapplication-config" content="/assets/img/browserconfig.xml?v=GvJ77d6nlW">
   <meta name="theme-color" content="#ffffff">
 
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
+  ga('create', 'UA-13067114-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <!-- End Google Analytics -->
+
+  <?php 
+    echo less('assets/less/main.less');
+    echo css('assets/css/main.css');
+  ?>
 </head>
 <body>
   <div id="pjax_wrapper">

@@ -123,6 +123,14 @@
 				$artistsummary = "";
 			}
 
+			//Description or not
+			if($news->description()->isNotEmpty()){
+				$description = "<span class='news_entry_item_desc'>";
+				$description .= $news->description();
+				$description .= "</span>";
+			} else {
+				$description = "";
+			};
 
 
 			//Build Block and display
@@ -135,7 +143,6 @@
 				$block .= "<li class='news_entry_item'>";
 				$block .= $urlStart;
 				$block .= $news->title();
-				$block .= $urlEnd;	
 				if(!empty($artistsummary)) {
 				$block .= ", ";
 				$block .= $artistsummary;
@@ -152,6 +159,8 @@
 					// }
 				$block .= "<span class='news_entry_date'>{$datestring}</span>";
 				}
+				$block .= $description;
+				$block .= $urlEnd;	
 				$block .= "</li>";
 				
 			$block .= "</ol>";

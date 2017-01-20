@@ -28,7 +28,7 @@ Items:
   title: E_MERGE
   external: ""
   artist: Anne de Vries
-  description: Solo exhibition
+  description: ""
   location: Foam, Amsterdam
   startdate: 2015-08-28
   enddate: 2015-09-25
@@ -51,3 +51,7 @@ Items:
   location: "Museo H.C. Andersen - Galleria nazionale d'arte moderna e contemporanea, Rome"
   startdate: 2014-09-20
   enddate: 2014-11-21
+
+----
+
+Rotateangle: 30

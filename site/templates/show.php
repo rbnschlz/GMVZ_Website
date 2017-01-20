@@ -97,8 +97,8 @@
 					$orientation = $image->orientation() == 'landscape' ? "landscape" : "portrait";
 					$caption = $image->caption()->kirbytext();
 
-					$block = "<img class='show_images_img zoomable fader' src='";
-					$block .= $image->url();
+					$block = "<img class='show_images_img zoomable' src='";
+					$block .= $image->width(200)->url();
 					$block .= "'></img>";
 
 					echo $block;

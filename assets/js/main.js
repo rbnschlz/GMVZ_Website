@@ -167,7 +167,7 @@
 	var fade = function () {
         $(".fader").each(function(index) {
             // $(this).delay(50*index).addClass('faded').removeClass('fader');
-             $(this).delay(50*index).queue(function(next){
+             $(this).delay(10*index).queue(function(next){
     			$(this).removeClass("fader").addClass("faded");
 			});
         });
@@ -222,7 +222,6 @@
 		// showPage();
 		randommargin();
 		zindexhover();
-		fade();
 	});
 
 	$(window).resize(function(){

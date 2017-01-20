@@ -1,0 +1,45 @@
+Title: Painting
+
+----
+
+Artist: 
+
+----
+
+Extartist: 
+
+----
+
+Price: 
+
+----
+
+Year: 
+
+----
+
+Height: 
+
+----
+
+Width: 
+
+----
+
+Length: 
+
+----
+
+Edition: 
+
+----
+
+Description: 
+
+----
+
+Availability: available
+
+----
+
+Rotateangle: 30

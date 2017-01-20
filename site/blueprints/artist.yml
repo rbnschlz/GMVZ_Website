@@ -33,4 +33,5 @@ fields:
     placeholder: city, country
 options:
   template: false
+  delete: true
 
