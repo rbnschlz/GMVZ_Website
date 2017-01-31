@@ -21,13 +21,14 @@
   <meta property="og:image" content="/assets/img/gmvzfb.jpg" />
   <link rel="image_src" href="/assets/img/gmvzfb.jpg" />
   
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/apple-touch-icon.png?v=GvJ77d6nlW">
-  <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png?v=GvJ77d6nlW" sizes="32x32">
-  <link rel="icon" type="image/png" href="/assets/img/favicon-16x16.png?v=GvJ77d6nlW" sizes="16x16">
-  <link rel="manifest" href="/assets/img/manifest.json?v=GvJ77d6nlW">
-  <link rel="mask-icon" href="/assets/img/safari-pinned-tab.svg?v=GvJ77d6nlW" color="#5bbad5">
-  <link rel="shortcut icon" href="/assets/img/favicon.ico?v=GvJ77d6nlW">
-  <meta name="msapplication-config" content="/assets/img/browserconfig.xml?v=GvJ77d6nlW">
+  <?php $siteurl = $site->url(); ?>
+  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $siteurl ?>/assets/img/apple-touch-icon.png?v=GvJ77d6nlW">
+  <link rel="icon" type="image/png" href="<?php echo $siteurl ?>/assets/img/favicon-32x32.png?v=GvJ77d6nlW" sizes="32x32">
+  <link rel="icon" type="image/png" href="<?php echo $siteurl ?>/assets/img/favicon-16x16.png?v=GvJ77d6nlW" sizes="16x16">
+  <link rel="manifest" href="<?php echo $siteurl ?>/assets/img/manifest.json?v=GvJ77d6nlW">
+  <link rel="mask-icon" href="<?php echo $siteurl ?>/assets/img/safari-pinned-tab.svg?v=GvJ77d6nlW" color="#5bbad5">
+  <link rel="shortcut icon" href="<?php echo $siteurl ?>/assets/img/favicon.ico?v=GvJ77d6nlW">
+  <meta name="msapplication-config" content="<?php echo $siteurl ?>/assets/img/browserconfig.xml?v=GvJ77d6nlW">
   <meta name="theme-color" content="#ffffff">
 
   <!-- Google Analytics -->
