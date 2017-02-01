@@ -98,7 +98,7 @@
 					$caption = $image->caption()->kirbytext();
 
 					$block = "<img class='show_images_img zoomable' src='";
-					$block .= $image->width(200)->url();
+					$block .= $image->width(300)->url();
 					$block .= "'></img>";
 
 					echo $block;
