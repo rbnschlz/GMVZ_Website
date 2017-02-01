@@ -22,7 +22,7 @@ fields:
   extartist:
     label: External Artist(s)
     type:  structure
-    help: Not represented by Martin van Zomeren
+    help: Not represented by Martin van Zomeren, add one entry per artist
     entry: >
       {{artistname}}
     fields:

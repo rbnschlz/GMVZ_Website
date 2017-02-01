@@ -83,7 +83,7 @@
 			$img = "";
 			if ($show->hasImages()) {
 				// $img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().");".$rotation."'";
-				$img = "data-src='".$show->images()->sortBy('sort', 'asc')->first()->url()."'";
+				$img = "data-src='".$show->images()->sortBy('sort', 'asc')->first()->resize(450)->url()."'";
 				$zoomImg = $show->images()->sortBy('sort', 'asc')->first()->width(1000)->url();
 			}
 

@@ -27,7 +27,7 @@
 	        $featured[] = true;
 	        $current[] = true;
 	        $event = $show;
-	        $img = "style='background-image:url(".$show->images()->first()->url().")'";
+	        $img = "style='background-image:url(".$show->images()->first()->resize(1800)->url().")'";
 	    } else if ($start > $current_date) {
 	        $featured[] = true;
 	        $upcoming[] = true;
@@ -59,7 +59,7 @@
 
 				
 
-				$img = "style='background-image:url(".$show->images()->first()->url().")'";
+				$img = "style='background-image:url(".$show->images()->first()->resize(1800)->url().")'";
 				if (($start < $current_date) && ($end > $current_date)) {
 					$number = $rotationval;
 					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
@@ -151,7 +151,7 @@
 			foreach($shows as $show) {
 				$start = strtotime($show->startdate());
 				$end = strtotime($show->enddate());
-				$img = "style='background-image:url(".$show->images()->first()->url().")'";
+				$img = "style='background-image:url(".$show->images()->first()->resize(1800)->url().")'";
 
 				// Rotate
 			    if($show->rotateangle()->isNotEmpty()) {

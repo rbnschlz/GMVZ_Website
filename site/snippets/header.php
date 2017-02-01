@@ -1,12 +1,4 @@
 <!DOCTYPE HTML>
-<?php
-// $url = $site->find("archive")->children()->visible()->filter(function($child) {
-//   return $child->hasImages();
-// });
-// $url = $url->shuffle()->first();
-// $images = $url->images()->shuffle();
-// $img = $images->first()->url();
-?>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -20,6 +12,11 @@
   <meta property="og:description" content="<?php echo html($site->description()) ?>" />
   <meta property="og:image" content="/assets/img/gmvzfb.jpg" />
   <link rel="image_src" href="/assets/img/gmvzfb.jpg" />
+
+  <?php 
+    echo less('assets/less/main.less');
+    echo css('assets/css/main.css');
+  ?>
   
   <?php $siteurl = $site->url(); ?>
   <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $siteurl ?>/assets/img/apple-touch-icon.png?v=GvJ77d6nlW">
@@ -43,10 +40,6 @@
   </script>
   <!-- End Google Analytics -->
 
-  <?php 
-    echo less('assets/less/main.less');
-    echo css('assets/css/main.css');
-  ?>
 </head>
 <body>
   <div id="pjax_wrapper">
