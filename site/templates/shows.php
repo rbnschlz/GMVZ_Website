@@ -84,7 +84,7 @@
 			if ($show->hasImages()) {
 				// $img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->url().");".$rotation."'";
 				$img = "data-src='".$show->images()->sortBy('sort', 'asc')->first()->resize(450)->url()."'";
-				$zoomImg = $show->images()->sortBy('sort', 'asc')->first()->width(1000)->url();
+				$zoomImg = $show->images()->sortBy('sort', 'asc')->first()->width(800)->url();
 			}
 
 			// Set artists
@@ -96,7 +96,11 @@
 			$artistsExtCount = count($show->extartist()->artistname()->toStructure());
 
 			if($show->artist()->isNotEmpty() && $show->extartist()->isNotEmpty() ){
-			$artistSummery = "<span class='shows_block_artists hide'>";	
+			$artistSummery = "<span class='shows_block_artists'>";	
+				$artistSummery .= "<span class='shows_block_artists_groupshow'>";
+				$artistSummery .= "Group show";
+				$artistSummery .= "</span>";
+				$artistSummery .= "<span class='shows_block_artists_wrap hide'>";
 				$i = 0;
 				foreach ($artists as $artist) {	
 					$artistSummery .= "<span>";
@@ -114,39 +118,67 @@
 					$artistSummery .= "</span>";
 					$artistSummery .= " ";
 				}	
+				$artistSummery .= "</span>";
 			$artistSummery .= "</span>";
-			$artistClickable = "clickable";
+			
 			} else if ($show->artist()->isNotEmpty()){
-			$artistSummery = "<span class='shows_block_artists hide'>";
+			
 				$i = 0;
-				foreach ($artists as $artist) {
-				$i++;	
-					$artistSummery .= "<span class='";
-					$artistSummery .= $artistcount == 1 ? "single" : "";
-					$artistSummery .= "'>";
+				if($artistcount === 1) {
+					$artistSummery = "<span class='shows_block_artists'>";
 					$artistSummery .= $artist;
-					$artistSummery .= $i < $artistcount ? ", " : "";
 					$artistSummery .= "</span>";
-					$artistSummery .= " ";
+				} else {
+					$artistSummery = "<span class='shows_block_artists'>";	
+						$artistSummery .= "<span class='shows_block_artists_groupshow'>";
+						$artistSummery .= "Group show";
+						$artistSummery .= "</span>";
+						$artistSummery .= "<span class='shows_block_artists_wrap hide'>";
+							foreach ($artists as $artist) {
+							$i++;	
+							$artistSummery .= "<span class='";
+							$artistSummery .= $artistcount == 1 ? "single" : "";
+							$artistSummery .= "'>";
+							$artistSummery .= $artist;
+							$artistSummery .= $i < $artistcount ? ", " : "";
+							$artistSummery .= "</span>";
+							$artistSummery .= " ";
+							}
+						$artistSummery .= "</span>";
+					$artistSummery .= "</span>";
+					
 				}
-			$artistSummery .= "</span>";
-			$artistClickable = "clickable";
+				
+			
 			} else if ($show->extartist()->isNotEmpty()){
-			$artistSummery = "<span class='shows_block_artists single hide'>";
-				$i = 0;
-				foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
-				$i++;	
-					$artistSummery .= "<span>";
-					$artistSummery .= $exhartist;
-					$artistSummery .= $i < $len ? ", " : "";
+			$artistSummery = "<span class='shows_block_artists'>";
+			$exhartistcount = $show->extartist()->toStructure()->count();
+				if($exhartistcount === 1) {
+					$artistSummery = "<span class='shows_block_artists'>";
+					$artistSummery .= $show->extartist()->toStructure();
 					$artistSummery .= "</span>";
-					$artistSummery .= " ";
-				}	
+				} else {
+					$i = 0;
+					$artistSummery .= "<span class='shows_block_artists_groupshow'>";
+					$artistSummery .= "Group show";
+					$artistSummery .= "</span>";
+					$artistSummery .= "<span class='shows_block_artists_wrap hide'>";
+						foreach ($show->extartist()->artistname()->toStructure() as $exhartist) {
+						$i++;	
+						$artistSummery .= "<span>";
+						$artistSummery .= $exhartist;
+						$artistSummery .= $i < $len ? ", " : "";
+						$artistSummery .= "</span>";
+						$artistSummery .= " ";
+						}
+					$artistSummery .= "</span>";
+				}
+				
+					
 			$artistSummery .= "</span>";
-			$artistClickable = "clickable";
+			
 			} else {
 				$artistSummery = "";
-				$artistClickable = "";
 			}
 
 			// Add image orientation
@@ -207,18 +239,18 @@
 			$block .= s::get('device_class') == 'mobile' || s::get('device_class') == 'tablet' ? "" : "zoomthis ";
 			$block .= "shows_block_thumb ".$when."' ".$img." ".$rotation." zoom-image=".$zoomImg." data-time='".$when."'></span>";
 			$block .= $urlEnd;
-			$block .= "<span class='shows_block_caption ".$artistClickable."'>";
+			$block .= "<span class='shows_block_caption'>";
 				$block .= "<span class='shows_block_title'>";
 				$block .= $show->title();
 				$block .= "</span>";
 				$block .= ", ";
 				
 				$block .= "<span class='shows_block_date'>";
-				$block .= $date;
+				$block .= $date.",";
 				$block .= "</span>";
 
 				if (!empty($artistSummery)) {
-			    $block .= $artistSummery;
+			    $block .= " ".$artistSummery;
 				}
 			$block .= "</span>";
 			$block .= "</div>";

@@ -63,7 +63,7 @@
 				if (($start < $current_date) && ($end > $current_date)) {
 					$number = $rotationval;
 					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
-					$block = "<a class='home_link_wrapper_curr_d home_show' show='{$show->title()}' ";
+					$block = "<a class='home_link_wrapper_curr_d home_show' show='{$show->uid()}' ";
 					$block .= " style='transform: rotate(".$number."deg)' ";
 					$block .= "href='{$showsUrl}'>";
 					$block .= "<div class='home_background' ";
@@ -77,7 +77,7 @@
 					// $number = $i >= 2 ? $clockwise[mt_rand(0, count($clockwise) - 1)] : $rotationval;
 					$number = $rotationval;
 					$block2 = "<a class='";
-					$block2 .= $i >= 2 ? "home_link_wrapper_upc_d home_show' show='{$show->title()}' " : "home_link_wrapper_upc_s home_show' show='{$show->title()}' ";
+					$block2 .= $i >= 2 ? "home_link_wrapper_upc_d home_show' show='{$show->uid()}' " : "home_link_wrapper_upc_s home_show' show='{$show->uid()}' ";
 					$block2 .= " style='transform: rotate(".$number."deg)' ";
 					$block2 .= "href='{$showsUrl}'>";
 					$block2 .= "<div class='home_background' ";
@@ -126,7 +126,7 @@
 
 			$number = $rotationval;
 			// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
-			$block = "<a class='home_link_wrapper_curr_s home_show' show='{$show->title()}' ";
+			$block = "<a class='home_link_wrapper_curr_s home_show' show='{$show->uid()}' ";
 			$block .= " style='transform: rotate(".$number."deg)' ";
 			$block .= "href='{$showsUrl}'>";
 			$block .= "<div class='home_background' ";
@@ -164,7 +164,7 @@
 					$number = $rotationval;
 					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
 					$block = "<a class='";
-					$block .= $i >= 2 ? "home_link_wrapper_upc_d' home_show show='{$show->title()}' " : "home_link_wrapper_upc_s home_show' show='{$show->title()}' ";
+					$block .= $i >= 2 ? "home_link_wrapper_upc_d' home_show show='{$show->uid()}' " : "home_link_wrapper_upc_s home_show' show='{$show->uid()}' ";
 					$block .= " style='transform: rotate(".$number."deg)' ";
 					$block .= "href='{$showsUrl}'>";
 					$block .= "<div class='home_background' ";

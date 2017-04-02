@@ -8,6 +8,9 @@ Artist:
 
 Extartist: 
 
+- 
+  artistname: Bram berg
+
 ----
 
 Description: 
@@ -18,7 +21,7 @@ Startdate: 2017-01-06
 
 ----
 
-Enddate: 2017-01-20
+Enddate: 2017-04-30
 
 ----
 

@@ -87,8 +87,9 @@
 			loaded: function () {
 	        	var parent = $(this).parent();
 	        	var caption = parent.siblings(".shows_block_caption");	
-				var	date = caption.children(".shows_block_date");
 				var	artists = caption.children(".shows_block_artists");
+				var groupshow = artists.children(".shows_block_artists_groupshow");
+				var groupshowwrap = artists.children(".shows_block_artists_wrap");
 				var	image = $(this);
 				var imageUrl = $(image).attr("zoom-image");
 
@@ -101,12 +102,12 @@
 					$(image).trigger('zoom.destroy'); 
 				}
 
+				
 				//Artist Names
 				if(artists.length){
-					$(caption).click(function() {
-					// $(document).on('click', caption, function(event) {	
-						date.toggleClass("hide");
-						artists.toggleClass("hide");
+					$(artists).on('click touchstart', function() {
+						groupshow.toggleClass("hide");
+						groupshowwrap.toggleClass("hide");
 					});
 				}
 	        }
@@ -144,17 +145,18 @@
   				var shows = $(".home_show").length;
   				var zindexplus = zindex + 1;
 
-  				var title = $(this).attr("show");
+  				var uid = $(this).attr("show");
 
   				$(this).hover (function () {
 	                  $(this).css({"z-index": zindexplus});
 	                  $(this).siblings(".home_show").css({"z-index": ""});
 
 	                  $(".home_link").each(function(){
-	                  	var text = $(this).text();
-	                  	if(text === title) {
-	                  		$(this).addClass("active");
-	                  	} else {
+	                  	var href = $(this).attr("href");
+	                  	if(href.indexOf(uid) != -1){
+						    $(this).addClass("active");
+						}
+	                  	else {
 	                  		$(this).removeClass("active");
 	                  	}
 	                  });
