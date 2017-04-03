@@ -106,12 +106,12 @@
 				//Artist Names
 				if(artists.length){
 					$(groupshow).click(function() {
-							groupshow.toggleClass("hide");
-							groupshowwrap.toggleClass("hide");
+							groupshow.addClass("hide");
+							groupshowwrap.removeClass("hide");
 					});
 					$(groupshowwrap).click(function() {
-							groupshow.toggleClass("hide");
-							groupshowwrap.toggleClass("hide");
+							groupshow.removeClass("hide");
+							groupshowwrap.addClass("hide");
 					});
 				}
 	        }
@@ -172,13 +172,10 @@
 	//Fade in Images
 	var fade = function () {
         $(".fader").each(function(index) {
-            // $(this).delay(50*index).addClass('faded').removeClass('fader');
              $(this).delay(10*index).queue(function(next){
     			$(this).removeClass("fader").addClass("faded");
 			});
         });
-        // var timer = $(".faded").length;
-        // setTimeout(function() { pos(); }, 49.5*timer);
 	};
 
 	// PJAX
