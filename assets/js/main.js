@@ -25,7 +25,6 @@
 		$(document).on('click', ".zoomable", function(event) {
 			var i = $(".zoomable").index(this);
 			$(".overlay_wrapper").addClass('active').addClass('ontop');
-			$(".overlay_wrapper").addClass('ontop');
 			$(".overlay_slide").cycle({
 				slides:".overlay_slide_s",
 				timeout: 0,

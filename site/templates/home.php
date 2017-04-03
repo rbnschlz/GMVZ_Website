@@ -11,8 +11,6 @@
 	$capt = "";
 	$showsUrl = page("shows")->url();
 	$i = 0;
-	$clockwise = ['5', '10', '15', '30'];
-	$counterclockwise = ['-5', '-10', '-15', '-45'];
 
 
 	//Check what events are currently on
@@ -59,7 +57,7 @@
 
 				
 
-				$img = "style='background-image:url(".$show->images()->first()->resize(1800)->url().")'";
+				$img = "style='background-image:url(".$show->images()->sortBy('sort', 'asc')->first()->resize(1800)->url().")'";
 				if (($start < $current_date) && ($end > $current_date)) {
 					$number = $rotationval;
 					// $number = $counterclockwise[mt_rand(0, count($counterclockwise) - 1)];
@@ -73,8 +71,6 @@
 
 					echo $block;
 				} else if ($start > $current_date) {
-					// $number = $clockwise[mt_rand(0, count($clockwise) - 1)];
-					// $number = $i >= 2 ? $clockwise[mt_rand(0, count($clockwise) - 1)] : $rotationval;
 					$number = $rotationval;
 					$block2 = "<a class='";
 					$block2 .= $i >= 2 ? "home_link_wrapper_upc_d home_show' show='{$show->uid()}' " : "home_link_wrapper_upc_s home_show' show='{$show->uid()}' ";
