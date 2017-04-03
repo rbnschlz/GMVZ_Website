@@ -105,9 +105,13 @@
 				
 				//Artist Names
 				if(artists.length){
-					$(artists).on('click touchstart', function() {
-						groupshow.toggleClass("hide");
-						groupshowwrap.toggleClass("hide");
+					$(groupshow).click(function() {
+							groupshow.toggleClass("hide");
+							groupshowwrap.toggleClass("hide");
+					});
+					$(groupshowwrap).click(function() {
+							groupshow.toggleClass("hide");
+							groupshowwrap.toggleClass("hide");
 					});
 				}
 	        }
