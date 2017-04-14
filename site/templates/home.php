@@ -182,7 +182,7 @@
 				$i++;
 				$start = strtotime($show->startdate());
 				if ($start > $current_date) {
-				$block .= "<a class='home_link' href='";
+				$block .= "<a class='home_link active' href='";
 				$block .= $show->url();
 				$block .= "'>";
 				$block .= $show->title();
