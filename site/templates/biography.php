@@ -23,22 +23,23 @@
 
 		echo $block;
 
-		$block = "<li class='artist_bio_info_section'>";
-		$block .= "<span class='artist_bio_info_year'>";
-		$block .= $artist->yearBirth();
-		$block .= "</span>";
-		$block .= $artist->yearBirth()->isNotEmpty() && $artist->placeBirth()->isNotEmpty() ? ", " : "";
-		$block .= "<span class='artist_bio_info_place'>";
-		$block .= $artist->placeBirth();
-		$block .= "</span>";
-		$block .= "<span class='artist_bio_info_web'>";
-		$block .= "<a href='".$artist->web()."' target='_blank'>";
-		$block .=  url::short($artist->web());
-		$block .= "</a></span>";
-		$block .= "</li>";
+		if ($artist->yearBirth()->isNotEmpty() || $artist->web()->isNotEmpty()) {
+			$block = "<li class='artist_bio_info_section'>";
+			$block .= "<span class='artist_bio_info_year'>";
+			$block .= $artist->yearBirth();
+			$block .= "</span>";
+			$block .= $artist->yearBirth()->isNotEmpty() && $artist->placeBirth()->isNotEmpty() ? ", " : "";
+			$block .= "<span class='artist_bio_info_place'>";
+			$block .= $artist->placeBirth();
+			$block .= "</span>";
+			$block .= "<span class='artist_bio_info_web'>";
+			$block .= "<a href='".$artist->web()."' target='_blank'>";
+			$block .=  url::short($artist->web());
+			$block .= "</a></span>";
+			$block .= "</li>";
 
-		echo $block
-
+			echo $block;
+		}
 		?>
 	</div>
 		

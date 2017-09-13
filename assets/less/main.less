@@ -114,7 +114,12 @@ em {
 }
 
 p {
-  padding-bottom: @mp-s;
+  padding-bottom: @mp-m;
+}
+
+strong {
+  font-weight: normal;
+  text-transform: uppercase;
 }
 
 .pointer {
@@ -545,6 +550,10 @@ input:focus:-ms-input-placeholder { color:transparent; }
     margin: 0 0 @mp-s 0;
     .dotted;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: normal;
+  }
 }
 
 
@@ -588,6 +597,10 @@ input:focus:-ms-input-placeholder { color:transparent; }
 
 .artist_bio_info_section {
   display: block;
+  padding-bottom: @mp-s;
+  &:first-child {
+    padding-bottom: 0;
+  }
 }
 
 .artist_bio_info_title {
@@ -601,7 +614,7 @@ input:focus:-ms-input-placeholder { color:transparent; }
 }
 
 .artist_bio_info {
-  padding-bottom: @mp-m;
+  padding-bottom: @mp-s;
 }
 
 .artist_bio_section {
