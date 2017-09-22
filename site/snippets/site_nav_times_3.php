@@ -1,5 +1,5 @@
 <div class="menu_sub">
-	<?php $types = array("Publications", "Multiples");
+	<?php $types = array("Books", "Multiples");
 
 	//Striketrough
 	$featured = [];

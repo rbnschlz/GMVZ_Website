@@ -70,6 +70,7 @@
 <?php 
 	$form = "<span class='newsletter_headline'>Newsletter</span>";
 	$form .= "<form id='signup' class='mailform' action='' method='post'>";
+	$form .= "<input class='name' type='text' name='name' placeholder='Name'>";
 	$form .= "<input class='email' type='text' name='email' placeholder='e-Mail'>";
 	$form .= "<input type='submit' name='submit' value='Subscribe'>";
 	$form .= "</form>";
@@ -81,7 +82,7 @@
 			'to'      => $mail,
 			'from'    => $_POST['email'],
 			'subject' => 'Newsletter Subscription',
-			'body'    => 'Please add ' . $_POST['email'] . ' to the list of subscribers'
+			'body'    => 'Please add ' . $_POST['email'] . ', '. $_POST['name'] . ' to the list of subscribers'
 		));
 
 		if($email->send()) {
